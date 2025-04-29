@@ -21,11 +21,11 @@
 #include "spi.h"
 #include "usart.h"
 #include "gpio.h"
-#include "CANSPI.h"
-#include "MCP2515.h"
+
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-
+#include "CANSPI.h"
+#include "MCP2515.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -58,38 +58,28 @@ void SystemClock_Config(void);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
-#define SENSOR_TRESHOLD 3000
-uint16_t read_sensor(){
-	return 4000; // sensor control
+volatile uint8_t can_rx_flag = 0;
+void do_wake_up(void)
+{
+    HAL_GPIO_TogglePin(GPIOA, GPIO_PIN_5); // LED ON
+		HAL_Delay(100);
+		HAL_GPIO_TogglePin(GPIOA, GPIO_PIN_5); // LED ON
+		HAL_Delay(100);
 }
-void check_and_send(void) {
-    uint16_t sensor_value = read_sensor();
-    if(sensor_value > SENSOR_TRESHOLD) {
-        uCAN_MSG txMessage;
-				txMessage.frame.idType = dSTANDARD_CAN_MSG_ID_2_0B;
-				txMessage.frame.data0 = 'W';
-				txMessage.frame.data1 = 'A';
-				txMessage.frame.data2 = 'K';
-				txMessage.frame.data3 = 'E';
-				txMessage.frame.data4 = 0;
-				txMessage.frame.data5 = 0;
-				txMessage.frame.data6 = 0;
-				txMessage.frame.data7 = 0;
-				txMessage.frame.id = 0x01;
-				txMessage.frame.dlc = 8;
-        txMessage.frame.id = 0x100;
-
-        CANSPI_Transmit(&txMessage);
+void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
+{
+	 if (GPIO_Pin == GPIO_PIN_9)  // PB9 INT
+    {
+				can_rx_flag = 1;
     }
 }
+
 /* USER CODE END 0 */
 
 /**
   * @brief  The application entry point.
   * @retval int
   */
-	
-	
 int main(void)
 {
 
@@ -119,15 +109,40 @@ int main(void)
   MX_USART2_UART_Init();
   /* USER CODE BEGIN 2 */
   CANSPI_Initialize();	
+	MCP2515_BitModify(MCP2515_CANINTE, 0x03, 0x03);
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-			// loop on timer interrupt
-		check_and_send();
-		HAL_Delay(1000);
+		if (can_rx_flag)
+    {
+        can_rx_flag = 0; 
+        if (CANSPI_Receive(&rxMessage))
+        {
+            if (rxMessage.frame.id == 0x100 &&
+                rxMessage.frame.data0 == 'W')
+            {
+                do_wake_up();
+            }
+        }
+    }
+		
+//		GPIO_PinState pinState = HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_9);
+
+//    if (pinState == GPIO_PIN_RESET)
+//    {
+//        HAL_GPIO_WritePin(GPIOA, GPIO_PIN_5, GPIO_PIN_RESET); // LOW: ?
+//    }
+//    else
+//    {
+//        HAL_GPIO_WritePin(GPIOA, GPIO_PIN_5, GPIO_PIN_SET);   // HIGH: ?
+//    }
+
+//    HAL_Delay(50);
+
+    HAL_Delay(10);
     
   }
     /* USER CODE END WHILE */

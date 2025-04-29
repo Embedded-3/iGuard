@@ -46,7 +46,7 @@
 /* Private variables ---------------------------------------------------------*/
 
 /* USER CODE BEGIN PV */
-uCAN_MSG txMessage;
+
 uCAN_MSG rxMessage;
 /* USER CODE END PV */
 
@@ -58,13 +58,39 @@ void SystemClock_Config(void);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
+#define SENSOR_TRESHOLD 3000
+uint16_t read_sensor(){
+	return 4000; // sensor control
+}
+void check_and_send(void) {
+    uint16_t sensor_value = read_sensor();
+    if(sensor_value > SENSOR_TRESHOLD) {
+        uCAN_MSG txMessage;
+				txMessage.frame.idType = dSTANDARD_CAN_MSG_ID_2_0B;
+				txMessage.frame.data0 = 'W';
+				txMessage.frame.data1 = 'A';
+				txMessage.frame.data2 = 'K';
+				txMessage.frame.data3 = 'E';
+				txMessage.frame.data4 = 0;
+				txMessage.frame.data5 = 0;
+				txMessage.frame.data6 = 0;
+				txMessage.frame.data7 = 0;
+				txMessage.frame.dlc = 8;
+        txMessage.frame.id = 0x100;
 
+        CANSPI_Transmit(&txMessage);
+			
+				HAL_GPIO_TogglePin(GPIOA, GPIO_PIN_5);
+    }
+}
 /* USER CODE END 0 */
 
 /**
   * @brief  The application entry point.
   * @retval int
   */
+	
+	
 int main(void)
 {
 
@@ -100,67 +126,9 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-    if(CANSPI_Receive(&rxMessage))
-    {
-      txMessage.frame.idType = rxMessage.frame.idType;
-      txMessage.frame.id = rxMessage.frame.id + 1;
-      txMessage.frame.dlc = rxMessage.frame.dlc;
-      txMessage.frame.data0++;
-      txMessage.frame.data1 = rxMessage.frame.data1;
-      txMessage.frame.data2 = rxMessage.frame.data2;
-      txMessage.frame.data3 = rxMessage.frame.data3;
-      txMessage.frame.data4 = rxMessage.frame.data4;
-      txMessage.frame.data5 = rxMessage.frame.data5;
-      txMessage.frame.data6 = rxMessage.frame.data6;
-      txMessage.frame.data7 = rxMessage.frame.data7;
-			
-			if (txMessage.frame.id == 0xAB) {
-					HAL_GPIO_TogglePin(GPIOA, GPIO_PIN_5);
-					HAL_Delay(100);
-					HAL_GPIO_TogglePin(GPIOA, GPIO_PIN_5);
-					HAL_Delay(100);
-					CANSPI_Transmit(&txMessage);
-			}
-    }  
-		
-		ctrl_status_t status;
-		status.ctrl_status = MCP2515_ReadStatus();
-
-//		if (status.TXB0REQ == 1 && status.TX0IF == 0) {
-//				HAL_GPIO_TogglePin(GPIOA, GPIO_PIN_5);
-//				HAL_Delay(100);
-//		}
-//		else if (status.TX0IF == 1) {
-//				HAL_GPIO_WritePin(GPIOA, GPIO_PIN_5, GPIO_PIN_SET); // connected success
-//		}
-//		else {
-//				HAL_GPIO_TogglePin(GPIOA, GPIO_PIN_5);
-//				HAL_Delay(300);
-//		}
-		
-		
-//    txMessage.frame.idType = dSTANDARD_CAN_MSG_ID_2_0B;
-//    txMessage.frame.id = 0xAA;
-//    txMessage.frame.dlc = 8;
-//    txMessage.frame.data0 = 0;
-//    txMessage.frame.data1 = 2;
-//    txMessage.frame.data2 = 4;
-//    txMessage.frame.data3 = 6;
-//    txMessage.frame.data4 = 8;
-//    txMessage.frame.data5 = 10;
-//    txMessage.frame.data6 = 12;
-//    txMessage.frame.data7 = 18;	
-//    CANSPI_Transmit(&txMessage);
-//    
-//		uint8_t result = CANSPI_Transmit(&txMessage);
-//    if (result != 1)
-//    {
-//        HAL_GPIO_TogglePin(GPIOA, GPIO_PIN_5);  
-//        HAL_Delay(100); 
-//        HAL_GPIO_TogglePin(GPIOA, GPIO_PIN_5);
-//        HAL_Delay(100);
-//    }else
-			HAL_Delay(1000);
+			// loop on timer interrupt
+		check_and_send();
+		HAL_Delay(1000);
     
   }
     /* USER CODE END WHILE */
