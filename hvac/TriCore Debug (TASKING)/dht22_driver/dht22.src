@@ -1,6 +1,6 @@
 	; Module start
 	.compiler_version	"TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler v1.1r8 Build 22011964"
-	.compiler_invocation	"ctc -f cc24376a --dep-file=dht22_driver/dht22.d -c99 --fp-model=3cflnrSTz -D__CPU__=tc27xd -D__CPU_TC27XD__ --core=tc1.6.x --fp-model=+float -D__CPU__=tc27xd -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1 -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Configurations -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\Infra -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\Infra\\\\Platform -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\Infra\\\\Platform\\\\Tricore -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\Infra\\\\Platform\\\\Tricore\\\\Compilers -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\Infra\\\\Sfr -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\Infra\\\\Sfr\\\\TC27D -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\Infra\\\\Sfr\\\\TC27D\\\\_Reg -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\Service -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\Service\\\\CpuGeneric -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\Service\\\\CpuGeneric\\\\StdIf -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\Service\\\\CpuGeneric\\\\SysSe -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\Service\\\\CpuGeneric\\\\SysSe\\\\Bsp -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\Service\\\\CpuGeneric\\\\SysSe\\\\Comm -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\Service\\\\CpuGeneric\\\\_Utilities -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Asclin -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Asclin\\\\Asc -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Asclin\\\\Std -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Cpu -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Cpu\\\\CStart -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Cpu\\\\Irq -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Cpu\\\\Std -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Cpu\\\\Trap -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Gtm -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Gtm\\\\Std -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Mtu -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Mtu\\\\Std -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Port -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Port\\\\Std -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Scu -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Scu\\\\Std -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Src -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Src\\\\Std -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Stm -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Stm\\\\Std -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Vadc -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Vadc\\\\Adc -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Vadc\\\\Std -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\_Impl -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\_Lib -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\_Lib\\\\DataHandling -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\_PinMap -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\asclin_driver -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\dht22_driver -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\mq135_driver -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\stm_driver -g2 -w544 -w557 -t4 --language=+volatile -N0 -O0 -Y0 -Z0 --compact-max-size=200 --misrac-version=2004 -o dht22_driver/dht22.src ../dht22_driver/dht22.c"
+	.compiler_invocation	"ctc -f cc12908a --dep-file=dht22_driver/dht22.d -c99 --fp-model=3cflnrSTz -D__CPU__=tc27xd -D__CPU_TC27XD__ --core=tc1.6.x --fp-model=+float -D__CPU__=tc27xd -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1 -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Configurations -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\Infra -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\Infra\\\\Platform -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\Infra\\\\Platform\\\\Tricore -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\Infra\\\\Platform\\\\Tricore\\\\Compilers -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\Infra\\\\Sfr -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\Infra\\\\Sfr\\\\TC27D -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\Infra\\\\Sfr\\\\TC27D\\\\_Reg -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\Service -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\Service\\\\CpuGeneric -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\Service\\\\CpuGeneric\\\\StdIf -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\Service\\\\CpuGeneric\\\\SysSe -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\Service\\\\CpuGeneric\\\\SysSe\\\\Bsp -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\Service\\\\CpuGeneric\\\\SysSe\\\\Comm -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\Service\\\\CpuGeneric\\\\_Utilities -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Asclin -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Asclin\\\\Asc -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Asclin\\\\Std -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Cpu -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Cpu\\\\CStart -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Cpu\\\\Irq -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Cpu\\\\Std -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Cpu\\\\Trap -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Gtm -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Gtm\\\\Std -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Mtu -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Mtu\\\\Std -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Port -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Port\\\\Std -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Scu -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Scu\\\\Std -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Src -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Src\\\\Std -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Stm -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Stm\\\\Std -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Vadc -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Vadc\\\\Adc -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Vadc\\\\Std -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\_Impl -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\_Lib -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\_Lib\\\\DataHandling -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\_PinMap -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\asclin_driver -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\dht22_driver -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\mhz19b_driver -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\mq135_driver -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\stm_driver -g2 -w544 -w557 -t4 --language=+volatile -N0 -O0 -Y0 -Z0 --compact-max-size=200 --misrac-version=2004 -o dht22_driver/dht22.src ../dht22_driver/dht22.c"
 	.compiler_name		"ctc"
 	;source	'../dht22_driver/dht22.c'
 
@@ -57,14 +57,14 @@ __delay_us_function_end:
 .L64:
 	; End of function
 	
-	.sdecl	'.text.dht22.DHT11_ReadByte',code,cluster('DHT11_ReadByte')
-	.sect	'.text.dht22.DHT11_ReadByte'
+	.sdecl	'.text.dht22.DHT22_ReadByte',code,cluster('DHT22_ReadByte')
+	.sect	'.text.dht22.DHT22_ReadByte'
 	.align	2
 	
-	.global	DHT11_ReadByte
-; Function DHT11_ReadByte
+	.global	DHT22_ReadByte
+; Function DHT22_ReadByte
 .L53:
-DHT11_ReadByte:	.type	func
+DHT22_ReadByte:	.type	func
 	mov	d8,#0
 .L102:
 	mov	d9,#0
@@ -178,19 +178,19 @@ DHT11_ReadByte:	.type	func
 	ret
 .L100:
 	
-__DHT11_ReadByte_function_end:
-	.size	DHT11_ReadByte,__DHT11_ReadByte_function_end-DHT11_ReadByte
+__DHT22_ReadByte_function_end:
+	.size	DHT22_ReadByte,__DHT22_ReadByte_function_end-DHT22_ReadByte
 .L69:
 	; End of function
 	
-	.sdecl	'.text.dht22.DHT11_process',code,cluster('DHT11_process')
-	.sect	'.text.dht22.DHT11_process'
+	.sdecl	'.text.dht22.DHT22_process',code,cluster('DHT22_process')
+	.sect	'.text.dht22.DHT22_process'
 	.align	2
 	
-	.global	DHT11_process
-; Function DHT11_process
+	.global	DHT22_process
+; Function DHT22_process
 .L55:
-DHT11_process:	.type	func
+DHT22_process:	.type	func
 	sub.a	a10,#8
 .L191:
 	mov.aa	a12,a4
@@ -396,7 +396,7 @@ DHT11_process:	.type	func
 .L46:
 	addsc.a	a15,a10,d15,#0
 .L289:
-	call	DHT11_ReadByte
+	call	DHT22_ReadByte
 .L290:
 	st.b	[a15],d2
 .L291:
@@ -457,8 +457,8 @@ DHT11_process:	.type	func
 	ret
 .L118:
 	
-__DHT11_process_function_end:
-	.size	DHT11_process,__DHT11_process_function_end-DHT11_process
+__DHT22_process_function_end:
+	.size	DHT22_process,__DHT22_process_function_end-DHT22_process
 .L74:
 	; End of function
 	
@@ -469,17 +469,17 @@ __DHT11_process_function_end:
 	.space	5
 	.calls	'delay_us','IfxScuCcu_getSourceFrequency'
 	.calls	'delay_us','waitTime'
-	.calls	'DHT11_ReadByte','delay_us'
-	.calls	'DHT11_process','IfxPort_setPinMode'
-	.calls	'DHT11_process','delay_us'
-	.calls	'DHT11_process','DHT11_ReadByte'
+	.calls	'DHT22_ReadByte','delay_us'
+	.calls	'DHT22_process','IfxPort_setPinMode'
+	.calls	'DHT22_process','delay_us'
+	.calls	'DHT22_process','DHT22_ReadByte'
 	.calls	'delay_us','',0
-	.calls	'DHT11_ReadByte','',0
+	.calls	'DHT22_ReadByte','',0
 	.extern	IfxPort_setPinMode
 	.extern	IfxScuCcu_getSourceFrequency
 	.extern	waitTime
 	.extern	IfxPort_P02_0
-	.calls	'DHT11_process','',8
+	.calls	'DHT22_process','',8
 	.sdecl	'.debug_info',debug
 	.sect	'.debug_info'
 .L57:
@@ -14864,7 +14864,7 @@ __DHT11_process_function_end:
 	.sect	'.debug_ranges'
 .L63:
 	.word	-1,.L51,0,.L64-.L51,0,0
-	.sdecl	'.debug_info',debug,cluster('DHT11_ReadByte')
+	.sdecl	'.debug_info',debug,cluster('DHT22_ReadByte')
 	.sect	'.debug_info'
 .L65:
 	.word	418
@@ -14878,7 +14878,7 @@ __DHT11_process_function_end:
 	.byte	2
 	.word	.L56
 	.byte	3
-	.byte	'DHT11_ReadByte',0,1,13,7
+	.byte	'DHT22_ReadByte',0,1,13,7
 	.word	.L99
 	.byte	1,1,1
 	.word	.L53,.L100,.L52
@@ -14917,13 +14917,13 @@ __DHT11_process_function_end:
 	.byte	8
 	.word	.L113,.L116,.L117
 	.byte	0,0,0,0,0
-	.sdecl	'.debug_abbrev',debug,cluster('DHT11_ReadByte')
+	.sdecl	'.debug_abbrev',debug,cluster('DHT22_ReadByte')
 	.sect	'.debug_abbrev'
 .L66:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,73,16
 	.byte	54,15,39,12,63,12,17,1,18,1,64,6,0,0,4,11,1,17,1,18,1,0,0,5,52,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,6
 	.byte	29,1,49,16,17,1,18,1,0,0,7,5,0,49,16,2,6,0,0,8,11,0,49,16,17,1,18,1,0,0,0
-	.sdecl	'.debug_line',debug,cluster('DHT11_ReadByte')
+	.sdecl	'.debug_line',debug,cluster('DHT22_ReadByte')
 	.sect	'.debug_line'
 .L67:
 	.word	.L210-.L209
@@ -15036,11 +15036,11 @@ __DHT11_process_function_end:
 	.half	.L69-.L22
 	.byte	0,1,1
 .L210:
-	.sdecl	'.debug_ranges',debug,cluster('DHT11_ReadByte')
+	.sdecl	'.debug_ranges',debug,cluster('DHT22_ReadByte')
 	.sect	'.debug_ranges'
 .L68:
 	.word	-1,.L53,0,.L69-.L53,0,0
-	.sdecl	'.debug_info',debug,cluster('DHT11_process')
+	.sdecl	'.debug_info',debug,cluster('DHT22_process')
 	.sect	'.debug_info'
 .L70:
 	.word	791
@@ -15054,7 +15054,7 @@ __DHT11_process_function_end:
 	.byte	2
 	.word	.L56
 	.byte	3
-	.byte	'DHT11_process',0,1,29,5
+	.byte	'DHT22_process',0,1,29,5
 	.word	.L104
 	.byte	1,1,1
 	.word	.L55,.L118,.L54
@@ -15161,14 +15161,14 @@ __DHT11_process_function_end:
 	.byte	'i',0,1,57,14
 	.word	.L104,.L182
 	.byte	0,0,0,0,0,0
-	.sdecl	'.debug_abbrev',debug,cluster('DHT11_process')
+	.sdecl	'.debug_abbrev',debug,cluster('DHT22_process')
 	.sect	'.debug_abbrev'
 .L71:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,73,16
 	.byte	54,15,39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,1,17,1,18,1,0,0,6
 	.byte	29,1,49,16,17,1,18,1,0,0,7,5,0,49,16,2,6,0,0,8,11,0,49,16,17,1,18,1,0,0,9,11,1,49,16,17,1,18,1,0,0,10
 	.byte	52,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,0
-	.sdecl	'.debug_line',debug,cluster('DHT11_process')
+	.sdecl	'.debug_line',debug,cluster('DHT22_process')
 	.sect	'.debug_line'
 .L72:
 	.word	.L237-.L236
@@ -15415,11 +15415,11 @@ __DHT11_process_function_end:
 	.half	.L74-.L26
 	.byte	0,1,1
 .L237:
-	.sdecl	'.debug_ranges',debug,cluster('DHT11_process')
+	.sdecl	'.debug_ranges',debug,cluster('DHT22_process')
 	.sect	'.debug_ranges'
 .L73:
 	.word	-1,.L55,0,.L74-.L55,0,0
-	.sdecl	'.debug_loc',debug,cluster('DHT11_ReadByte')
+	.sdecl	'.debug_loc',debug,cluster('DHT22_ReadByte')
 	.sect	'.debug_loc'
 .L52:
 	.word	-1,.L53,0,.L100-.L53
@@ -15446,7 +15446,7 @@ __DHT11_process_function_end:
 	.half	1
 	.byte	82
 	.word	0,0
-	.sdecl	'.debug_loc',debug,cluster('DHT11_process')
+	.sdecl	'.debug_loc',debug,cluster('DHT22_process')
 	.sect	'.debug_loc'
 .L54:
 	.word	-1,.L55,0,.L191-.L55
@@ -15558,11 +15558,11 @@ __DHT11_process_function_end:
 	.sect	'.debug_frame'
 	.word	12
 	.word	.L312,.L51,.L75-.L51
-	.sdecl	'.debug_frame',debug,cluster('DHT11_ReadByte')
+	.sdecl	'.debug_frame',debug,cluster('DHT22_ReadByte')
 	.sect	'.debug_frame'
 	.word	12
 	.word	.L312,.L53,.L100-.L53
-	.sdecl	'.debug_frame',debug,cluster('DHT11_process')
+	.sdecl	'.debug_frame',debug,cluster('DHT22_process')
 	.sect	'.debug_frame'
 	.word	36
 	.word	.L312,.L55,.L118-.L55

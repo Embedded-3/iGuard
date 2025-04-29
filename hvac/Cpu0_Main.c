@@ -33,6 +33,7 @@
 #include <stm_driver/stm.h>
 #include <mq135_driver/mq135.h>
 #include <dht22_driver/dht22.h>
+#include <mhz19b_driver/mhz19b.h>
 
 #include "IfxPort.h"
 #include "IfxPort_PinMap.h"
@@ -67,6 +68,8 @@ void core0_main(void)
     initShellInterface();
     Driver_Stm_Init();
     Driver_MQ135_Init();
+    Driver_MHZ19B_Init();
+    //initASCLIN0Interface(); // mh-z19b ASCLIN(UART) 초기화
 
     while(1)
     {
@@ -96,15 +99,20 @@ void AppTask1000ms(void)
 {
     stTestCnt.u32nuCnt1000ms++;
 
+    print("\n\r");
+
+    // 1. MQ135
+    mq135_adcval = 0;
     mq135_adcval = Driver_Adc0_DataObtain();   // mq135 val평소 1600
     Driver_Adc0_ConvStart();
 
     print("< MQ135 >\n\r");
     print("adcval      : %d\n\r", mq135_adcval);
 
+    // 2. DHT22
     if(stTestCnt.u32nuCnt1000ms % 2){        // DHT22 Period = 2s
         DHT22_Data dht22_data;
-        int result = DHT11_process(&dht22_data);  // DHT22 데이터 읽기
+        int result = DHT22_process(&dht22_data);  // DHT22 데이터 읽기
         if(!result){
             print("< DHT22 > \n\r");
             print("temperature : %.1lf\n\r", (double)dht22_data.temperature/10);
@@ -114,8 +122,17 @@ void AppTask1000ms(void)
             print("DHT22 Error : %d\n\r", result);
         }
     }
-    print("\n\r");
 
+    // 3. MH-Z19B
+    uint16 mhz19b_value = 0;
+    mhz19b_value = MHZ19B_requestCO2();
+    if(mhz19b_value == -1 || mhz19b_value == 2){
+        print("MH-Z19B Error, %d\n\r", mhz19b_value);
+    }
+    else{
+        print("< MH-Z19B >\n\r");
+        print("CO2        : %d ppm\n\r", mhz19b_value);
+    }
 
 
 

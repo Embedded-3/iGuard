@@ -2,7 +2,7 @@
 
 #include "dht22.h"
 
-#define DHT11_PORT IfxPort_P02_0  // DHT11 데이터 핀
+#define DHT22_PORT IfxPort_P02_0  // DHT22 데이터 핀
 #define TIMEOUT 10000  // 타임아웃 값
 
 void delay_us(uint32 us) {
@@ -10,51 +10,52 @@ void delay_us(uint32 us) {
     waitTime(ticks);
 }
 
-uint8 DHT11_ReadByte(void) {
+uint8 DHT22_ReadByte(void) {
+
      uint8 result = 0;
      for (int i = 0; i < 8; i++) {
-         while (IfxPort_getPinState(DHT11_PORT.port, DHT11_PORT.pinIndex) == 0); // LOW면 대기
+         while (IfxPort_getPinState(DHT22_PORT.port, DHT22_PORT.pinIndex) == 0); // LOW면 대기
          delay_us(30);  // 26~28us면 '0', 70us면 '1'
 
-         if (IfxPort_getPinState(DHT11_PORT.port, DHT11_PORT.pinIndex)) {    //70us이상일 때 High기록
+         if (IfxPort_getPinState(DHT22_PORT.port, DHT22_PORT.pinIndex)) {    //70us이상일 때 High기록
              result |= (1 << (7 - i));   //MSB부터 write
          }
 
-         while (IfxPort_getPinState(DHT11_PORT.port, DHT11_PORT.pinIndex) == 1); // HIGH면 대기
+         while (IfxPort_getPinState(DHT22_PORT.port, DHT22_PORT.pinIndex) == 1); // HIGH면 대기
      }
      return result;
 }
 
-int DHT11_process(DHT22_Data* data) {
+int DHT22_process(DHT22_Data* data) {
 
-    // MCU → DHT11: Start Signal
-    IfxPort_setPinModeOutput(DHT11_PORT.port, DHT11_PORT.pinIndex, IfxPort_OutputMode_pushPull, IfxPort_OutputIdx_general);
-    IfxPort_setPinLow(DHT11_PORT.port, DHT11_PORT.pinIndex);
+    // MCU → DHT22: Start Signal
+    IfxPort_setPinModeOutput(DHT22_PORT.port, DHT22_PORT.pinIndex, IfxPort_OutputMode_pushPull, IfxPort_OutputIdx_general);
+    IfxPort_setPinLow(DHT22_PORT.port, DHT22_PORT.pinIndex);
     delay_us(8000);  // 최소 8ms 동안 LOW 유지  // modified
-    IfxPort_setPinHigh(DHT11_PORT.port, DHT11_PORT.pinIndex);
+    IfxPort_setPinHigh(DHT22_PORT.port, DHT22_PORT.pinIndex);
     delay_us(40);  // 20~40us 동안 HIGH 유지
 
-    // MCU ← DHT11: 응답 대기
-    IfxPort_setPinModeInput(DHT11_PORT.port, DHT11_PORT.pinIndex, IfxPort_Mode_inputPullUp);
+    // MCU ← DHT22: 응답 대기
+    IfxPort_setPinModeInput(DHT22_PORT.port, DHT22_PORT.pinIndex, IfxPort_Mode_inputPullUp);
 
-    //DHT11에서 Low -> High -> Low 보내옴
+    //DHT22에서 Low -> High -> Low 보내옴
     uint32 timeout = TIMEOUT;
-    while (IfxPort_getPinState(DHT11_PORT.port, DHT11_PORT.pinIndex) == 1) {
+    while (IfxPort_getPinState(DHT22_PORT.port, DHT22_PORT.pinIndex) == 1) {
         if (--timeout == 0) return -1;  // 응답 없음
     }
     timeout = TIMEOUT;
-    while (IfxPort_getPinState(DHT11_PORT.port, DHT11_PORT.pinIndex) == 0) {
+    while (IfxPort_getPinState(DHT22_PORT.port, DHT22_PORT.pinIndex) == 0) {
         if (--timeout == 0) return -1;
     }
     timeout = TIMEOUT;
-    while (IfxPort_getPinState(DHT11_PORT.port, DHT11_PORT.pinIndex) == 1) {
+    while (IfxPort_getPinState(DHT22_PORT.port, DHT22_PORT.pinIndex) == 1) {
         if (--timeout == 0) return -1;
     }
 
     // 데이터 수신 (40비트 = 5바이트)
     uint8 buffer[5] = {0};
     for (int i = 0; i < 5; i++) {
-        buffer[i] = DHT11_ReadByte();
+        buffer[i] = DHT22_ReadByte();
     }
 
     // 체크섬 검증

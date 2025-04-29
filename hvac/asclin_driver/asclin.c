@@ -21,23 +21,23 @@ IfxStdIf_DPipe* stdif = &g_ascStandardInterface;    // To use other file
 
 // Function Implementations
 // IFX_INTERRUPT
-IFX_INTERRUPT(asc0TxISR, 0, ISR_PRIORITY_ASCLIN_TX);
+IFX_INTERRUPT(asc3TxISR, 0, ISR_PRIORITY_ASCLIN_TX);
 
-void asc0TxISR(void)
+void asc3TxISR(void)
 {
     IfxStdIf_DPipe_onTransmit(&g_ascStandardInterface);
 }
 
-IFX_INTERRUPT(asc0RxISR, 0, ISR_PRIORITY_ASCLIN_RX);
+IFX_INTERRUPT(asc3RxISR, 0, ISR_PRIORITY_ASCLIN_RX);
 
-void asc0RxISR(void)
+void asc3RxISR(void)
 {
     IfxStdIf_DPipe_onReceive(&g_ascStandardInterface);
 }
 
-IFX_INTERRUPT(asc0ErrISR, 0, ISR_PRIORITY_ASCLIN_ER);
+IFX_INTERRUPT(asc3ErrISR, 0, ISR_PRIORITY_ASCLIN_ER);
 
-void asc0ErrISR(void)
+void asc3ErrISR(void)
 {
     IfxStdIf_DPipe_onError(&g_ascStandardInterface);
 }

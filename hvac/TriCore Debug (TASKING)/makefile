@@ -10,6 +10,7 @@ RM := rm -rf
 -include sources.mk
 -include stm_driver/subdir.mk
 -include mq135_driver/subdir.mk
+-include mhz19b_driver/subdir.mk
 -include dht22_driver/subdir.mk
 -include asclin_driver/subdir.mk
 -include Libraries/iLLD/TC27D/Tricore/_PinMap/subdir.mk

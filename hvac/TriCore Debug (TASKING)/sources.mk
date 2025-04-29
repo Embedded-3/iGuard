@@ -49,6 +49,7 @@ Libraries/iLLD/TC27D/Tricore/_Lib/DataHandling \
 Libraries/iLLD/TC27D/Tricore/_PinMap \
 asclin_driver \
 dht22_driver \
+mhz19b_driver \
 mq135_driver \
 stm_driver \
 
