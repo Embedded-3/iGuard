@@ -107,7 +107,7 @@ void initCan(void)
     IfxMultican_Can_MsgObj_init(&g_rxMsgObj, &rxMsgConfig);
 
     /* 송신 메시지 데이터 준비 */
-    IfxMultican_Message_init(&g_txMsg, 0x00a, 0x11223344, 0x55667788, 8);  // ID 0x100, 데이터 8 bytes
+    IfxMultican_Message_init(&g_txMsg, 0x100, 0x11223344, 0x55667788, 8);  // ID 0x100, 데이터 8 bytes
 }
 
 /* 송신 함수 */
@@ -174,7 +174,7 @@ int core0_main(void)
     {
         sendCanMessage();
         IfxStm_wait(100000);
-        //canReceiveLoop();
+        canReceiveLoop();
     }
     return (1);
 }
