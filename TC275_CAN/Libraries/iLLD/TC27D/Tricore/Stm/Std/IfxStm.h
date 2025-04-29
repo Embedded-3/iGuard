@@ -740,7 +740,8 @@ IFX_INLINE sint64 IfxStm_now(void)
     stmNow         = (Ifx_TickTime)IfxStm_get(IFXSTM_DEFAULT_TIMER) & TIME_INFINITE;
     IfxCpu_restoreInterrupts(interruptState);
 
-    return stmNow;
+
+return stmNow;
 }
 
 

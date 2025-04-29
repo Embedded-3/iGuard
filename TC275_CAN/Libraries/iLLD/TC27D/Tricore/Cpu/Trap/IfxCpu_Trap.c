@@ -172,7 +172,10 @@ void IfxCpu_Trap_busError(uint32 tin)
     volatile IfxCpu_Trap trapWatch;
     trapWatch = IfxCpu_Trap_extractTrapInfo(IfxCpu_Trap_Class_bus, tin);
     IFX_CFG_CPU_TRAP_BE_HOOK(trapWatch);
-    IFX_CFG_CPU_TRAP_DEBUG;
+
+
+
+IFX_CFG_CPU_TRAP_DEBUG;
     __asm("rslcx"); /* Restore lower context before returning. lower context was stored in the trap vector */
     __asm("rfe");
 }

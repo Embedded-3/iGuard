@@ -13,11 +13,11 @@
        <EditorPersist>
         <__.0>
          <BookmarkList></BookmarkList>
-         <CaretPos>27113</CaretPos>
+         <CaretPos>30611</CaretPos>
          <Encoding>8</Encoding>
          <FileName>C:\Users\USER\AURIX-v1.10.2-workspace\MULTICAN_1_KIT_TC275_LK\Libraries\iLLD\TC27D\Tricore\Stm\Std\IfxStm.h</FileName>
          <FileType>1</FileType>
-         <ScrollPos>579</ScrollPos>
+         <ScrollPos>719</ScrollPos>
         </__.0>
         <__.1>
          <BookmarkList></BookmarkList>
@@ -27,6 +27,54 @@
          <FileType>1</FileType>
          <ScrollPos>658</ScrollPos>
         </__.1>
+        <__.2>
+         <BookmarkList></BookmarkList>
+         <CaretPos>7661</CaretPos>
+         <Encoding>8</Encoding>
+         <FileName>C:\Users\USER\AURIX-v1.10.2-workspace\MULTICAN_1_KIT_TC275_LK\Libraries\iLLD\TC27D\Tricore\Cpu\Trap\IfxCpu_Trap.c</FileName>
+         <FileType>1</FileType>
+         <ScrollPos>151</ScrollPos>
+        </__.2>
+        <__.3>
+         <BookmarkList></BookmarkList>
+         <CaretPos>5532</CaretPos>
+         <Encoding>8</Encoding>
+         <FileName>C:\Users\USER\AURIX-v1.10.2-workspace\MULTICAN_1_KIT_TC275_LK\Cpu0_Main.c</FileName>
+         <FileType>1</FileType>
+         <ScrollPos>103</ScrollPos>
+        </__.3>
+        <__.4>
+         <BookmarkList></BookmarkList>
+         <CaretPos>0</CaretPos>
+         <Encoding>8</Encoding>
+         <FileName>C:\Users\USER\AURIX-v1.10.2-workspace\TC275_CAN\Libraries\iLLD\TC27D\Tricore\Stm\Std\IfxStm.h</FileName>
+         <FileType>1</FileType>
+         <ScrollPos>0</ScrollPos>
+        </__.4>
+        <__.5>
+         <BookmarkList></BookmarkList>
+         <CaretPos>0</CaretPos>
+         <Encoding>8</Encoding>
+         <FileName>C:\Users\USER\AURIX-v1.10.2-workspace\TC275_CAN\Libraries\iLLD\TC27D\Tricore\Cpu\Std\IfxCpu.h</FileName>
+         <FileType>1</FileType>
+         <ScrollPos>0</ScrollPos>
+        </__.5>
+        <__.6>
+         <BookmarkList></BookmarkList>
+         <CaretPos>0</CaretPos>
+         <Encoding>8</Encoding>
+         <FileName>C:\Users\USER\AURIX-v1.10.2-workspace\TC275_CAN\Libraries\iLLD\TC27D\Tricore\Cpu\Trap\IfxCpu_Trap.c</FileName>
+         <FileType>1</FileType>
+         <ScrollPos>0</ScrollPos>
+        </__.6>
+        <__.7>
+         <BookmarkList></BookmarkList>
+         <CaretPos>0</CaretPos>
+         <Encoding>8</Encoding>
+         <FileName>C:\Users\USER\AURIX-v1.10.2-workspace\TC275_CAN\Cpu0_Main.c</FileName>
+         <FileType>1</FileType>
+         <ScrollPos>0</ScrollPos>
+        </__.7>
        </EditorPersist>
       </EditorPersist>
      </REG_ROOT>
@@ -97,13 +145,21 @@
         <ViewType>Document</ViewType>
        </__.4>
        <__.5>
-        <ViewId>1</ViewId>
-        <ViewType>Output_Progress</ViewType>
+        <ViewId>7</ViewId>
+        <ViewType>Document</ViewType>
        </__.5>
        <__.6>
+        <ViewId>8</ViewId>
+        <ViewType>Document</ViewType>
+       </__.6>
+       <__.7>
+        <ViewId>1</ViewId>
+        <ViewType>Output_Progress</ViewType>
+       </__.7>
+       <__.8>
         <ViewId>0</ViewId>
         <ViewType>Symbols</ViewType>
-       </__.6>
+       </__.8>
       </AllViewBaseData>
       <DissasemblyViews>
        <__.0>
@@ -139,6 +195,16 @@
         <ViewId>6</ViewId>
         <ViewType>Document</ViewType>
        </__.1>
+       <__.2>
+        <RelativePath>..\..\..\Libraries\iLLD\TC27D\Tricore\Cpu\Trap\IfxCpu_Trap.c</RelativePath>
+        <ViewId>7</ViewId>
+        <ViewType>Document</ViewType>
+       </__.2>
+       <__.3>
+        <RelativePath>..\..\..\Cpu0_Main.c</RelativePath>
+        <ViewId>8</ViewId>
+        <ViewType>Document</ViewType>
+       </__.3>
       </DocumentViews>
       <OtherViews>
        <__.0>
@@ -260,7 +326,7 @@
       <PrimaryDocumentPaneId>5</PrimaryDocumentPaneId>
       <Frames>
        <__.0>
-        <FocusedViewId>6</FocusedViewId>
+        <FocusedViewId>4</FocusedViewId>
         <FrameState>3</FrameState>
         <IsPrimary>true</IsPrimary>
         <Bounds>
@@ -316,7 +382,7 @@
                <IsPinned>false</IsPinned>
                <IsTabbed>true</IsTabbed>
                <Orientation>None</Orientation>
-               <TopTabViewId>6</TopTabViewId>
+               <TopTabViewId>5</TopTabViewId>
                <ViewId>-1</ViewId>
                <Children>
                 <__.0>
@@ -339,6 +405,26 @@
                  <TopTabViewId>-1</TopTabViewId>
                  <ViewId>6</ViewId>
                 </__.1>
+                <__.2>
+                 <DockType>Document</DockType>
+                 <Extent>1</Extent>
+                 <IsDocumentPane>false</IsDocumentPane>
+                 <IsPinned>false</IsPinned>
+                 <IsTabbed>false</IsTabbed>
+                 <Orientation>None</Orientation>
+                 <TopTabViewId>-1</TopTabViewId>
+                 <ViewId>7</ViewId>
+                </__.2>
+                <__.3>
+                 <DockType>Document</DockType>
+                 <Extent>1</Extent>
+                 <IsDocumentPane>false</IsDocumentPane>
+                 <IsPinned>false</IsPinned>
+                 <IsTabbed>false</IsTabbed>
+                 <Orientation>None</Orientation>
+                 <TopTabViewId>-1</TopTabViewId>
+                 <ViewId>8</ViewId>
+                </__.3>
                </Children>
               </__.1>
              </Children>
@@ -416,6 +502,10 @@
       </FindInFilesDialogData>
      </GlobalData>
      <History>
+      <ComboBox>
+       <ComboBoxes>
+       </ComboBoxes>
+      </ComboBox>
      </History>
      <Options>
       <CallstackWindow>

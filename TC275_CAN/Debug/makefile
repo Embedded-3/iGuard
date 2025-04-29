@@ -58,39 +58,39 @@ $(wildcard ../makefile.init) \
 $(wildcard ../makefile.targets) \
 
 
-BUILD_ARTIFACT_NAME := MULTICAN_1_KIT_TC275_LK
+BUILD_ARTIFACT_NAME := TC275_CAN
 BUILD_ARTIFACT_EXTENSION := elf
 BUILD_ARTIFACT_PREFIX :=
 BUILD_ARTIFACT := $(BUILD_ARTIFACT_PREFIX)$(BUILD_ARTIFACT_NAME)$(if $(BUILD_ARTIFACT_EXTENSION),.$(BUILD_ARTIFACT_EXTENSION),)
 
 # Add inputs and outputs from these tool invocations to the build variables 
 SECONDARY_SIZE += \
-MULTICAN_1_KIT_TC275_LK.siz \
+TC275_CAN.siz \
 
 
 # All Target
 all: main-build
 
 # Main-build Target
-main-build: MULTICAN_1_KIT_TC275_LK.elf secondary-outputs
+main-build: TC275_CAN.elf secondary-outputs
 
 # Tool invocations
-MULTICAN_1_KIT_TC275_LK.elf: $(OBJS) makefile $(OPTIONAL_TOOL_DEPS)
+TC275_CAN.elf: $(OBJS) makefile $(OPTIONAL_TOOL_DEPS)
 	@echo 'Building target: $@'
 	@echo 'Invoking: TASKING Linker'
-	cctc --lsl-file="../Lcf_Tasking_Tricore_Tc.lsl" -Wl-Oc -Wl-OL -Wl-Ot -Wl-Ox -Wl-Oy -Wl--map-file="MULTICAN_1_KIT_TC275_LK.map" -Wl-mc -Wl-mf -Wl-mi -Wl-mk -Wl-ml -Wl-mm -Wl-md -Wl-mr -Wl-mu --no-warnings= -Wl--error-limit=42 --fp-model=3 -lrt --lsl-core=vtc --exceptions --strict --anachronisms --force-c++ -Ctc27xd -o"MULTICAN_1_KIT_TC275_LK.elf" -Wl-o"MULTICAN_1_KIT_TC275_LK.hex:IHEX" $(OBJS)
+	cctc --lsl-file="../Lcf_Tasking_Tricore_Tc.lsl" -Wl-Oc -Wl-OL -Wl-Ot -Wl-Ox -Wl-Oy -Wl--map-file="TC275_CAN.map" -Wl-mc -Wl-mf -Wl-mi -Wl-mk -Wl-ml -Wl-mm -Wl-md -Wl-mr -Wl-mu --no-warnings= -Wl--error-limit=42 --fp-model=3 -lrt --lsl-core=vtc --exceptions --strict --anachronisms --force-c++ -Ctc27xd -o"TC275_CAN.elf" -Wl-o"TC275_CAN.hex:IHEX" $(OBJS)
 	@echo 'Finished building target: $@'
 	@echo ' '
 
-MULTICAN_1_KIT_TC275_LK.siz: MULTICAN_1_KIT_TC275_LK.elf makefile $(OPTIONAL_TOOL_DEPS)
+TC275_CAN.siz: TC275_CAN.elf makefile $(OPTIONAL_TOOL_DEPS)
 	@echo 'Invoking: Print Size'
-	elfsize  "MULTICAN_1_KIT_TC275_LK.elf"
+	elfsize  "TC275_CAN.elf"
 	@echo 'Finished building: $@'
 	@echo ' '
 
 # Other Targets
 clean:
-	-$(RM) MULTICAN_1_KIT_TC275_LK.siz MULTICAN_1_KIT_TC275_LK.elf
+	-$(RM) TC275_CAN.siz TC275_CAN.elf
 	-@echo ' '
 
 secondary-outputs: $(SECONDARY_SIZE)

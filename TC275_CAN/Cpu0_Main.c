@@ -48,6 +48,7 @@
 #include "IfxStm.h"
 //#include "MULTICAN.h"
 #include "IfxMultican_Can.h"
+#include "TC275_Can.h"
 #include "asclin_driver/asclin.h"
 
 /* 글로벌 핸들 */
@@ -56,97 +57,46 @@ IfxMultican_Can_Node   g_canNode;     // CAN 노드 핸들
 IfxMultican_Can_MsgObj g_txMsgObj;    // 송신 메시지 오브젝트
 IfxMultican_Can_MsgObj g_rxMsgObj;    // 수신 메시지 오브젝트
 
+
+uint8 g_sleep = 0;
 /* 송신 메시지 */
 IfxMultican_Message g_txMsg;
 /* 수신 메시지 */
 IfxMultican_Message g_rxMsg;
 
-/* 초기화 함수 */
-void initCan(void)
+
+void initSleepMode(void)
 {
-    /* 1. CAN 모듈 초기화 */
-    IfxMultican_Can_Config canConfig;
-    IfxMultican_Can_initModuleConfig(&canConfig, &MODULE_CAN);
-    IfxMultican_Can_initModule(&g_can, &canConfig);
+    /* Clear ENDINIT protection */
+    IfxScuWdt_clearCpuEndinit(IfxScuWdt_getCpuWatchdogPassword());
 
-    /* 2. CAN 노드 초기화 */
-    IfxMultican_Can_NodeConfig nodeConfig;
-    IfxMultican_Can_Node_initConfig(&nodeConfig, &g_can);
+    /* Set CPU0 as the master CPU for Sleep Request */
+    SCU_PMSWCR1.B.CPUSEL = 0x1;  // CPU0 선택
 
-    nodeConfig.nodeId = IfxMultican_NodeId_0;  // Node0 사용
-    nodeConfig.baudrate = 250000;              // 250kbps 설정
-    nodeConfig.samplePoint = 8000;             // 샘플 포인트 80%
-    nodeConfig.rxPin = &IfxMultican_RXD0B_P20_7_IN;  // RX 핀 (P20.7)
-    nodeConfig.txPin = &IfxMultican_TXD0_P20_8_OUT;  // TX 핀 (P20.8)
-    nodeConfig.rxPinMode = IfxPort_InputMode_pullUp;
-    nodeConfig.txPinMode = IfxPort_OutputMode_pushPull;
-    nodeConfig.pinDriver = IfxPort_PadDriver_cmosAutomotiveSpeed1; // 패드 드라이버 설정
-
-    IfxMultican_Can_Node_init(&g_canNode, &nodeConfig);
-
-    /* 3. 송신 메시지 오브젝트 초기화 */
-    IfxMultican_Can_MsgObjConfig txMsgConfig;
-    IfxMultican_Can_MsgObj_initConfig(&txMsgConfig, &g_canNode);
-
-    txMsgConfig.msgObjId = 0;  // 오브젝트 ID 0
-    txMsgConfig.messageId = 0x100;  // 송신 ID: 0x100
-    txMsgConfig.frame = IfxMultican_Frame_transmit;
-    txMsgConfig.control.messageLen = IfxMultican_DataLengthCode_8;
-
-    IfxMultican_Can_MsgObj_init(&g_txMsgObj, &txMsgConfig);
-
-    /* 4. 수신 메시지 오브젝트 초기화 */
-    IfxMultican_Can_MsgObjConfig rxMsgConfig;
-    IfxMultican_Can_MsgObj_initConfig(&rxMsgConfig, &g_canNode);
-
-    rxMsgConfig.msgObjId = 1;  // 오브젝트 ID 1
-    rxMsgConfig.messageId = 0x200;  // 수신 ID: 0x200
-    rxMsgConfig.frame = IfxMultican_Frame_receive;
-    rxMsgConfig.control.messageLen = IfxMultican_DataLengthCode_8;
-
-    IfxMultican_Can_MsgObj_init(&g_rxMsgObj, &rxMsgConfig);
-
-    /* 송신 메시지 데이터 준비 */
-    IfxMultican_Message_init(&g_txMsg, 0x100, 0x11223344, 0x55667788, 8);  // ID 0x100, 데이터 8 bytes
+    /* Set ENDINIT protection */
+    IfxScuWdt_setCpuEndinit(IfxScuWdt_getCpuWatchdogPassword());
 }
 
-/* 송신 함수 */
-void sendCanMessage(void)
+void enter_sleep_mode(void)
 {
-    IfxMultican_Can_MsgObj_sendMessage(&g_txMsgObj, &g_txMsg);
-}
-
-/* 수신 대기 및 출력 함수 */
-void canReceiveLoop(void)
-{
-    while (1)
+    if (g_sleep == 0)
     {
-        Ifx_CAN_MO *hwObj = IfxMultican_MsgObj_getPointer(g_rxMsgObj.node->mcan, g_rxMsgObj.msgObjId);
+        g_sleep = 1;
 
-        // 메시지가 수신되었는지 확인
-        if (IfxMultican_MsgObj_isRxPending(hwObj))
-        {
-            // 수신 메시지 읽기
-            IfxMultican_Message_init(&g_rxMsg, 0, 0, 0, 8);  // ID, data 초기화
-            IfxMultican_Status status = IfxMultican_MsgObj_readMessage(hwObj, &g_rxMsg);
-
-            // 수신 성공
-            if (status & IfxMultican_Status_newData)
-            {
-                print("[CAN 수신 성공]\n");
-                print("ID: 0x%03X\n", g_rxMsg.id);
-                print("Data[0]: 0x%08X\n", g_rxMsg.data[0]);
-                print("Data[1]: 0x%08X\n", g_rxMsg.data[1]);
-            }
-
-            // 수신 Pending Clear
-            IfxMultican_MsgObj_clearRxPending(hwObj);
-        }
-
-        // 잠깐 쉬어 CPU 낭비 방지 (약 1ms 대기)
-        IfxStm_wait(10000000);
+        IfxScuWdt_clearCpuEndinit(IfxScuWdt_getCpuWatchdogPassword());
+        SCU_PMCSR0.B.REQSLP = 0x2;
+        IfxScuWdt_setCpuEndinit(IfxScuWdt_getCpuWatchdogPassword());
     }
 }
+
+void exit_sleep_mode(void)
+{
+    if (g_sleep == 1)
+    {
+        g_sleep = 0;
+    }
+}
+
 
 IfxCpu_syncEvent g_cpuSyncEvent = 0;
 
@@ -165,15 +115,18 @@ int core0_main(void)
     IfxCpu_waitEvent(&g_cpuSyncEvent, 1);
 
     /* Application code: initialization of MULTICAN, LEDs and the transmission of the CAN message */
-//    initMultican();
-//    initLed();
     initCan();
     initShellInterface();
-    //transmitCanMessage();
+    initSleepMode();
+
+    // enter sleep mode
+    enter_sleep_mode();
+    print("빠져나왔다!!\r\n");
     while(1)
     {
         sendCanMessage();
-        IfxStm_wait(100000);
+        print("Send완료\r\n");
+        IfxStm_wait(100000000);
         canReceiveLoop();
     }
     return (1);
