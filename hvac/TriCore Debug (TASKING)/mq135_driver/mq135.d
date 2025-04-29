@@ -2,8 +2,14 @@ mq135.o :	../mq135_driver/mq135.c
 ../mq135_driver/mq135.c :
 mq135.o :	..\mq135_driver\mq135.h
 ..\mq135_driver\mq135.h :
-mq135.o :	"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p1\\Libraries\\iLLD\\TC27D\\Tricore\\Cpu\\Std\Ifx_Types.h"
-"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p1\\Libraries\\iLLD\\TC27D\\Tricore\\Cpu\\Std\Ifx_Types.h" :
+mq135.o :	"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p1\asclin_driver\asclin.h"
+"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p1\asclin_driver\asclin.h" :
+mq135.o :	"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p1\\Libraries\\Service\\CpuGeneric\\StdIf\IfxStdIf_DPipe.h"
+"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p1\\Libraries\\Service\\CpuGeneric\\StdIf\IfxStdIf_DPipe.h" :
+mq135.o :	"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p1\\Libraries\\Service\\CpuGeneric\\StdIf\IfxStdIf.h"
+"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p1\\Libraries\\Service\\CpuGeneric\\StdIf\IfxStdIf.h" :
+mq135.o :	"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p1\\Libraries\\iLLD\\TC27D\\Tricore\Cpu\Std\Ifx_Types.h"
+"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p1\\Libraries\\iLLD\\TC27D\\Tricore\Cpu\Std\Ifx_Types.h" :
 mq135.o :	"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p1\\Libraries\\Infra\\Platform\Tricore\Compilers\Compilers.h"
 "C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p1\\Libraries\\Infra\\Platform\Tricore\Compilers\Compilers.h" :
 mq135.o :	"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p1\\Configurations\Ifx_Cfg.h"
@@ -12,10 +18,12 @@ mq135.o :	"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p1\\Libraries\\Infra\\Platf
 "C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p1\\Libraries\\Infra\\Platform\Tricore\Compilers\CompilerTasking.h" :
 mq135.o :	"C:\Infineon\AURIX-Studio-1.10.6\tools\Compilers\Tasking_1.1r8\ctc\include\stddef.h"
 "C:\Infineon\AURIX-Studio-1.10.6\tools\Compilers\Tasking_1.1r8\ctc\include\stddef.h" :
-mq135.o :	"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p1\\Libraries\\iLLD\\TC27D\\Tricore\\Cpu\\Std\Platform_Types.h"
-"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p1\\Libraries\\iLLD\\TC27D\\Tricore\\Cpu\\Std\Platform_Types.h" :
-mq135.o :	"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p1\\Libraries\\iLLD\\TC27D\\Tricore\\Cpu\\Std\Ifx_TypesTasking.h"
-"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p1\\Libraries\\iLLD\\TC27D\\Tricore\\Cpu\\Std\Ifx_TypesTasking.h" :
+mq135.o :	"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p1\\Libraries\\iLLD\\TC27D\\Tricore\Cpu\Std\Platform_Types.h"
+"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p1\\Libraries\\iLLD\\TC27D\\Tricore\Cpu\Std\Platform_Types.h" :
+mq135.o :	"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p1\\Libraries\\iLLD\\TC27D\\Tricore\Cpu\Std\Ifx_TypesTasking.h"
+"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p1\\Libraries\\iLLD\\TC27D\\Tricore\Cpu\Std\Ifx_TypesTasking.h" :
+mq135.o :	"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p1\\Libraries\\iLLD\\TC27D\\Tricore\\Cpu\\Std\Ifx_Types.h"
+"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p1\\Libraries\\iLLD\\TC27D\\Tricore\\Cpu\\Std\Ifx_Types.h" :
 mq135.o :	"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p1\\Libraries\\iLLD\\TC27D\\Tricore\\Vadc\\Std\IfxVadc.h"
 "C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p1\\Libraries\\iLLD\\TC27D\\Tricore\\Vadc\\Std\IfxVadc.h" :
 mq135.o :	"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p1\\Libraries\\iLLD\\TC27D\\Tricore\_Impl\IfxVadc_cfg.h"
@@ -56,8 +64,6 @@ mq135.o :	"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p1\\Libraries\\Infra\\Sfr\\
 "C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p1\\Libraries\\Infra\\Sfr\\TC27D\\_Reg\IfxScu_bf.h" :
 mq135.o :	"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p1\\Libraries\\Infra\\Sfr\\TC27D\\_Reg\IfxFlash_bf.h"
 "C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p1\\Libraries\\Infra\\Sfr\\TC27D\\_Reg\IfxFlash_bf.h" :
-mq135.o :	"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p1\\Libraries\\iLLD\\TC27D\\Tricore\Cpu\Std\Ifx_Types.h"
-"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p1\\Libraries\\iLLD\\TC27D\\Tricore\Cpu\Std\Ifx_Types.h" :
 mq135.o :	"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p1\\Libraries\\Infra\\Sfr\\TC27D\\_Reg\IfxScu_reg.h"
 "C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p1\\Libraries\\Infra\\Sfr\\TC27D\\_Reg\IfxScu_reg.h" :
 mq135.o :	"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p1\\Libraries\\Infra\\Sfr\\TC27D\\_Reg\IfxScu_regdef.h"
@@ -100,3 +106,7 @@ mq135.o :	"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p1\\Libraries\\iLLD\\TC27D\
 "C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p1\\Libraries\\iLLD\\TC27D\\Tricore\\Vadc\\Adc\IfxVadc_Adc.h" :
 mq135.o :	"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p1\\Libraries\\iLLD\\TC27D\\Tricore\Vadc\Std\IfxVadc.h"
 "C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p1\\Libraries\\iLLD\\TC27D\\Tricore\Vadc\Std\IfxVadc.h" :
+mq135.o :	"C:\Infineon\AURIX-Studio-1.10.6\tools\Compilers\Tasking_1.1r8\ctc\include\math.h"
+"C:\Infineon\AURIX-Studio-1.10.6\tools\Compilers\Tasking_1.1r8\ctc\include\math.h" :
+mq135.o :	"C:\Infineon\AURIX-Studio-1.10.6\tools\Compilers\Tasking_1.1r8\ctc\include\typeinfo.h"
+"C:\Infineon\AURIX-Studio-1.10.6\tools\Compilers\Tasking_1.1r8\ctc\include\typeinfo.h" :

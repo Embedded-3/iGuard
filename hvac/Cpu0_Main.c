@@ -28,6 +28,7 @@
 #include "IfxCpu.h"
 #include "IfxScuWdt.h"
 
+// my include
 #include <asclin_driver/asclin.h>
 #include <stm_driver/stm.h>
 #include <mq135_driver/mq135.h>
@@ -51,10 +52,10 @@ void AppTask10ms(void);
 void AppTask100ms(void);
 void AppTask1000ms(void);
 
+IfxCpu_syncEvent g_cpuSyncEvent = 0;
 
 TestCnt stTestCnt;
-uint32 adcResult=0;
-IfxCpu_syncEvent g_cpuSyncEvent = 0;
+uint32 mq135_adcval=0;
 
 void core0_main(void)
 {
@@ -72,7 +73,7 @@ void core0_main(void)
 
     initShellInterface();
     Driver_Stm_Init();
-    Driver_Adc_Init();
+    Driver_MQ135_Init();
 
     while(1)
     {
@@ -101,9 +102,30 @@ void AppTask100ms(void)
 void AppTask1000ms(void)
 {
     stTestCnt.u32nuCnt1000ms++;
+    static float sensor_val = 0;
+    static int n = 0;
+    mq135_adcval = Driver_Adc0_DataObtain();   // mq135 val평소 1600
+    //double ppm = calculate_ppm(mq135_adcval);
+    //print("ppm : %lf\n\r", ppm);
 
-    adcResult = Driver_Adc0_DataObtain();
-    print("cur: %d\n\r", adcResult);
+
+
+    //print("[%d] adc_val = %d sensor_val  = %f \n\r", n, mq135_adcval, sensor_val);
+//    if(n++ < 500) sensor_val += mq135_adcval;
+//    else if(n==500)
+//    {
+//        sensor_val /= 500;
+//        float sensor_volt =sensor_val * (5 / 4095.0);
+//        float rs_air = 5.0 * 10.0 / sensor_volt - 10;
+//        float r0 = rs_air / 4.4;
+//
+//        printf("sensor_val : %f\n\r", sensor_val);
+//        printf("volt : %f\n\r", sensor_volt);
+//        printf("rs_air : %f\n\r", rs_air);
+//        printf("r0 : %f\n\r", r0);
+//    }
+
+
     Driver_Adc0_ConvStart();
 
 
