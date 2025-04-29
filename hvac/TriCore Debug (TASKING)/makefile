@@ -10,6 +10,7 @@ RM := rm -rf
 -include sources.mk
 -include stm_driver/subdir.mk
 -include mq135_driver/subdir.mk
+-include dht22_driver/subdir.mk
 -include asclin_driver/subdir.mk
 -include Libraries/iLLD/TC27D/Tricore/_PinMap/subdir.mk
 -include Libraries/iLLD/TC27D/Tricore/_Lib/DataHandling/subdir.mk
@@ -29,6 +30,7 @@ RM := rm -rf
 -include Libraries/iLLD/TC27D/Tricore/Asclin/Std/subdir.mk
 -include Libraries/iLLD/TC27D/Tricore/Asclin/Asc/subdir.mk
 -include Libraries/Service/CpuGeneric/SysSe/Comm/subdir.mk
+-include Libraries/Service/CpuGeneric/SysSe/Bsp/subdir.mk
 -include Libraries/Service/CpuGeneric/StdIf/subdir.mk
 -include Libraries/Infra/Platform/Tricore/Compilers/subdir.mk
 -include Configurations/Debug/subdir.mk

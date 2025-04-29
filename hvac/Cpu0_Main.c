@@ -32,18 +32,11 @@
 #include <asclin_driver/asclin.h>
 #include <stm_driver/stm.h>
 #include <mq135_driver/mq135.h>
+#include <dht22_driver/dht22.h>
 
 #include "IfxPort.h"
 #include "IfxPort_PinMap.h"
 
-typedef struct
-{
-    uint32 u32nuCnt1ms;
-    uint32 u32nuCnt10ms;
-    uint32 u32nuCnt100ms;
-    uint32 u32nuCnt1000ms;
-
-}TestCnt;
 
 // Task scheduling related
 void AppScheduling(void);
@@ -102,31 +95,28 @@ void AppTask100ms(void)
 void AppTask1000ms(void)
 {
     stTestCnt.u32nuCnt1000ms++;
-    static float sensor_val = 0;
-    static int n = 0;
+
     mq135_adcval = Driver_Adc0_DataObtain();   // mq135 val평소 1600
-    //double ppm = calculate_ppm(mq135_adcval);
-    //print("ppm : %lf\n\r", ppm);
-
-
-
-    //print("[%d] adc_val = %d sensor_val  = %f \n\r", n, mq135_adcval, sensor_val);
-//    if(n++ < 500) sensor_val += mq135_adcval;
-//    else if(n==500)
-//    {
-//        sensor_val /= 500;
-//        float sensor_volt =sensor_val * (5 / 4095.0);
-//        float rs_air = 5.0 * 10.0 / sensor_volt - 10;
-//        float r0 = rs_air / 4.4;
-//
-//        printf("sensor_val : %f\n\r", sensor_val);
-//        printf("volt : %f\n\r", sensor_volt);
-//        printf("rs_air : %f\n\r", rs_air);
-//        printf("r0 : %f\n\r", r0);
-//    }
-
-
     Driver_Adc0_ConvStart();
+
+    print("< MQ135 >\n\r");
+    print("adcval      : %d\n\r", mq135_adcval);
+
+    if(stTestCnt.u32nuCnt1000ms % 2){        // DHT22 Period = 2s
+        DHT22_Data dht22_data;
+        int result = DHT11_process(&dht22_data);  // DHT22 데이터 읽기
+        if(!result){
+            print("< DHT22 > \n\r");
+            print("temperature : %.1lf\n\r", (double)dht22_data.temperature/10);
+            print("humidity    : %.1lf\n\r", (double)dht22_data.humidity/10);
+        }
+        else{
+            print("DHT22 Error : %d\n\r", result);
+        }
+    }
+    print("\n\r");
+
+
 
 
 }

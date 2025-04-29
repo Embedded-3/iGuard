@@ -28,6 +28,7 @@ Configurations/Debug \
 . \
 Libraries/Infra/Platform/Tricore/Compilers \
 Libraries/Service/CpuGeneric/StdIf \
+Libraries/Service/CpuGeneric/SysSe/Bsp \
 Libraries/Service/CpuGeneric/SysSe/Comm \
 Libraries/iLLD/TC27D/Tricore/Asclin/Asc \
 Libraries/iLLD/TC27D/Tricore/Asclin/Std \
@@ -47,6 +48,7 @@ Libraries/iLLD/TC27D/Tricore/_Impl \
 Libraries/iLLD/TC27D/Tricore/_Lib/DataHandling \
 Libraries/iLLD/TC27D/Tricore/_PinMap \
 asclin_driver \
+dht22_driver \
 mq135_driver \
 stm_driver \
 

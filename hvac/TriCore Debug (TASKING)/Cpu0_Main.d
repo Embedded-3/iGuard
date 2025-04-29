@@ -124,6 +124,16 @@ Cpu0_Main.o :	"C:\Infineon\AURIX-Studio-1.10.6\tools\Compilers\Tasking_1.1r8\ctc
 "C:\Infineon\AURIX-Studio-1.10.6\tools\Compilers\Tasking_1.1r8\ctc\include\math.h" :
 Cpu0_Main.o :	"C:\Infineon\AURIX-Studio-1.10.6\tools\Compilers\Tasking_1.1r8\ctc\include\typeinfo.h"
 "C:\Infineon\AURIX-Studio-1.10.6\tools\Compilers\Tasking_1.1r8\ctc\include\typeinfo.h" :
+Cpu0_Main.o :	"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p1\dht22_driver\dht22.h"
+"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p1\dht22_driver\dht22.h" :
+Cpu0_Main.o :	"C:\Infineon\AURIX-Studio-1.10.6\tools\Compilers\Tasking_1.1r8\ctc\include\stdint.h"
+"C:\Infineon\AURIX-Studio-1.10.6\tools\Compilers\Tasking_1.1r8\ctc\include\stdint.h" :
+Cpu0_Main.o :	"C:\Infineon\AURIX-Studio-1.10.6\tools\Compilers\Tasking_1.1r8\ctc\include\stdbool.h"
+"C:\Infineon\AURIX-Studio-1.10.6\tools\Compilers\Tasking_1.1r8\ctc\include\stdbool.h" :
+Cpu0_Main.o :	"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p1\\Libraries\\Service\\CpuGeneric\\SysSe\\Bsp\Bsp.h"
+"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p1\\Libraries\\Service\\CpuGeneric\\SysSe\\Bsp\Bsp.h" :
+Cpu0_Main.o :	"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p1\\Libraries\\iLLD\\TC27D\\Tricore\Stm\Std\IfxStm.h"
+"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p1\\Libraries\\iLLD\\TC27D\\Tricore\Stm\Std\IfxStm.h" :
 Cpu0_Main.o :	"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p1\\Libraries\\iLLD\\TC27D\\Tricore\\Port\\Std\IfxPort.h"
 "C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p1\\Libraries\\iLLD\\TC27D\\Tricore\\Port\\Std\IfxPort.h" :
 Cpu0_Main.o :	"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p1\\Libraries\\iLLD\\TC27D\\Tricore\\_PinMap\IfxPort_PinMap.h"
