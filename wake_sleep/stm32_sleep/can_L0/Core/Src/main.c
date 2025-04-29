@@ -68,8 +68,10 @@ void do_wake_up(void)
 }
 void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 {
+	 // Set here to get filtered messege
 	 if (GPIO_Pin == GPIO_PIN_9)  // PB9 INT
     {
+				HAL_ResumeTick();
 				can_rx_flag = 1;
     }
 }
@@ -110,37 +112,35 @@ int main(void)
   /* USER CODE BEGIN 2 */
   CANSPI_Initialize();	
 	MCP2515_BitModify(MCP2515_CANINTE, 0x03, 0x03);
+	
+	HAL_SuspendTick();
+	HAL_PWR_EnterSLEEPMode(PWR_MAINREGULATOR_ON, PWR_SLEEPENTRY_WFI);
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-		if (can_rx_flag)
-    {
-        can_rx_flag = 0; 
-        if (CANSPI_Receive(&rxMessage))
-        {
-            if (rxMessage.frame.id == 0x100 &&
-                rxMessage.frame.data0 == 'W')
-            {
-                do_wake_up();
-            }
-        }
-    }
-		
-//		GPIO_PinState pinState = HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_9);
+		GPIO_PinState int_pin_state = HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_9);
+		if (int_pin_state == GPIO_PIN_RESET)
+		{
+				HAL_GPIO_WritePin(GPIOA, GPIO_PIN_5, GPIO_PIN_RESET); // INT LOW ? LED ??
+		}
+		else
+		{
+				HAL_GPIO_WritePin(GPIOA, GPIO_PIN_5, GPIO_PIN_SET);   // INT HIGH ? LED ??
+		}
+//		if (can_rx_flag)
+//		{
+//				can_rx_flag = 0; 
+//				if (CANSPI_Receive(&rxMessage))
+//				{
+//						do_wake_up();
 
-//    if (pinState == GPIO_PIN_RESET)
-//    {
-//        HAL_GPIO_WritePin(GPIOA, GPIO_PIN_5, GPIO_PIN_RESET); // LOW: ?
-//    }
-//    else
-//    {
-//        HAL_GPIO_WritePin(GPIOA, GPIO_PIN_5, GPIO_PIN_SET);   // HIGH: ?
-//    }
-
-//    HAL_Delay(50);
+//						HAL_SuspendTick();
+//						HAL_PWR_EnterSLEEPMode(PWR_MAINREGULATOR_ON, PWR_SLEEPENTRY_WFI);
+//				}
+//		}
 
     HAL_Delay(10);
     
