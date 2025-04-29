@@ -11,7 +11,6 @@ void delay_us(uint32 us) {
 }
 
 uint8 DHT11_ReadByte(void) {
-
      uint8 result = 0;
      for (int i = 0; i < 8; i++) {
          while (IfxPort_getPinState(DHT11_PORT.port, DHT11_PORT.pinIndex) == 0); // LOW면 대기
