@@ -91,7 +91,7 @@ int main(void)
   //MX_USART2_UART_Init();
   /* USER CODE BEGIN 2 */
 	DF_Init(20);
-	HAL_Delay(200);
+	HAL_Delay(2000);
 	Sound_Track(1);
 	HAL_Delay(2000);
 
