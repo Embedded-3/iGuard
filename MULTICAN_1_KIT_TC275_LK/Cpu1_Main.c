@@ -24,7 +24,7 @@
  * CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS 
  * IN THE SOFTWARE.
  *********************************************************************************************************************/
-//GOGO
+//GOGOgo
  #include "Ifx_Types.h"
 #include "IfxCpu.h"
 #include "IfxScuWdt.h"
