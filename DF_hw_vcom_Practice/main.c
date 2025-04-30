@@ -98,8 +98,22 @@
     DF_Init(2);
    // Sound_Track(1);
     Printf("DF_Init finished\r\n");
+    HAL_Delay(6000);
+    
+    DF_Pause(); // pause
+    Printf("DF_Pause \r\n");
+    HAL_Delay(6000);
+    
+    DF_Resume();
+    Printf("DF_Resume \r\n");
+    HAL_Delay(6000);
+      
+    Sound_Track(2); // play 2nd song
+    Printf("Sound_Track 2 \r\n");
+    
+    
     /* USER CODE END 2 */
-  
+    
     /* Infinite loop */
     /* USER CODE BEGIN WHILE */
     while (1)

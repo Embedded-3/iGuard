@@ -14,5 +14,7 @@
 
 void Send_Cmd(uint8_t cmd, uint8_t Parameter1, uint8_t Parameter2);
 void DF_Init(uint8_t volume);
+void DF_Pause(void);
+void DF_Resume (void);
 void Sound_Track(uint8_t nums);
 #endif

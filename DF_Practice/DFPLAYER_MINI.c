@@ -27,9 +27,21 @@ void Sound_Track(uint8_t nums){
     }
 }
 
+void DF_Pause (void) {
+	Send_Cmd(0x0E, 0x00, 0x00);
+}
+
+void DF_Resume (void) {
+	Send_Cmd(0x0D, 0x00, 0);
+}
+
 void DF_Init (uint8_t volume)
 {
 	Printf("DF_Init \r\n");
+	
+	Send_Cmd(0x0C, 0x00, 0x00); // reset
+	Printf("DF Reset \r\n");	
+	HAL_Delay(2000);
 	
 	Send_Cmd(0x3F, 0x00, Source); // initialize parameters
 	Printf("Send Cmd that initialize \r\n");
