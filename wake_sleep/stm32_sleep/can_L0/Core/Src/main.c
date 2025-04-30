@@ -62,16 +62,13 @@ volatile uint8_t can_rx_flag = 0;
 void do_wake_up(void)
 {
     HAL_GPIO_TogglePin(GPIOA, GPIO_PIN_5); // LED ON
-		HAL_Delay(100);
-		HAL_GPIO_TogglePin(GPIOA, GPIO_PIN_5); // LED ON
-		HAL_Delay(100);
+
 }
 void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 {
 	 // Set here to get filtered messege
-	 if (GPIO_Pin == GPIO_PIN_9)  // PB9 INT
+	 if (GPIO_Pin == CAN_INT_Pin)  // PB9 INT
     {
-				HAL_ResumeTick();
 				can_rx_flag = 1;
     }
 }
@@ -111,7 +108,8 @@ int main(void)
   MX_USART2_UART_Init();
   /* USER CODE BEGIN 2 */
   CANSPI_Initialize();	
-	MCP2515_BitModify(MCP2515_CANINTE, 0x03, 0x03);
+//	MCP2515_BitModify(MCP2515_CANINTE, 0x03, 0x03);
+	MCP2515_EnableInterrupts();
 	
 	HAL_SuspendTick();
 	HAL_PWR_EnterSLEEPMode(PWR_MAINREGULATOR_ON, PWR_SLEEPENTRY_WFI);
@@ -121,29 +119,19 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-		GPIO_PinState int_pin_state = HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_9);
-		if (int_pin_state == GPIO_PIN_RESET)
+		if (can_rx_flag)
 		{
-				HAL_GPIO_WritePin(GPIOA, GPIO_PIN_5, GPIO_PIN_RESET); // INT LOW ? LED ??
+				HAL_ResumeTick();
+				can_rx_flag = 0; 
+			while(CANSPI_messagesInBuffer() > 0){
+				if (CANSPI_Receive(&rxMessage))
+				{
+						do_wake_up();
+				}		
+			}
+				HAL_SuspendTick();
+				HAL_PWR_EnterSLEEPMode(PWR_MAINREGULATOR_ON, PWR_SLEEPENTRY_WFI);
 		}
-		else
-		{
-				HAL_GPIO_WritePin(GPIOA, GPIO_PIN_5, GPIO_PIN_SET);   // INT HIGH ? LED ??
-		}
-//		if (can_rx_flag)
-//		{
-//				can_rx_flag = 0; 
-//				if (CANSPI_Receive(&rxMessage))
-//				{
-//						do_wake_up();
-
-//						HAL_SuspendTick();
-//						HAL_PWR_EnterSLEEPMode(PWR_MAINREGULATOR_ON, PWR_SLEEPENTRY_WFI);
-//				}
-//		}
-
-    HAL_Delay(10);
-    
   }
     /* USER CODE END WHILE */
 

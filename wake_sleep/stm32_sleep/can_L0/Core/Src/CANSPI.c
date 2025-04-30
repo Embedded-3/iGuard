@@ -135,7 +135,7 @@ bool CANSPI_Initialize(void)
   */
   
   /* 00(SJW 1tq) 000000 */  
-  MCP2515_WriteByte(MCP2515_CNF1, 0x00);
+  MCP2515_WriteByte(MCP2515_CNF1, 0x00); // 0x01 : 250, 0x00 : 500kbps
   
   /* 1 1 100(5tq) 101(6tq) */  
   MCP2515_WriteByte(MCP2515_CNF2, 0xE5);
