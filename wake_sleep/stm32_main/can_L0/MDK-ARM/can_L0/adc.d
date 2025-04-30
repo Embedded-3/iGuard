@@ -1,5 +1,4 @@
-can_l0/stm32l0xx_hal_dma.o: \
-  ..\Drivers\STM32L0xx_HAL_Driver\Src\stm32l0xx_hal_dma.c \
+can_l0/adc.o: ..\Core\Src\adc.c ..\Core\Inc\adc.h ..\Core\Inc\main.h \
   ..\Drivers\STM32L0xx_HAL_Driver\Inc\stm32l0xx_hal.h \
   ..\Core\Inc\stm32l0xx_hal_conf.h \
   ..\Drivers\STM32L0xx_HAL_Driver\Inc\stm32l0xx_hal_rcc.h \

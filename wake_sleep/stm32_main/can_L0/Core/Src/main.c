@@ -18,14 +18,15 @@
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
+#include "adc.h"
 #include "spi.h"
 #include "usart.h"
 #include "gpio.h"
-#include "CANSPI.h"
-#include "MCP2515.h"
+
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-
+#include "CANSPI.h"
+#include "MCP2515.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -47,7 +48,11 @@
 
 /* USER CODE BEGIN PV */
 
-uCAN_MSG rxMessage;
+volatile uCAN_MSG rxMessage;
+extern ADC_HandleTypeDef hadc;
+volatile uint32_t adcValue;
+volatile float Vout;
+volatile static float pressure = 0.0f;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -59,12 +64,37 @@ void SystemClock_Config(void);
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
 #define SENSOR_TRESHOLD 3000
-uint16_t read_sensor(){
-	return 4000; // sensor control
+
+uint32_t FSR_sensor(){
+	HAL_ADC_Start(&hadc);
+	HAL_ADC_PollForConversion(&hadc, 1000);
+	adcValue = HAL_ADC_GetValue(&hadc); // ADC
+	HAL_ADC_Stop(&hadc);
+	
+	Vout = (adcValue / 4095.0f) * 5.0f;    // VOUT  (5V )
+	if (Vout < 1.0f) {
+			pressure = 0.0f; 
+	} else if (Vout < 2.0f) {
+			pressure = 200.0f;  // VOUT 2V 200g
+	} else if (Vout < 3.0f) {
+			pressure = 600.0f;  // VOUT 3V 600g
+	} else {
+			pressure = 800.0f;  // VOUT 5V 400g 
+	}
+	
+	int is_valid = 0;
+	if(pressure>200){
+		is_valid = 1;
+	}else{
+		is_valid = 0;
+	}
+	
+	return is_valid;
 }
+
 void check_and_send(void) {
-    uint16_t sensor_value = read_sensor();
-    if(sensor_value > SENSOR_TRESHOLD) {
+    uint32_t FSR_valid = FSR_sensor();
+    if(FSR_valid) {
         uCAN_MSG txMessage;
 				txMessage.frame.idType = dSTANDARD_CAN_MSG_ID_2_0B;
 				txMessage.frame.data0 = 'W';
@@ -89,8 +119,6 @@ void check_and_send(void) {
   * @brief  The application entry point.
   * @retval int
   */
-	
-	
 int main(void)
 {
 
@@ -118,6 +146,7 @@ int main(void)
   MX_GPIO_Init();
   MX_SPI1_Init();
   MX_USART2_UART_Init();
+  MX_ADC_Init();
   /* USER CODE BEGIN 2 */
   CANSPI_Initialize();	
   /* USER CODE END 2 */
