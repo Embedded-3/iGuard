@@ -47,12 +47,12 @@
 /* Private variables ---------------------------------------------------------*/
 
 /* USER CODE BEGIN PV */
-volatile uint8_t bReadHCSR501 = 0;
-uint32_t IC_Val1 = 0;
-uint32_t IC_Val2 = 0;
-uint32_t Difference = 0;
-uint8_t Is_First_Captured = 0;  // is the first value captured ?
-uint8_t Distance  = 0;
+volatile static bReadHCSR501 = 0;
+volatile static uint32_t IC_Val1 = 0;
+volatile static uint32_t IC_Val2 = 0;
+volatile static uint32_t Difference = 0;
+volatile static uint8_t Is_First_Captured = 0;  // is the first value captured ?
+volatile static uint8_t Distance  = 0;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -97,10 +97,11 @@ int main(void)
 
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
-  MX_TIM2_Init();
   MX_USART2_Init();
   MX_CAN_Init();
+
   MX_TIM3_Init();
+  MX_TIM2_Init();
   /* USER CODE BEGIN 2 */
 
   /* USER CODE END 2 */

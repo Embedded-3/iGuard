@@ -73,6 +73,10 @@ void Error_Handler(void);
 #define TMS_GPIO_Port GPIOA
 #define TCK_Pin GPIO_PIN_14
 #define TCK_GPIO_Port GPIOA
+#define Ultrasound_Output_Pin GPIO_PIN_4
+#define Ultrasound_Output_GPIO_Port GPIOB
+#define PIR_Input_Pin GPIO_PIN_5
+#define PIR_Input_GPIO_Port GPIOB
 #define CAN_CS_Pin GPIO_PIN_6
 #define CAN_CS_GPIO_Port GPIOB
 
