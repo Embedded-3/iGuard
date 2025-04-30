@@ -36,7 +36,9 @@ int DHT22_process(DHT22_Data* data) {
     delay_us(40);  // 20~40us 동안 HIGH 유지
 
     // MCU ← DHT22: 응답 대기
+    //print("DHT22 응답 대기...\n\r");
     IfxPort_setPinModeInput(DHT22_PORT.port, DHT22_PORT.pinIndex, IfxPort_Mode_inputPullUp);
+    //print("DHT22 응답.\n\r");
 
     //DHT22에서 Low -> High -> Low 보내옴
     uint32 timeout = TIMEOUT;

@@ -10,6 +10,10 @@ IfxVadc_Adc_ChannelConfig adcChannelConfig[8];
 IfxVadc_Adc_Channel   adcChannel[8];
 uint32 adcDataResult[8] = {0u,};
 
+// 핀 설정 : 핀 A2
+uint32 chnIx = 5; //7;
+uint16 groutId = IfxVadc_GroupId_4;
+
 const Gas gas[6]=
 {
     {605.18, -3.937},   // CO
@@ -23,7 +27,7 @@ const Gas gas[6]=
 
 static void Driver_Adc0_Init(void)
 {
-    uint32    chnIx = 7;
+    //uint32    chnIx = 7;
 
     /* VADC Configuration */
 
@@ -39,7 +43,7 @@ static void Driver_Adc0_Init(void)
     IfxVadc_Adc_initGroupConfig(&adcGroupConfig, &g_VadcAutoScan.vadc);
 
     /* with group 0 */
-    adcGroupConfig.groupId = IfxVadc_GroupId_4;
+    adcGroupConfig.groupId = groutId; //IfxVadc_GroupId_4;
     adcGroupConfig.master  = adcGroupConfig.groupId;
 
     /* enable scan source */
@@ -89,7 +93,7 @@ void Driver_Adc0_ConvStart(void)
 
 uint32 Driver_Adc0_DataObtain(void)
 {
-    uint32    chnIx = 7;
+    //uint32    chnIx = 7;
     Ifx_VADC_RES conversionResult; /* wait for valid result */
 
     /* check results */

@@ -19,7 +19,7 @@
 
 
 void Driver_MHZ19B_Init(void);    // ASCLIN 인터페이스 초기화
-uint16 MHZ19B_requestCO2(void);     // CO2 농도 요청 및 응답 처리
+uint16 MHZ19B_requestCO2(uint16* ret_val);     // CO2 농도 요청 및 응답 처리
 
 
 #endif // MH_Z19B_H

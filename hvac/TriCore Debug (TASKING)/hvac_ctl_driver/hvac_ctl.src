@@ -1,0 +1,747 @@
+	; Module start
+	.compiler_version	"TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler v1.1r8 Build 22011964"
+	.compiler_invocation	"ctc -f cc10680a --dep-file=hvac_ctl_driver/hvac_ctl.d -c99 --fp-model=3cflnrSTz -D__CPU__=tc27xd -D__CPU_TC27XD__ --core=tc1.6.x --fp-model=+float -D__CPU__=tc27xd -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1 -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Configurations -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\Infra -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\Infra\\\\Platform -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\Infra\\\\Platform\\\\Tricore -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\Infra\\\\Platform\\\\Tricore\\\\Compilers -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\Infra\\\\Sfr -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\Infra\\\\Sfr\\\\TC27D -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\Infra\\\\Sfr\\\\TC27D\\\\_Reg -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\Service -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\Service\\\\CpuGeneric -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\Service\\\\CpuGeneric\\\\StdIf -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\Service\\\\CpuGeneric\\\\SysSe -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\Service\\\\CpuGeneric\\\\SysSe\\\\Bsp -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\Service\\\\CpuGeneric\\\\SysSe\\\\Comm -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\Service\\\\CpuGeneric\\\\_Utilities -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Asclin -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Asclin\\\\Asc -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Asclin\\\\Std -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Cpu -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Cpu\\\\CStart -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Cpu\\\\Irq -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Cpu\\\\Std -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Cpu\\\\Trap -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Gtm -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Gtm\\\\Std -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Mtu -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Mtu\\\\Std -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Port -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Port\\\\Std -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Scu -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Scu\\\\Std -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Src -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Src\\\\Std -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Stm -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Stm\\\\Std -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Vadc -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Vadc\\\\Adc -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Vadc\\\\Std -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\_Impl -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\_Lib -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\_Lib\\\\DataHandling -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\_PinMap -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\asclin_driver -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\dht22_driver -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\hvac_ctl_driver -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\mhz19b_driver -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\mq135_driver -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\stm_driver -g2 -w544 -w557 -t4 --language=+volatile -N0 -O0 -Y0 -Z0 --compact-max-size=200 --misrac-version=2004 -o hvac_ctl_driver/hvac_ctl.src ../hvac_ctl_driver/hvac_ctl.c"
+	.compiler_name		"ctc"
+	;source	'../hvac_ctl_driver/hvac_ctl.c'
+
+	
+$TC16X
+	
+	.sdecl	'.text.hvac_ctl.hvac_init',code,cluster('hvac_init')
+	.sect	'.text.hvac_ctl.hvac_init'
+	.align	2
+	
+	.global	hvac_init
+; Function hvac_init
+.L21:
+hvac_init:	.type	func
+	mov	d15,#0
+.L81:
+	st.b	[a4],d15
+.L82:
+	mov	d15,#0
+.L83:
+	st.b	[a4]1,d15
+.L84:
+	ret
+.L52:
+	
+__hvac_init_function_end:
+	.size	hvac_init,__hvac_init_function_end-hvac_init
+.L36:
+	; End of function
+	
+	.sdecl	'.text.hvac_ctl.sensor_init',code,cluster('sensor_init')
+	.sect	'.text.hvac_ctl.sensor_init'
+	.align	2
+	
+	.global	sensor_init
+; Function sensor_init
+.L23:
+sensor_init:	.type	func
+	mov	d15,#0
+.L89:
+	st.w	[a4],d15
+.L90:
+	mov	d15,#0
+.L91:
+	st.h	[a4]4,d15
+.L92:
+	mov	d15,#0
+.L93:
+	st.w	[a4]6,d15
+.L94:
+	mov	d15,#0
+.L95:
+	st.w	[a4]10,d15
+.L96:
+	ret
+.L55:
+	
+__sensor_init_function_end:
+	.size	sensor_init,__sensor_init_function_end-sensor_init
+.L41:
+	; End of function
+	
+	.sdecl	'.text.hvac_ctl.havc_control',code,cluster('havc_control')
+	.sect	'.text.hvac_ctl.havc_control'
+	.align	2
+	
+	.global	havc_control
+; Function havc_control
+.L25:
+havc_control:	.type	func
+	mov.aa	a15,a4
+.L71:
+	ld.bu	d15,[a15]
+.L101:
+	mov	d0,#0
+	jeq	d15,d0,.L2
+.L102:
+	mov	d0,#1
+	jeq	d15,d0,.L3
+	j	.L4
+.L2:
+	ld.w	d15,[a10]
+.L103:
+	mov	d0,#2000
+.L104:
+	jge.u	d0,d15,.L5
+.L105:
+	mov	d15,#1
+.L106:
+	st.b	[a15],d15
+.L5:
+	ld.hu	d4,[a10]4
+.L107:
+	ld.w	d5,[a10]10
+.L108:
+	ld.w	d6,[a10]6
+	call	select_fan_speed
+.L70:
+	st.b	[a15]1,d2
+.L109:
+	j	.L6
+.L3:
+	ld.w	d15,[a10]
+.L110:
+	mov	d0,#2000
+.L111:
+	jlt.u	d0,d15,.L7
+.L112:
+	mov	d15,#0
+.L113:
+	st.b	[a15],d15
+.L7:
+	ld.hu	d4,[a10]4
+.L114:
+	ld.w	d5,[a10]10
+.L115:
+	ld.w	d6,[a10]6
+	call	select_fan_speed
+.L72:
+	st.b	[a15]1,d2
+.L116:
+	j	.L8
+.L4:
+	mov.u	d2,#65535
+.L117:
+	j	.L9
+.L69:
+	j	.L10
+.L10:
+.L8:
+.L6:
+	mov	d2,#0
+.L118:
+	j	.L11
+.L11:
+.L9:
+	ret
+.L59:
+	
+__havc_control_function_end:
+	.size	havc_control,__havc_control_function_end-havc_control
+.L46:
+	; End of function
+	
+	.sdecl	'.text.hvac_ctl.select_fan_speed',code,cluster('select_fan_speed')
+	.sect	'.text.hvac_ctl.select_fan_speed'
+	.align	2
+	
+; Function select_fan_speed
+.L27:
+select_fan_speed:	.type	func
+	mov	d15,#1000
+.L123:
+	jge.u	d4,d15,.L12
+.L124:
+	movh	d15,#16928
+.L125:
+	cmp.f	d15,d6,d15
+	and	d15,#6
+	ne	d15,d15,#0
+	jeq	d15,#0,.L13
+.L12:
+	mov	d2,#3
+.L126:
+	j	.L14
+.L13:
+	movh	d15,#16880
+.L127:
+	cmp.f	d15,d6,d15
+	and	d15,#6
+	ne	d15,d15,#0
+.L128:
+	jeq	d15,#0,.L15
+.L129:
+	mov	d2,#2
+.L130:
+	j	.L16
+.L15:
+	movh	d15,#17008
+.L131:
+	cmp.f	d15,d5,d15
+	and	d15,#6
+	ne	d15,d15,#0
+.L132:
+	jeq	d15,#0,.L17
+.L133:
+	mov	d2,#1
+.L134:
+	j	.L18
+.L17:
+	mov	d2,#0
+.L135:
+	j	.L19
+.L19:
+.L18:
+.L16:
+.L14:
+	ret
+.L64:
+	
+__select_fan_speed_function_end:
+	.size	select_fan_speed,__select_fan_speed_function_end-select_fan_speed
+.L51:
+	; End of function
+	
+	.calls	'havc_control','select_fan_speed'
+	.calls	'hvac_init','',0
+	.calls	'sensor_init','',0
+	.calls	'havc_control','',0
+	.calls	'select_fan_speed','',0
+	.sdecl	'.debug_info',debug
+	.sect	'.debug_info'
+.L29:
+	.word	605
+	.half	3
+	.word	.L30
+	.byte	4
+.L28:
+	.byte	1
+	.byte	'../hvac_ctl_driver/hvac_ctl.c',0
+	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
+	.byte	'C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p1\\TriCore Debug (TASKING)\\',0,12,1
+	.word	.L31
+	.byte	2,1,14,9,1,3
+	.byte	'EXT_MODE',0,0,3
+	.byte	'INT_MODE',0,1,0,2,1,19,9,1,3
+	.byte	'STOP',0,0,3
+	.byte	'LOW_SPEED',0,1,3
+	.byte	'MID_SPEED',0,2,3
+	.byte	'HIGH_SPEED',0,3,0,4,1,26,9,2,5
+	.byte	'mode',0
+	.word	191
+	.byte	1,2,35,0,5
+	.byte	'speed',0
+	.word	219
+	.byte	1,2,35,1,0
+.L53:
+	.byte	6
+	.word	269
+	.byte	7
+	.byte	'unsigned long int',0,4,7
+.L58:
+	.byte	7
+	.byte	'unsigned short int',0,2,7
+.L66:
+	.byte	7
+	.byte	'float',0,4,4,4,1,31,9,16,5
+	.byte	'ext_air',0
+	.word	309
+	.byte	4,2,35,0,5
+	.byte	'int_co2',0
+	.word	330
+	.byte	2,2,35,4,5
+	.byte	'int_temperature',0
+	.word	352
+	.byte	4,2,35,6,5
+	.byte	'int_humidity',0
+	.word	352
+	.byte	4,2,35,10,0
+.L56:
+	.byte	6
+	.word	361
+.L61:
+	.byte	8
+	.word	361
+.L63:
+	.byte	7
+	.byte	'unsigned char',0,1,8,9,1,6
+	.word	475
+	.byte	10
+	.byte	'__codeptr',0,2,1,1
+	.word	477
+	.byte	10
+	.byte	'uint8',0,3,108,29
+	.word	458
+	.byte	10
+	.byte	'uint16',0,3,112,29
+	.word	330
+	.byte	10
+	.byte	'uint32',0,3,116,29
+	.word	309
+	.byte	10
+	.byte	'Mode',0,1,17,2
+	.word	191
+	.byte	10
+	.byte	'Fan_Speed',0,1,24,2
+	.word	219
+	.byte	10
+	.byte	'Hvac',0,1,29,2
+	.word	269
+	.byte	10
+	.byte	'Sensor_Data',0,1,36,2
+	.word	361
+	.byte	0
+	.sdecl	'.debug_abbrev',debug
+	.sect	'.debug_abbrev'
+.L30:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,16,6,0,0,2,4,1,58,15,59,15,57,15,11,15,0,0,3,40,0,3,8,28,13,0,0,4
+	.byte	19,1,58,15,59,15,57,15,11,15,0,0,5,13,0,3,8,73,19,11,15,56,9,0,0,6,15,0,73,19,0,0,7,36,0,3,8,11,15,62
+	.byte	15,0,0,8,38,0,73,19,0,0,9,21,0,54,15,0,0,10,22,0,3,8,58,15,59,15,57,15,73,19,0,0,0
+	.sdecl	'.debug_line',debug
+	.sect	'.debug_line'
+.L31:
+	.word	.L74-.L73
+.L73:
+	.half	3
+	.word	.L76-.L75
+.L75:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
+	.byte	'C:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Cpu\\\\Std',0
+	.byte	0
+	.byte	'..\\hvac_ctl_driver\\hvac_ctl.h',0,0,0,0
+	.byte	'../hvac_ctl_driver/hvac_ctl.c',0,0,0,0
+	.byte	'Platform_Types.h',0,1,0,0,0
+.L76:
+.L74:
+	.sdecl	'.debug_info',debug,cluster('hvac_init')
+	.sect	'.debug_info'
+.L32:
+	.word	253
+	.half	3
+	.word	.L33
+	.byte	4,1
+	.byte	'../hvac_ctl_driver/hvac_ctl.c',0
+	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
+	.byte	'C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p1\\TriCore Debug (TASKING)\\',0,12,1
+	.word	.L35,.L34
+	.byte	2
+	.word	.L28
+	.byte	3
+	.byte	'hvac_init',0,1,8,6,1,1,1
+	.word	.L21,.L52,.L20
+	.byte	4
+	.byte	'hvac',0,1,8,22
+	.word	.L53,.L54
+	.byte	5
+	.word	.L21,.L52
+	.byte	0,0
+	.sdecl	'.debug_abbrev',debug,cluster('hvac_init')
+	.sect	'.debug_abbrev'
+.L33:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
+	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,0,17,1,18,1,0,0,0
+	.sdecl	'.debug_line',debug,cluster('hvac_init')
+	.sect	'.debug_line'
+.L34:
+	.word	.L78-.L77
+.L77:
+	.half	3
+	.word	.L80-.L79
+.L79:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
+	.byte	'../hvac_ctl_driver/hvac_ctl.c',0,0,0,0,0
+.L80:
+	.byte	5,18,7,0,5,2
+	.word	.L21
+	.byte	3,8,1,5,16,9
+	.half	.L81-.L21
+	.byte	1,5,19,9
+	.half	.L82-.L81
+	.byte	3,1,1,5,17,9
+	.half	.L83-.L82
+	.byte	1,5,1,9
+	.half	.L84-.L83
+	.byte	3,1,1,7,9
+	.half	.L36-.L84
+	.byte	0,1,1
+.L78:
+	.sdecl	'.debug_ranges',debug,cluster('hvac_init')
+	.sect	'.debug_ranges'
+.L35:
+	.word	-1,.L21,0,.L36-.L21,0,0
+	.sdecl	'.debug_info',debug,cluster('sensor_init')
+	.sect	'.debug_info'
+.L37:
+	.word	255
+	.half	3
+	.word	.L38
+	.byte	4,1
+	.byte	'../hvac_ctl_driver/hvac_ctl.c',0
+	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
+	.byte	'C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p1\\TriCore Debug (TASKING)\\',0,12,1
+	.word	.L40,.L39
+	.byte	2
+	.word	.L28
+	.byte	3
+	.byte	'sensor_init',0,1,13,6,1,1,1
+	.word	.L23,.L55,.L22
+	.byte	4
+	.byte	'data',0,1,13,31
+	.word	.L56,.L57
+	.byte	5
+	.word	.L23,.L55
+	.byte	0,0
+	.sdecl	'.debug_abbrev',debug,cluster('sensor_init')
+	.sect	'.debug_abbrev'
+.L38:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
+	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,0,17,1,18,1,0,0,0
+	.sdecl	'.debug_line',debug,cluster('sensor_init')
+	.sect	'.debug_line'
+.L39:
+	.word	.L86-.L85
+.L85:
+	.half	3
+	.word	.L88-.L87
+.L87:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
+	.byte	'../hvac_ctl_driver/hvac_ctl.c',0,0,0,0,0
+.L88:
+	.byte	5,21,7,0,5,2
+	.word	.L23
+	.byte	3,13,1,5,19,9
+	.half	.L89-.L23
+	.byte	1,5,21,9
+	.half	.L90-.L89
+	.byte	3,1,1,5,19,9
+	.half	.L91-.L90
+	.byte	1,5,29,9
+	.half	.L92-.L91
+	.byte	3,1,1,5,27,9
+	.half	.L93-.L92
+	.byte	1,5,26,9
+	.half	.L94-.L93
+	.byte	3,1,1,5,24,9
+	.half	.L95-.L94
+	.byte	1,5,1,9
+	.half	.L96-.L95
+	.byte	3,1,1,7,9
+	.half	.L41-.L96
+	.byte	0,1,1
+.L86:
+	.sdecl	'.debug_ranges',debug,cluster('sensor_init')
+	.sect	'.debug_ranges'
+.L40:
+	.word	-1,.L23,0,.L41-.L23,0,0
+	.sdecl	'.debug_info',debug,cluster('havc_control')
+	.sect	'.debug_info'
+.L42:
+	.word	277
+	.half	3
+	.word	.L43
+	.byte	4,1
+	.byte	'../hvac_ctl_driver/hvac_ctl.c',0
+	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
+	.byte	'C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p1\\TriCore Debug (TASKING)\\',0,12,1
+	.word	.L45,.L44
+	.byte	2
+	.word	.L28
+	.byte	3
+	.byte	'havc_control',0,1,20,8
+	.word	.L58
+	.byte	1,1,1
+	.word	.L25,.L59,.L24
+	.byte	4
+	.byte	'hvac',0,1,20,27
+	.word	.L53,.L60
+	.byte	4
+	.byte	'data',0,1,20,51
+	.word	.L61,.L62
+	.byte	5
+	.word	.L25,.L59
+	.byte	0,0
+	.sdecl	'.debug_abbrev',debug,cluster('havc_control')
+	.sect	'.debug_abbrev'
+.L43:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,73,16
+	.byte	54,15,39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,0,17,1,18,1,0,0,0
+	.sdecl	'.debug_line',debug,cluster('havc_control')
+	.sect	'.debug_line'
+.L44:
+	.word	.L98-.L97
+.L97:
+	.half	3
+	.word	.L100-.L99
+.L99:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
+	.byte	'../hvac_ctl_driver/hvac_ctl.c',0,0,0,0,0
+.L100:
+	.byte	5,8,7,0,5,2
+	.word	.L25
+	.byte	3,19,1,5,16,9
+	.half	.L71-.L25
+	.byte	3,1,1,5,14,9
+	.half	.L101-.L71
+	.byte	3,1,1,9
+	.half	.L102-.L101
+	.byte	3,10,1,5,20,9
+	.half	.L2-.L102
+	.byte	3,120,1,5,31,9
+	.half	.L103-.L2
+	.byte	1,5,13,9
+	.half	.L104-.L103
+	.byte	1,5,30,7,9
+	.half	.L105-.L104
+	.byte	3,1,1,5,28,9
+	.half	.L106-.L105
+	.byte	1,5,48,9
+	.half	.L5-.L106
+	.byte	3,3,1,5,62,9
+	.half	.L107-.L5
+	.byte	1,5,81,9
+	.half	.L108-.L107
+	.byte	1,5,25,9
+	.half	.L70-.L108
+	.byte	1,5,13,9
+	.half	.L109-.L70
+	.byte	3,2,1,5,20,9
+	.half	.L3-.L109
+	.byte	3,4,1,5,32,9
+	.half	.L110-.L3
+	.byte	1,5,13,9
+	.half	.L111-.L110
+	.byte	1,5,30,7,9
+	.half	.L112-.L111
+	.byte	3,1,1,5,28,9
+	.half	.L113-.L112
+	.byte	1,5,48,9
+	.half	.L7-.L113
+	.byte	3,3,1,5,62,9
+	.half	.L114-.L7
+	.byte	1,5,81,9
+	.half	.L115-.L114
+	.byte	1,5,25,9
+	.half	.L72-.L115
+	.byte	1,5,13,9
+	.half	.L116-.L72
+	.byte	3,2,1,5,20,9
+	.half	.L4-.L116
+	.byte	3,3,1,5,13,9
+	.half	.L117-.L4
+	.byte	1,9
+	.half	.L69-.L117
+	.byte	3,1,1,5,12,9
+	.half	.L6-.L69
+	.byte	3,2,1,5,5,9
+	.half	.L118-.L6
+	.byte	1,5,1,9
+	.half	.L9-.L118
+	.byte	3,1,1,7,9
+	.half	.L46-.L9
+	.byte	0,1,1
+.L98:
+	.sdecl	'.debug_ranges',debug,cluster('havc_control')
+	.sect	'.debug_ranges'
+.L45:
+	.word	-1,.L25,0,.L46-.L25,0,0
+	.sdecl	'.debug_info',debug,cluster('select_fan_speed')
+	.sect	'.debug_info'
+.L47:
+	.word	296
+	.half	3
+	.word	.L48
+	.byte	4,1
+	.byte	'../hvac_ctl_driver/hvac_ctl.c',0
+	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
+	.byte	'C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p1\\TriCore Debug (TASKING)\\',0,12,1
+	.word	.L50,.L49
+	.byte	2
+	.word	.L28
+	.byte	3
+	.byte	'select_fan_speed',0,1,49,7
+	.word	.L63
+	.byte	1,1
+	.word	.L27,.L64,.L26
+	.byte	4
+	.byte	'co2',0,1,49,31
+	.word	.L58,.L65
+	.byte	4
+	.byte	'humi',0,1,49,43
+	.word	.L66,.L67
+	.byte	4
+	.byte	'temp',0,1,49,56
+	.word	.L66,.L68
+	.byte	5
+	.word	.L27,.L64
+	.byte	0,0
+	.sdecl	'.debug_abbrev',debug,cluster('select_fan_speed')
+	.sect	'.debug_abbrev'
+.L48:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,73,16
+	.byte	54,15,39,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,0,17,1,18,1,0,0,0
+	.sdecl	'.debug_line',debug,cluster('select_fan_speed')
+	.sect	'.debug_line'
+.L49:
+	.word	.L120-.L119
+.L119:
+	.half	3
+	.word	.L122-.L121
+.L121:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
+	.byte	'../hvac_ctl_driver/hvac_ctl.c',0,0,0,0,0
+.L122:
+	.byte	5,15,7,0,5,2
+	.word	.L27
+	.byte	3,49,1,5,8,9
+	.half	.L123-.L27
+	.byte	1,5,37,7,9
+	.half	.L124-.L123
+	.byte	1,5,34,9
+	.half	.L125-.L124
+	.byte	1,5,16,9
+	.half	.L12-.L125
+	.byte	3,1,1,5,9,9
+	.half	.L126-.L12
+	.byte	1,5,21,9
+	.half	.L13-.L126
+	.byte	3,2,1,5,18,9
+	.half	.L127-.L13
+	.byte	1,5,10,9
+	.half	.L128-.L127
+	.byte	1,5,16,7,9
+	.half	.L129-.L128
+	.byte	3,1,1,5,9,9
+	.half	.L130-.L129
+	.byte	1,5,21,9
+	.half	.L15-.L130
+	.byte	3,2,1,5,18,9
+	.half	.L131-.L15
+	.byte	1,5,10,9
+	.half	.L132-.L131
+	.byte	1,5,16,7,9
+	.half	.L133-.L132
+	.byte	3,1,1,5,9,9
+	.half	.L134-.L133
+	.byte	1,5,16,9
+	.half	.L17-.L134
+	.byte	3,3,1,5,9,9
+	.half	.L135-.L17
+	.byte	1,5,1,9
+	.half	.L14-.L135
+	.byte	3,2,1,7,9
+	.half	.L51-.L14
+	.byte	0,1,1
+.L120:
+	.sdecl	'.debug_ranges',debug,cluster('select_fan_speed')
+	.sect	'.debug_ranges'
+.L50:
+	.word	-1,.L27,0,.L51-.L27,0,0
+	.sdecl	'.debug_loc',debug,cluster('havc_control')
+	.sect	'.debug_loc'
+.L62:
+	.word	-1,.L25,0,.L69-.L25
+	.half	2
+	.byte	145,0
+	.word	.L6-.L25,.L59-.L25
+	.half	2
+	.byte	145,0
+	.word	0,0
+.L24:
+	.word	-1,.L25,0,.L59-.L25
+	.half	2
+	.byte	138,0
+	.word	0,0
+.L60:
+	.word	-1,.L25,0,.L70-.L25
+	.half	1
+	.byte	100
+	.word	.L71-.L25,.L69-.L25
+	.half	1
+	.byte	111
+	.word	.L3-.L25,.L72-.L25
+	.half	1
+	.byte	100
+	.word	.L4-.L25,.L69-.L25
+	.half	1
+	.byte	100
+	.word	.L6-.L25,.L59-.L25
+	.half	1
+	.byte	111
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('hvac_init')
+	.sect	'.debug_loc'
+.L54:
+	.word	-1,.L21,0,.L52-.L21
+	.half	1
+	.byte	100
+	.word	0,0
+.L20:
+	.word	-1,.L21,0,.L52-.L21
+	.half	2
+	.byte	138,0
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('select_fan_speed')
+	.sect	'.debug_loc'
+.L65:
+	.word	-1,.L27,0,.L64-.L27
+	.half	1
+	.byte	84
+	.word	0,0
+.L67:
+	.word	-1,.L27,0,.L64-.L27
+	.half	1
+	.byte	85
+	.word	0,0
+.L26:
+	.word	-1,.L27,0,.L64-.L27
+	.half	2
+	.byte	138,0
+	.word	0,0
+.L68:
+	.word	-1,.L27,0,.L64-.L27
+	.half	1
+	.byte	86
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('sensor_init')
+	.sect	'.debug_loc'
+.L57:
+	.word	-1,.L23,0,.L55-.L23
+	.half	1
+	.byte	100
+	.word	0,0
+.L22:
+	.word	-1,.L23,0,.L55-.L23
+	.half	2
+	.byte	138,0
+	.word	0,0
+	.sdecl	'.debug_frame',debug
+	.sect	'.debug_frame'
+.L136:
+	.word	48
+	.word	-1
+	.byte	3,0,2,1,27,12,26,0,8,26,8,27,8,30,8,29,8,28,8,16,8,17,8,24,8,25,8,31,8,32,8,33,8,34,8,35,8,36,8,37,8,38
+	.byte	8,39
+	.sdecl	'.debug_frame',debug,cluster('hvac_init')
+	.sect	'.debug_frame'
+	.word	24
+	.word	.L136,.L21,.L52-.L21
+	.byte	8,18,8,19,8,21,8,22,8,23,0,0
+	.sdecl	'.debug_frame',debug,cluster('sensor_init')
+	.sect	'.debug_frame'
+	.word	24
+	.word	.L136,.L23,.L55-.L23
+	.byte	8,18,8,19,8,21,8,22,8,23,0,0
+	.sdecl	'.debug_frame',debug,cluster('havc_control')
+	.sect	'.debug_frame'
+	.word	12
+	.word	.L136,.L25,.L59-.L25
+	.sdecl	'.debug_frame',debug,cluster('select_fan_speed')
+	.sect	'.debug_frame'
+	.word	24
+	.word	.L136,.L27,.L64-.L27
+	.byte	8,18,8,19,8,20,8,21,8,22,8,23
+	; Module end

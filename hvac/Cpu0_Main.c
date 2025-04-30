@@ -34,6 +34,7 @@
 #include <mq135_driver/mq135.h>
 #include <dht22_driver/dht22.h>
 #include <mhz19b_driver/mhz19b.h>
+#include <hvac_ctl_driver/hvac_ctl.h>
 
 #include "IfxPort.h"
 #include "IfxPort_PinMap.h"
@@ -49,7 +50,9 @@ void AppTask1000ms(void);
 IfxCpu_syncEvent g_cpuSyncEvent = 0;
 
 TestCnt stTestCnt;
-uint32 mq135_adcval=0;
+
+Hvac g_hvac;         // HVAC control data
+Sensor_Data g_data;   // HVAC sensor data
 
 void core0_main(void)
 {
@@ -64,6 +67,11 @@ void core0_main(void)
     /* Wait for CPU sync event */
     IfxCpu_emitEvent(&g_cpuSyncEvent);
     IfxCpu_waitEvent(&g_cpuSyncEvent, 1);
+
+
+
+    sensor_init(&g_data);  // 센서 데이터 초기화
+    hvac_init(&g_hvac);    // HVAC 초기화
 
     initShellInterface();
     Driver_Stm_Init();
@@ -102,7 +110,7 @@ void AppTask1000ms(void)
     print("\n\r");
 
     // 1. MQ135
-    mq135_adcval = 0;
+    uint32 mq135_adcval = 0;
     mq135_adcval = Driver_Adc0_DataObtain();   // mq135 val평소 1600
     Driver_Adc0_ConvStart();
 
@@ -110,8 +118,8 @@ void AppTask1000ms(void)
     print("adcval      : %d\n\r", mq135_adcval);
 
     // 2. DHT22
+    DHT22_Data dht22_data;
     if(stTestCnt.u32nuCnt1000ms % 2){        // DHT22 Period = 2s
-        DHT22_Data dht22_data;
         int result = DHT22_process(&dht22_data);  // DHT22 데이터 읽기
         if(!result){
             print("< DHT22 > \n\r");
@@ -125,8 +133,8 @@ void AppTask1000ms(void)
 
     // 3. MH-Z19B
     uint16 mhz19b_value = 0;
-    mhz19b_value = MHZ19B_requestCO2();
-    if(mhz19b_value == -1 || mhz19b_value == 2){
+    uint16 mhz19b_ret = MHZ19B_requestCO2(&mhz19b_value);
+    if(mhz19b_ret == -1 || mhz19b_ret == 2){
         print("MH-Z19B Error, %d\n\r", mhz19b_value);
     }
     else{
@@ -135,6 +143,20 @@ void AppTask1000ms(void)
     }
 
 
+    // 4. Fan Control
+    g_data.ext_air = mq135_adcval;         // 외부 공기질
+    g_data.int_co2 = mhz19b_value;        // 내부 CO2 농도
+    g_data.int_temperature = (double)dht22_data.temperature/10; // 내부 온도
+    g_data.int_humidity = (double)dht22_data.humidity/10;     // 내부 습도
+    int hvac_ret = havc_control(&g_hvac, g_data);  // 센서 데이터 바탕으로 팬 제어 함수 호출
+
+    if(!hvac_ret){
+        print("HVAC Mode  : %d\n\r", g_hvac.mode);
+        print("HVAC Speed : %d\n\r", g_hvac.speed);
+    }
+    else{
+        print("HVAC Error : %dn\r", hvac_ret);
+    }
 
 }
 

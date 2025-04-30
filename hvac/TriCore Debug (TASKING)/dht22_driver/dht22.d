@@ -118,3 +118,11 @@ dht22.o :	"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p1\\Libraries\\iLLD\\TC27D\
 "C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p1\\Libraries\\iLLD\\TC27D\\Tricore\\_PinMap\IfxPort_PinMap.h" :
 dht22.o :	"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p1\\Libraries\\iLLD\\TC27D\\Tricore\Port\Std\IfxPort.h"
 "C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p1\\Libraries\\iLLD\\TC27D\\Tricore\Port\Std\IfxPort.h" :
+dht22.o :	"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p1\\asclin_driver\asclin.h"
+"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p1\\asclin_driver\asclin.h" :
+dht22.o :	"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p1\\Libraries\\Service\\CpuGeneric\\StdIf\IfxStdIf_DPipe.h"
+"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p1\\Libraries\\Service\\CpuGeneric\\StdIf\IfxStdIf_DPipe.h" :
+dht22.o :	"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p1\\Libraries\\Service\\CpuGeneric\\StdIf\IfxStdIf.h"
+"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p1\\Libraries\\Service\\CpuGeneric\\StdIf\IfxStdIf.h" :
+dht22.o :	"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p1\\Libraries\\iLLD\\TC27D\\Tricore\Cpu\Std\Ifx_Types.h"
+"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p1\\Libraries\\iLLD\\TC27D\\Tricore\Cpu\Std\Ifx_Types.h" :

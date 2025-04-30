@@ -138,5 +138,9 @@ Cpu0_Main.o :	"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p1\\Libraries\\iLLD\\TC
 "C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p1\\Libraries\\iLLD\\TC27D\\Tricore\\Port\\Std\IfxPort.h" :
 Cpu0_Main.o :	"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p1\\Libraries\\iLLD\\TC27D\\Tricore\\_PinMap\IfxPort_PinMap.h"
 "C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p1\\Libraries\\iLLD\\TC27D\\Tricore\\_PinMap\IfxPort_PinMap.h" :
+Cpu0_Main.o :	"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p1\\asclin_driver\asclin.h"
+"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p1\\asclin_driver\asclin.h" :
 Cpu0_Main.o :	"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p1\mhz19b_driver\mhz19b.h"
 "C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p1\mhz19b_driver\mhz19b.h" :
+Cpu0_Main.o :	"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p1\hvac_ctl_driver\hvac_ctl.h"
+"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p1\hvac_ctl_driver\hvac_ctl.h" :

@@ -100,7 +100,7 @@ void initSerialInterface0(void)
     IfxAsclin_Asc_initModule(&g_asclin0, &ascConf0);          /* Initialize the module with the given configuration   */
 }
 
-uint16 MHZ19B_requestCO2(void)
+uint16 MHZ19B_requestCO2(uint16* ret_val)
 {
     // 1. 명령 전송
     for (int i = 0; i < MH_Z19B_CMD_LEN; i++)
@@ -120,7 +120,8 @@ uint16 MHZ19B_requestCO2(void)
     if (response[0] == 0xFF && response[1] == 0x86)
     {
         uint16 ppm = (response[2] << 8) | response[3];
-        return ppm;
+        *ret_val = ppm; // CO2 농도 값 저장
+        return 0;
     }
     else return -1;
 
