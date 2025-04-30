@@ -49,12 +49,19 @@
 
 /* USER CODE BEGIN PV */
 volatile uint8_t bReadHCSR501 = 0;
+uint32_t IC_Val1 = 0;
+uint32_t IC_Val2 = 0;
+uint32_t Difference = 0;
+uint8_t Is_First_Captured = 0;  // is the first value captured ?
+uint8_t Distance  = 0;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
 void SystemClock_Config(void);
 /* USER CODE BEGIN PFP */
-
+void delay (uint16_t time);
+void HAL_TIM_IC_CaptureCallback(TIM_HandleTypeDef *htim);
+void HCSR04_Read (void);
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
@@ -95,8 +102,7 @@ int main(void)
   MX_TIM2_Init();
   MX_USART2_Init();
   MX_CAN_Init();
-  MX_USART1_Init();
-  MX_USART3_Init();
+  HAL_TIM_IC_Start_IT(&htim2, TIM_CHANNEL_3);
   /* USER CODE BEGIN 2 */
 
   /* USER CODE END 2 */
@@ -104,17 +110,16 @@ int main(void)
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   volatile static GPIO_PinState bReadHCSR501 = 0;
-  volatile static GPIO_PinState bReadHCSR04 = 0;
   while (1)
   {
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
 	  HAL_Delay(3000);
-
+	  HCSR04_Read();
 	  bReadHCSR501 = HAL_GPIO_ReadPin(GPIOB,GPIO_PIN_4);
-	  //bReadHCSR04 = HAL_GPIO_ReadPin(GPIOB,GPIO_PIN_5);
-	  char buffer[20];
+
+	  char buffer[30];
 	  //HAL_USART_Transmit(&husart2, (char*)"main", 8, HAL_MAX_DELAY);
 	  switch(bReadHCSR501){
 	  	case(GPIO_PIN_RESET):
@@ -180,31 +185,31 @@ void SystemClock_Config(void)
 }
 
 /* USER CODE BEGIN 4 */
-
-void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
+void delay (uint16_t time)
 {
-  if(htim->Instance == TIM2)
-  {
-	   //bReadHCSR501 = HCSR501_Read();
-  }
+    __HAL_TIM_SET_COUNTER(&htim2, 0);
+    while (__HAL_TIM_GET_COUNTER (&htim2) < time);
 }
 
-/*
+
 void HAL_TIM_IC_CaptureCallback(TIM_HandleTypeDef *htim)
 {
-    if (htim->Channel == HAL_TIM_ACTIVE_CHANNEL_1)  // if the interrupt source is channel1
+    if (htim->Channel == HAL_TIM_ACTIVE_CHANNEL_3)  // if the interrupt source is channel1
     {
         if (Is_First_Captured==0) // if the first value is not captured
         {
-            IC_Val1 = HAL_TIM_ReadCapturedValue(htim, TIM_CHANNEL_1); // read the first value
+            IC_Val1 = HAL_TIM_ReadCapturedValue(htim, TIM_CHANNEL_3); // read the first value
             Is_First_Captured = 1;  // set the first captured as true
             // Now change the polarity to falling edge
-            __HAL_TIM_SET_CAPTUREPOLARITY(htim, TIM_CHANNEL_1, TIM_INPUTCHANNELPOLARITY_FALLING);
+            __HAL_TIM_SET_CAPTUREPOLARITY(htim, TIM_CHANNEL_3, TIM_INPUTCHANNELPOLARITY_FALLING);
+            char buffer[10];
+            sprintf(buffer, "start");
+            HAL_USART_Transmit(&husart2, (uint8_t*)buffer, strlen(buffer), HAL_MAX_DELAY);
         }
 
         else if (Is_First_Captured==1)   // if the first is already captured
         {
-            IC_Val2 = HAL_TIM_ReadCapturedValue(htim, TIM_CHANNEL_1);  // read second value
+            IC_Val2 = HAL_TIM_ReadCapturedValue(htim, TIM_CHANNEL_3);  // read second value
             __HAL_TIM_SET_COUNTER(htim, 0);  // reset the counter
 
             if (IC_Val2 > IC_Val1)
@@ -218,24 +223,27 @@ void HAL_TIM_IC_CaptureCallback(TIM_HandleTypeDef *htim)
             }
 
             Distance = Difference * .034/2;
+            char buffer[10];
+            sprintf(buffer, "%d\n", Distance);
+            HAL_USART_Transmit(&husart2, (uint8_t*)buffer, strlen(buffer), HAL_MAX_DELAY);
             Is_First_Captured = 0; // set it back to false
 
             // set polarity to rising edge
-            __HAL_TIM_SET_CAPTUREPOLARITY(htim, TIM_CHANNEL_1, TIM_INPUTCHANNELPOLARITY_RISING);
-            __HAL_TIM_DISABLE_IT(&htim1, TIM_IT_CC1);
+            __HAL_TIM_SET_CAPTUREPOLARITY(htim, TIM_CHANNEL_3, TIM_INPUTCHANNELPOLARITY_RISING);
+            __HAL_TIM_DISABLE_IT(&htim2, TIM_IT_CC3);
         }
     }
 }
 
 void HCSR04_Read (void)
 {
-  HAL_GPIO_WritePin(GPIOB,GPIO_PIN_6,GPIO_PIN_SET);
-  HAL_Delay(10);
-  HAL_GPIO_WritePin(GPIOB,GPIO_PIN_6,GPIO_PIN_RESET);
+	HAL_GPIO_WritePin(GPIOB,GPIO_PIN_6,GPIO_PIN_SET);
+	delay(10);
+	HAL_GPIO_WritePin(GPIOB,GPIO_PIN_6,GPIO_PIN_RESET);
 
-  __HAL_TIM_ENABLE_IT(&htim2, TIM_IT_CC1);
+	__HAL_TIM_ENABLE_IT(&htim2, TIM_IT_CC3);
 }
-*/
+
 /* USER CODE END 4 */
 
 /**
