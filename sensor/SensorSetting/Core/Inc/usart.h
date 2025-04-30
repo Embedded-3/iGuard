@@ -32,19 +32,13 @@ extern "C" {
 
 /* USER CODE END Includes */
 
-extern USART_HandleTypeDef husart1;
-
 extern USART_HandleTypeDef husart2;
-
-extern USART_HandleTypeDef husart3;
 
 /* USER CODE BEGIN Private defines */
 
 /* USER CODE END Private defines */
 
-void MX_USART1_Init(void);
 void MX_USART2_Init(void);
-void MX_USART3_Init(void);
 
 /* USER CODE BEGIN Prototypes */
 
