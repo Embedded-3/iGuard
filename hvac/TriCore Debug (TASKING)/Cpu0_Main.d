@@ -144,3 +144,5 @@ Cpu0_Main.o :	"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p1\mhz19b_driver\mhz19b
 "C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p1\mhz19b_driver\mhz19b.h" :
 Cpu0_Main.o :	"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p1\hvac_ctl_driver\hvac_ctl.h"
 "C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p1\hvac_ctl_driver\hvac_ctl.h" :
+Cpu0_Main.o :	"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p1\PWM_driver\PWM.h"
+"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p1\PWM_driver\PWM.h" :

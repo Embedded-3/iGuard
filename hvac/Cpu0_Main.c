@@ -35,6 +35,7 @@
 #include <dht22_driver/dht22.h>
 #include <mhz19b_driver/mhz19b.h>
 #include <hvac_ctl_driver/hvac_ctl.h>
+#include <PWM_driver/PWM.h>
 
 #include "IfxPort.h"
 #include "IfxPort_PinMap.h"
@@ -77,7 +78,9 @@ void core0_main(void)
     Driver_Stm_Init();
     Driver_MQ135_Init();
     Driver_MHZ19B_Init();
-    //initASCLIN0Interface(); // mh-z19b ASCLIN(UART) 초기화
+
+    initServoPwm();
+
 
     while(1)
     {
@@ -89,7 +92,20 @@ void core0_main(void)
 
 void AppTask1ms(void)
 {
+    /*
+    #define SERVO_PIN IfxPort_P02_5
+    IfxPort_setPinModeOutput(SERVO_PIN.port, SERVO_PIN.pinIndex, IfxPort_OutputMode_pushPull, IfxPort_OutputIdx_general);
 
+    static time =  0;
+    time = (time + 1) % 20;
+    if(time == 0){
+        IfxPort_setPinHigh(SERVO_PIN.port, SERVO_PIN.pinIndex);
+        //for(volatile int i=0;i<5000000;i++);
+    }
+    else if (time == 2){
+        IfxPort_setPinLow(SERVO_PIN.port, SERVO_PIN.pinIndex);
+    }
+    */
     stTestCnt.u32nuCnt1ms++;
 }
 
@@ -108,7 +124,7 @@ void AppTask1000ms(void)
     stTestCnt.u32nuCnt1000ms++;
 
     print("\n\r");
-
+/*
     // 1. MQ135
     uint32 mq135_adcval = 0;
     mq135_adcval = Driver_Adc0_DataObtain();   // mq135 val평소 1600
@@ -157,6 +173,12 @@ void AppTask1000ms(void)
     else{
         print("HVAC Error : %dn\r", hvac_ret);
     }
+*/
+
+
+    if(stTestCnt.u32nuCnt1000ms%3 == 0) setSERVODutyCycle(SERVO_PWM_MAX);   // 1자
+    else if(stTestCnt.u32nuCnt1000ms%3 == 1) setSERVODutyCycle(SERVO_PWM_MIN);
+    else setSERVODutyCycle(SERVO_PWM_CENTER);
 
 }
 

@@ -37,6 +37,7 @@ Libraries/iLLD/TC27D/Tricore/Cpu/Irq \
 Libraries/iLLD/TC27D/Tricore/Cpu/Std \
 Libraries/iLLD/TC27D/Tricore/Cpu/Trap \
 Libraries/iLLD/TC27D/Tricore/Gtm/Std \
+Libraries/iLLD/TC27D/Tricore/Gtm/Tom/Pwm \
 Libraries/iLLD/TC27D/Tricore/Mtu/Std \
 Libraries/iLLD/TC27D/Tricore/Port/Std \
 Libraries/iLLD/TC27D/Tricore/Scu/Std \
@@ -47,6 +48,7 @@ Libraries/iLLD/TC27D/Tricore/Vadc/Std \
 Libraries/iLLD/TC27D/Tricore/_Impl \
 Libraries/iLLD/TC27D/Tricore/_Lib/DataHandling \
 Libraries/iLLD/TC27D/Tricore/_PinMap \
+PWM_driver \
 asclin_driver \
 dht22_driver \
 hvac_ctl_driver \
