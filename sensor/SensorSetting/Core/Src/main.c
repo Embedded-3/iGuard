@@ -18,7 +18,6 @@
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
-#include "adc.h"
 #include "can.h"
 #include "tim.h"
 #include "usart.h"
@@ -98,42 +97,23 @@ int main(void)
 
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
-  MX_ADC1_Init();
   MX_TIM2_Init();
   MX_USART2_Init();
   MX_CAN_Init();
-  HAL_TIM_IC_Start_IT(&htim2, TIM_CHANNEL_3);
+  MX_TIM3_Init();
   /* USER CODE BEGIN 2 */
 
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
-  volatile static GPIO_PinState bReadHCSR501 = 0;
+  HAL_TIM_IC_Start_IT(&htim2, TIM_CHANNEL_3);
+  HAL_TIM_Base_Start_IT(&htim3);
   while (1)
   {
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
-	  HAL_Delay(3000);
-	  HCSR04_Read();
-	  bReadHCSR501 = HAL_GPIO_ReadPin(GPIOB,GPIO_PIN_4);
-
-	  char buffer[30];
-	  //HAL_USART_Transmit(&husart2, (char*)"main", 8, HAL_MAX_DELAY);
-	  switch(bReadHCSR501){
-	  	case(GPIO_PIN_RESET):
-			sprintf(buffer, "Not Detective\n");
-	  		break;
-	  	case(GPIO_PIN_SET):
-			sprintf(buffer, "Detective\n");
-	  		break;
-	  	default:
-	  		break;
-
-	  }
-	  HAL_USART_Transmit(&husart2, (uint8_t*)buffer, strlen(buffer), HAL_MAX_DELAY);
-
 
   }
   /* USER CODE END 3 */
@@ -147,7 +127,6 @@ void SystemClock_Config(void)
 {
   RCC_OscInitTypeDef RCC_OscInitStruct = {0};
   RCC_ClkInitTypeDef RCC_ClkInitStruct = {0};
-  RCC_PeriphCLKInitTypeDef PeriphClkInit = {0};
 
   /** Initializes the RCC Oscillators according to the specified parameters
   * in the RCC_OscInitTypeDef structure.
@@ -176,12 +155,6 @@ void SystemClock_Config(void)
   {
     Error_Handler();
   }
-  PeriphClkInit.PeriphClockSelection = RCC_PERIPHCLK_ADC;
-  PeriphClkInit.AdcClockSelection = RCC_ADCPCLK2_DIV2;
-  if (HAL_RCCEx_PeriphCLKConfig(&PeriphClkInit) != HAL_OK)
-  {
-    Error_Handler();
-  }
 }
 
 /* USER CODE BEGIN 4 */
@@ -202,9 +175,6 @@ void HAL_TIM_IC_CaptureCallback(TIM_HandleTypeDef *htim)
             Is_First_Captured = 1;  // set the first captured as true
             // Now change the polarity to falling edge
             __HAL_TIM_SET_CAPTUREPOLARITY(htim, TIM_CHANNEL_3, TIM_INPUTCHANNELPOLARITY_FALLING);
-            char buffer[10];
-            sprintf(buffer, "start");
-            HAL_USART_Transmit(&husart2, (uint8_t*)buffer, strlen(buffer), HAL_MAX_DELAY);
         }
 
         else if (Is_First_Captured==1)   // if the first is already captured
@@ -223,9 +193,6 @@ void HAL_TIM_IC_CaptureCallback(TIM_HandleTypeDef *htim)
             }
 
             Distance = Difference * .034/2;
-            char buffer[10];
-            sprintf(buffer, "%d\n", Distance);
-            HAL_USART_Transmit(&husart2, (uint8_t*)buffer, strlen(buffer), HAL_MAX_DELAY);
             Is_First_Captured = 0; // set it back to false
 
             // set polarity to rising edge
@@ -244,6 +211,31 @@ void HCSR04_Read (void)
 	__HAL_TIM_ENABLE_IT(&htim2, TIM_IT_CC3);
 }
 
+void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
+{
+	volatile static GPIO_PinState bReadHCSR501 = 0;
+	if(htim->Instance == htim3.Instance){
+	  char buffer[30];
+	  bReadHCSR501 = HAL_GPIO_ReadPin(GPIOB,GPIO_PIN_4);
+	  HCSR04_Read();
+
+
+	  switch(bReadHCSR501){
+		case(GPIO_PIN_RESET):
+			sprintf(buffer, "Not Detective\n");
+			break;
+		case(GPIO_PIN_SET):
+			sprintf(buffer, "Detective\n");
+			break;
+		default:
+			break;
+	  }
+	  HAL_USART_Transmit(&husart2, (uint8_t*)buffer, strlen(buffer), HAL_MAX_DELAY);
+
+	  sprintf(buffer, "%d\n", Distance);
+	  HAL_USART_Transmit(&husart2, (uint8_t*)buffer, strlen(buffer), HAL_MAX_DELAY);
+	}
+}
 /* USER CODE END 4 */
 
 /**
