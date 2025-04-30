@@ -78,8 +78,6 @@ void check_and_send(void);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
-#define SENSOR_TRESHOLD 3000
-
 
 /* USER CODE END 0 */
 
@@ -119,16 +117,15 @@ int main(void)
   MX_TIM3_Init();
   /* USER CODE BEGIN 2 */
   CANSPI_Initialize();	
+	HAL_TIM_IC_Start_IT(&htim2, TIM_CHANNEL_3);
+  HAL_TIM_Base_Start_IT(&htim3);
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-			// loop on timer interrupt
-		check_and_send();
-		HAL_Delay(1000);
-    
+			// loop on timer interrupt 
   }
     /* USER CODE END WHILE */
 
@@ -197,6 +194,7 @@ void delay (uint16_t time)
 
 void HAL_TIM_IC_CaptureCallback(TIM_HandleTypeDef *htim)
 { // INT when detected Ultrasound sig
+
     if (htim->Channel == HAL_TIM_ACTIVE_CHANNEL_3)  // if the interrupt source is channel1
     {
         if (Is_First_Captured==0) // if the first value is not captured
@@ -224,7 +222,7 @@ void HAL_TIM_IC_CaptureCallback(TIM_HandleTypeDef *htim)
 
             Distance = Difference * .034/2;
             Is_First_Captured = 0; // set it back to false
-
+						
             // set polarity to rising edge
             __HAL_TIM_SET_CAPTUREPOLARITY(htim, TIM_CHANNEL_3, TIM_INPUTCHANNELPOLARITY_RISING);
             __HAL_TIM_DISABLE_IT(&htim2, TIM_IT_CC3);
@@ -244,7 +242,7 @@ void HCSR04_Read (void)
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 {
 	volatile static GPIO_PinState bReadHCSR501 = 0;
-	
+
 	if(htim->Instance == htim3.Instance){
 	  char buffer[30];
 	  bReadHCSR501 = HAL_GPIO_ReadPin(GPIOB,GPIO_PIN_5);
@@ -252,10 +250,12 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 		FSR_Read();
 		// bReadHCSR501 1 detect
 		
-	  
+	  if(bReadHCSR501){
+			sprintf(buffer, "Detected >>> ");
+		}
 	  HAL_USART_Transmit(&husart2, (uint8_t*)buffer, strlen(buffer), HAL_MAX_DELAY);
 
-	  sprintf(buffer, "%d\n", Distance);
+	  sprintf(buffer, "%d\r\n", Distance);
 	  HAL_USART_Transmit(&husart2, (uint8_t*)buffer, strlen(buffer), HAL_MAX_DELAY);
 	}
 }
@@ -284,7 +284,6 @@ uint8_t FSR_Read(void){
 	}else{
 		is_valid = 0;
 	}
-	
 	return is_valid;
 }
 

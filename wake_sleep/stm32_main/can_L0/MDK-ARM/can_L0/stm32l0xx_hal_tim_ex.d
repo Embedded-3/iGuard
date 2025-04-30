@@ -1,5 +1,5 @@
-can_l0/stm32l0xx_hal_rcc_ex.o: \
-  ..\Drivers\STM32L0xx_HAL_Driver\Src\stm32l0xx_hal_rcc_ex.c \
+can_l0/stm32l0xx_hal_tim_ex.o: \
+  ..\Drivers\STM32L0xx_HAL_Driver\Src\stm32l0xx_hal_tim_ex.c \
   ..\Drivers\STM32L0xx_HAL_Driver\Inc\stm32l0xx_hal.h \
   ..\Core\Inc\stm32l0xx_hal_conf.h \
   ..\Drivers\STM32L0xx_HAL_Driver\Inc\stm32l0xx_hal_rcc.h \

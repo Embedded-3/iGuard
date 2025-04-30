@@ -24,7 +24,10 @@ can_l0/main.o: ..\Core\Src\main.c ..\Core\Inc\main.h \
   ..\Drivers\STM32L0xx_HAL_Driver\Inc\stm32l0xx_hal_pwr.h \
   ..\Drivers\STM32L0xx_HAL_Driver\Inc\stm32l0xx_hal_pwr_ex.h \
   ..\Drivers\STM32L0xx_HAL_Driver\Inc\stm32l0xx_hal_spi.h \
-  ..\Drivers\STM32L0xx_HAL_Driver\Inc\stm32l0xx_hal_uart.h \
-  ..\Drivers\STM32L0xx_HAL_Driver\Inc\stm32l0xx_hal_uart_ex.h \
-  ..\Core\Inc\adc.h ..\Core\Inc\spi.h ..\Core\Inc\usart.h \
-  ..\Core\Inc\gpio.h ..\Core\Inc\CANSPI.h ..\Core\Inc\MCP2515.h
+  ..\Drivers\STM32L0xx_HAL_Driver\Inc\stm32l0xx_hal_tim.h \
+  ..\Drivers\STM32L0xx_HAL_Driver\Inc\stm32l0xx_hal_tim_ex.h \
+  ..\Drivers\STM32L0xx_HAL_Driver\Inc\stm32l0xx_hal_usart.h \
+  ..\Drivers\STM32L0xx_HAL_Driver\Inc\stm32l0xx_hal_usart_ex.h \
+  ..\Core\Inc\adc.h ..\Core\Inc\spi.h ..\Core\Inc\tim.h \
+  ..\Core\Inc\usart.h ..\Core\Inc\gpio.h ..\Core\Inc\CANSPI.h \
+  ..\Core\Inc\MCP2515.h
