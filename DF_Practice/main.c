@@ -4,7 +4,7 @@
   * @file           : main.c
   * @brief          : Main program body
   ******************************************************************************
-  * @attention //dd
+  * @attention
   *
   * Copyright (c) 2025 STMicroelectronics.
   * All rights reserved.
