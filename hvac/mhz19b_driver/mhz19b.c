@@ -109,21 +109,50 @@ uint16 MHZ19B_requestCO2(uint16* ret_val)
     }
 
     // 2. 센서로부터 수신
+    #define UART_TIMEOUT_LIMIT 8000000  // 적절한 대기시간
     #define MH_Z19B_RESPONSE_LEN 9
     uint8 response[MH_Z19B_RESPONSE_LEN] = {0};
     for (int i = 0; i < MH_Z19B_RESPONSE_LEN; i++)
     {
+        // 수신 데이터가 들어올 때까지 대기
+        volatile int timeout = 0;
+        while (IfxAsclin_Asc_getReadCount(&g_asclin0) == 0)
+        {   
+            //print("waitint...\n\r");
+            if (++timeout > UART_TIMEOUT_LIMIT)
+            {
+                // 타임아웃 발생
+                print("UART RX timeout at byte %d\n", i);
+                return -1;
+            }
+        }
         response[i] = IfxAsclin_Asc_blockingRead(&g_asclin0); // UART RX
     }
 
+    // 3. 체크섬 확인
+    uint8 checksum = 0;
+    for(int i = 1;i <= 7;i++){
+        //print("response[%d] = %d\n\r", i, response[i]);   // 패킷 확인용
+        checksum += response[i];
+    }
+    checksum = 0xff - checksum + 1; // 체크섬 계산
+    if(checksum != response[8]){
+        print("Checksum error: expected %d, got %d\n\r", checksum, response[8]);
+        //return -1;
+    }
+
     // 3. CO2 농도 계산
-    if (response[0] == 0xFF && response[1] == 0x86)
+    if (response[0] == 0xFF && response[1] == 0x86) // && response[8] == (0xff - (response[0] + response[1] + response[2] + response[3]) + 0x01))
     {
+        
         uint16 ppm = (response[2] << 8) | response[3];
         *ret_val = ppm; // CO2 농도 값 저장
         return 0;
     }
-    else return -1;
+    else {
+        print("Invalid response: \n\r");
+        return -1;
+    }
 
-    return 2;
+    return -2;
 }

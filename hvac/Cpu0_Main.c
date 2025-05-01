@@ -124,7 +124,7 @@ void AppTask1000ms(void)
     stTestCnt.u32nuCnt1000ms++;
 
     print("\n\r");
-/*
+
     // 1. MQ135
     uint32 mq135_adcval = 0;
     mq135_adcval = Driver_Adc0_DataObtain();   // mq135 val평소 1600
@@ -150,14 +150,13 @@ void AppTask1000ms(void)
     // 3. MH-Z19B
     uint16 mhz19b_value = 0;
     uint16 mhz19b_ret = MHZ19B_requestCO2(&mhz19b_value);
-    if(mhz19b_ret == -1 || mhz19b_ret == 2){
-        print("MH-Z19B Error, %d\n\r", mhz19b_value);
-    }
-    else{
+    if(!mhz19b_ret){
         print("< MH-Z19B >\n\r");
         print("CO2        : %d ppm\n\r", mhz19b_value);
     }
-
+    else{
+        print("MH-Z19B Error, %d\n\r", mhz19b_value);
+    }
 
     // 4. Fan Control
     g_data.ext_air = mq135_adcval;         // 외부 공기질
@@ -173,12 +172,12 @@ void AppTask1000ms(void)
     else{
         print("HVAC Error : %dn\r", hvac_ret);
     }
-*/
 
 
-    if(stTestCnt.u32nuCnt1000ms%3 == 0) setSERVODutyCycle(SERVO_PWM_MAX);   // 1자
-    else if(stTestCnt.u32nuCnt1000ms%3 == 1) setSERVODutyCycle(SERVO_PWM_MIN);
-    else setSERVODutyCycle(SERVO_PWM_CENTER);
+    // // 5. 서보 테스트
+    // if(stTestCnt.u32nuCnt1000ms%3 == 0) setSERVODutyCycle(SERVO_PWM_MAX);   // 1자
+    // else if(stTestCnt.u32nuCnt1000ms%3 == 1) setSERVODutyCycle(SERVO_PWM_MIN);
+    // else setSERVODutyCycle(SERVO_PWM_CENTER);
 
 }
 
