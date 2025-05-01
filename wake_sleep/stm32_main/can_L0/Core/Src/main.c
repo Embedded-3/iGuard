@@ -63,6 +63,9 @@ volatile static uint32_t IC_Val2 = 0;
 volatile static uint32_t Difference = 0;
 volatile static uint8_t Is_First_Captured = 0;  // is the first value captured 
 volatile static uint8_t Distance  = 0;
+volatile uint8_t DistanceReady = 0;
+volatile uint16_t no_activity_counter = 0;
+volatile uint8_t tim3_flag = 0;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -70,10 +73,11 @@ void SystemClock_Config(void);
 /* USER CODE BEGIN PFP */
 void delay (uint16_t time);
 void HAL_TIM_IC_CaptureCallback(TIM_HandleTypeDef *htim);
-void HCSR04_Read (void);
-uint8_t FSR_Read (void);
+void HCSR04_Read(void);
+uint8_t FSR_Check (void);
+uint8_t Ultrasonic_Check(void);
 void check_and_send(void);
-
+void enter_sleep_mode(void);
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
@@ -119,13 +123,16 @@ int main(void)
   CANSPI_Initialize();	
 	HAL_TIM_IC_Start_IT(&htim2, TIM_CHANNEL_3);
   HAL_TIM_Base_Start_IT(&htim3);
+
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
-  while (1)
-  {
-			// loop on timer interrupt 
+  while (1) {
+    if (tim3_flag) {
+      tim3_flag = 0;
+      check_and_send();  
+    }
   }
     /* USER CODE END WHILE */
 
@@ -191,20 +198,23 @@ void delay (uint16_t time)
     while (__HAL_TIM_GET_COUNTER (&htim2) < time);
 }
 
+void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
+{
+  if(htim->Instance == htim3.Instance){
+    tim3_flag= 1;
+  }
+}
 
-void HAL_TIM_IC_CaptureCallback(TIM_HandleTypeDef *htim)
+void HAL_TIM_IC_CaptureCallback(TIM_HandleTypeDef *htim) // 초음파 센서 거리 계산 비동기 로직
 { // INT when detected Ultrasound sig
-
     if (htim->Channel == HAL_TIM_ACTIVE_CHANNEL_3)  // if the interrupt source is channel1
     {
         if (Is_First_Captured==0) // if the first value is not captured
         {
             IC_Val1 = HAL_TIM_ReadCapturedValue(htim, TIM_CHANNEL_3); // read the first value
-            Is_First_Captured = 1;  // set the first captured as true
-            // Now change the polarity to falling edge
+            Is_First_Captured = 1; 
             __HAL_TIM_SET_CAPTUREPOLARITY(htim, TIM_CHANNEL_3, TIM_INPUTCHANNELPOLARITY_FALLING);
         }
-
         else if (Is_First_Captured==1)   // if the first is already captured
         {
             IC_Val2 = HAL_TIM_ReadCapturedValue(htim, TIM_CHANNEL_3);  // read second value
@@ -214,23 +224,29 @@ void HAL_TIM_IC_CaptureCallback(TIM_HandleTypeDef *htim)
             {
                 Difference = IC_Val2-IC_Val1;
             }
-
             else if (IC_Val1 > IC_Val2)
             {
                 Difference = (0xffff - IC_Val1) + IC_Val2;
             }
 
             Distance = Difference * .034/2;
-            Is_First_Captured = 0; // set it back to false
+            DistanceReady = 1;
+            Is_First_Captured = 0; 
 						
-            // set polarity to rising edge
             __HAL_TIM_SET_CAPTUREPOLARITY(htim, TIM_CHANNEL_3, TIM_INPUTCHANNELPOLARITY_RISING);
             __HAL_TIM_DISABLE_IT(&htim2, TIM_IT_CC3);
         }
     }
 }
 
-void HCSR04_Read (void)
+
+void enter_sleep_mode(void) {
+  HAL_SuspendTick(); 
+  HAL_PWR_EnterSLEEPMode(PWR_MAINREGULATOR_ON, PWR_SLEEPENTRY_WFI);
+  HAL_ResumeTick();   
+}
+
+void HCSR04_Read(void)
 {
 	HAL_GPIO_WritePin(GPIOB,GPIO_PIN_4,GPIO_PIN_SET);
 	delay(10);
@@ -239,29 +255,26 @@ void HCSR04_Read (void)
 	__HAL_TIM_ENABLE_IT(&htim2, TIM_IT_CC3);
 }
 
-void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
-{
-	volatile static GPIO_PinState bReadHCSR501 = 0;
 
-	if(htim->Instance == htim3.Instance){
-	  char buffer[30];
-	  bReadHCSR501 = HAL_GPIO_ReadPin(GPIOB,GPIO_PIN_5);
-	  HCSR04_Read();
-		FSR_Read();
-		// bReadHCSR501 1 detect
-		
-	  if(bReadHCSR501){
-			sprintf(buffer, "Detected >>> ");
-		}
-	  HAL_USART_Transmit(&husart2, (uint8_t*)buffer, strlen(buffer), HAL_MAX_DELAY);
+uint8_t Ultrasonic_Check(void) {
+  DistanceReady = 0;
+  HCSR04_Read();
+  // 변화량으로 할지 말지 결정해야함.
+  uint32_t timeout = 0; 
+  while (!DistanceReady && timeout < 200) {
+      HAL_Delay(1);
+      timeout++;
+  }
 
-	  sprintf(buffer, "%d\r\n", Distance);
-	  HAL_USART_Transmit(&husart2, (uint8_t*)buffer, strlen(buffer), HAL_MAX_DELAY);
-	}
+  return (Distance < 100) ? 1 : 0;
 }
 
+uint8_t PIR_Check(void) {
+  GPIO_PinState state = HAL_GPIO_ReadPin(GPIOB, GPIO_PIN_5);  // PIR 센서 핀
+  return (state == GPIO_PIN_SET) ? 1 : 0;
+}
 
-uint8_t FSR_Read(void){
+uint8_t FSR_Check(void){
 	HAL_ADC_Start(&hadc);
 	HAL_ADC_PollForConversion(&hadc, 1000);
 	adcValue = HAL_ADC_GetValue(&hadc); // ADC
@@ -278,35 +291,41 @@ uint8_t FSR_Read(void){
 			pressure = 800.0f;  // VOUT 5V 400g 
 	}
 	
-	int is_valid = 0;
-	if(pressure>200){
-		is_valid = 1;
-	}else{
-		is_valid = 0;
-	}
-	return is_valid;
+  return (pressure > 200) ? 1 : 0;
 }
 
 void check_and_send(void) {
-    uint32_t FSR_valid = FSR_Read();
-    if(FSR_valid) {
-        uCAN_MSG txMessage;
-				txMessage.frame.idType = dSTANDARD_CAN_MSG_ID_2_0B;
-				txMessage.frame.data0 = 'W';
-				txMessage.frame.data1 = 'A';
-				txMessage.frame.data2 = 'K';
-				txMessage.frame.data3 = 'E';
-				txMessage.frame.data4 = 0;
-				txMessage.frame.data5 = 0;
-				txMessage.frame.data6 = 0;
-				txMessage.frame.data7 = 0;
-				txMessage.frame.dlc = 8;
-        txMessage.frame.id = 0x100;
+  uint8_t fsr = FSR_Check();
+  uint8_t pir = PIR_Check();
+  uint8_t ultrasonic = Ultrasonic_Check();
 
-        CANSPI_Transmit(&txMessage);
-			
-				HAL_GPIO_TogglePin(GPIOA, GPIO_PIN_5);
-    }
+  uint8_t result = fsr | pir | ultrasonic; // Sensor Logic
+
+  if(result) {
+      uCAN_MSG txMessage;
+      txMessage.frame.idType = dSTANDARD_CAN_MSG_ID_2_0B;
+      txMessage.frame.id = 0x100;
+      txMessage.frame.dlc = 8;
+      txMessage.frame.data0 = 'W';
+      txMessage.frame.data1 = 'A';
+      txMessage.frame.data2 = 'K';
+      txMessage.frame.data3 = 'E';
+      txMessage.frame.data4 = 0;
+      txMessage.frame.data5 = 0;
+      txMessage.frame.data6 = 0;
+      txMessage.frame.data7 = 0;
+
+      CANSPI_Transmit(&txMessage);
+      HAL_GPIO_TogglePin(GPIOA, GPIO_PIN_5);
+      no_activity_counter = 0;
+  }else {
+    no_activity_counter++;
+  }
+
+  if (no_activity_counter >= 500) {
+    no_activity_counter = 0;
+    enter_sleep_mode();
+  }
 }
 
 /* USER CODE END 4 */
