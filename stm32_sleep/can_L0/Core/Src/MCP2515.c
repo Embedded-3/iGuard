@@ -275,42 +275,33 @@ static void SPI_RxBuffer(uint8_t *buffer, uint8_t length)
   HAL_SPI_Receive(SPI_CAN, buffer, length, SPI_TIMEOUT);
 }
 
-<<<<<<< HEAD
-
+/* HyunHo Custom */
+#define MCP2515_READ_RX_BUFFER_0  0x90  // Read RX Buffer 0: Start from RXB0SIDH
+#define MCP2515_READ_RX_BUFFER_1  0x94  // Read RX Buffer 1: Start from RXB1SIDH
 void MCP2515_EnableInterrupts(void)
 {
     // SET RX0IE | RX1IE bit to 1(0x01 | 0x02 = 0x03)
     MCP2515_WriteByte(MCP2515_CANINTE, 0x03);
 }
 
-=======
-/* HyunHo Custom */
-#define MCP2515_READ_RX_BUFFER_0 0x90 // Read RX Buffer 0: Start from RXB0SIDH
-#define MCP2515_READ_RX_BUFFER_1 0x94 // Read RX Buffer 1: Start from RXB1SIDH
-void MCP2515_EnableInterrupts(void)
-{
-  // SET RX0IE | RX1IE bit to 1(0x01 | 0x02 = 0x03)
-  MCP2515_WriteByte(MCP2515_CANINTE, 0x03);
-}
 
 void MCP2515_ReadCANMessage(void)
 {
-  uint8_t intf = MCP2515_ReadByte(MCP2515_CANINTF);
+    uint8_t intf = MCP2515_ReadByte(MCP2515_CANINTF);
 
-  if (intf & 0x01) // RX0IF
-  {
-    uint8_t data[13]; // SIDH, SIDL, EID8, EID0, DLC, data(8???)
-    MCP2515_ReadRxSequence(MCP2515_READ_RX_BUFFER_0, data, 13);
+    if (intf & 0x01)  // RX0IF
+    {
+        uint8_t data[13];  // SIDH, SIDL, EID8, EID0, DLC, data(8???)
+        MCP2515_ReadRxSequence(MCP2515_READ_RX_BUFFER_0, data, 13);
 
-    MCP2515_BitModify(MCP2515_CANINTF, 0x01, 0x00); // RX0IF
-  }
+        MCP2515_BitModify(MCP2515_CANINTF, 0x01, 0x00);  // RX0IF 
+    }
 
-  if (intf & 0x02) // RX1IF
-  {
-    uint8_t data[13];
-    MCP2515_ReadRxSequence(MCP2515_READ_RX_BUFFER_1, data, 13);
-
-    MCP2515_BitModify(MCP2515_CANINTF, 0x02, 0x00); // RX1IF
-  }
+    if (intf & 0x02)  // RX1IF
+    {
+        uint8_t data[13];
+        MCP2515_ReadRxSequence(MCP2515_READ_RX_BUFFER_1, data, 13);
+			
+        MCP2515_BitModify(MCP2515_CANINTF, 0x02, 0x00);  // RX1IF 
+    }
 }
->>>>>>> 4823f90179ce21cf03613cc457511ce4e8bfc72c
