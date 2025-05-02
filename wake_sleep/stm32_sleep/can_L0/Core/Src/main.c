@@ -111,7 +111,6 @@ int main(void)
   MX_USART2_UART_Init();
   /* USER CODE BEGIN 2 */
   CANSPI_Initialize();	
-//	MCP2515_BitModify(MCP2515_CANINTE, 0x03, 0x03);
 	MCP2515_EnableInterrupts();
 	
 	HAL_SuspendTick();
@@ -122,29 +121,7 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-		if (can_rx_flag)
-		{
-				HAL_ResumeTick();
-				can_rx_flag = 0; 
-			while(CANSPI_messagesInBuffer() > 0){
-				if (CANSPI_Receive(&rxMessage))
-				{
-										// Set song number from Raspberry pi CAN messege !!!!!!!!!!!!
-					// STM32 check
-					if(rxMessage.frame.id){
-						do_wake_up();
-					}
-					
-					// Raspberry check
-//					else if(){
-//						
-//					}
-						
-				}		
-			}
-				HAL_SuspendTick();
-				HAL_PWR_EnterSLEEPMode(PWR_MAINREGULATOR_ON, PWR_SLEEPENTRY_WFI);
-		}
+		
   }
     /* USER CODE END WHILE */
 

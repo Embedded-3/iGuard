@@ -41,6 +41,8 @@
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
 #define BUFSIZE 128
+#define CANID_RASP	0x101
+#define CANID_STM		0x100
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -67,10 +69,7 @@ void SystemClock_Config(void);
 volatile uint8_t can_rx_flag = 0;
 void do_wake_up(void)
 {
-    HAL_GPIO_TogglePin(GPIOA, GPIO_PIN_5); // LED ON
-		HAL_Delay(100);
-		HAL_GPIO_TogglePin(GPIOA, GPIO_PIN_5); // LED ON
-		HAL_Delay(100);
+		HAL_ResumeTick();
 }
 
 void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
@@ -121,6 +120,10 @@ int main(void)
 	lcd_init();
 	MCP2515_BitModify(MCP2515_CANINTE, 0x03, 0x03);
   
+	MCP2515_EnableInterrupts();
+	HAL_SuspendTick();
+	HAL_PWR_EnterSLEEPMode(PWR_MAINREGULATOR_ON, PWR_SLEEPENTRY_WFI);
+
 	DF_Resume();
   Printf("DF_Init finished\r\n");
   HAL_Delay(6000);
@@ -141,19 +144,38 @@ int main(void)
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)
-  {
-		
-		lcd_clear(); // LCD ��� ���� �ʱ�ȭ �Լ�
+  {   
+		if (can_rx_flag)
+		{
+				
+				
+			while(CANSPI_messagesInBuffer() > 0){
+				if (CANSPI_Receive(&rxMessage))
+				{
+					can_rx_flag = 0; 
+					switch(rxMessage.frame.id){
+						case CANID_STM: // STM32 check
+							do_wake_up();
+							break;
+						
+						case CANID_RASP: // Set song number from Raspberry pi CAN messege !!!!!!!!!!!!
+							Printf("hello world!\r\n");
+							lcd_clear(); // LCD ��� ���� �ʱ�ȭ �Լ�
 
-    char buf[32];  
-    sprintf(buf, "Hello World 1!"); 
-    lcd_print(buf);  // ����� ������ ���ڿ��� ����� LCD���� ����
-
-    lcd_goto(1,0); // LCD Ŀ�� ��ġ �̵� �Լ�
-    lcd_print("Hello World 2!");
-		Printf("hello world!\r\n");
-    HAL_Delay(100);
-    
+							char buf[32];  
+							sprintf(buf, "Hello World 1!"); 
+							lcd_print(buf);  // ����� ������ ���ڿ��� ����� LCD���� ����
+							break;
+						
+						case CANID_
+						default:
+							break;
+					}						
+				}		
+			}
+				HAL_SuspendTick();
+				HAL_PWR_EnterSLEEPMode(PWR_MAINREGULATOR_ON, PWR_SLEEPENTRY_WFI);
+		}
   }
     /* USER CODE END WHILE */
 

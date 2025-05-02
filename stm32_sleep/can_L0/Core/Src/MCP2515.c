@@ -274,3 +274,11 @@ static void SPI_RxBuffer(uint8_t *buffer, uint8_t length)
 {
   HAL_SPI_Receive(SPI_CAN, buffer, length, SPI_TIMEOUT);
 }
+
+
+void MCP2515_EnableInterrupts(void)
+{
+    // SET RX0IE | RX1IE bit to 1(0x01 | 0x02 = 0x03)
+    MCP2515_WriteByte(MCP2515_CANINTE, 0x03);
+}
+
