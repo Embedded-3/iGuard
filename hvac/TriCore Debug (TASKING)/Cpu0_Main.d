@@ -142,7 +142,37 @@ Cpu0_Main.o :	"C:\\Users\\haewoong\\AURIX-v1.10.6-workspace\\p1\\asclin_driver\a
 "C:\\Users\\haewoong\\AURIX-v1.10.6-workspace\\p1\\asclin_driver\asclin.h" :
 Cpu0_Main.o :	"C:\\Users\\haewoong\\AURIX-v1.10.6-workspace\\p1\mhz19b_driver\mhz19b.h"
 "C:\\Users\\haewoong\\AURIX-v1.10.6-workspace\\p1\mhz19b_driver\mhz19b.h" :
-Cpu0_Main.o :	"C:\\Users\\haewoong\\AURIX-v1.10.6-workspace\\p1\hvac_ctl_driver\hvac_ctl.h"
-"C:\\Users\\haewoong\\AURIX-v1.10.6-workspace\\p1\hvac_ctl_driver\hvac_ctl.h" :
 Cpu0_Main.o :	"C:\\Users\\haewoong\\AURIX-v1.10.6-workspace\\p1\PWM_driver\PWM.h"
 "C:\\Users\\haewoong\\AURIX-v1.10.6-workspace\\p1\PWM_driver\PWM.h" :
+Cpu0_Main.o :	"C:\\Users\\haewoong\\AURIX-v1.10.6-workspace\\p1\\hvac_ctl_driver\hvac_ctl.h"
+"C:\\Users\\haewoong\\AURIX-v1.10.6-workspace\\p1\\hvac_ctl_driver\hvac_ctl.h" :
+Cpu0_Main.o :	"C:\\Users\\haewoong\\AURIX-v1.10.6-workspace\\p1\\PWM_driver\PWM.h"
+"C:\\Users\\haewoong\\AURIX-v1.10.6-workspace\\p1\\PWM_driver\PWM.h" :
+Cpu0_Main.o :	"C:\\Users\\haewoong\\AURIX-v1.10.6-workspace\\p1\\Libraries\\iLLD\\TC27D\\Tricore\\Gtm\\Tom\\Pwm\IfxGtm_Tom_Pwm.h"
+"C:\\Users\\haewoong\\AURIX-v1.10.6-workspace\\p1\\Libraries\\iLLD\\TC27D\\Tricore\\Gtm\\Tom\\Pwm\IfxGtm_Tom_Pwm.h" :
+Cpu0_Main.o :	"C:\\Users\\haewoong\\AURIX-v1.10.6-workspace\\p1\\Libraries\\iLLD\\TC27D\\Tricore\_PinMap\IfxGtm_PinMap.h"
+"C:\\Users\\haewoong\\AURIX-v1.10.6-workspace\\p1\\Libraries\\iLLD\\TC27D\\Tricore\_PinMap\IfxGtm_PinMap.h" :
+Cpu0_Main.o :	"C:\\Users\\haewoong\\AURIX-v1.10.6-workspace\\p1\\Libraries\\Infra\\Sfr\\TC27D\\_Reg\IfxGtm_reg.h"
+"C:\\Users\\haewoong\\AURIX-v1.10.6-workspace\\p1\\Libraries\\Infra\\Sfr\\TC27D\\_Reg\IfxGtm_reg.h" :
+Cpu0_Main.o :	"C:\\Users\\haewoong\\AURIX-v1.10.6-workspace\\p1\\Libraries\\Infra\\Sfr\\TC27D\\_Reg\IfxGtm_regdef.h"
+"C:\\Users\\haewoong\\AURIX-v1.10.6-workspace\\p1\\Libraries\\Infra\\Sfr\\TC27D\\_Reg\IfxGtm_regdef.h" :
+Cpu0_Main.o :	"C:\\Users\\haewoong\\AURIX-v1.10.6-workspace\\p1\\Libraries\\iLLD\\TC27D\\Tricore\_Impl\IfxGtm_cfg.h"
+"C:\\Users\\haewoong\\AURIX-v1.10.6-workspace\\p1\\Libraries\\iLLD\\TC27D\\Tricore\_Impl\IfxGtm_cfg.h" :
+Cpu0_Main.o :	"C:\\Users\\haewoong\\AURIX-v1.10.6-workspace\\p1\\Libraries\\iLLD\\TC27D\\Tricore\Gtm\Std\IfxGtm_Atom.h"
+"C:\\Users\\haewoong\\AURIX-v1.10.6-workspace\\p1\\Libraries\\iLLD\\TC27D\\Tricore\Gtm\Std\IfxGtm_Atom.h" :
+Cpu0_Main.o :	"C:\\Users\\haewoong\\AURIX-v1.10.6-workspace\\p1\\Libraries\\iLLD\\TC27D\\Tricore\Gtm\Std\IfxGtm.h"
+"C:\\Users\\haewoong\\AURIX-v1.10.6-workspace\\p1\\Libraries\\iLLD\\TC27D\\Tricore\Gtm\Std\IfxGtm.h" :
+Cpu0_Main.o :	"C:\\Users\\haewoong\\AURIX-v1.10.6-workspace\\p1\\Libraries\\iLLD\\TC27D\\Tricore\Gtm\Std\IfxGtm_Tbu.h"
+"C:\\Users\\haewoong\\AURIX-v1.10.6-workspace\\p1\\Libraries\\iLLD\\TC27D\\Tricore\Gtm\Std\IfxGtm_Tbu.h" :
+Cpu0_Main.o :	"C:\\Users\\haewoong\\AURIX-v1.10.6-workspace\\p1\\Libraries\\iLLD\\TC27D\\Tricore\Gtm\Std\IfxGtm_Cmu.h"
+"C:\\Users\\haewoong\\AURIX-v1.10.6-workspace\\p1\\Libraries\\iLLD\\TC27D\\Tricore\Gtm\Std\IfxGtm_Cmu.h" :
+Cpu0_Main.o :	"C:\\Users\\haewoong\\AURIX-v1.10.6-workspace\\p1\\Libraries\\iLLD\\TC27D\\Tricore\Gtm\Std\IfxGtm_Tom.h"
+"C:\\Users\\haewoong\\AURIX-v1.10.6-workspace\\p1\\Libraries\\iLLD\\TC27D\\Tricore\Gtm\Std\IfxGtm_Tom.h" :
+Cpu0_Main.o :	"C:\\Users\\haewoong\\AURIX-v1.10.6-workspace\\p1\\Libraries\\Infra\\Sfr\\TC27D\\_Reg\IfxGtm_bf.h"
+"C:\\Users\\haewoong\\AURIX-v1.10.6-workspace\\p1\\Libraries\\Infra\\Sfr\\TC27D\\_Reg\IfxGtm_bf.h" :
+Cpu0_Main.o :	"C:\\Users\\haewoong\\AURIX-v1.10.6-workspace\\p1\\Libraries\\iLLD\\TC27D\\Tricore\Gtm\Std\IfxGtm_Tim.h"
+"C:\\Users\\haewoong\\AURIX-v1.10.6-workspace\\p1\\Libraries\\iLLD\\TC27D\\Tricore\Gtm\Std\IfxGtm_Tim.h" :
+Cpu0_Main.o :	"C:\\Users\\haewoong\\AURIX-v1.10.6-workspace\\p1\\Libraries\\iLLD\\TC27D\\Tricore\Gtm\Std\IfxGtm_Cmu.h"
+"C:\\Users\\haewoong\\AURIX-v1.10.6-workspace\\p1\\Libraries\\iLLD\\TC27D\\Tricore\Gtm\Std\IfxGtm_Cmu.h" :
+Cpu0_Main.o :	"C:\\Users\\haewoong\\AURIX-v1.10.6-workspace\\p1\hvac_ctl_driver\hvac_ctl.h"
+"C:\\Users\\haewoong\\AURIX-v1.10.6-workspace\\p1\hvac_ctl_driver\hvac_ctl.h" :

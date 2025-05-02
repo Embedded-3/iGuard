@@ -2,6 +2,12 @@ PWM.o :	../PWM_driver/PWM.c
 ../PWM_driver/PWM.c :
 PWM.o :	..\PWM_driver\PWM.h
 ..\PWM_driver\PWM.h :
+PWM.o :	"C:\\Users\\haewoong\\AURIX-v1.10.6-workspace\\p1\\hvac_ctl_driver\hvac_ctl.h"
+"C:\\Users\\haewoong\\AURIX-v1.10.6-workspace\\p1\\hvac_ctl_driver\hvac_ctl.h" :
+PWM.o :	"C:\\Users\\haewoong\\AURIX-v1.10.6-workspace\\p1\\Libraries\\iLLD\\TC27D\\Tricore\\Cpu\\Std\Platform_Types.h"
+"C:\\Users\\haewoong\\AURIX-v1.10.6-workspace\\p1\\Libraries\\iLLD\\TC27D\\Tricore\\Cpu\\Std\Platform_Types.h" :
+PWM.o :	"C:\\Users\\haewoong\\AURIX-v1.10.6-workspace\\p1\\PWM_driver\PWM.h"
+"C:\\Users\\haewoong\\AURIX-v1.10.6-workspace\\p1\\PWM_driver\PWM.h" :
 PWM.o :	"C:\\Users\\haewoong\\AURIX-v1.10.6-workspace\\p1\\Libraries\\iLLD\\TC27D\\Tricore\\Cpu\\Std\Ifx_Types.h"
 "C:\\Users\\haewoong\\AURIX-v1.10.6-workspace\\p1\\Libraries\\iLLD\\TC27D\\Tricore\\Cpu\\Std\Ifx_Types.h" :
 PWM.o :	"C:\\Users\\haewoong\\AURIX-v1.10.6-workspace\\p1\\Libraries\\Infra\\Platform\Tricore\Compilers\Compilers.h"
@@ -12,8 +18,6 @@ PWM.o :	"C:\\Users\\haewoong\\AURIX-v1.10.6-workspace\\p1\\Libraries\\Infra\\Pla
 "C:\\Users\\haewoong\\AURIX-v1.10.6-workspace\\p1\\Libraries\\Infra\\Platform\Tricore\Compilers\CompilerTasking.h" :
 PWM.o :	"C:\Infineon\AURIX-Studio-1.10.6\tools\Compilers\Tasking_1.1r8\ctc\include\stddef.h"
 "C:\Infineon\AURIX-Studio-1.10.6\tools\Compilers\Tasking_1.1r8\ctc\include\stddef.h" :
-PWM.o :	"C:\\Users\\haewoong\\AURIX-v1.10.6-workspace\\p1\\Libraries\\iLLD\\TC27D\\Tricore\\Cpu\\Std\Platform_Types.h"
-"C:\\Users\\haewoong\\AURIX-v1.10.6-workspace\\p1\\Libraries\\iLLD\\TC27D\\Tricore\\Cpu\\Std\Platform_Types.h" :
 PWM.o :	"C:\\Users\\haewoong\\AURIX-v1.10.6-workspace\\p1\\Libraries\\iLLD\\TC27D\\Tricore\\Cpu\\Std\Ifx_TypesTasking.h"
 "C:\\Users\\haewoong\\AURIX-v1.10.6-workspace\\p1\\Libraries\\iLLD\\TC27D\\Tricore\\Cpu\\Std\Ifx_TypesTasking.h" :
 PWM.o :	"C:\\Users\\haewoong\\AURIX-v1.10.6-workspace\\p1\\Libraries\\iLLD\\TC27D\\Tricore\\Gtm\\Tom\\Pwm\IfxGtm_Tom_Pwm.h"
@@ -104,3 +108,9 @@ PWM.o :	"C:\\Users\\haewoong\\AURIX-v1.10.6-workspace\\p1\\Libraries\\Infra\\Sfr
 "C:\\Users\\haewoong\\AURIX-v1.10.6-workspace\\p1\\Libraries\\Infra\\Sfr\\TC27D\\_Reg\IfxFlash_regdef.h" :
 PWM.o :	"C:\\Users\\haewoong\\AURIX-v1.10.6-workspace\\p1\\Libraries\\iLLD\\TC27D\\Tricore\_PinMap\IfxScu_PinMap.h"
 "C:\\Users\\haewoong\\AURIX-v1.10.6-workspace\\p1\\Libraries\\iLLD\\TC27D\\Tricore\_PinMap\IfxScu_PinMap.h" :
+PWM.o :	"C:\\Users\\haewoong\\AURIX-v1.10.6-workspace\\p1\\asclin_driver\asclin.h"
+"C:\\Users\\haewoong\\AURIX-v1.10.6-workspace\\p1\\asclin_driver\asclin.h" :
+PWM.o :	"C:\\Users\\haewoong\\AURIX-v1.10.6-workspace\\p1\\Libraries\\Service\\CpuGeneric\\StdIf\IfxStdIf_DPipe.h"
+"C:\\Users\\haewoong\\AURIX-v1.10.6-workspace\\p1\\Libraries\\Service\\CpuGeneric\\StdIf\IfxStdIf_DPipe.h" :
+PWM.o :	"C:\\Users\\haewoong\\AURIX-v1.10.6-workspace\\p1\\Libraries\\Service\\CpuGeneric\\StdIf\IfxStdIf.h"
+"C:\\Users\\haewoong\\AURIX-v1.10.6-workspace\\p1\\Libraries\\Service\\CpuGeneric\\StdIf\IfxStdIf.h" :

@@ -28,14 +28,15 @@
 #include "IfxCpu.h"
 #include "IfxScuWdt.h"
 
-// my include
+// My include
 #include <asclin_driver/asclin.h>
 #include <stm_driver/stm.h>
 #include <mq135_driver/mq135.h>
 #include <dht22_driver/dht22.h>
 #include <mhz19b_driver/mhz19b.h>
-#include <hvac_ctl_driver/hvac_ctl.h>
 #include <PWM_driver/PWM.h>
+#include <hvac_ctl_driver/hvac_ctl.h>
+
 
 #include "IfxPort.h"
 #include "IfxPort_PinMap.h"
@@ -48,12 +49,11 @@ void AppTask10ms(void);
 void AppTask100ms(void);
 void AppTask1000ms(void);
 
-IfxCpu_syncEvent g_cpuSyncEvent = 0;
-
-TestCnt stTestCnt;
-
-Hvac g_hvac;         // HVAC control data
-Sensor_Data g_data;   // HVAC sensor data
+// Global variables
+IfxCpu_syncEvent g_cpuSyncEvent = 0;    // CPU sync event
+TestCnt stTestCnt;                      // Test counter for scheduling
+Hvac g_hvac;                            // HVAC control data
+Sensor_Data g_data;                     // HVAC sensor data
 
 void core0_main(void)
 {
@@ -70,16 +70,16 @@ void core0_main(void)
     IfxCpu_waitEvent(&g_cpuSyncEvent, 1);
 
 
+    // Initialize the HVAC system
+    sensor_init(&g_data);   // Init 센서 데이터
+    hvac_init(&g_hvac);     // Init HVAC
 
-    sensor_init(&g_data);  // 센서 데이터 초기화
-    hvac_init(&g_hvac);    // HVAC 초기화
-
-    initShellInterface();
-    Driver_Stm_Init();
-    Driver_MQ135_Init();
-    Driver_MHZ19B_Init();
-
-    initServoPwm();
+    initShellInterface();   // Init Debug
+    Driver_Stm_Init();      // Init Scheuduling
+    Driver_MQ135_Init();    // Init MQ135 ADC
+    Driver_MHZ19B_Init();   // Init MH-Z19B ASCLIN
+    initFanTomPwm();        // Init Fan PWM
+    initServoPwm();         // Init Servo PWM
 
 
     while(1)
@@ -126,7 +126,7 @@ void AppTask1000ms(void)
     print("\n\r");
 
     // 1. MQ135
-    uint32 mq135_adcval = 0;
+    uint16 mq135_adcval = 0;
     mq135_adcval = Driver_Adc0_DataObtain();   // mq135 val평소 1600
     Driver_Adc0_ConvStart();
 
@@ -158,7 +158,7 @@ void AppTask1000ms(void)
         print("MH-Z19B Error, %d\n\r", mhz19b_value);
     }
 
-    // 4. Fan Control
+    // 4. Hvac Control
     g_data.ext_air = mq135_adcval;         // 외부 공기질
     g_data.int_co2 = mhz19b_value;        // 내부 CO2 농도
     g_data.int_temperature = (double)dht22_data.temperature/10; // 내부 온도
@@ -172,7 +172,6 @@ void AppTask1000ms(void)
     else{
         print("HVAC Error : %dn\r", hvac_ret);
     }
-
 
     // // 5. 서보 테스트
     // if(stTestCnt.u32nuCnt1000ms%3 == 0) setSERVODutyCycle(SERVO_PWM_MAX);   // 1자

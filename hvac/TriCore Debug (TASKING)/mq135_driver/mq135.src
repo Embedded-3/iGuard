@@ -1,6 +1,6 @@
 	; Module start
 	.compiler_version	"TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler v1.1r8 Build 22011964"
-	.compiler_invocation	"ctc -f cc22304a --dep-file=mq135_driver/mq135.d -c99 --fp-model=3cflnrSTz -D__CPU__=tc27xd -D__CPU_TC27XD__ --core=tc1.6.x --fp-model=+float -D__CPU__=tc27xd -IC:\\\\Users\\\\haewoong\\\\AURIX-v1.10.6-workspace\\\\p1 -IC:\\\\Users\\\\haewoong\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Configurations -IC:\\\\Users\\\\haewoong\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries -IC:\\\\Users\\\\haewoong\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\Infra -IC:\\\\Users\\\\haewoong\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\Infra\\\\Platform -IC:\\\\Users\\\\haewoong\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\Infra\\\\Platform\\\\Tricore -IC:\\\\Users\\\\haewoong\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\Infra\\\\Platform\\\\Tricore\\\\Compilers -IC:\\\\Users\\\\haewoong\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\Infra\\\\Sfr -IC:\\\\Users\\\\haewoong\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\Infra\\\\Sfr\\\\TC27D -IC:\\\\Users\\\\haewoong\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\Infra\\\\Sfr\\\\TC27D\\\\_Reg -IC:\\\\Users\\\\haewoong\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\Service -IC:\\\\Users\\\\haewoong\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\Service\\\\CpuGeneric -IC:\\\\Users\\\\haewoong\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\Service\\\\CpuGeneric\\\\StdIf -IC:\\\\Users\\\\haewoong\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\Service\\\\CpuGeneric\\\\SysSe -IC:\\\\Users\\\\haewoong\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\Service\\\\CpuGeneric\\\\SysSe\\\\Bsp -IC:\\\\Users\\\\haewoong\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\Service\\\\CpuGeneric\\\\SysSe\\\\Comm -IC:\\\\Users\\\\haewoong\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\Service\\\\CpuGeneric\\\\_Utilities -IC:\\\\Users\\\\haewoong\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD -IC:\\\\Users\\\\haewoong\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D -IC:\\\\Users\\\\haewoong\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore -IC:\\\\Users\\\\haewoong\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Asclin -IC:\\\\Users\\\\haewoong\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Asclin\\\\Asc -IC:\\\\Users\\\\haewoong\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Asclin\\\\Std -IC:\\\\Users\\\\haewoong\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Cpu -IC:\\\\Users\\\\haewoong\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Cpu\\\\CStart -IC:\\\\Users\\\\haewoong\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Cpu\\\\Irq -IC:\\\\Users\\\\haewoong\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Cpu\\\\Std -IC:\\\\Users\\\\haewoong\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Cpu\\\\Trap -IC:\\\\Users\\\\haewoong\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Gtm -IC:\\\\Users\\\\haewoong\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Gtm\\\\Std -IC:\\\\Users\\\\haewoong\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Gtm\\\\Tom -IC:\\\\Users\\\\haewoong\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Gtm\\\\Tom\\\\Pwm -IC:\\\\Users\\\\haewoong\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Mtu -IC:\\\\Users\\\\haewoong\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Mtu\\\\Std -IC:\\\\Users\\\\haewoong\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Port -IC:\\\\Users\\\\haewoong\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Port\\\\Std -IC:\\\\Users\\\\haewoong\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Scu -IC:\\\\Users\\\\haewoong\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Scu\\\\Std -IC:\\\\Users\\\\haewoong\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Src -IC:\\\\Users\\\\haewoong\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Src\\\\Std -IC:\\\\Users\\\\haewoong\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Stm -IC:\\\\Users\\\\haewoong\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Stm\\\\Std -IC:\\\\Users\\\\haewoong\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Vadc -IC:\\\\Users\\\\haewoong\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Vadc\\\\Adc -IC:\\\\Users\\\\haewoong\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Vadc\\\\Std -IC:\\\\Users\\\\haewoong\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\_Impl -IC:\\\\Users\\\\haewoong\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\_Lib -IC:\\\\Users\\\\haewoong\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\_Lib\\\\DataHandling -IC:\\\\Users\\\\haewoong\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\_PinMap -IC:\\\\Users\\\\haewoong\\\\AURIX-v1.10.6-workspace\\\\p1\\\\PWM_driver -IC:\\\\Users\\\\haewoong\\\\AURIX-v1.10.6-workspace\\\\p1\\\\asclin_driver -IC:\\\\Users\\\\haewoong\\\\AURIX-v1.10.6-workspace\\\\p1\\\\dht22_driver -IC:\\\\Users\\\\haewoong\\\\AURIX-v1.10.6-workspace\\\\p1\\\\hvac_ctl_driver -IC:\\\\Users\\\\haewoong\\\\AURIX-v1.10.6-workspace\\\\p1\\\\mhz19b_driver -IC:\\\\Users\\\\haewoong\\\\AURIX-v1.10.6-workspace\\\\p1\\\\mq135_driver -IC:\\\\Users\\\\haewoong\\\\AURIX-v1.10.6-workspace\\\\p1\\\\stm_driver -g2 -w544 -w557 -t4 --language=+volatile -N0 -O0 -Y0 -Z0 --compact-max-size=200 --misrac-version=2004 -o mq135_driver/mq135.src ../mq135_driver/mq135.c"
+	.compiler_invocation	"ctc -f cc21380a --dep-file=mq135_driver/mq135.d -c99 --fp-model=3cflnrSTz -D__CPU__=tc27xd -D__CPU_TC27XD__ --core=tc1.6.x --fp-model=+float -D__CPU__=tc27xd -IC:\\\\Users\\\\haewoong\\\\AURIX-v1.10.6-workspace\\\\p1 -IC:\\\\Users\\\\haewoong\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Configurations -IC:\\\\Users\\\\haewoong\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries -IC:\\\\Users\\\\haewoong\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\Infra -IC:\\\\Users\\\\haewoong\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\Infra\\\\Platform -IC:\\\\Users\\\\haewoong\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\Infra\\\\Platform\\\\Tricore -IC:\\\\Users\\\\haewoong\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\Infra\\\\Platform\\\\Tricore\\\\Compilers -IC:\\\\Users\\\\haewoong\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\Infra\\\\Sfr -IC:\\\\Users\\\\haewoong\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\Infra\\\\Sfr\\\\TC27D -IC:\\\\Users\\\\haewoong\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\Infra\\\\Sfr\\\\TC27D\\\\_Reg -IC:\\\\Users\\\\haewoong\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\Service -IC:\\\\Users\\\\haewoong\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\Service\\\\CpuGeneric -IC:\\\\Users\\\\haewoong\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\Service\\\\CpuGeneric\\\\StdIf -IC:\\\\Users\\\\haewoong\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\Service\\\\CpuGeneric\\\\SysSe -IC:\\\\Users\\\\haewoong\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\Service\\\\CpuGeneric\\\\SysSe\\\\Bsp -IC:\\\\Users\\\\haewoong\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\Service\\\\CpuGeneric\\\\SysSe\\\\Comm -IC:\\\\Users\\\\haewoong\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\Service\\\\CpuGeneric\\\\_Utilities -IC:\\\\Users\\\\haewoong\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD -IC:\\\\Users\\\\haewoong\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D -IC:\\\\Users\\\\haewoong\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore -IC:\\\\Users\\\\haewoong\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Asclin -IC:\\\\Users\\\\haewoong\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Asclin\\\\Asc -IC:\\\\Users\\\\haewoong\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Asclin\\\\Std -IC:\\\\Users\\\\haewoong\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Cpu -IC:\\\\Users\\\\haewoong\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Cpu\\\\CStart -IC:\\\\Users\\\\haewoong\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Cpu\\\\Irq -IC:\\\\Users\\\\haewoong\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Cpu\\\\Std -IC:\\\\Users\\\\haewoong\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Cpu\\\\Trap -IC:\\\\Users\\\\haewoong\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Gtm -IC:\\\\Users\\\\haewoong\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Gtm\\\\Std -IC:\\\\Users\\\\haewoong\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Gtm\\\\Tom -IC:\\\\Users\\\\haewoong\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Gtm\\\\Tom\\\\Pwm -IC:\\\\Users\\\\haewoong\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Mtu -IC:\\\\Users\\\\haewoong\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Mtu\\\\Std -IC:\\\\Users\\\\haewoong\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Port -IC:\\\\Users\\\\haewoong\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Port\\\\Std -IC:\\\\Users\\\\haewoong\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Scu -IC:\\\\Users\\\\haewoong\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Scu\\\\Std -IC:\\\\Users\\\\haewoong\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Src -IC:\\\\Users\\\\haewoong\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Src\\\\Std -IC:\\\\Users\\\\haewoong\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Stm -IC:\\\\Users\\\\haewoong\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Stm\\\\Std -IC:\\\\Users\\\\haewoong\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Vadc -IC:\\\\Users\\\\haewoong\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Vadc\\\\Adc -IC:\\\\Users\\\\haewoong\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Vadc\\\\Std -IC:\\\\Users\\\\haewoong\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\_Impl -IC:\\\\Users\\\\haewoong\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\_Lib -IC:\\\\Users\\\\haewoong\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\_Lib\\\\DataHandling -IC:\\\\Users\\\\haewoong\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\_PinMap -IC:\\\\Users\\\\haewoong\\\\AURIX-v1.10.6-workspace\\\\p1\\\\PWM_driver -IC:\\\\Users\\\\haewoong\\\\AURIX-v1.10.6-workspace\\\\p1\\\\asclin_driver -IC:\\\\Users\\\\haewoong\\\\AURIX-v1.10.6-workspace\\\\p1\\\\dht22_driver -IC:\\\\Users\\\\haewoong\\\\AURIX-v1.10.6-workspace\\\\p1\\\\hvac_ctl_driver -IC:\\\\Users\\\\haewoong\\\\AURIX-v1.10.6-workspace\\\\p1\\\\mhz19b_driver -IC:\\\\Users\\\\haewoong\\\\AURIX-v1.10.6-workspace\\\\p1\\\\mq135_driver -IC:\\\\Users\\\\haewoong\\\\AURIX-v1.10.6-workspace\\\\p1\\\\stm_driver -g2 -w544 -w557 -t4 --language=+volatile -N0 -O0 -Y0 -Z0 --compact-max-size=200 --misrac-version=2004 -o mq135_driver/mq135.src ../mq135_driver/mq135.c"
 	.compiler_name		"ctc"
 	;source	'../mq135_driver/mq135.c'
 
@@ -26,7 +26,7 @@ Driver_Adc0_Init:	.type	func
 .L192:
 	lea	a5,[a10]0
 	call	IfxVadc_Adc_initModule
-.L105:
+.L106:
 	lea	a4,[a10]32
 .L193:
 	movh.a	a5,#@his(g_VadcAutoScan)
@@ -142,7 +142,7 @@ Driver_Adc0_Init:	.type	func
 .L235:
 	addsc.a	a5,a15,d15,#0
 	call	IfxVadc_Adc_initChannel
-.L108:
+.L109:
 	mov	d5,#1
 .L236:
 	movh.a	a15,#@his(chnIx)
@@ -164,15 +164,15 @@ Driver_Adc0_Init:	.type	func
 	lea	a15,[a15]@los(g_VadcAutoScan)
 .L242:
 	add.a	a15,#4
-.L113:
+.L114:
 	ld.a	a4,[a15]4
 .L243:
 	mov	d4,d5
 .L130:
 	call	IfxVadc_setScan
-.L114:
+.L115:
 	ret
-.L102:
+.L103:
 	
 __Driver_Adc0_Init_function_end:
 	.size	Driver_Adc0_Init,__Driver_Adc0_Init_function_end-Driver_Adc0_Init
@@ -269,7 +269,7 @@ Driver_Adc0_DataObtain:	.type	func
 	lea	a15,[a15]@los(chnIx)
 	ld.w	d15,[a15]
 .L169:
-	mul	d15,d15,#4
+	mul	d15,d15,#2
 .L170:
 	movh.a	a15,#@his(adcDataResult)
 	lea	a15,[a15]@los(adcDataResult)
@@ -278,19 +278,19 @@ Driver_Adc0_DataObtain:	.type	func
 .L83:
 	extr.u	d15,d0,#0,#16
 .L84:
-	st.w	[a15],d15
+	st.h	[a15],d15
 .L172:
 	movh.a	a15,#@his(chnIx)
 	lea	a15,[a15]@los(chnIx)
 	ld.w	d15,[a15]
 .L173:
-	mul	d15,d15,#4
+	mul	d15,d15,#2
 .L174:
 	movh.a	a15,#@his(adcDataResult)
 	lea	a15,[a15]@los(adcDataResult)
 .L175:
 	addsc.a	a15,a15,d15,#0
-	ld.w	d2,[a15]
+	ld.hu	d2,[a15]0
 .L176:
 	j	.L5
 .L5:
@@ -321,7 +321,7 @@ calculate_ppm:	.type	func
 	movh.a	a5,#@his(.1.str)
 	lea	a5,[a5]@los(.1.str)
 	call	IfxStdIf_DPipe_print
-.L97:
+.L98:
 	utof	d15,d15
 .L134:
 	mov	d0,#2561
@@ -388,8 +388,8 @@ adcChannel:	.type	object
 	.global	adcDataResult
 	.align	2
 adcDataResult:	.type	object
-	.size	adcDataResult,32
-	.space	32
+	.size	adcDataResult,16
+	.space	16
 	.sdecl	'.data.mq135.chnIx',data,cluster('chnIx')
 	.sect	'.data.mq135.chnIx'
 	.global	chnIx
@@ -494,7 +494,7 @@ gas:	.type	object
 	.byte	'value',0,2,143,1,43
 	.word	335
 	.byte	6,0
-.L109:
+.L110:
 	.byte	7
 	.byte	'unsigned int',0,4,7,7
 	.byte	'int',0,4,5,7
@@ -585,7 +585,7 @@ gas:	.type	object
 	.byte	'B',0
 	.word	891
 	.byte	4,2,35,0,0
-.L126:
+.L72:
 	.byte	7
 	.byte	'unsigned short int',0,2,7,10
 	.byte	'_Ifx_SCU_WDTCPU_CON1_Bits',0,6,242,8,16,4,11
@@ -2096,7 +2096,7 @@ gas:	.type	object
 	.byte	'IfxCpu_areInterruptsEnabled',0,3,9,138,5,20
 	.word	476
 	.byte	1,1,6,0
-.L72:
+.L96:
 	.byte	7
 	.byte	'unsigned long int',0,4,7,8
 	.byte	'IfxCpu_getPerformanceCounter',0,3,9,160,6,19
@@ -4995,22 +4995,22 @@ gas:	.type	object
 .L81:
 	.byte	19,6,0,0,3
 	.word	29208
-.L112:
+.L113:
 	.byte	4
 	.byte	'IfxVadc_Adc_setScan',0,3,14,130,10,17,1,1
-.L115:
+.L116:
 	.byte	5
 	.byte	'group',0,14,130,10,56
 	.word	29391
-.L117:
+.L118:
 	.byte	5
 	.byte	'channels',0,14,130,10,70
 	.word	10334
-.L119:
+.L120:
 	.byte	5
 	.byte	'mask',0,14,130,10,87
 	.word	10334
-.L121:
+.L122:
 	.byte	6,0
 .L61:
 	.byte	4
@@ -5464,7 +5464,7 @@ gas:	.type	object
 	.byte	16,1,0,17,11,199,2,9,1,18
 	.byte	'IfxVadc_LowSupplyVoltageSelect_5V',0,0,18
 	.byte	'IfxVadc_LowSupplyVoltageSelect_3V',0,1,0
-.L103:
+.L104:
 	.byte	21,14,246,3,9,32,13
 	.byte	'vadc',0
 	.word	27071
@@ -5623,7 +5623,7 @@ gas:	.type	object
 	.byte	'requestSlotBackgroundScanEnabled',0
 	.word	476
 	.byte	1,2,35,3,0
-.L106:
+.L107:
 	.byte	21,14,150,4,9,52,13
 	.byte	'module',0
 	.word	32249
@@ -18159,7 +18159,7 @@ gas:	.type	object
 	.byte	4,2,35,4,0,23
 	.byte	'Gas',0,30,23,2
 	.word	122664
-.L122:
+.L123:
 	.byte	21,30,26,9,16,13
 	.byte	'vadc',0
 	.word	29187
@@ -18169,17 +18169,17 @@ gas:	.type	object
 	.byte	12,2,35,4,0,23
 	.byte	'App_VadcAutoScan',0,30,30,3
 	.word	122704
-.L123:
+.L124:
 	.byte	15,192,1
 	.word	36269
 	.byte	16,7,0
-.L124:
+.L125:
 	.byte	15,64
 	.word	29273
 	.byte	16,7,0
-.L125:
-	.byte	15,32
-	.word	10334
+.L126:
+	.byte	15,16
+	.word	1027
 	.byte	16,7,0,15,48
 	.word	122664
 	.byte	16,5,0
@@ -18544,23 +18544,23 @@ gas:	.type	object
 	.word	.L15,.L95,.L14
 	.byte	4
 	.byte	'adcval',0,1,109,29
-	.word	.L72,.L96
+	.word	.L96,.L97
 	.byte	5
 	.word	.L15,.L95
 	.byte	5
-	.word	.L97,.L95
+	.word	.L98,.L95
 	.byte	6
 	.byte	'sensor_volt',0,1,134,1,12
-	.word	.L94,.L98
-	.byte	6
-	.byte	'rs_calc',0,1,136,1,11
 	.word	.L94,.L99
 	.byte	6
-	.byte	'ratio',0,1,137,1,11
+	.byte	'rs_calc',0,1,136,1,11
 	.word	.L94,.L100
 	.byte	6
-	.byte	'ppm',0,1,140,1,12
+	.byte	'ratio',0,1,137,1,11
 	.word	.L94,.L101
+	.byte	6
+	.byte	'ppm',0,1,140,1,12
+	.word	.L94,.L102
 	.byte	0,0,0,0
 	.sdecl	'.debug_abbrev',debug,cluster('calculate_ppm')
 	.sect	'.debug_abbrev'
@@ -18584,9 +18584,9 @@ gas:	.type	object
 	.byte	3,236,0,1,5,5,9
 	.half	.L133-.L15
 	.byte	3,24,1,5,26,9
-	.half	.L97-.L133
+	.half	.L98-.L133
 	.byte	3,1,1,5,41,9
-	.half	.L134-.L97
+	.half	.L134-.L98
 	.byte	1,5,33,9
 	.half	.L181-.L134
 	.byte	1,5,28,9
@@ -18634,35 +18634,35 @@ gas:	.type	object
 	.word	.L16
 	.byte	3
 	.byte	'Driver_Adc0_Init',0,1,28,13,1,1
-	.word	.L8,.L102,.L7
+	.word	.L8,.L103,.L7
 	.byte	4
-	.word	.L8,.L102
+	.word	.L8,.L103
 	.byte	5
 	.byte	'adcConfig',0,1,35,24
-	.word	.L103,.L104
+	.word	.L104,.L105
 	.byte	4
-	.word	.L105,.L102
+	.word	.L106,.L103
 	.byte	5
 	.byte	'adcGroupConfig',0,1,42,29
-	.word	.L106,.L107
+	.word	.L107,.L108
 	.byte	4
-	.word	.L108,.L102
+	.word	.L109,.L103
 	.byte	5
 	.byte	'channels',0,1,72,14
-	.word	.L109,.L110
+	.word	.L110,.L111
 	.byte	5
 	.byte	'mask',0,1,73,14
-	.word	.L109,.L111
+	.word	.L110,.L112
 	.byte	6
-	.word	.L112,.L113,.L114
+	.word	.L113,.L114,.L115
 	.byte	7
-	.word	.L115,.L116
+	.word	.L116,.L117
 	.byte	7
-	.word	.L117,.L118
+	.word	.L118,.L119
 	.byte	7
-	.word	.L119,.L120
+	.word	.L120,.L121
 	.byte	8
-	.word	.L121,.L113,.L114
+	.word	.L122,.L114,.L115
 	.byte	0,0,0,0,0,0
 	.sdecl	'.debug_abbrev',debug,cluster('Driver_Adc0_Init')
 	.sect	'.debug_abbrev'
@@ -18695,9 +18695,9 @@ gas:	.type	object
 	.byte	3,3,1,5,51,9
 	.half	.L192-.L191
 	.byte	1,5,34,9
-	.half	.L105-.L192
+	.half	.L106-.L192
 	.byte	3,4,1,5,51,9
-	.half	.L193-.L105
+	.half	.L193-.L106
 	.byte	1,5,65,9
 	.half	.L194-.L193
 	.byte	1,5,30,9
@@ -18783,9 +18783,9 @@ gas:	.type	object
 	.byte	1,5,66,9
 	.half	.L235-.L234
 	.byte	1,5,26,9
-	.half	.L108-.L235
+	.half	.L109-.L235
 	.byte	3,3,1,5,48,9
-	.half	.L236-.L108
+	.half	.L236-.L109
 	.byte	1,5,47,9
 	.half	.L237-.L236
 	.byte	1,5,31,9
@@ -18801,13 +18801,13 @@ gas:	.type	object
 	.byte	3,2,1,5,40,9
 	.half	.L242-.L129
 	.byte	1,4,2,5,26,9
-	.half	.L113-.L242
+	.half	.L114-.L242
 	.byte	3,186,9,1,5,45,9
-	.half	.L243-.L113
+	.half	.L243-.L114
 	.byte	1,4,1,5,1,9
-	.half	.L114-.L243
+	.half	.L115-.L243
 	.byte	3,200,118,1,7,9
-	.half	.L44-.L114
+	.half	.L44-.L115
 	.byte	0,1,1
 .L187:
 	.sdecl	'.debug_ranges',debug,cluster('Driver_Adc0_Init')
@@ -18827,7 +18827,7 @@ gas:	.type	object
 	.word	.L16
 	.byte	3
 	.byte	'g_VadcAutoScan',0,20,8,18
-	.word	.L122
+	.word	.L123
 	.byte	1,5,3
 	.word	g_VadcAutoScan
 	.byte	0
@@ -18849,7 +18849,7 @@ gas:	.type	object
 	.word	.L16
 	.byte	3
 	.byte	'adcChannelConfig',0,20,9,27
-	.word	.L123
+	.word	.L124
 	.byte	1,5,3
 	.word	adcChannelConfig
 	.byte	0
@@ -18871,7 +18871,7 @@ gas:	.type	object
 	.word	.L16
 	.byte	3
 	.byte	'adcChannel',0,20,10,23
-	.word	.L124
+	.word	.L125
 	.byte	1,5,3
 	.word	adcChannel
 	.byte	0
@@ -18893,7 +18893,7 @@ gas:	.type	object
 	.word	.L16
 	.byte	3
 	.byte	'adcDataResult',0,20,11,8
-	.word	.L125
+	.word	.L126
 	.byte	1,5,3
 	.word	adcDataResult
 	.byte	0
@@ -18915,7 +18915,7 @@ gas:	.type	object
 	.word	.L16
 	.byte	3
 	.byte	'chnIx',0,20,14,8
-	.word	.L72
+	.word	.L96
 	.byte	1,5,3
 	.word	chnIx
 	.byte	0
@@ -18937,7 +18937,7 @@ gas:	.type	object
 	.word	.L16
 	.byte	3
 	.byte	'groutId',0,20,15,8
-	.word	.L126
+	.word	.L72
 	.byte	1,5,3
 	.word	groutId
 	.byte	0
@@ -19005,38 +19005,38 @@ gas:	.type	object
 	.word	-1,.L8,0,.L128-.L8
 	.half	2
 	.byte	138,0
-	.word	.L128-.L8,.L102-.L8
+	.word	.L128-.L8,.L103-.L8
 	.half	3
 	.byte	138,216,0
-	.word	.L102-.L8,.L102-.L8
+	.word	.L103-.L8,.L103-.L8
 	.half	2
 	.byte	138,0
 	.word	0,0
-.L104:
-	.word	-1,.L8,0,.L102-.L8
+.L105:
+	.word	-1,.L8,0,.L103-.L8
 	.half	3
 	.byte	145,168,127
 	.word	0,0
-.L107:
-	.word	-1,.L8,0,.L102-.L8
+.L108:
+	.word	-1,.L8,0,.L103-.L8
 	.half	2
 	.byte	145,72
 	.word	0,0
-.L110:
-	.word	-1,.L8,.L129-.L8,.L114-.L8
+.L111:
+	.word	-1,.L8,.L129-.L8,.L115-.L8
 	.half	1
 	.byte	85
-	.word	.L130-.L8,.L114-.L8
+	.word	.L130-.L8,.L115-.L8
 	.half	1
 	.byte	84
 	.word	0,0
-.L118:
+.L119:
 	.word	0,0
-.L116:
+.L117:
 	.word	0,0
-.L111:
+.L112:
 	.word	0,0
-.L120:
+.L121:
 	.word	0,0
 	.sdecl	'.debug_loc',debug,cluster('Driver_MQ135_Init')
 	.sect	'.debug_loc'
@@ -19047,8 +19047,8 @@ gas:	.type	object
 	.word	0,0
 	.sdecl	'.debug_loc',debug,cluster('calculate_ppm')
 	.sect	'.debug_loc'
-.L96:
-	.word	-1,.L15,0,.L97-.L15
+.L97:
+	.word	-1,.L15,0,.L98-.L15
 	.half	1
 	.byte	84
 	.word	.L133-.L15,.L134-.L15
@@ -19066,22 +19066,22 @@ gas:	.type	object
 	.half	2
 	.byte	138,0
 	.word	0,0
-.L101:
+.L102:
 	.word	-1,.L15,.L141-.L15,.L95-.L15
 	.half	1
 	.byte	82
 	.word	0,0
-.L100:
+.L101:
 	.word	-1,.L15,.L139-.L15,.L140-.L15
 	.half	1
 	.byte	84
 	.word	0,0
-.L99:
+.L100:
 	.word	-1,.L15,.L137-.L15,.L138-.L15
 	.half	1
 	.byte	95
 	.word	0,0
-.L98:
+.L99:
 	.word	-1,.L15,.L135-.L15,.L136-.L15
 	.half	1
 	.byte	95
@@ -19096,11 +19096,11 @@ gas:	.type	object
 	.sdecl	'.debug_frame',debug,cluster('Driver_Adc0_Init')
 	.sect	'.debug_frame'
 	.word	36
-	.word	.L244,.L8,.L102-.L8
+	.word	.L244,.L8,.L103-.L8
 	.byte	4
 	.word	(.L128-.L8)/2
 	.byte	19,216,0,22,26,4,19,138,216,0,4
-	.word	(.L102-.L128)/2
+	.word	(.L103-.L128)/2
 	.byte	19,0,8,26
 	.sdecl	'.debug_frame',debug,cluster('Driver_MQ135_Init')
 	.sect	'.debug_frame'

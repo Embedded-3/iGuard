@@ -8,7 +8,7 @@ static void Driver_Adc0_Init(void);
 App_VadcAutoScan g_VadcAutoScan;
 IfxVadc_Adc_ChannelConfig adcChannelConfig[8];
 IfxVadc_Adc_Channel   adcChannel[8];
-uint32 adcDataResult[8] = {0u,};
+uint16 adcDataResult[8] = {0u,};
 
 // 핀 설정 : 핀 A2
 uint32 chnIx = 5; //7;
@@ -91,7 +91,7 @@ void Driver_Adc0_ConvStart(void)
     IfxVadc_Adc_startScan(&g_VadcAutoScan.adcGroup);
 }
 
-uint32 Driver_Adc0_DataObtain(void)
+uint16 Driver_Adc0_DataObtain(void)
 {
     //uint32    chnIx = 7;
     Ifx_VADC_RES conversionResult; /* wait for valid result */

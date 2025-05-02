@@ -3,6 +3,7 @@
 #define HVAC_CTL_H
 
 #include "Platform_Types.h"
+#include "PWM.h"
 
 // Thresholds Values
 #define EXT_AIR_TH 2000
@@ -29,7 +30,7 @@ typedef struct {
 }Hvac;
 
 typedef struct{
-    uint32 ext_air;         // external air quality
+    uint16 ext_air;         // external air quality
     uint16 int_co2;         // internal co2 level
     double int_temperature; // internal temperature
     double int_humidity;    // internal humidity

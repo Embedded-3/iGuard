@@ -36,7 +36,7 @@ IFX_EXTERN App_VadcAutoScan g_VadcAutoScan;
 
 void Driver_MQ135_Init(void);
 void Driver_Adc0_ConvStart(void);
-uint32 Driver_Adc0_DataObtain(void);
+uint16 Driver_Adc0_DataObtain(void);
 double calculate_ppm(uint32 adcval);
 
 /*
