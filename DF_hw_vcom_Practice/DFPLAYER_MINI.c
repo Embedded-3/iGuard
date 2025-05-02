@@ -15,16 +15,10 @@ void Send_Cmd (uint8_t cmd, uint8_t Parameter1, uint8_t Parameter2)
 	HAL_UART_Transmit(DF_UART, CmdSequence, 10, HAL_MAX_DELAY);
 }
 
-void Sound_Track(uint8_t nums){
-    switch (nums) {
-			case 1:
-				Send_Cmd(0x03, 0x00, 1);
-			  break;
-		  case 2:
-			  Send_Cmd(0x03, 0x00, 2);
-      default:
-				break;
-    }
+void Sound_Track(uint8_t nums){ // before use this func, you need to use DF_Resume() first.
+    if(nums < 255) {
+		Send_Cmd(0x03, 0x00, nums);
+	}
 }
 
 void DF_Pause (void) {
@@ -50,7 +44,4 @@ void DF_Init (uint8_t volume)
 	Send_Cmd(0x06, 0x00, volume); // initialize volume
 	Printf("Send Cmd that change volume \r\n");
 	HAL_Delay(500);
-	
-	Send_Cmd(0x0D, 0x00, 0); // start track 
-	Printf("Start track \r\n");
 }

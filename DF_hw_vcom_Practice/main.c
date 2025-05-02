@@ -96,7 +96,7 @@
     MX_USART2_UART_Init();
     /* USER CODE BEGIN 2 */
     DF_Init(2);
-   // Sound_Track(1);
+    DF_Resume();
     Printf("DF_Init finished\r\n");
     HAL_Delay(6000);
     
