@@ -36,6 +36,7 @@
 #include <mhz19b_driver/mhz19b.h>
 #include <PWM_driver/PWM.h>
 #include <hvac_ctl_driver/hvac_ctl.h>
+#include <can_driver/can.h>
 
 
 #include "IfxPort.h"
@@ -54,6 +55,52 @@ IfxCpu_syncEvent g_cpuSyncEvent = 0;    // CPU sync event
 TestCnt stTestCnt;                      // Test counter for scheduling
 Hvac g_hvac;                            // HVAC control data
 Sensor_Data g_data;                     // HVAC sensor data
+
+/* 글로벌 핸들 */
+IfxMultican_Can        g_can;         // CAN 모듈 핸들
+IfxMultican_Can_Node   g_canNode;     // CAN 노드 핸들
+IfxMultican_Can_MsgObj g_txMsgObj;    // 송신 메시지 오브젝트
+IfxMultican_Can_MsgObj g_rxMsgObj;    // 수신 메시지 오브젝트
+
+uint8 g_sleep = 0;
+/* 송신 메시지 */
+IfxMultican_Message g_txMsg;
+/* 수신 메시지 */
+IfxMultican_Message g_rxMsg;
+
+IfxMultican_Status g_status;  // CAN 상태
+
+void initSleepMode(void)
+{
+    /* Clear ENDINIT protection */
+    IfxScuWdt_clearCpuEndinit(IfxScuWdt_getCpuWatchdogPassword());
+
+    /* Set CPU0 as the master CPU for Sleep Request */
+    SCU_PMSWCR1.B.CPUSEL = 0x1;  // CPU0 선택
+
+    /* Set ENDINIT protection */
+    IfxScuWdt_setCpuEndinit(IfxScuWdt_getCpuWatchdogPassword());
+}
+
+void enter_sleep_mode(void)
+{
+    if (g_sleep == 0)
+    {
+        g_sleep = 1;
+
+        IfxScuWdt_clearCpuEndinit(IfxScuWdt_getCpuWatchdogPassword());
+        SCU_PMCSR0.B.REQSLP = 0x2;  // Request CPU0 to enter sleep mode
+        IfxScuWdt_setCpuEndinit(IfxScuWdt_getCpuWatchdogPassword());
+    }
+}
+
+void exit_sleep_mode(void)
+{
+    if (g_sleep == 1)
+    {
+        g_sleep = 0;
+    }
+}
 
 void core0_main(void)
 {
@@ -80,7 +127,12 @@ void core0_main(void)
     Driver_MHZ19B_Init();   // Init MH-Z19B ASCLIN
     initFanTomPwm();        // Init Fan PWM
     initServoPwm();         // Init Servo PWM
+    initSleepMode();        // Init Sleep Mode
+    initCan();              // Init CAN
 
+    //enter_sleep_mode();       // Sleep 모드 진입
+    print("빠져나왔다!!\r\n");
+    sendCanMessage();   // CAN 송신 : 빠져나왔다!!
 
     while(1)
     {
@@ -173,11 +225,32 @@ void AppTask1000ms(void)
         print("HVAC Error : %dn\r", hvac_ret);
     }
 
+    // 5. CAN 송신, 주기 : 2초
+    if(stTestCnt.u32nuCnt1000ms % 2) {
+        // 온도, 습도 데이터 송신
+        g_txMsg.id = 0x21;
+        g_txMsg.lengthCode = 8;
+        g_txMsg.data[0] = (uint32)(g_data.int_temperature * 10); // 온도
+        g_txMsg.data[1] = (uint32)(g_data.int_humidity * 10);    // 습도
+        // do {
+        //     g_status = sendCanMessage();  // 메시지 전송
+        // } while (g_status != IfxMultican_Status_ok);  // 성공적으로 전송되었을 때까지 반복
+
+        g_txMsg.id = 0x20;
+        g_txMsg.lengthCode = 8;
+        g_txMsg.data[0] = ((uint32)(g_data.ext_air) << 16) | (uint32)(g_data.int_co2);  // 외부 공기질, 내부 CO2 농도
+        g_txMsg.data[1] = ((uint32)(g_hvac.mode) << 16) | (uint32)(g_hvac.speed);       // HVAC 모드, 팬 속도
+        // do {
+        //     g_status = sendCanMessage();  // 메시지 전송
+        // } while (g_status != IfxMultican_Status_ok);  // 성공적으로 전송되었을 때까지 반복
+    }
+
+
+
     // // 5. 서보 테스트
     // if(stTestCnt.u32nuCnt1000ms%3 == 0) setSERVODutyCycle(SERVO_PWM_MAX);   // 1자
     // else if(stTestCnt.u32nuCnt1000ms%3 == 1) setSERVODutyCycle(SERVO_PWM_MIN);
     // else setSERVODutyCycle(SERVO_PWM_CENTER);
-
 }
 
 void AppScheduling(void)

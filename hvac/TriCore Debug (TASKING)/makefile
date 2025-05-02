@@ -13,6 +13,7 @@ RM := rm -rf
 -include mhz19b_driver/subdir.mk
 -include hvac_ctl_driver/subdir.mk
 -include dht22_driver/subdir.mk
+-include can_driver/subdir.mk
 -include asclin_driver/subdir.mk
 -include PWM_driver/subdir.mk
 -include Libraries/iLLD/TC27D/Tricore/_PinMap/subdir.mk
@@ -24,6 +25,8 @@ RM := rm -rf
 -include Libraries/iLLD/TC27D/Tricore/Src/Std/subdir.mk
 -include Libraries/iLLD/TC27D/Tricore/Scu/Std/subdir.mk
 -include Libraries/iLLD/TC27D/Tricore/Port/Std/subdir.mk
+-include Libraries/iLLD/TC27D/Tricore/Multican/Std/subdir.mk
+-include Libraries/iLLD/TC27D/Tricore/Multican/Can/subdir.mk
 -include Libraries/iLLD/TC27D/Tricore/Mtu/Std/subdir.mk
 -include Libraries/iLLD/TC27D/Tricore/Gtm/Tom/Pwm/subdir.mk
 -include Libraries/iLLD/TC27D/Tricore/Gtm/Std/subdir.mk

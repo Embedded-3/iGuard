@@ -176,3 +176,19 @@ Cpu0_Main.o :	"C:\\Users\\haewoong\\AURIX-v1.10.6-workspace\\p1\\Libraries\\iLLD
 "C:\\Users\\haewoong\\AURIX-v1.10.6-workspace\\p1\\Libraries\\iLLD\\TC27D\\Tricore\Gtm\Std\IfxGtm_Cmu.h" :
 Cpu0_Main.o :	"C:\\Users\\haewoong\\AURIX-v1.10.6-workspace\\p1\hvac_ctl_driver\hvac_ctl.h"
 "C:\\Users\\haewoong\\AURIX-v1.10.6-workspace\\p1\hvac_ctl_driver\hvac_ctl.h" :
+Cpu0_Main.o :	"C:\\Users\\haewoong\\AURIX-v1.10.6-workspace\\p1\can_driver\can.h"
+"C:\\Users\\haewoong\\AURIX-v1.10.6-workspace\\p1\can_driver\can.h" :
+Cpu0_Main.o :	"C:\\Users\\haewoong\\AURIX-v1.10.6-workspace\\p1\Libraries\iLLD\TC27D\Tricore\Multican\Can\IfxMultican_Can.h"
+"C:\\Users\\haewoong\\AURIX-v1.10.6-workspace\\p1\Libraries\iLLD\TC27D\Tricore\Multican\Can\IfxMultican_Can.h" :
+Cpu0_Main.o :	"C:\\Users\\haewoong\\AURIX-v1.10.6-workspace\\p1\\Libraries\\iLLD\\TC27D\\Tricore\Multican\Std\IfxMultican.h"
+"C:\\Users\\haewoong\\AURIX-v1.10.6-workspace\\p1\\Libraries\\iLLD\\TC27D\\Tricore\Multican\Std\IfxMultican.h" :
+Cpu0_Main.o :	"C:\\Users\\haewoong\\AURIX-v1.10.6-workspace\\p1\\Libraries\\iLLD\\TC27D\\Tricore\_Impl\IfxMultican_cfg.h"
+"C:\\Users\\haewoong\\AURIX-v1.10.6-workspace\\p1\\Libraries\\iLLD\\TC27D\\Tricore\_Impl\IfxMultican_cfg.h" :
+Cpu0_Main.o :	"C:\\Users\\haewoong\\AURIX-v1.10.6-workspace\\p1\\Libraries\\Infra\\Sfr\\TC27D\\_Reg\IfxCan_reg.h"
+"C:\\Users\\haewoong\\AURIX-v1.10.6-workspace\\p1\\Libraries\\Infra\\Sfr\\TC27D\\_Reg\IfxCan_reg.h" :
+Cpu0_Main.o :	"C:\\Users\\haewoong\\AURIX-v1.10.6-workspace\\p1\\Libraries\\Infra\\Sfr\\TC27D\\_Reg\IfxCan_regdef.h"
+"C:\\Users\\haewoong\\AURIX-v1.10.6-workspace\\p1\\Libraries\\Infra\\Sfr\\TC27D\\_Reg\IfxCan_regdef.h" :
+Cpu0_Main.o :	"C:\\Users\\haewoong\\AURIX-v1.10.6-workspace\\p1\\Libraries\\iLLD\\TC27D\\Tricore\_PinMap\IfxMultican_PinMap.h"
+"C:\\Users\\haewoong\\AURIX-v1.10.6-workspace\\p1\\Libraries\\iLLD\\TC27D\\Tricore\_PinMap\IfxMultican_PinMap.h" :
+Cpu0_Main.o :	"C:\\Users\\haewoong\\AURIX-v1.10.6-workspace\\p1\\Libraries\\Infra\\Sfr\\TC27D\\_Reg\IfxCan_bf.h"
+"C:\\Users\\haewoong\\AURIX-v1.10.6-workspace\\p1\\Libraries\\Infra\\Sfr\\TC27D\\_Reg\IfxCan_bf.h" :
