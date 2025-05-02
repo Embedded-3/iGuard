@@ -104,8 +104,14 @@
     Printf("DF_Pause \r\n");
     HAL_Delay(6000);
     
+    DF_Resume();
+    Printf("DF_Resume \r\n");
+    HAL_Delay(6000);
+      
     Sound_Track(2); // play 2nd song
     Printf("Sound_Track 2 \r\n");
+    
+    
     /* USER CODE END 2 */
     
     /* Infinite loop */
