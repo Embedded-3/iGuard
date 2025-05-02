@@ -1,20 +1,20 @@
 /* USER CODE BEGIN Header */
 /**
-  ******************************************************************************
-  * @file           : main.c
-  * @brief          : Main program body
-  ******************************************************************************
-  * @attention
-  *
-  * Copyright (c) 2025 STMicroelectronics.
-  * All rights reserved.
-  *
-  * This software is licensed under terms that can be found in the LICENSE file
-  * in the root directory of this software component.
-  * If no LICENSE file comes with this software, it is provided AS-IS.
-  *
-  ******************************************************************************
-  */
+ ******************************************************************************
+ * @file           : main.c
+ * @brief          : Main program body
+ ******************************************************************************
+ * @attention
+ *
+ * Copyright (c) 2025 STMicroelectronics.
+ * All rights reserved.
+ *
+ * This software is licensed under terms that can be found in the LICENSE file
+ * in the root directory of this software component.
+ * If no LICENSE file comes with this software, it is provided AS-IS.
+ *
+ ******************************************************************************
+ */
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
@@ -53,8 +53,8 @@
 /* Private variables ---------------------------------------------------------*/
 
 /* USER CODE BEGIN PV */
-extern UART_HandleTypeDef huart2; // USART1
-extern UART_HandleTypeDef huart4; // USART2
+extern UART_HandleTypeDef huart2; // USART2
+extern UART_HandleTypeDef huart4; // USART4
 uCAN_MSG rxMessage;
 /* USER CODE END PV */
 
@@ -74,17 +74,17 @@ void do_wake_up(void)
 
 void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 {
-	 if (GPIO_Pin == GPIO_PIN_9)  // PB9 INT
-    {
-				can_rx_flag = 1;
-    }
+  if (GPIO_Pin == CAN_INT_Pin) // PB9 INT
+  {
+    can_rx_flag = 1;
+  }
 }
 /* USER CODE END 0 */
 
 /**
-  * @brief  The application entry point.
-  * @retval int
-  */
+ * @brief  The application entry point.
+ * @retval int
+ */
 int main(void)
 {
 
@@ -96,7 +96,7 @@ int main(void)
 
   /* Reset of all peripherals, Initializes the Flash interface and the Systick. */
   HAL_Init();
-
+  HAL_Delay(1000);
   /* USER CODE BEGIN Init */
 
   /* USER CODE END Init */
@@ -127,67 +127,51 @@ int main(void)
 	DF_Resume();
   Printf("DF_Init finished\r\n");
   HAL_Delay(6000);
-    
+
   DF_Pause(); // pause
   Printf("DF_Pause \r\n");
   HAL_Delay(6000);
-    
+
   DF_Resume();
   Printf("DF_Resume \r\n");
   HAL_Delay(6000);
-      
+
   Sound_Track(2); // play 2nd song
   Printf("Sound_Track 2 \r\n");
-	
-	/* USER CODE END 2 */
+
+  HAL_SuspendTick();
+  HAL_PWR_EnterSLEEPMode(PWR_MAINREGULATOR_ON, PWR_SLEEPENTRY_WFI);
+
+  /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)
-  {   
-		if (can_rx_flag)
-		{
-				
-				
-			while(CANSPI_messagesInBuffer() > 0){
-				if (CANSPI_Receive(&rxMessage))
-				{
-					can_rx_flag = 0; 
-					switch(rxMessage.frame.id){
-						case CANID_STM: // STM32 check
-							do_wake_up();
-							break;
-						
-						case CANID_RASP: // Set song number from Raspberry pi CAN messege !!!!!!!!!!!!
-							Printf("hello world!\r\n");
-							lcd_clear(); // LCD ��� ���� �ʱ�ȭ �Լ�
+  {
+		
+		lcd_clear(); // LCD ��� ���� �ʱ�ȭ �Լ�
 
-							char buf[32];  
-							sprintf(buf, "Hello World 1!"); 
-							lcd_print(buf);  // ����� ������ ���ڿ��� ����� LCD���� ����
-							break;
-						
-						case CANID_
-						default:
-							break;
-					}						
-				}		
-			}
-				HAL_SuspendTick();
-				HAL_PWR_EnterSLEEPMode(PWR_MAINREGULATOR_ON, PWR_SLEEPENTRY_WFI);
-		}
+    char buf[32];  
+    sprintf(buf, "Hello World 1!"); 
+    lcd_print(buf);  // ����� ������ ���ڿ��� ����� LCD���� ����
+
+    lcd_goto(1,0); // LCD Ŀ�� ��ġ �̵� �Լ�
+    lcd_print("Hello World 2!");
+		Printf("hello world!\r\n");
+    HAL_Delay(100);
+    
   }
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
-	
+  }
   /* USER CODE END 3 */
 }
 
 /**
-  * @brief System Clock Configuration
-  * @retval None
-  */
+ * @brief System Clock Configuration
+ * @retval None
+ */
 void SystemClock_Config(void)
 {
   RCC_OscInitTypeDef RCC_OscInitStruct = {0};
@@ -195,12 +179,12 @@ void SystemClock_Config(void)
   RCC_PeriphCLKInitTypeDef PeriphClkInit = {0};
 
   /** Configure the main internal regulator output voltage
-  */
+   */
   __HAL_PWR_VOLTAGESCALING_CONFIG(PWR_REGULATOR_VOLTAGE_SCALE1);
 
   /** Initializes the RCC Oscillators according to the specified parameters
-  * in the RCC_OscInitTypeDef structure.
-  */
+   * in the RCC_OscInitTypeDef structure.
+   */
   RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_HSI;
   RCC_OscInitStruct.HSIState = RCC_HSI_ON;
   RCC_OscInitStruct.HSICalibrationValue = RCC_HSICALIBRATION_DEFAULT;
@@ -214,9 +198,8 @@ void SystemClock_Config(void)
   }
 
   /** Initializes the CPU, AHB and APB buses clocks
-  */
-  RCC_ClkInitStruct.ClockType = RCC_CLOCKTYPE_HCLK|RCC_CLOCKTYPE_SYSCLK
-                              |RCC_CLOCKTYPE_PCLK1|RCC_CLOCKTYPE_PCLK2;
+   */
+  RCC_ClkInitStruct.ClockType = RCC_CLOCKTYPE_HCLK | RCC_CLOCKTYPE_SYSCLK | RCC_CLOCKTYPE_PCLK1 | RCC_CLOCKTYPE_PCLK2;
   RCC_ClkInitStruct.SYSCLKSource = RCC_SYSCLKSOURCE_PLLCLK;
   RCC_ClkInitStruct.AHBCLKDivider = RCC_SYSCLK_DIV1;
   RCC_ClkInitStruct.APB1CLKDivider = RCC_HCLK_DIV1;
@@ -239,9 +222,9 @@ void SystemClock_Config(void)
 /* USER CODE END 4 */
 
 /**
-  * @brief  This function is executed in case of error occurrence.
-  * @retval None
-  */
+ * @brief  This function is executed in case of error occurrence.
+ * @retval None
+ */
 void Error_Handler(void)
 {
   /* USER CODE BEGIN Error_Handler_Debug */
@@ -253,14 +236,14 @@ void Error_Handler(void)
   /* USER CODE END Error_Handler_Debug */
 }
 
-#ifdef  USE_FULL_ASSERT
+#ifdef USE_FULL_ASSERT
 /**
-  * @brief  Reports the name of the source file and the source line number
-  *         where the assert_param error has occurred.
-  * @param  file: pointer to the source file name
-  * @param  line: assert_param error line source number
-  * @retval None
-  */
+ * @brief  Reports the name of the source file and the source line number
+ *         where the assert_param error has occurred.
+ * @param  file: pointer to the source file name
+ * @param  line: assert_param error line source number
+ * @retval None
+ */
 void assert_failed(uint8_t *file, uint32_t line)
 {
   /* USER CODE BEGIN 6 */
