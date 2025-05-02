@@ -62,7 +62,7 @@ volatile uint8_t can_rx_flag = 0;
 void do_wake_up(void)
 {
     HAL_GPIO_TogglePin(GPIOA, GPIO_PIN_5); // LED ON
-
+		
 }
 void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 {
@@ -70,7 +70,10 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 	 if (GPIO_Pin == CAN_INT_Pin)  // PB9 INT
     {
 				can_rx_flag = 1;
+
     }
+		
+		
 }
 
 /* USER CODE END 0 */
@@ -90,7 +93,7 @@ int main(void)
 
   /* Reset of all peripherals, Initializes the Flash interface and the Systick. */
   HAL_Init();
-
+	HAL_Delay(1000);
   /* USER CODE BEGIN Init */
 
   /* USER CODE END Init */
@@ -126,7 +129,17 @@ int main(void)
 			while(CANSPI_messagesInBuffer() > 0){
 				if (CANSPI_Receive(&rxMessage))
 				{
+										// Set song number from Raspberry pi CAN messege !!!!!!!!!!!!
+					// STM32 check
+					if(rxMessage.frame.id){
 						do_wake_up();
+					}
+					
+					// Raspberry check
+//					else if(){
+//						
+//					}
+						
 				}		
 			}
 				HAL_SuspendTick();

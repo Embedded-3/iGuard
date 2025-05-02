@@ -298,8 +298,8 @@ void check_and_send(void) {
   uint8_t fsr = FSR_Check();
   uint8_t pir = PIR_Check();
   uint8_t ultrasonic = Ultrasonic_Check();
-
-  uint8_t result = fsr | pir | ultrasonic; // Sensor Logic
+	
+  uint8_t result = fsr & (pir | ultrasonic); // Sensor Logic
 
   if(result) {
       uCAN_MSG txMessage;
