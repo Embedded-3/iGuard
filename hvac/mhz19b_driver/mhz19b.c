@@ -20,7 +20,6 @@ static uint8 g_uartRxBuffer0[ASC_RX_BUFFER_SIZE + sizeof(Ifx_Fifo) + 8];
 // Function Prototype
 static void initSerialInterface0(void);
 
-
 // IFX_INTERRUPT
 IFX_INTERRUPT(asc0TxISR, 0, ISR_PRIORITY_ASCLIN0_TX);
 
@@ -99,60 +98,104 @@ void initSerialInterface0(void)
     /* Init ASCLIN module */
     IfxAsclin_Asc_initModule(&g_asclin0, &ascConf0);          /* Initialize the module with the given configuration   */
 }
-
 uint16 MHZ19B_requestCO2(uint16* ret_val)
 {
+    #define TIMEOUT_LIMIT 8000000   // 타임아웃 시간
+    #define MH_Z19B_RESPONSE_LEN 9  // 수신 패킷 길이
+
     // 1. 명령 전송
-    for (int i = 0; i < MH_Z19B_CMD_LEN; i++)
-    {
-        IfxAsclin_Asc_blockingWrite(&g_asclin0, mh_z19b_cmd[i]); // UART TX
-    }
+    Ifx_SizeT txLength = MH_Z19B_CMD_LEN;
+    IfxStdIf_DPipe_write(&g_ascStandardInterface0, (void *)mh_z19b_cmd, &txLength, TIMEOUT_LIMIT);
 
     // 2. 센서로부터 수신
-    #define UART_TIMEOUT_LIMIT 8000000  // 적절한 대기시간
-    #define MH_Z19B_RESPONSE_LEN 9
     uint8 response[MH_Z19B_RESPONSE_LEN] = {0};
-    for (int i = 0; i < MH_Z19B_RESPONSE_LEN; i++)
-    {
-        // 수신 데이터가 들어올 때까지 대기
-        volatile int timeout = 0;
-        while (IfxAsclin_Asc_getReadCount(&g_asclin0) == 0)
-        {   
-            //print("waitint...\n\r");
-            if (++timeout > UART_TIMEOUT_LIMIT)
-            {
-                // 타임아웃 발생
-                print("UART RX timeout at byte %d\n", i);
-                return -1;
-            }
-        }
-        response[i] = IfxAsclin_Asc_blockingRead(&g_asclin0); // UART RX
+    Ifx_SizeT rxLength = MH_Z19B_RESPONSE_LEN;
+
+    // 수신 (TIMEOUT_LIMIT: 내부적으로 대기)
+    IfxStdIf_DPipe_read(&g_ascStandardInterface0, response, &rxLength, TIMEOUT_LIMIT);
+
+    if (rxLength != MH_Z19B_RESPONSE_LEN) {
+        print("RX length mismatch: expected %d, got %d\n\r", MH_Z19B_RESPONSE_LEN, rxLength);
+        return -1;
     }
 
     // 3. 체크섬 확인
     uint8 checksum = 0;
-    for(int i = 1;i <= 7;i++){
-        //print("response[%d] = %d\n\r", i, response[i]);   // 패킷 확인용
+    for(int i = 1; i <= 7; i++) {
         checksum += response[i];
     }
-    checksum = 0xff - checksum + 1; // 체크섬 계산
+    checksum = 0xFF - checksum + 1;
     if(checksum != response[8]){
         print("Checksum error: expected %d, got %d\n\r", checksum, response[8]);
-        //return -1;
-    }
-
-    // 3. CO2 농도 계산
-    if (response[0] == 0xFF && response[1] == 0x86) // && response[8] == (0xff - (response[0] + response[1] + response[2] + response[3]) + 0x01))
-    {
-        
-        uint16 ppm = (response[2] << 8) | response[3];
-        *ret_val = ppm; // CO2 농도 값 저장
-        return 0;
-    }
-    else {
-        print("Invalid response: \n\r");
         return -1;
     }
 
+    // 4. CO2 농도 계산
+    if (response[0] == 0xFF && response[1] == 0x86)
+    {
+        uint16 ppm = (response[2] << 8) | response[3];
+        *ret_val = ppm;
+        return 0;   // 정상 종료
+    }
+    else {
+        print("Invalid response\n\r");
+        return -1;
+    }
     return -2;
 }
+
+// uint16 MHZ19B_requestCO2(uint16* ret_val)
+// {
+//     // 1. 명령 전송
+//     for (int i = 0; i < MH_Z19B_CMD_LEN; i++)
+//     {
+//         IfxAsclin_Asc_blockingWrite(&g_asclin0, mh_z19b_cmd[i]); // UART TX
+//     }
+
+//     // 2. 센서로부터 수신
+//     #define UART_TIMEOUT_LIMIT 8000000  // 적절한 대기시간
+//     #define MH_Z19B_RESPONSE_LEN 9
+//     uint8 response[MH_Z19B_RESPONSE_LEN] = {0};
+//     for (int i = 0; i < MH_Z19B_RESPONSE_LEN; i++)
+//     {
+//         // 수신 데이터가 들어올 때까지 대기
+//         volatile int timeout = 0;
+//         while (IfxAsclin_Asc_getReadCount(&g_asclin0) == 0)
+//         {   
+//             //print("waitint...\n\r");
+//             if (++timeout > UART_TIMEOUT_LIMIT)
+//             {
+//                 // 타임아웃 발생
+//                 print("UART RX timeout at byte %d\n", i);
+//                 return -1;
+//             }
+//         }
+//         response[i] = IfxAsclin_Asc_blockingRead(&g_asclin0); // UART RX
+//     }
+
+//     // 3. 체크섬 확인
+//     uint8 checksum = 0;
+//     for(int i = 1;i <= 7;i++){
+//         //print("response[%d] = %d\n\r", i, response[i]);   // 패킷 확인용
+//         checksum += response[i];
+//     }
+//     checksum = 0xff - checksum + 1; // 체크섬 계산
+//     if(checksum != response[8]){
+//         print("Checksum error: expected %d, got %d\n\r", checksum, response[8]);
+//         //return -1;
+//     }
+
+//     // 3. CO2 농도 계산
+//     if (response[0] == 0xFF && response[1] == 0x86) // && response[8] == (0xff - (response[0] + response[1] + response[2] + response[3]) + 0x01))
+//     {
+//         uint16 ppm = (response[2] << 8) | response[3];
+//         *ret_val = ppm; // CO2 농도 값 저장
+//         return 0;
+//     }
+//     else {
+//         print("Invalid response: \n\r");
+//         return -1;
+//     }
+
+//     return -2;
+// }
