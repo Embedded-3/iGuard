@@ -1,4 +1,4 @@
-// mq135.c 로 저장해주세요
+// mq135.c
 
 #include "mq135.h"
 
@@ -14,21 +14,10 @@ uint16 adcDataResult[8] = {0u,};
 uint32 chnIx = 5; //7;
 uint16 groutId = IfxVadc_GroupId_4;
 
-const Gas gas[6]=
-{
-    {605.18, -3.937},   // CO
-    {77.255, -3.18},    // Alcohol
-    {110.47, -2.862},   // CO2
-    {44.947, -3.445},   // Toluen
-    {102.2, -2.473},    // NH4
-    {34.668, -3.369},   // Aceton
-};
 
 
 static void Driver_Adc0_Init(void)
 {
-    //uint32    chnIx = 7;
-
     /* VADC Configuration */
 
     /* create configuration */
@@ -43,7 +32,7 @@ static void Driver_Adc0_Init(void)
     IfxVadc_Adc_initGroupConfig(&adcGroupConfig, &g_VadcAutoScan.vadc);
 
     /* with group 0 */
-    adcGroupConfig.groupId = groutId; //IfxVadc_GroupId_4;
+    adcGroupConfig.groupId = groutId;   // groupId 4
     adcGroupConfig.master  = adcGroupConfig.groupId;
 
     /* enable scan source */
@@ -93,7 +82,6 @@ void Driver_Adc0_ConvStart(void)
 
 uint16 Driver_Adc0_DataObtain(void)
 {
-    //uint32    chnIx = 7;
     Ifx_VADC_RES conversionResult; /* wait for valid result */
 
     /* check results */
@@ -105,51 +93,3 @@ uint16 Driver_Adc0_DataObtain(void)
     adcDataResult[chnIx] = conversionResult.B.RESULT;
     return adcDataResult[chnIx];
 }
-
-double calculate_ppm(uint32 adcval)
-{
-    #define RL 1
-    #define V_REF 5
-    #define ADC_MAX_VAL 4095.0
-    #define R0 3.6267
-
-//    double sensor_volt = adcval * (V_REF/ADC_MAX_VAL);
-//    double rs_cal = sensor_volt * RL / sensor_volt - RL;
-//    double ratio = rs_cal/R0;
-//    double ppm = 0;
-//
-//    print("|    CO   |  Alcohol |   CO2  |  Tolueno  |  NH4  |  Acteona  |\n\r");
-//    print("|   ");
-//    for(int i=0;i < 6;i++){
-//        ppm = gas[i].a * pow(ratio, gas[i].b);
-//        print("   |   %lf", ppm);
-//    }
-//    print("   |\n]r");
-
-//    double ppm = a*pow(ratio, b);
-//
-
-
-    print("\n\radcval : %d\n\r", adcval);
-    double sensor_volt = adcval * (V_REF/ADC_MAX_VAL);
-    //print("sensor_V : %lf\n\r", sensor_volt);
-    float rs_calc = (V_REF * RL)/ sensor_volt - RL;
-    float ratio = rs_calc / R0;
-    //print("%lf\n\r", ratio);
-
-    double ppm =110.47 * pow(ratio, -2.862);
-
-    /*
-      Exponential regression:
-    GAS      | a      | b
-    CO       | 605.18 | -3.937
-    Alcohol  | 77.255 | -3.18
-    CO2      | 110.47 | -2.862
-    Toluen  | 44.947 | -3.445
-    NH4      | 102.2  | -2.473
-    Aceton  | 34.668 | -3.369
-    */
-
-    return ppm;
-}
-
