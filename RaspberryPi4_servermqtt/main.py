@@ -24,7 +24,7 @@ music_topic = "Car/music"
 can_interface = 'can0'
 bus = can.interface.Bus(channel=can_interface, bustype='socketcan')
 
-# ✅ CAN 메시지 전송 함수 (bytes, list 모두 처리)
+# CAN 메시지 전송 함수 (bytes, list 모두 처리)
 def send_can_message(can_id, data_list):
     if isinstance(data_list, bytes):
         data_list = bytearray(data_list)
