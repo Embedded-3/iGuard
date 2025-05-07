@@ -210,14 +210,18 @@ int main(void)
 								Printf("Music Pauses\r\n");
 								DF_Pause();
 								break;
+							//  Sleep Message
+							case 0x02:
+								Printf("Goes to Sleep\r\n");
+								HAL_SuspendTick();
+								HAL_PWR_EnterSLEEPMode(PWR_MAINREGULATOR_ON, PWR_SLEEPENTRY_WFI);
+								break;
 							default:
 								Printf("Defuault : %d\r\n", rxMessage.frame.id);
 								break;
 						}
 					}		
 				}
-				HAL_SuspendTick();
-				HAL_PWR_EnterSLEEPMode(PWR_MAINREGULATOR_ON, PWR_SLEEPENTRY_WFI);
 		}
   }
     /* USER CODE END WHILE */
