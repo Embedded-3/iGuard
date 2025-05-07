@@ -3,7 +3,7 @@
 <title>Static Call Graph - [can_L0\can_L0.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image can_L0\can_L0.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 6220000: Last Updated: Fri May  2 22:27:47 2025
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 6220000: Last Updated: Wed May  7 11:09:06 2025
 <BR><P>
 <H3>Maximum Stack Usage =        472 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -1074,8 +1074,7 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[d]"></a>EXTI4_15_IRQHandler</STRONG> (Thumb, 18 bytes, Stack size 8 bytes, stm32l0xx_it.o(.text.EXTI4_15_IRQHandler))
-<BR><BR>[Stack]<UL><LI>Max Depth = 312 + Unknown Stack Size
-<LI>Call Chain = EXTI4_15_IRQHandler &rArr; HAL_GPIO_EXTI_IRQHandler &rArr; HAL_GPIO_EXTI_Callback &rArr; Printf &rArr; vsprintf &rArr; _printf_char_common &rArr; __printf
+<BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = EXTI4_15_IRQHandler &rArr; HAL_GPIO_EXTI_IRQHandler &rArr; HAL_GPIO_EXTI_Callback
 </UL>
 <BR>[Calls]<UL><LI><a href="#[a6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_EXTI_IRQHandler
 </UL>
@@ -1101,19 +1100,16 @@ Global Symbols
 <LI><a href="#[d5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lcd_command
 </UL>
 
-<P><STRONG><a name="[a8]"></a>HAL_GPIO_EXTI_Callback</STRONG> (Thumb, 28 bytes, Stack size 8 bytes, main.o(.text.HAL_GPIO_EXTI_Callback))
-<BR><BR>[Stack]<UL><LI>Max Depth = 296 + Unknown Stack Size
-<LI>Call Chain = HAL_GPIO_EXTI_Callback &rArr; Printf &rArr; vsprintf &rArr; _printf_char_common &rArr; __printf
+<P><STRONG><a name="[a8]"></a>HAL_GPIO_EXTI_Callback</STRONG> (Thumb, 20 bytes, Stack size 8 bytes, main.o(.text.HAL_GPIO_EXTI_Callback))
+<BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = HAL_GPIO_EXTI_Callback
 </UL>
 <BR>[Calls]<UL><LI><a href="#[a9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_ResumeTick
-<LI><a href="#[a1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Printf
 </UL>
 <BR>[Called By]<UL><LI><a href="#[a6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_EXTI_IRQHandler
 </UL>
 
 <P><STRONG><a name="[a6]"></a>HAL_GPIO_EXTI_IRQHandler</STRONG> (Thumb, 20 bytes, Stack size 8 bytes, stm32l0xx_hal_gpio.o(.text.HAL_GPIO_EXTI_IRQHandler))
-<BR><BR>[Stack]<UL><LI>Max Depth = 304 + Unknown Stack Size
-<LI>Call Chain = HAL_GPIO_EXTI_IRQHandler &rArr; HAL_GPIO_EXTI_Callback &rArr; Printf &rArr; vsprintf &rArr; _printf_char_common &rArr; __printf
+<BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = HAL_GPIO_EXTI_IRQHandler &rArr; HAL_GPIO_EXTI_Callback
 </UL>
 <BR>[Calls]<UL><LI><a href="#[a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_EXTI_Callback
 </UL>
@@ -1369,9 +1365,9 @@ Global Symbols
 </UL>
 <BR>[Called By]<UL><LI><a href="#[cc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Sound_Track
 <LI><a href="#[a4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DF_Pause
+<LI><a href="#[a1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Printf
 <LI><a href="#[a5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DF_Resume
 <LI><a href="#[a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DF_Init
-<LI><a href="#[a1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Printf
 </UL>
 
 <P><STRONG><a name="[c2]"></a>HW_VCOM_Init</STRONG> (Thumb, 68 bytes, Stack size 8 bytes, hw_vcom.o(.text.HW_VCOM_Init))
@@ -1537,7 +1533,6 @@ Global Symbols
 </UL>
 <BR>[Called By]<UL><LI><a href="#[a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DF_Init
 <LI><a href="#[61]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
-<LI><a href="#[a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_EXTI_Callback
 </UL>
 
 <P><STRONG><a name="[3]"></a>SVC_Handler</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, stm32l0xx_it.o(.text.SVC_Handler))
@@ -1638,7 +1633,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[61]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[61]"></a>main</STRONG> (Thumb, 512 bytes, Stack size 120 bytes, main.o(.text.main))
+<P><STRONG><a name="[61]"></a>main</STRONG> (Thumb, 516 bytes, Stack size 120 bytes, main.o(.text.main))
 <BR><BR>[Stack]<UL><LI>Max Depth = 472 + Unknown Stack Size
 <LI>Call Chain = main &rArr; DF_Init &rArr; Printf &rArr; vsprintf &rArr; _printf_char_common &rArr; __printf
 </UL>
@@ -1647,6 +1642,7 @@ Global Symbols
 <LI><a href="#[db]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SuspendTick
 <LI><a href="#[da]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_ReadPin
 <LI><a href="#[a4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DF_Pause
+<LI><a href="#[a1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Printf
 <LI><a href="#[a5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DF_Resume
 <LI><a href="#[a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DF_Init
 <LI><a href="#[c2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HW_VCOM_Init
@@ -1658,7 +1654,6 @@ Global Symbols
 <LI><a href="#[b1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_RCC_ClockConfig
 <LI><a href="#[b3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_RCC_OscConfig
 <LI><a href="#[aa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_Init
-<LI><a href="#[a1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Printf
 <LI><a href="#[d8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lcd_print
 <LI><a href="#[d6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lcd_goto
 <LI><a href="#[d7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lcd_init

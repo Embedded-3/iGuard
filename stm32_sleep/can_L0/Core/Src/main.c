@@ -211,7 +211,7 @@ int main(void)
 								DF_Pause();
 								break;
 							default:
-								Printf("Defuault : %c\r\n", rxMessage.frame.data0);
+								Printf("Defuault : %d\r\n", rxMessage.frame.id);
 								break;
 						}
 					}		
