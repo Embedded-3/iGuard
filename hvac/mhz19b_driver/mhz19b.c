@@ -5,7 +5,7 @@
 #include "IfxAsclin_Asc.h"
 #include "Ifx_Shell.h"
 #include "Ifx_Console.h"
-#include "IfxPort.h"
+#include "IfxPort.h"x
 #include "asclin_driver/asclin.h"
 
 static const uint8 mh_z19b_cmd[MH_Z19B_CMD_LEN] = { 0xFF, 0x01, 0x86, 0, 0, 0, 0, 0, 0x79 };    // CO2 데이터 요청 명령어

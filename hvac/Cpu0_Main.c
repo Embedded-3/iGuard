@@ -130,7 +130,7 @@ void core0_main(void)
     initSleepMode();        // Init Sleep Mode
     initCan();              // Init CAN
 
-    //enter_sleep_mode();       // Sleep 모드 진입
+    //enter_sleep_mode();       // Sleep 모드 진입  // TODO
     print("빠져나왔다!!\r\n");
     sendCanMessage();   // CAN 송신 : 빠져나왔다!!
 
@@ -232,17 +232,37 @@ void AppTask1000ms(void)
         g_txMsg.lengthCode = 8;
         g_txMsg.data[0] = (uint32)(g_data.int_temperature * 10); // 온도
         g_txMsg.data[1] = (uint32)(g_data.int_humidity * 10);    // 습도
+        g_status = sendCanMessage();  // 메시지 전송
         // do {
+        //     int cnt = 0;
+        //     cnt++;
         //     g_status = sendCanMessage();  // 메시지 전송
+        //     if(cnt > 3) {
+        //         print("CAN 송신 실패 ID : %d\r\n", g_txMsg.id);
+        //         //break;
+        //     }
         // } while (g_status != IfxMultican_Status_ok);  // 성공적으로 전송되었을 때까지 반복
 
+        //for(volatile int i=0;i<100000;i++);  // 대기
+
+        
+        // do {
+        //     int cnt = 0;
+        //     cnt++;
+        //     g_status = sendCanMessage();  // 메시지 전송
+        //     if(cnt > 3) {
+        //         print("CAN 송신 실패 ID : %d\r\n", g_txMsg.id);
+        //         break;
+        //     }
+        // } while (g_status != IfxMultican_Status_ok);  // 성공적으로 전송되었을 때까지 반복
+    }
+    else{
         g_txMsg.id = 0x20;
         g_txMsg.lengthCode = 8;
         g_txMsg.data[0] = ((uint32)(g_data.ext_air) << 16) | (uint32)(g_data.int_co2);  // 외부 공기질, 내부 CO2 농도
         g_txMsg.data[1] = ((uint32)(g_hvac.mode) << 16) | (uint32)(g_hvac.speed);       // HVAC 모드, 팬 속도
-        // do {
-        //     g_status = sendCanMessage();  // 메시지 전송
-        // } while (g_status != IfxMultican_Status_ok);  // 성공적으로 전송되었을 때까지 반복
+        g_status = sendCanMessage();  // 메시지 전송
+
     }
 
 

@@ -6,7 +6,7 @@
 #include "PWM.h"
 
 // Thresholds Values
-#define EXT_AIR_TH 2000
+#define EXT_AIR_TH 2660
 #define INT_CO2_TH 1000
 #define INT_TEMP_TH 30.0
 #define INT_TEMP_TOO_HIGH_TH 40.0 

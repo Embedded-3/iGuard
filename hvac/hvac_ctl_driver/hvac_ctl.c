@@ -18,6 +18,7 @@ void sensor_init(Sensor_Data* data) {
 }
 
 uint16 havc_control(Hvac* hvac, const Sensor_Data data) {
+    //controlFan(1);
     switch(hvac->mode){
         case EXT_MODE:
             // 1. 모드 판단

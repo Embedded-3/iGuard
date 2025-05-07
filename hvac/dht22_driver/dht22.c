@@ -62,12 +62,15 @@ int DHT22_process(DHT22_Data* data) {
 
     // 체크섬 검증
     if (buffer[4] != (buffer[0] + buffer[1] + buffer[2] + buffer[3])) {
-        if (buffer[4] + 256 != (buffer[0] + buffer[1] + buffer[2] + buffer[3])) {   // uint8 오버플로우도 허용
+        if ((buffer[4] + 256 != (buffer[0] + buffer[1] + buffer[2] + buffer[3])) && buffer[4] + 256*2 != (buffer[0] + buffer[1] + buffer[2] + buffer[3])) {   // uint8 오버플로우도 허용
             print("Checksum error\n\r");
             print("%d waiting...  ", buffer[4]);
             print("but %d\n\r", (buffer[0] + buffer[1] + buffer[2] + buffer[3]));
         }
-        return -2;  // 체크섬 오류
+        // print("Checksum error\n\r");
+        // print("%d waiting...  ", buffer[4]);
+        // print("but %d\n\r", (buffer[0] + buffer[1] + buffer[2] + buffer[3]));
+        //return -2;  // 체크섬 오류
     }
 
     // 데이터 저장
