@@ -247,5 +247,6 @@ void MCP2515_RequestToSend(uint8_t instruction);
 uint8_t MCP2515_ReadStatus(void);
 uint8_t MCP2515_GetRxStatus(void);
 void MCP2515_BitModify(uint8_t address, uint8_t mask, uint8_t data);
-
+void MCP2515_EnableInterrupts(void);     // Interrupt
+void MCP2515_ReadCANMessage(void);  
 #endif

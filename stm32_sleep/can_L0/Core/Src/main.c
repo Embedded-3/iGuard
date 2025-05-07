@@ -51,8 +51,8 @@
 /* Private variables ---------------------------------------------------------*/
 
 /* USER CODE BEGIN PV */
-extern UART_HandleTypeDef huart2; // USART1
-extern UART_HandleTypeDef huart4; // USART2
+extern UART_HandleTypeDef huart2; // USART2
+extern UART_HandleTypeDef huart4; // USART4
 uCAN_MSG rxMessage;
 /* USER CODE END PV */
 
@@ -75,9 +75,11 @@ void do_wake_up(void)
 
 void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 {
-	 if (GPIO_Pin == GPIO_PIN_9)  // PB9 INT
+	 if (GPIO_Pin == CAN_INT_Pin)  // PB9 INT
     {
+				//HAL_GPIO_TogglePin(GPIOA, GPIO_PIN_5);
 				can_rx_flag = 1;
+				HAL_ResumeTick();
     }
 }
 /* USER CODE END 0 */
@@ -116,44 +118,107 @@ int main(void)
   MX_USART4_UART_Init();
   /* USER CODE BEGIN 2 */
 	HW_VCOM_Init(&huart2);
-	DF_Init(2);
+	DF_Init(10);
   CANSPI_Initialize();	
 	lcd_init();
-	MCP2515_BitModify(MCP2515_CANINTE, 0x03, 0x03);
-  
+	
+	MCP2515_EnableInterrupts();
+	
 	DF_Resume();
   Printf("DF_Init finished\r\n");
-  HAL_Delay(6000);
-    
+  HAL_Delay(1000);  
+	
   DF_Pause(); // pause
   Printf("DF_Pause \r\n");
-  HAL_Delay(6000);
-    
-  DF_Resume();
-  Printf("DF_Resume \r\n");
-  HAL_Delay(6000);
-      
-  Sound_Track(2); // play 2nd song
-  Printf("Sound_Track 2 \r\n");
+  HAL_Delay(1000);
+  
+	Printf("Go Sleep \r\n");
+  //DF_Resume();
+  //Printf("DF_Resume \r\n");
+  //HAL_Delay(6000);
 	
+	Printf("now int pin : %d\r\n", HAL_GPIO_ReadPin(CAN_INT_GPIO_Port, CAN_INT_Pin));
+     
+	HAL_SuspendTick();
+	HAL_PWR_EnterSLEEPMode(PWR_MAINREGULATOR_ON, PWR_SLEEPENTRY_WFI);
+  
+  static int lcdCnt = 0;
+	static char buf[32];
+	static uint8_t musicNumber;
 	/* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-		
-		lcd_clear(); // LCD ��� ���� �ʱ�ȭ �Լ�
+		if (can_rx_flag)
+		{
+				can_rx_flag = 0; 
+				while(CANSPI_messagesInBuffer() > 0)
+				{
+					if (CANSPI_Receive(&rxMessage))
+					{
+						// Set song number from Raspberry pi CAN messege !!!!!!!!!!!!
+						// STM32 check
+						switch (rxMessage.frame.id)
+						{
+							// wakeup message 
+							case 0x1:
+								Printf("Wake up Message Received\r\n");
+								break;
+							// TextLcd message
+							case 0x10:
+								// store 8 bytes to buf
+								Printf("%d th PrintLcd Message Received\r\n", lcdCnt + 1);
+								if (lcdCnt < 4)
+								{
+										buf[lcdCnt * 8 + 0] = rxMessage.frame.data0;
+										buf[lcdCnt * 8 + 1] = rxMessage.frame.data1;
+										buf[lcdCnt * 8 + 2] = rxMessage.frame.data2;
+										buf[lcdCnt * 8 + 3] = rxMessage.frame.data3;
+										buf[lcdCnt * 8 + 4] = rxMessage.frame.data4;
+										buf[lcdCnt * 8 + 5] = rxMessage.frame.data5;
+										buf[lcdCnt * 8 + 6] = rxMessage.frame.data6;
+										buf[lcdCnt * 8 + 7] = rxMessage.frame.data7;
 
-    char buf[32];  
-    sprintf(buf, "Hello World 1!"); 
-    lcd_print(buf);  // ����� ������ ���ڿ��� ����� LCD���� ����
+										lcdCnt++;
+								}
 
-    lcd_goto(1,0); // LCD Ŀ�� ��ġ �̵� �Լ�
-    lcd_print("Hello World 2!");
-		Printf("hello world!\r\n");
-    HAL_Delay(100);
-    
+								// print lcd
+								if (lcdCnt == 4)
+								{
+										buf[31] = '\0';  // null-terminate
+										Printf("Print Message : %s\r\n", buf);
+										lcd_clear();
+										lcd_goto(0, 0); 
+										lcd_print((char*)buf);  // buf[0~15]
+
+										lcd_goto(1, 0);
+										lcd_print((char*)&buf[16]); // buf[16~31]
+
+										lcdCnt = 0;  // clear buf
+								}
+								break;
+							// DFPlayer StartMusic
+							case 0x05:
+								musicNumber = rxMessage.frame.data0;
+								Printf("%d Music Starts\r\n", musicNumber);
+								Sound_Track(musicNumber);
+								break;
+							// DFPlayer EndMusic
+							case 0x06:
+								Printf("Music Pauses\r\n");
+								DF_Pause();
+								break;
+							default:
+								Printf("Defuault : %d\r\n", rxMessage.frame.id);
+								break;
+						}
+					}		
+				}
+				HAL_SuspendTick();
+				HAL_PWR_EnterSLEEPMode(PWR_MAINREGULATOR_ON, PWR_SLEEPENTRY_WFI);
+		}
   }
     /* USER CODE END WHILE */
 
