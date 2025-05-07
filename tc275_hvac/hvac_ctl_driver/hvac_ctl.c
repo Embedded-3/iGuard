@@ -50,16 +50,28 @@ uint16 havc_control(Hvac* hvac, const Sensor_Data data) {
 }
 
 static Fan_Speed select_fan_speed(uint16 co2, double humi, double temp){
-    if(co2 >= INT_CO2_TH || temp >= INT_TEMP_TOO_HIGH_TH) {  // CO2 농도가 기준치 이상이면 팬 작동
+    if(co2 >= INT_CO2_TH || temp >= INT_TEMP_TOO_HIGH_TH) {  // CO2 농도가 기준치 이상, 온도가 너무 높은 경우 팬 작동
+        IfxPort_setPinHigh(RED.port, RED.pinIndex);  
+        IfxPort_setPinLow(YELLOW.port, YELLOW.pinIndex);  
+        IfxPort_setPinLow(GREEN.port, GREEN.pinIndex); 
         return HIGH_SPEED;
     }
     else if(temp >= INT_TEMP_TH) {  // 온도가 기준치 이상이면 팬 작동
+        IfxPort_setPinLow(RED.port, RED.pinIndex);  
+        IfxPort_setPinHigh(YELLOW.port, YELLOW.pinIndex);  
+        IfxPort_setPinLow(GREEN.port, GREEN.pinIndex); 
         return MID_SPEED;
     }
     else if(humi >= INT_HUMIDITY_TH) {  // 습도가 기준치 이상이면 팬 작동
+        IfxPort_setPinLow(RED.port, RED.pinIndex);  
+        IfxPort_setPinLow(YELLOW.port, YELLOW.pinIndex);  
+        IfxPort_setPinHigh(GREEN.port, GREEN.pinIndex); 
         return LOW_SPEED;
     }
     else {
+        IfxPort_setPinLow(RED.port, RED.pinIndex);  
+        IfxPort_setPinLow(YELLOW.port, YELLOW.pinIndex);  
+        IfxPort_setPinLow(GREEN.port, GREEN.pinIndex); 
         return STOP;  // 모든 조건을 만족하지 않으면 팬 정지
     }
 }

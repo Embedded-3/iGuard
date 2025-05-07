@@ -102,6 +102,18 @@ void exit_sleep_mode(void)
     }
 }
 
+void initGPIO(void)
+{
+    // GPIO 초기화
+    IfxPort_setPinModeOutput(RED.port, RED.pinIndex, IfxPort_OutputMode_pushPull, IfxPort_OutputIdx_general);
+    IfxPort_setPinLow(RED.port, RED.pinIndex);  // 초기값 HIGH
+
+    IfxPort_setPinModeOutput(YELLOW.port, YELLOW.pinIndex, IfxPort_OutputMode_pushPull, IfxPort_OutputIdx_general);
+    IfxPort_setPinLow(YELLOW.port, YELLOW.pinIndex);  // 초기값 HIGH
+
+    IfxPort_setPinModeOutput(GREEN.port, GREEN.pinIndex, IfxPort_OutputMode_pushPull, IfxPort_OutputIdx_general);
+    IfxPort_setPinLow(GREEN.port, GREEN.pinIndex);  // 초기값 HIGH
+}
 void core0_main(void)
 {
     IfxCpu_enableInterrupts();
@@ -129,14 +141,17 @@ void core0_main(void)
     initServoPwm();         // Init Servo PWM
     initSleepMode();        // Init Sleep Mode
     initCan();              // Init CAN
+    initGPIO();             // Init GPIO
 
     //enter_sleep_mode();       // Sleep 모드 진입  // TODO
     print("빠져나왔다!!\r\n");
     sendCanMessage();   // CAN 송신 : 빠져나왔다!!
 
+
     while(1)
     {
         AppScheduling();
+        canReceiveLoop();
     }
 }
 
@@ -225,8 +240,8 @@ void AppTask1000ms(void)
         print("HVAC Error : %dn\r", hvac_ret);
     }
 
-    // 5. CAN 송신, 주기 : 2초
-    if(stTestCnt.u32nuCnt1000ms % 2) {
+    // 5. CAN 송신 9, 10초
+    if(stTestCnt.u32nuCnt1000ms % 9 == 0) { // 9초에 한번
         // 온도, 습도 데이터 송신
         g_txMsg.id = 0x21;
         g_txMsg.lengthCode = 8;
@@ -256,7 +271,7 @@ void AppTask1000ms(void)
         //     }
         // } while (g_status != IfxMultican_Status_ok);  // 성공적으로 전송되었을 때까지 반복
     }
-    else{
+    else if(stTestCnt.u32nuCnt1000ms % 10 == 0) {   // 10초에 한번
         g_txMsg.id = 0x20;
         g_txMsg.lengthCode = 8;
         g_txMsg.data[0] = ((uint32)(g_data.ext_air) << 16) | (uint32)(g_data.int_co2);  // 외부 공기질, 내부 CO2 농도
