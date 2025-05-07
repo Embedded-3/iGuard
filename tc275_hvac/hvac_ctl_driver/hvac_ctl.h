@@ -2,15 +2,22 @@
 #ifndef HVAC_CTL_H
 #define HVAC_CTL_H
 
+#include "IfxPort.h"
+#include "IfxPort_PinMap.h"
+
 #include "Platform_Types.h"
 #include "PWM.h"
 
 // Thresholds Values
-#define EXT_AIR_TH 2660
+#define EXT_AIR_TH 2680
 #define INT_CO2_TH 1000
 #define INT_TEMP_TH 30.0
 #define INT_TEMP_TOO_HIGH_TH 40.0 
 #define INT_HUMIDITY_TH 60.0 
+
+#define RED IfxPort_P10_3
+#define YELLOW IfxPort_P10_1
+#define GREEN IfxPort_P10_2
 
 typedef enum {
     EXT_MODE = 0,

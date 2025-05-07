@@ -95,12 +95,11 @@ void canReceiveLoop(void)
         {
             print("[CAN 수신 성공]\r\n");
             print("ID: 0x%03X\r\n", g_rxMsg.id);
-            print("Data[0]: 0x%08X\r\n", g_rxMsg.data[0]);
-            print("Data[1]: 0x%08X\r\n", g_rxMsg.data[1]);
+            // print("Data[0]: 0x%08X\r\n", g_rxMsg.data[0]);
+            // print("Data[1]: 0x%08X\r\n", g_rxMsg.data[1]);
 
-            if(g_rxMsg.id == 0x02){
-                ;
-                //enter_sleep_mode();
+            if(g_rxMsg.id == 0x02){ // Sleep 메시지 수신시
+                enter_sleep_mode();
             }
         }
 
