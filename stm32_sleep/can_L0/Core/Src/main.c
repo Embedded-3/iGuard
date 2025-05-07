@@ -79,7 +79,6 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
     {
 				//HAL_GPIO_TogglePin(GPIOA, GPIO_PIN_5);
 				can_rx_flag = 1;
-				Printf("Wake up!!\r\n");
 				HAL_ResumeTick();
     }
 }
@@ -212,6 +211,7 @@ int main(void)
 								DF_Pause();
 								break;
 							default:
+								Printf("Defuault : %c\r\n", rxMessage.frame.data0);
 								break;
 						}
 					}		
