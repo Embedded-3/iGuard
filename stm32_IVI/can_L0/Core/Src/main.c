@@ -133,15 +133,15 @@ int main(void)
   Printf("DF_Pause \r\n");
   HAL_Delay(1000);
   
-	Printf("Go Sleep \r\n");
+	//Printf("Go Sleep \r\n");
   //DF_Resume();
   //Printf("DF_Resume \r\n");
   //HAL_Delay(6000);
 	
 	Printf("now int pin : %d\r\n", HAL_GPIO_ReadPin(CAN_INT_GPIO_Port, CAN_INT_Pin));
      
-	HAL_SuspendTick();
-	HAL_PWR_EnterSLEEPMode(PWR_MAINREGULATOR_ON, PWR_SLEEPENTRY_WFI);
+	// HAL_SuspendTick();
+	// HAL_PWR_EnterSLEEPMode(PWR_MAINREGULATOR_ON, PWR_SLEEPENTRY_WFI);
   
   static int lcdCnt = 0;
 	static char buf[32];
