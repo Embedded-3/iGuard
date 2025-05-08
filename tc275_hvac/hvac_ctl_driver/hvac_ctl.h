@@ -7,17 +7,19 @@
 
 #include "Platform_Types.h"
 #include "PWM.h"
+#include "asclin.h"
 
 // Thresholds Values
-#define EXT_AIR_TH 2680
+#define EXT_AIR_TH 3200 //2660
 #define INT_CO2_TH 1000
 #define INT_TEMP_TH 30.0
 #define INT_TEMP_TOO_HIGH_TH 40.0 
 #define INT_HUMIDITY_TH 60.0 
 
-#define RED IfxPort_P10_3
-#define YELLOW IfxPort_P10_1
-#define GREEN IfxPort_P10_2
+// 10, 11, 13
+#define RED_LED IfxPort_P10_5
+#define YELLOW_LED IfxPort_P10_3
+#define GREEN_LED IfxPort_P10_2
 
 typedef enum {
     EXT_MODE = 0,
@@ -47,7 +49,5 @@ typedef struct{
 void hvac_init(Hvac* hvac);           // HVAC 초기화 함수
 void sensor_init(Sensor_Data* data); // 센서 데이터 초기화 함수
 uint16 havc_control(Hvac* hvac, const Sensor_Data data);  // 센서 데이터 바탕으로 팬 제어 함수
-
-
 
 #endif // HVAC_CTL_H

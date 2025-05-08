@@ -5,7 +5,7 @@
 #include "IfxAsclin_Asc.h"
 #include "Ifx_Shell.h"
 #include "Ifx_Console.h"
-#include "IfxPort.h"x
+#include "IfxPort.h"
 #include "asclin_driver/asclin.h"
 
 static const uint8 mh_z19b_cmd[MH_Z19B_CMD_LEN] = { 0xFF, 0x01, 0x86, 0, 0, 0, 0, 0, 0x79 };    // CO2 데이터 요청 명령어
@@ -98,7 +98,7 @@ void initSerialInterface0(void)
     /* Init ASCLIN module */
     IfxAsclin_Asc_initModule(&g_asclin0, &ascConf0);          /* Initialize the module with the given configuration   */
 }
-uint16 MHZ19B_requestCO2(uint16* ret_val)
+int MHZ19B_requestCO2(uint16* ret_val)
 {
     #define TIMEOUT_LIMIT 8000000   // 타임아웃 시간
     #define MH_Z19B_RESPONSE_LEN 9  // 수신 패킷 길이
@@ -115,8 +115,8 @@ uint16 MHZ19B_requestCO2(uint16* ret_val)
     IfxStdIf_DPipe_read(&g_ascStandardInterface0, response, &rxLength, TIMEOUT_LIMIT);
 
     if (rxLength != MH_Z19B_RESPONSE_LEN) {
-        print("RX length mismatch: expected %d, got %d\n\r", MH_Z19B_RESPONSE_LEN, rxLength);
-        return -1;
+        print("Error : RX length mismatch, expected %d, got %d\n\r", MH_Z19B_RESPONSE_LEN, rxLength);
+        return -1;  // 수신 길이 오류
     }
 
     // 3. 체크섬 확인
@@ -126,22 +126,26 @@ uint16 MHZ19B_requestCO2(uint16* ret_val)
     }
     checksum = 0xFF - checksum + 1;
     if(checksum != response[8]){
-        print("Checksum error: expected %d, got %d\n\r", checksum, response[8]);
-        return -1;
+        print("Error : Checksum, expected %d, got %d\n\r", checksum, response[8]);
+        return -2;  // 체크섬 오류
     }
 
     // 4. CO2 농도 계산
     if (response[0] == 0xFF && response[1] == 0x86)
     {
         uint16 ppm = (response[2] << 8) | response[3];
+        if(ppm > 5000) {
+            print("Error : Out Of Range\n\r");
+            return -3;  // CO2 값 범위 초과
+        }
         *ret_val = ppm;
         return 0;   // 정상 종료
     }
     else {
-        print("Invalid response\n\r");
-        return -1;
+        print("Error : Invalid response\n\r");
+        return -4;  // 응답 오류
     }
-    return -2;
+    return -4;
 }
 
 // uint16 MHZ19B_requestCO2(uint16* ret_val)

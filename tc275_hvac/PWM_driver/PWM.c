@@ -9,7 +9,7 @@ IfxGtm_Tom_Pwm_Driver g_fanDriver;
 IfxGtm_Tom_Pwm_Config g_servoConfig;
 IfxGtm_Tom_Pwm_Driver g_servoDriver;
 
-static void setFanDutyCycle(uint16);
+void setFanDutyCycle(uint16);
 static void setSERVODutyCycle(uint16);
 
 void initFanTomPwm(void)
@@ -21,7 +21,7 @@ void initFanTomPwm(void)
 
     g_fanConfig.tom = FAN.tom;                                      /* Select the TOM depending on the LED          */
     g_fanConfig.tomChannel = FAN.channel;                           /* Select the channel depending on the LED      */
-    g_fanConfig.period = PWM_PERIOD;                                /* Set the timer period                         */
+    g_fanConfig.period = FAN_PWM;                                   /* Set the timer period                         */
     g_fanConfig.dutyCycle = 0;
     g_fanConfig.pin.outputPin = &FAN;                               /* Set the LED port pin as output               */
     g_fanConfig.synchronousUpdateEnabled = TRUE;                    /* Enable synchronous update                    */
@@ -42,7 +42,7 @@ void initServoPwm(void)
     g_servoConfig.tomChannel = SERVO.channel;                           /* Select the channel depending on the LED      */
     g_servoConfig.clock = IfxGtm_Tom_Ch_ClkSrc_cmuFxclk2;
     g_servoConfig.period = SERVO_PWM;                                /* Set the timer period                         */
-    g_servoConfig.dutyCycle = SERVO_PWM_CENTER;
+    g_servoConfig.dutyCycle = SERVO_PWM_MIN;
     g_servoConfig.pin.outputPin = &SERVO;                               /* Set the LED port pin as output               */
     g_servoConfig.synchronousUpdateEnabled = TRUE;                    /* Enable synchronous update                    */
 
@@ -60,13 +60,13 @@ void controlFan(uint8 speed)
             Fanduty = 0;
             break;
         case LOW_SPEED:
-            Fanduty = PWM_PERIOD * 0.3;
+            Fanduty = FAN_1;
             break;
         case MID_SPEED:
-            Fanduty = PWM_PERIOD * 0.6;
+            Fanduty = FAN_2;
             break;
         case HIGH_SPEED:
-            Fanduty = PWM_PERIOD * 0.9;
+            Fanduty = FAN_3;
             break;
         default:
             Fanduty = 0;
@@ -81,10 +81,10 @@ void changeMode(uint8 mode)
     switch(mode)
     {
         case EXT_MODE:
-            Servoduty = SERVO_PWM_CENTER;
+            Servoduty = SERVO_PWM_MIN; //SERVO_PWM_CENTER;
             break;
         case INT_MODE:
-            Servoduty = SERVO_PWM_MIN;
+            Servoduty = SERVO_PWM_CENTER; //SERVO_PWM_MIN;
             break;
         default:
             Servoduty = 450;
@@ -98,7 +98,6 @@ void setFanDutyCycle(uint16 dutyCycle)
 {
     g_fanConfig.dutyCycle = dutyCycle;                              /* Change the value of the duty cycle           */
     IfxGtm_Tom_Pwm_init(&g_fanDriver, &g_fanConfig);                /* Re-initialize the PWM                        */
-
 }
 
 void setSERVODutyCycle(uint16 dutyCycle)

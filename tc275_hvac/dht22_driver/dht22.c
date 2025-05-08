@@ -66,16 +66,30 @@ int DHT22_process(DHT22_Data* data) {
             print("Checksum error\n\r");
             print("%d waiting...  ", buffer[4]);
             print("but %d\n\r", (buffer[0] + buffer[1] + buffer[2] + buffer[3]));
+            return -2;  // 체크섬 오류
         }
-        // print("Checksum error\n\r");
-        // print("%d waiting...  ", buffer[4]);
-        // print("but %d\n\r", (buffer[0] + buffer[1] + buffer[2] + buffer[3]));
-        //return -2;  // 체크섬 오류
+    }
+
+    // 온도, 습도 데이터 임시 저장
+    DHT22_Data temp = {0};
+    temp.humidity = (uint32)(((uint16_t)buffer[0] << 8) | buffer[1]);
+    temp.temperature = (uint32)(((uint16_t)buffer[2] << 8) | buffer[3]);
+    
+    // 데이터 범위 체크
+    if(temp.humidity > 1000) {
+        print("Error : Humidity, Out Of Range\n\r");
+        return -3;  // 습도 범위 오류
+    }
+    if(temp.temperature > 800) {
+        print("Error : Temperature, Out Of Range\n\r");
+        return -4;  // 온도 범위 오류
     }
 
     // 데이터 저장
-    data->humidity = (uint32)(((uint16_t)buffer[0] << 8) | buffer[1]);
-    data->temperature = (uint32)(((uint16_t)buffer[2] << 8) | buffer[3]);
+    //data->humidity = (uint32)(((uint16_t)buffer[0] << 8) | buffer[1]);
+    //data->temperature = (uint32)(((uint16_t)buffer[2] << 8) | buffer[3]);
+    data->humidity = temp.humidity;
+    data->temperature = temp.temperature;
 
     return 0;
 }
