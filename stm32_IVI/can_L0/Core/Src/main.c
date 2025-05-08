@@ -64,7 +64,7 @@ void SystemClock_Config(void);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
-volatile uint8_t can_rx_flag = 0;
+volatile uint8_t can_rx_flag = 1;
 volatile uint8_t driving_flag = 1;
 void do_wake_up(void)
 {
@@ -127,7 +127,7 @@ int main(void)
 	
 	DF_Resume();
   Printf("DF_Init finished\r\n");
-  HAL_Delay(1000);  
+  HAL_Delay(100);  
 	
   DF_Pause(); // pause
   Printf("DF_Pause \r\n");
@@ -138,6 +138,7 @@ int main(void)
   //Printf("DF_Resume \r\n");
   //HAL_Delay(6000);
 	
+	Printf("now Driving mode : %d\r\n", driving_flag);
 	Printf("now int pin : %d\r\n", HAL_GPIO_ReadPin(CAN_INT_GPIO_Port, CAN_INT_Pin));
      
 	// HAL_SuspendTick();
@@ -215,6 +216,7 @@ int main(void)
 							//  Sleep Message
 							case 0x02:
 								Printf("Goes to Sleep\r\n");
+								can_rx_flag = 0;
 								HAL_SuspendTick();
 								HAL_PWR_EnterSLEEPMode(PWR_MAINREGULATOR_ON, PWR_SLEEPENTRY_WFI);
 								break;
