@@ -1,0 +1,5 @@
+[Desktop Entry]
+Type=Application
+Name=V
+Exec=bash -c "sleep 5 && /usr/bin/python3 /home/jw/Desktop/dashboard.py
+X-GNOME-Autostart-enabled=true
