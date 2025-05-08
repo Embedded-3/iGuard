@@ -3,7 +3,7 @@
 <title>Static Call Graph - [can_L0\can_L0.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image can_L0\can_L0.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 6220000: Last Updated: Wed May  7 11:09:06 2025
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 6220000: Last Updated: Thu May  8 10:42:13 2025
 <BR><P>
 <H3>Maximum Stack Usage =        472 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -180,8 +180,8 @@ Global Symbols
 <BR><BR>[Stack]<UL><LI>Max Depth = 96 + Unknown Stack Size
 <LI>Call Chain = _printf_i &rArr; _printf_d &rArr; _printf_u &rArr; _printf_o &rArr; _printf_x &rArr; _printf_int_hex &rArr; _printf_longlong_hex &rArr; _printf_int_common &rArr; _printf_post_padding
 </UL>
-<BR>[Calls]<UL><LI><a href="#[3f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_int_dec
-<LI><a href="#[3e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_d
+<BR>[Calls]<UL><LI><a href="#[3e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_d
+<LI><a href="#[3f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_int_dec
 </UL>
 <BR>[Called By]<UL><LI><a href="#[3b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_ll
 </UL>
@@ -190,8 +190,8 @@ Global Symbols
 <BR><BR>[Stack]<UL><LI>Max Depth = 96 + Unknown Stack Size
 <LI>Call Chain = _printf_d &rArr; _printf_u &rArr; _printf_o &rArr; _printf_x &rArr; _printf_int_hex &rArr; _printf_longlong_hex &rArr; _printf_int_common &rArr; _printf_post_padding
 </UL>
-<BR>[Calls]<UL><LI><a href="#[3f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_int_dec
-<LI><a href="#[40]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_u
+<BR>[Calls]<UL><LI><a href="#[40]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_u
+<LI><a href="#[3f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_int_dec
 </UL>
 <BR>[Called By]<UL><LI><a href="#[3d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_i
 </UL>
@@ -200,8 +200,8 @@ Global Symbols
 <BR><BR>[Stack]<UL><LI>Max Depth = 96 + Unknown Stack Size
 <LI>Call Chain = _printf_u &rArr; _printf_o &rArr; _printf_x &rArr; _printf_int_hex &rArr; _printf_longlong_hex &rArr; _printf_int_common &rArr; _printf_post_padding
 </UL>
-<BR>[Calls]<UL><LI><a href="#[3f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_int_dec
-<LI><a href="#[41]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_o
+<BR>[Calls]<UL><LI><a href="#[41]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_o
+<LI><a href="#[3f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_int_dec
 </UL>
 <BR>[Called By]<UL><LI><a href="#[3e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_d
 </UL>
@@ -661,9 +661,9 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[73]"></a>_printf_truncate_unsigned</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, _printf_truncate.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[3f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_int_dec
-<LI><a href="#[45]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_int_hex
+<BR><BR>[Called By]<UL><LI><a href="#[45]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_int_hex
 <LI><a href="#[43]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_int_oct
+<LI><a href="#[3f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_int_dec
 </UL>
 
 <P><STRONG><a name="[6f]"></a>_printf_str</STRONG> (Thumb, 82 bytes, Stack size 16 bytes, _printf_str.o(.text))
@@ -811,10 +811,10 @@ Global Symbols
 <BR>[Calls]<UL><LI><a href="#[71]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_post_padding
 <LI><a href="#[70]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_pre_padding
 </UL>
-<BR>[Called By]<UL><LI><a href="#[3f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_int_dec
-<LI><a href="#[7b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_longlong_hex
+<BR>[Called By]<UL><LI><a href="#[7b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_longlong_hex
 <LI><a href="#[7a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_longlong_oct
 <LI><a href="#[47]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_longlong_dec
+<LI><a href="#[3f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_int_dec
 </UL>
 
 <P><STRONG><a name="[2c]"></a>_printf_fp_dec_real</STRONG> (Thumb, 620 bytes, Stack size 96 bytes, _printf_fp_dec.o(.text))
@@ -904,8 +904,8 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[74]"></a>__rt_udiv10</STRONG> (Thumb, 40 bytes, Stack size 0 bytes, rtudiv10.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[3f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_int_dec
-<LI><a href="#[2c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_fp_dec_real
+<BR><BR>[Called By]<UL><LI><a href="#[2c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_fp_dec_real
+<LI><a href="#[3f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_int_dec
 </UL>
 
 <P><STRONG><a name="[5d]"></a>__user_setup_stackheap</STRONG> (Thumb, 62 bytes, Stack size 8 bytes, sys_stackheap_outer.o(.text))
@@ -1299,6 +1299,7 @@ Global Symbols
 <LI><a href="#[99]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MCP2515_WriteByte
 <LI><a href="#[98]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MCP2515_WriteByteSequence
 <LI><a href="#[97]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MCP2515_SetConfigMode
+<LI><a href="#[96]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MCP2515_Initialize
 </UL>
 
 <P><STRONG><a name="[b8]"></a>HAL_SPI_TransmitReceive</STRONG> (Thumb, 836 bytes, Stack size 48 bytes, stm32l0xx_hal_spi.o(.text.HAL_SPI_TransmitReceive))
@@ -1407,10 +1408,11 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[9b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CANSPI_Receive
 </UL>
 
-<P><STRONG><a name="[96]"></a>MCP2515_Initialize</STRONG> (Thumb, 120 bytes, Stack size 8 bytes, mcp2515.o(.text.MCP2515_Initialize))
-<BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = MCP2515_Initialize
+<P><STRONG><a name="[96]"></a>MCP2515_Initialize</STRONG> (Thumb, 216 bytes, Stack size 40 bytes, mcp2515.o(.text.MCP2515_Initialize))
+<BR><BR>[Stack]<UL><LI>Max Depth = 128<LI>Call Chain = MCP2515_Initialize &rArr; HAL_SPI_Transmit &rArr; SPI_WaitFlagStateUntilTimeout
 </UL>
-<BR>[Calls]<UL><LI><a href="#[c6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SPI_GetState
+<BR>[Calls]<UL><LI><a href="#[ba]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SPI_Transmit
+<LI><a href="#[c6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SPI_GetState
 <LI><a href="#[c5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_WritePin
 </UL>
 <BR>[Called By]<UL><LI><a href="#[95]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CANSPI_Initialize
@@ -1633,7 +1635,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[61]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[61]"></a>main</STRONG> (Thumb, 516 bytes, Stack size 120 bytes, main.o(.text.main))
+<P><STRONG><a name="[61]"></a>main</STRONG> (Thumb, 772 bytes, Stack size 120 bytes, main.o(.text.main))
 <BR><BR>[Stack]<UL><LI>Max Depth = 472 + Unknown Stack Size
 <LI>Call Chain = main &rArr; DF_Init &rArr; Printf &rArr; vsprintf &rArr; _printf_char_common &rArr; __printf
 </UL>

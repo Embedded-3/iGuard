@@ -65,6 +65,7 @@ void SystemClock_Config(void);
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
 volatile uint8_t can_rx_flag = 0;
+volatile uint8_t driving_flag = 1;
 void do_wake_up(void)
 {
     HAL_GPIO_TogglePin(GPIOA, GPIO_PIN_5); // LED ON
@@ -118,7 +119,7 @@ int main(void)
   MX_USART4_UART_Init();
   /* USER CODE BEGIN 2 */
 	HW_VCOM_Init(&huart2);
-	DF_Init(10);
+	DF_Init(20);
   CANSPI_Initialize();	
 	lcd_init();
 	
@@ -151,7 +152,8 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-		if (can_rx_flag)
+		// sleeping_mode
+		if (driving_flag == 0 && can_rx_flag)
 		{
 				can_rx_flag = 0; 
 				while(CANSPI_messagesInBuffer() > 0)
@@ -213,6 +215,79 @@ int main(void)
 							//  Sleep Message
 							case 0x02:
 								Printf("Goes to Sleep\r\n");
+								HAL_SuspendTick();
+								HAL_PWR_EnterSLEEPMode(PWR_MAINREGULATOR_ON, PWR_SLEEPENTRY_WFI);
+								break;
+							default:
+								Printf("Defuault : %d\r\n", rxMessage.frame.id);
+								break;
+						}
+					}		
+				}
+		}
+		// driving mode
+		else if (driving_flag && can_rx_flag)
+		{
+			while(CANSPI_messagesInBuffer() > 0)
+				{
+					if (CANSPI_Receive(&rxMessage))
+					{
+						// Set song number from Raspberry pi CAN messege !!!!!!!!!!!!
+						// STM32 check
+						switch (rxMessage.frame.id)
+						{
+							// wakeup message 
+							case 0x1:
+								Printf("Wake up Message Received\r\n");
+								break;
+							// TextLcd message
+							case 0x10:
+								// store 8 bytes to buf
+								Printf("%d th PrintLcd Message Received\r\n", lcdCnt + 1);
+								if (lcdCnt < 4)
+								{
+										buf[lcdCnt * 8 + 0] = rxMessage.frame.data0;
+										buf[lcdCnt * 8 + 1] = rxMessage.frame.data1;
+										buf[lcdCnt * 8 + 2] = rxMessage.frame.data2;
+										buf[lcdCnt * 8 + 3] = rxMessage.frame.data3;
+										buf[lcdCnt * 8 + 4] = rxMessage.frame.data4;
+										buf[lcdCnt * 8 + 5] = rxMessage.frame.data5;
+										buf[lcdCnt * 8 + 6] = rxMessage.frame.data6;
+										buf[lcdCnt * 8 + 7] = rxMessage.frame.data7;
+
+										lcdCnt++;
+								}
+
+								// print lcd
+								if (lcdCnt == 4)
+								{
+										buf[31] = '\0';  // null-terminate
+										Printf("Print Message : %s\r\n", buf);
+										lcd_clear();
+										lcd_goto(0, 0); 
+										lcd_print((char*)buf);  // buf[0~15]
+
+										lcd_goto(1, 0);
+										lcd_print((char*)&buf[16]); // buf[16~31]
+
+										lcdCnt = 0;  // clear buf
+								}
+								break;
+							// DFPlayer StartMusic
+							case 0x05:
+								musicNumber = rxMessage.frame.data0;
+								Printf("%d Music Starts\r\n", musicNumber);
+								Sound_Track(musicNumber);
+								break;
+							// DFPlayer EndMusic
+							case 0x06:
+								Printf("Music Pauses\r\n");
+								DF_Pause();
+								break;
+							//  Sleep Message
+							case 0x02:
+								Printf("Goes to Sleep\r\n");
+								driving_flag = 0;
 								HAL_SuspendTick();
 								HAL_PWR_EnterSLEEPMode(PWR_MAINREGULATOR_ON, PWR_SLEEPENTRY_WFI);
 								break;
