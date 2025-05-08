@@ -9,7 +9,7 @@
  * Boost Software License - Version 1.0 - August 17th, 2003
  * 
  * Permission is hereby granted, free of charge, to any person or organization obtaining a copy of the software and 
- * accompanying documentation covered by this license (the "Software") to use, reproduce, display, distribute, execute,
+ * accompanying documentation coveRED_LED by this license (the "Software") to use, reproduce, display, distribute, execute,
  * and transmit the Software, and to prepare derivative works of the Software, and to permit third-parties to whom the
  * Software is furnished to do so, all subject to the following:
  * 
@@ -45,9 +45,6 @@
 
 // Task scheduling related
 void AppScheduling(void);
-void AppTask1ms(void);
-void AppTask10ms(void);
-void AppTask100ms(void);
 void AppTask1000ms(void);
 
 // Global variables
@@ -105,21 +102,21 @@ void exit_sleep_mode(void)
 void initGPIO(void)
 {
     // GPIO 초기화
-    IfxPort_setPinModeOutput(RED.port, RED.pinIndex, IfxPort_OutputMode_pushPull, IfxPort_OutputIdx_general);
-    IfxPort_setPinLow(RED.port, RED.pinIndex);  // 초기값 HIGH
+    IfxPort_setPinModeOutput(RED_LED.port, RED_LED.pinIndex, IfxPort_OutputMode_pushPull, IfxPort_OutputIdx_general);
+    IfxPort_setPinLow(RED_LED.port, RED_LED.pinIndex);  // 초기값 HIGH
 
-    IfxPort_setPinModeOutput(YELLOW.port, YELLOW.pinIndex, IfxPort_OutputMode_pushPull, IfxPort_OutputIdx_general);
-    IfxPort_setPinLow(YELLOW.port, YELLOW.pinIndex);  // 초기값 HIGH
+    IfxPort_setPinModeOutput(YELLOW_LED.port, YELLOW_LED.pinIndex, IfxPort_OutputMode_pushPull, IfxPort_OutputIdx_general);
+    IfxPort_setPinLow(YELLOW_LED.port, YELLOW_LED.pinIndex);  // 초기값 HIGH
 
-    IfxPort_setPinModeOutput(GREEN.port, GREEN.pinIndex, IfxPort_OutputMode_pushPull, IfxPort_OutputIdx_general);
-    IfxPort_setPinLow(GREEN.port, GREEN.pinIndex);  // 초기값 HIGH
+    IfxPort_setPinModeOutput(GREEN_LED.port, GREEN_LED.pinIndex, IfxPort_OutputMode_pushPull, IfxPort_OutputIdx_general);
+    IfxPort_setPinLow(GREEN_LED.port, GREEN_LED.pinIndex);  // 초기값 HIGH
 }
 void core0_main(void)
 {
     IfxCpu_enableInterrupts();
     
     /* !!WATCHDOG0 AND SAFETY WATCHDOG ARE DISABLED HERE!!
-     * Enable the watchdogs and service them periodically if it is required
+     * Enable the watchdogs and service them periodically if it is requiRED_LED
      */
     IfxScuWdt_disableCpuWatchdog(IfxScuWdt_getCpuWatchdogPassword());
     IfxScuWdt_disableSafetyWatchdog(IfxScuWdt_getSafetyWatchdogPassword());
@@ -132,6 +129,7 @@ void core0_main(void)
     // Initialize the HVAC system
     sensor_init(&g_data);   // Init 센서 데이터
     hvac_init(&g_hvac);     // Init HVAC
+    //changeMode(0);  // 외부 유입 모드로 전환
 
     initShellInterface();   // Init Debug
     Driver_Stm_Init();      // Init Scheuduling
@@ -147,67 +145,50 @@ void core0_main(void)
     print("빠져나왔다!!\r\n");
     sendCanMessage();   // CAN 송신 : 빠져나왔다!!
 
+    //setFanDutyCycle(50000);  // 팬 속도 제어
 
     while(1)
     {
+
         AppScheduling();
         canReceiveLoop();
     }
-}
-
-
-
-void AppTask1ms(void)
-{
-    /*
-    #define SERVO_PIN IfxPort_P02_5
-    IfxPort_setPinModeOutput(SERVO_PIN.port, SERVO_PIN.pinIndex, IfxPort_OutputMode_pushPull, IfxPort_OutputIdx_general);
-
-    static time =  0;
-    time = (time + 1) % 20;
-    if(time == 0){
-        IfxPort_setPinHigh(SERVO_PIN.port, SERVO_PIN.pinIndex);
-        //for(volatile int i=0;i<5000000;i++);
-    }
-    else if (time == 2){
-        IfxPort_setPinLow(SERVO_PIN.port, SERVO_PIN.pinIndex);
-    }
-    */
-    stTestCnt.u32nuCnt1ms++;
-}
-
-void AppTask10ms(void)
-{
-    stTestCnt.u32nuCnt10ms++;
-}
-
-void AppTask100ms(void)
-{
-    stTestCnt.u32nuCnt100ms++;
 }
 
 void AppTask1000ms(void)
 {
     stTestCnt.u32nuCnt1000ms++;
 
-    print("\n\r");
+    #define RESET   "\033[0m"
+    #define GREEN   "\033[32m"
+    #define RED     "\033[31m"
+    #define YELLOW  "\033[33m"
+    #define BLUE    "\033[34m"
+    #define MAGENTA "\033[35m"
+    #define CYAN    "\033[36m"
+    #define WHITE   "\033[37m"
+
+    print("---------------------------\n\r");
 
     // 1. MQ135
     uint16 mq135_adcval = 0;
     mq135_adcval = Driver_Adc0_DataObtain();   // mq135 val평소 1600
     Driver_Adc0_ConvStart();
 
-    print("< MQ135 >\n\r");
-    print("adcval      : %d\n\r", mq135_adcval);
+    print(MAGENTA"< MQ135 >\n\r"RESET);
+    print("adcval      : ");
+    print(CYAN"%d\n\r"RESET, mq135_adcval);
 
     // 2. DHT22
     DHT22_Data dht22_data;
     if(stTestCnt.u32nuCnt1000ms % 2){        // DHT22 Period = 2s
         int result = DHT22_process(&dht22_data);  // DHT22 데이터 읽기
         if(!result){
-            print("< DHT22 > \n\r");
-            print("temperature : %.1lf\n\r", (double)dht22_data.temperature/10);
-            print("humidity    : %.1lf\n\r", (double)dht22_data.humidity/10);
+            print(MAGENTA"< DHT22 > \n\r"RESET);
+            print("temperature : ");
+            print(CYAN"%.1lf\n\r"RESET, (double)dht22_data.temperature/10);
+            print("humidity    : ");
+            print(CYAN"%.1lf\n\r"RESET, (double)dht22_data.humidity/10);
         }
         else{
             print("DHT22 Error : %d\n\r", result);
@@ -216,10 +197,11 @@ void AppTask1000ms(void)
 
     // 3. MH-Z19B
     uint16 mhz19b_value = 0;
-    uint16 mhz19b_ret = MHZ19B_requestCO2(&mhz19b_value);
+    int mhz19b_ret = MHZ19B_requestCO2(&mhz19b_value);
     if(!mhz19b_ret){
-        print("< MH-Z19B >\n\r");
-        print("CO2        : %d ppm\n\r", mhz19b_value);
+        print(MAGENTA"< MH-Z19B >\n\r"RESET);
+        print("CO2        : ");
+        print(CYAN"%d ppm\n\r"RESET, mhz19b_value);
     }
     else{
         print("MH-Z19B Error, %d\n\r", mhz19b_value);
@@ -233,8 +215,11 @@ void AppTask1000ms(void)
     int hvac_ret = havc_control(&g_hvac, g_data);  // 센서 데이터 바탕으로 팬 제어 함수 호출
 
     if(!hvac_ret){
-        print("HVAC Mode  : %d\n\r", g_hvac.mode);
-        print("HVAC Speed : %d\n\r", g_hvac.speed);
+        print(MAGENTA"< HVAC >\n\r"RESET);
+        print("HVAC Mode  : ");
+        print(CYAN"%d\n\r"RESET, g_hvac.mode);
+        print("HVAC Speed : ");
+        print(CYAN"%d\n\r"RESET, g_hvac.speed);
     }
     else{
         print("HVAC Error : %dn\r", hvac_ret);
@@ -279,38 +264,14 @@ void AppTask1000ms(void)
         g_status = sendCanMessage();  // 메시지 전송
 
     }
-
-
-
-    // // 5. 서보 테스트
-    // if(stTestCnt.u32nuCnt1000ms%3 == 0) setSERVODutyCycle(SERVO_PWM_MAX);   // 1자
-    // else if(stTestCnt.u32nuCnt1000ms%3 == 1) setSERVODutyCycle(SERVO_PWM_MIN);
-    // else setSERVODutyCycle(SERVO_PWM_CENTER);
 }
 
 void AppScheduling(void)
 {
-    if(stSchedulingInfo.u8nuScheduling1msFlag == 1u)
+    if(stSchedulingInfo.u8nuScheduling1000msFlag == 1u)
     {
-        stSchedulingInfo.u8nuScheduling1msFlag = 0u;
-        AppTask1ms();
-
-        if(stSchedulingInfo.u8nuScheduling10msFlag == 1u)
-        {
-            stSchedulingInfo.u8nuScheduling10msFlag = 0u;
-            AppTask10ms();
-        }
-
-        if(stSchedulingInfo.u8nuScheduling100msFlag == 1u)
-        {
-            stSchedulingInfo.u8nuScheduling100msFlag = 0u;
-            AppTask100ms();
-        }
-        if(stSchedulingInfo.u8nuScheduling1000msFlag == 1u)
-        {
-            stSchedulingInfo.u8nuScheduling1000msFlag = 0u;
-            AppTask1000ms();
-        }
+        stSchedulingInfo.u8nuScheduling1000msFlag = 0u;
+        AppTask1000ms();
     }
 }
 

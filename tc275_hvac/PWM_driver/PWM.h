@@ -5,7 +5,10 @@
 #define ISR_PRIORITY_TOM    20                                      /* Interrupt priority number                    */
 #define FAN                 IfxGtm_TOM0_9_TOUT1_P02_1_OUT   // D3 핀
 #define SERVO               IfxGtm_TOM0_13_TOUT5_P02_5_OUT  // D7 핀
-#define PWM_PERIOD          60000                                   /* PWM period for the TOM                       */
+#define FAN_PWM          50000 //65000 //60000                                   /* PWM period for the TOM                       */
+#define FAN_3    40000
+#define FAN_2    35000
+#define FAN_1    31000
 
 #define SERVO_PWM           7812
 #define SERVO_PWM_CENTER    680
@@ -22,5 +25,6 @@ void initFanTomPwm(void);
 void initServoPwm(void);
 void controlFan(uint8 speed);
 void changeMode(uint8 mode);
+void setFanDutyCycle(uint16 dutyCycle);
  
  #endif /* PWM_H_ */

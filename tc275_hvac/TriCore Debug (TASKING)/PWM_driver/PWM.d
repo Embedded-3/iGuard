@@ -56,6 +56,14 @@ PWM.o :	"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p1\\Libraries\\iLLD\\TC27D\\T
 "C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p1\\Libraries\\iLLD\\TC27D\\Tricore\Port\Std\IfxPort.h" :
 PWM.o :	"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p1\\PWM_driver\PWM.h"
 "C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p1\\PWM_driver\PWM.h" :
+PWM.o :	"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p1\\asclin_driver\asclin.h"
+"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p1\\asclin_driver\asclin.h" :
+PWM.o :	"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p1\\Libraries\\Service\\CpuGeneric\\StdIf\IfxStdIf_DPipe.h"
+"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p1\\Libraries\\Service\\CpuGeneric\\StdIf\IfxStdIf_DPipe.h" :
+PWM.o :	"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p1\\Libraries\\Service\\CpuGeneric\\StdIf\IfxStdIf.h"
+"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p1\\Libraries\\Service\\CpuGeneric\\StdIf\IfxStdIf.h" :
+PWM.o :	"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p1\\Libraries\\iLLD\\TC27D\\Tricore\Cpu\Std\Ifx_Types.h"
+"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p1\\Libraries\\iLLD\\TC27D\\Tricore\Cpu\Std\Ifx_Types.h" :
 PWM.o :	"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p1\\Libraries\\iLLD\\TC27D\\Tricore\\Gtm\\Tom\\Pwm\IfxGtm_Tom_Pwm.h"
 "C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p1\\Libraries\\iLLD\\TC27D\\Tricore\\Gtm\\Tom\\Pwm\IfxGtm_Tom_Pwm.h" :
 PWM.o :	"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p1\\Libraries\\iLLD\\TC27D\\Tricore\_PinMap\IfxGtm_PinMap.h"
@@ -122,9 +130,3 @@ PWM.o :	"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p1\\Libraries\\iLLD\\TC27D\\T
 "C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p1\\Libraries\\iLLD\\TC27D\\Tricore\_PinMap\IfxScu_PinMap.h" :
 PWM.o :	"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p1\\asclin_driver\asclin.h"
 "C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p1\\asclin_driver\asclin.h" :
-PWM.o :	"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p1\\Libraries\\Service\\CpuGeneric\\StdIf\IfxStdIf_DPipe.h"
-"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p1\\Libraries\\Service\\CpuGeneric\\StdIf\IfxStdIf_DPipe.h" :
-PWM.o :	"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p1\\Libraries\\Service\\CpuGeneric\\StdIf\IfxStdIf.h"
-"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p1\\Libraries\\Service\\CpuGeneric\\StdIf\IfxStdIf.h" :
-PWM.o :	"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p1\\Libraries\\iLLD\\TC27D\\Tricore\Cpu\Std\Ifx_Types.h"
-"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p1\\Libraries\\iLLD\\TC27D\\Tricore\Cpu\Std\Ifx_Types.h" :
