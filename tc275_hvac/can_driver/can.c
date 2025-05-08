@@ -79,7 +79,7 @@ IfxMultican_Status sendCanMessage(void)
 }
 
 /* 수신 대기 및 출력 함수 */
-void canReceiveLoop(void)
+void canReceiveLoop(Hvac* hvac)
 {
     Ifx_CAN_MO *hwObj = IfxMultican_MsgObj_getPointer(g_rxMsgObj.node->mcan, g_rxMsgObj.msgObjId);
 
@@ -93,16 +93,77 @@ void canReceiveLoop(void)
         // 수신 성공
         if (status & IfxMultican_Status_newData)
         {
-            print("[CAN 수신 성공]\r\n");
-            print("ID: 0x%03X\r\n", g_rxMsg.id);
+            print(GREEN"[CAN 수신 성공]\r\n"RESET);
+            print(GREEN"ID: 0x%02X  ---  "RESET, g_rxMsg.id);
+
+            uint32 receive_data[2] = {0};
 
             switch(g_rxMsg.id) {
                 case 0x02: // // Sleep 메시지 수신시
                     print("Sleep Mode\r\n");
+                    hvac->control = AUTOMATIC_CTL; // 자동 모드로 변경
                     enter_sleep_mode();
                     break;
-                // TODO
-
+                // case 0x03: // 팬 제어 정지
+                //     print("Fan Stop\r\n");
+                //     hvac->control = MANUAL_CTL; // 수동 모드로 변경
+                //     hvac->speed = STOP; 
+                //     controlFan(hvac->speed);  // 팬 속도 제어 함수 호출
+                //     break;
+                // case 0x04: // 팬 속도 1
+                //     print("Fan Speed 1\r\n");
+                //     hvac->control = MANUAL_CTL; // 수동 모드로 변경
+                //     hvac->speed = LOW_SPEED;
+                //     controlFan(hvac->speed);  // 팬 속도 제어 함수 호출
+                //     break;
+                // case 0x05: // 팬 속도 2
+                //     print("Fan Speed 2\r\n");
+                //     hvac->control = MANUAL_CTL; // 수동 모드로 변경
+                //     hvac->speed = MID_SPEED;
+                //     controlFan(hvac->speed);  // 팬 속도 제어 함수 호출
+                //     break;
+                // case 0x06: // 팬 속도 3
+                //     hvac->control = MANUAL_CTL; // 수동 모드로 변경
+                //     hvac->speed = HIGH_SPEED;
+                //     controlFan(hvac->speed);  // 팬 속도 제어 함수 호출
+                //     break;
+                case 0x07: // hvac 제어 메시지 수신시
+                    receive_data[0] = g_rxMsg.data[0]; // 수신 데이터 1바이트
+                    receive_data[1] = g_rxMsg.data[1]; // 수신 데이터 2바이트
+                    if(receive_data[0] == 0x00) { // 수신 데이터가 0x00이면
+                        hvac->control = MANUAL_CTL; // 수동 모드로 변경
+                    }
+                    else if(receive_data[0] == 0x01) { // 수신 데이터가 0x01이면
+                        hvac->control = AUTOMATIC_CTL; // 자동 모드로 변경
+                    }
+                    
+                    switch(receive_data[1]) {
+                        case 0x00:
+                            hvac->speed = STOP; // 팬 정지
+                            controlFan(hvac->speed);  // 팬 속도 제어 함수 호출
+                            break;
+                        case 0x01:
+                            hvac->speed = LOW_SPEED; // 팬 저속
+                            controlFan(hvac->speed);  // 팬 속도 제어 함수 호출
+                            break;
+                        case 0x02:
+                            hvac->speed = MID_SPEED; // 팬 중속
+                            controlFan(hvac->speed);  // 팬 속도 제어 함수 호출
+                            break;
+                        case 0x03:
+                            hvac->speed = HIGH_SPEED; // 팬 고속
+                            controlFan(hvac->speed);  // 팬 속도 제어 함수 호출
+                            break;
+                        default:
+                            print("Unknown Fan Speed: %d\r\n", receive_data[1]);
+                            break;
+                    }
+                    // print("HVAC Automatic Control Mode\r\n");
+                    // hvac->control = AUTOMATIC_CTL; // 자동 모드로 변경
+                    break;
+                default:
+                    print("Unknown ID: 0x%03X\r\n", g_rxMsg.id);
+                    break;
             }
 
         }

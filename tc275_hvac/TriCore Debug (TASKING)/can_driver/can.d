@@ -108,3 +108,41 @@ can.o :	"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p1\\Libraries\\Service\\CpuGe
 "C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p1\\Libraries\\Service\\CpuGeneric\\StdIf\IfxStdIf_DPipe.h" :
 can.o :	"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p1\\Libraries\\Service\\CpuGeneric\\StdIf\IfxStdIf.h"
 "C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p1\\Libraries\\Service\\CpuGeneric\\StdIf\IfxStdIf.h" :
+can.o :	"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p1\\hvac_ctl_driver\hvac_ctl.h"
+"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p1\\hvac_ctl_driver\hvac_ctl.h" :
+can.o :	"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p1\\Libraries\\iLLD\\TC27D\\Tricore\\Port\\Std\IfxPort.h"
+"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p1\\Libraries\\iLLD\\TC27D\\Tricore\\Port\\Std\IfxPort.h" :
+can.o :	"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p1\\Libraries\\iLLD\\TC27D\\Tricore\\_PinMap\IfxPort_PinMap.h"
+"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p1\\Libraries\\iLLD\\TC27D\\Tricore\\_PinMap\IfxPort_PinMap.h" :
+can.o :	"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p1\\PWM_driver\PWM.h"
+"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p1\\PWM_driver\PWM.h" :
+can.o :	"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p1\\hvac_ctl_driver\hvac_ctl.h"
+"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p1\\hvac_ctl_driver\hvac_ctl.h" :
+can.o :	"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p1\\Libraries\\iLLD\\TC27D\\Tricore\\Gtm\\Tom\\Pwm\IfxGtm_Tom_Pwm.h"
+"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p1\\Libraries\\iLLD\\TC27D\\Tricore\\Gtm\\Tom\\Pwm\IfxGtm_Tom_Pwm.h" :
+can.o :	"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p1\\Libraries\\iLLD\\TC27D\\Tricore\_PinMap\IfxGtm_PinMap.h"
+"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p1\\Libraries\\iLLD\\TC27D\\Tricore\_PinMap\IfxGtm_PinMap.h" :
+can.o :	"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p1\\Libraries\\Infra\\Sfr\\TC27D\\_Reg\IfxGtm_reg.h"
+"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p1\\Libraries\\Infra\\Sfr\\TC27D\\_Reg\IfxGtm_reg.h" :
+can.o :	"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p1\\Libraries\\Infra\\Sfr\\TC27D\\_Reg\IfxGtm_regdef.h"
+"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p1\\Libraries\\Infra\\Sfr\\TC27D\\_Reg\IfxGtm_regdef.h" :
+can.o :	"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p1\\Libraries\\iLLD\\TC27D\\Tricore\_Impl\IfxGtm_cfg.h"
+"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p1\\Libraries\\iLLD\\TC27D\\Tricore\_Impl\IfxGtm_cfg.h" :
+can.o :	"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p1\\Libraries\\iLLD\\TC27D\\Tricore\Gtm\Std\IfxGtm_Atom.h"
+"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p1\\Libraries\\iLLD\\TC27D\\Tricore\Gtm\Std\IfxGtm_Atom.h" :
+can.o :	"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p1\\Libraries\\iLLD\\TC27D\\Tricore\Gtm\Std\IfxGtm.h"
+"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p1\\Libraries\\iLLD\\TC27D\\Tricore\Gtm\Std\IfxGtm.h" :
+can.o :	"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p1\\Libraries\\iLLD\\TC27D\\Tricore\Gtm\Std\IfxGtm_Tbu.h"
+"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p1\\Libraries\\iLLD\\TC27D\\Tricore\Gtm\Std\IfxGtm_Tbu.h" :
+can.o :	"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p1\\Libraries\\iLLD\\TC27D\\Tricore\Gtm\Std\IfxGtm_Cmu.h"
+"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p1\\Libraries\\iLLD\\TC27D\\Tricore\Gtm\Std\IfxGtm_Cmu.h" :
+can.o :	"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p1\\Libraries\\iLLD\\TC27D\\Tricore\Gtm\Std\IfxGtm_Tom.h"
+"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p1\\Libraries\\iLLD\\TC27D\\Tricore\Gtm\Std\IfxGtm_Tom.h" :
+can.o :	"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p1\\Libraries\\Infra\\Sfr\\TC27D\\_Reg\IfxGtm_bf.h"
+"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p1\\Libraries\\Infra\\Sfr\\TC27D\\_Reg\IfxGtm_bf.h" :
+can.o :	"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p1\\Libraries\\iLLD\\TC27D\\Tricore\Gtm\Std\IfxGtm_Tim.h"
+"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p1\\Libraries\\iLLD\\TC27D\\Tricore\Gtm\Std\IfxGtm_Tim.h" :
+can.o :	"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p1\\Libraries\\iLLD\\TC27D\\Tricore\Gtm\Std\IfxGtm_Cmu.h"
+"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p1\\Libraries\\iLLD\\TC27D\\Tricore\Gtm\Std\IfxGtm_Cmu.h" :
+can.o :	"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p1\\asclin_driver\asclin.h"
+"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p1\\asclin_driver\asclin.h" :

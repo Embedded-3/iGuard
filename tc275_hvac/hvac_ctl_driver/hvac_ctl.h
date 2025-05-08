@@ -9,6 +9,16 @@
 #include "PWM.h"
 #include "asclin.h"
 
+// Print Color
+#define RESET   "\033[0m"
+#define GREEN   "\033[32m"
+#define RED     "\033[31m"
+#define YELLOW  "\033[33m"
+#define BLUE    "\033[34m"
+#define MAGENTA "\033[35m"
+#define CYAN    "\033[36m"
+#define WHITE   "\033[37m"
+
 // Thresholds Values
 #define EXT_AIR_TH 3200 //2660
 #define INT_CO2_TH 1000
@@ -20,6 +30,11 @@
 #define RED_LED IfxPort_P10_5
 #define YELLOW_LED IfxPort_P10_3
 #define GREEN_LED IfxPort_P10_2
+
+typedef enum {
+    MANUAL_CTL = 0, // manual control
+    AUTOMATIC_CTL = 1, // automatic control
+}Control_Mode; // control mode
 
 typedef enum {
     EXT_MODE = 0,
@@ -34,6 +49,7 @@ typedef enum {
 }Fan_Speed;
 
 typedef struct {
+    Control_Mode control; // 0: manual control, 1: automatic control
     Mode mode; // 0: external air quality, 1: internal air quality
     Fan_Speed speed; // 0: stop, 1: low speed, 2: mid speed, 3: high speed
 }Hvac;

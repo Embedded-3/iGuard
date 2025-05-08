@@ -83,6 +83,7 @@ void enter_sleep_mode(void)
 {
     if (g_sleep == 0)
     {
+        print("잠든다!!\n\r");
         g_sleep = 1;
 
         IfxScuWdt_clearCpuEndinit(IfxScuWdt_getCpuWatchdogPassword());
@@ -129,7 +130,6 @@ void core0_main(void)
     // Initialize the HVAC system
     sensor_init(&g_data);   // Init 센서 데이터
     hvac_init(&g_hvac);     // Init HVAC
-    //changeMode(0);  // 외부 유입 모드로 전환
 
     initShellInterface();   // Init Debug
     Driver_Stm_Init();      // Init Scheuduling
@@ -145,13 +145,10 @@ void core0_main(void)
     print("빠져나왔다!!\r\n");
     sendCanMessage();   // CAN 송신 : 빠져나왔다!!
 
-    //setFanDutyCycle(50000);  // 팬 속도 제어
-
     while(1)
     {
-
         AppScheduling();
-        canReceiveLoop();
+        canReceiveLoop(&g_hvac);
     }
 }
 
@@ -159,14 +156,6 @@ void AppTask1000ms(void)
 {
     stTestCnt.u32nuCnt1000ms++;
 
-    #define RESET   "\033[0m"
-    #define GREEN   "\033[32m"
-    #define RED     "\033[31m"
-    #define YELLOW  "\033[33m"
-    #define BLUE    "\033[34m"
-    #define MAGENTA "\033[35m"
-    #define CYAN    "\033[36m"
-    #define WHITE   "\033[37m"
 
     print("---------------------------\n\r");
 
@@ -214,8 +203,15 @@ void AppTask1000ms(void)
     g_data.int_humidity = (double)dht22_data.humidity/10;     // 내부 습도
     int hvac_ret = havc_control(&g_hvac, g_data);  // 센서 데이터 바탕으로 팬 제어 함수 호출
 
-    if(!hvac_ret){
-        print(MAGENTA"< HVAC >\n\r"RESET);
+    if(hvac_ret == 0){
+        print(MAGENTA"< HVAC Automatic Control >\n\r"RESET);
+        print("HVAC Mode  : ");
+        print(CYAN"%d\n\r"RESET, g_hvac.mode);
+        print("HVAC Speed : ");
+        print(CYAN"%d\n\r"RESET, g_hvac.speed);
+    }
+    else if(hvac_ret == 1){
+        print(MAGENTA"< HVAC "YELLOW"Manual Control >\r\n"RESET);
         print("HVAC Mode  : ");
         print(CYAN"%d\n\r"RESET, g_hvac.mode);
         print("HVAC Speed : ");
