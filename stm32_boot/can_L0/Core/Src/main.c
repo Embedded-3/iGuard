@@ -66,6 +66,8 @@ volatile static uint8_t Distance  = 0;
 volatile uint8_t DistanceReady = 0;
 volatile uint16_t no_activity_counter = 0;
 volatile uint8_t tim3_flag = 0;
+
+volatile uint8_t driving_mode = 1; // driving mode
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -77,12 +79,22 @@ void HCSR04_Read(void);
 uint8_t FSR_Check (void);
 uint8_t Ultrasonic_Check(void);
 void check_and_send(void);
+void send_sleep_message(void);
+void send_wakeup_message(void);
 void enter_sleep_mode(void);
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
-
+void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
+{
+	 if (GPIO_Pin == EXTERNAL_BUTTON_Pin)  // external button
+    {
+				HAL_GPIO_TogglePin(GPIOA, GPIO_PIN_5);
+			  send_sleep_message();
+				driving_mode = 0; // car poweroff
+    }
+}
 /* USER CODE END 0 */
 
 /**
@@ -129,7 +141,7 @@ int main(void)
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1) {
-    if (tim3_flag) {
+    if (driving_mode == 0 && tim3_flag) {
       tim3_flag = 0;
       check_and_send();  
     }
@@ -239,8 +251,46 @@ void HAL_TIM_IC_CaptureCallback(TIM_HandleTypeDef *htim) // 초음파 센서 거
     }
 }
 
+void send_sleep_message(void)
+{
+		uCAN_MSG txMessage;
+    txMessage.frame.idType = dSTANDARD_CAN_MSG_ID_2_0B;
+    txMessage.frame.id = 0x2; // sleep message id = 2
+    txMessage.frame.dlc = 8;
+    txMessage.frame.data0 = 's';
+    txMessage.frame.data1 = 'l';
+    txMessage.frame.data2 = 'e';
+    txMessage.frame.data3 = 'e';
+    txMessage.frame.data4 = 'p';
+    txMessage.frame.data5 = 0;
+    txMessage.frame.data6 = 0;
+    txMessage.frame.data7 = 0;
 
-void enter_sleep_mode(void) {
+    CANSPI_Transmit(&txMessage);
+    HAL_GPIO_TogglePin(GPIOA, GPIO_PIN_5);
+}
+
+void send_wakeup_message(void)
+{
+		uCAN_MSG txMessage;
+    txMessage.frame.idType = dSTANDARD_CAN_MSG_ID_2_0B;
+    txMessage.frame.id = 0x1; // wakeup message id = 1
+    txMessage.frame.dlc = 8;
+    txMessage.frame.data0 = 'W';
+    txMessage.frame.data1 = 'A';
+    txMessage.frame.data2 = 'K';
+    txMessage.frame.data3 = 'E';
+    txMessage.frame.data4 = 0;
+    txMessage.frame.data5 = 0;
+    txMessage.frame.data6 = 0;
+    txMessage.frame.data7 = 0;
+
+    CANSPI_Transmit(&txMessage);
+    HAL_GPIO_TogglePin(GPIOA, GPIO_PIN_5);
+}
+
+void enter_sleep_mode(void) 
+{
   HAL_SuspendTick(); 
   HAL_PWR_EnterSLEEPMode(PWR_MAINREGULATOR_ON, PWR_SLEEPENTRY_WFI);
   HAL_ResumeTick();   
@@ -319,21 +369,7 @@ void check_and_send(void) {
 	{
 		if (result_accumulated)
 		{
-			uCAN_MSG txMessage;
-      txMessage.frame.idType = dSTANDARD_CAN_MSG_ID_2_0B;
-      txMessage.frame.id = 0x1; // wakeup message id = 1
-      txMessage.frame.dlc = 8;
-      txMessage.frame.data0 = 'W';
-      txMessage.frame.data1 = 'A';
-      txMessage.frame.data2 = 'K';
-      txMessage.frame.data3 = 'E';
-      txMessage.frame.data4 = 0;
-      txMessage.frame.data5 = 0;
-      txMessage.frame.data6 = 0;
-      txMessage.frame.data7 = 0;
-
-      CANSPI_Transmit(&txMessage);
-      HAL_GPIO_TogglePin(GPIOA, GPIO_PIN_5);
+			send_wakeup_message();
       no_activity_counter = 0;
 			result_accumulated = 0;
 			sleep_message_sent = 0;
@@ -344,21 +380,7 @@ void check_and_send(void) {
 	// if CANT find child in 30seconds -> send sleep message to All other ECUs
   if (no_activity_counter >= 30 && sleep_message_sent == 0) {
 		// sleep message send
-	  uCAN_MSG txMessage;
-    txMessage.frame.idType = dSTANDARD_CAN_MSG_ID_2_0B;
-    txMessage.frame.id = 0x2; // sleep message id = 2
-    txMessage.frame.dlc = 8;
-    txMessage.frame.data0 = 's';
-    txMessage.frame.data1 = 'l';
-    txMessage.frame.data2 = 'e';
-    txMessage.frame.data3 = 'e';
-    txMessage.frame.data4 = 'p';
-    txMessage.frame.data5 = 0;
-    txMessage.frame.data6 = 0;
-    txMessage.frame.data7 = 0;
-
-    CANSPI_Transmit(&txMessage);
-    HAL_GPIO_TogglePin(GPIOA, GPIO_PIN_5);
+	  send_sleep_message();
     no_activity_counter = 0;
 		sleep_message_sent = 1;
     //enter_sleep_mode();
