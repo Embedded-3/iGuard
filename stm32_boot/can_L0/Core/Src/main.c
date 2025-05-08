@@ -300,11 +300,28 @@ void check_and_send(void) {
   uint8_t ultrasonic = Ultrasonic_Check();
 	
   uint8_t result = fsr & (pir | ultrasonic); // Sensor Logic
-
-  if(result) {
-      uCAN_MSG txMessage;
+	
+	// result accumulated stores last 3 results
+	static uint8_t result_accumulated = 0;
+	// one_second_cnt counts for 3 second.
+	static uint8_t one_second_cnt = 0; 
+	// sleep message sent -> sleeps all other ECUs
+	static uint8_t sleep_message_sent = 0;
+	
+	one_second_cnt++;
+	// stores result to result_accumulated
+	result_accumulated |= result;
+	// no_activity_counter counts for N seconds
+	no_activity_counter++;
+	
+	// if 3 seconds 
+	if (one_second_cnt == 3)
+	{
+		if (result_accumulated)
+		{
+			uCAN_MSG txMessage;
       txMessage.frame.idType = dSTANDARD_CAN_MSG_ID_2_0B;
-      txMessage.frame.id = 0x100;
+      txMessage.frame.id = 0x1; // wakeup message id = 1
       txMessage.frame.dlc = 8;
       txMessage.frame.data0 = 'W';
       txMessage.frame.data1 = 'A';
@@ -318,13 +335,33 @@ void check_and_send(void) {
       CANSPI_Transmit(&txMessage);
       HAL_GPIO_TogglePin(GPIOA, GPIO_PIN_5);
       no_activity_counter = 0;
-  }else {
-    no_activity_counter++;
-  }
+			result_accumulated = 0;
+			sleep_message_sent = 0;
+		}
+		one_second_cnt = 0;
+	}
 
-  if (no_activity_counter >= 500) {
+	// if CANT find child in 30seconds -> send sleep message to All other ECUs
+  if (no_activity_counter >= 30 && sleep_message_sent == 0) {
+		// sleep message send
+	  uCAN_MSG txMessage;
+    txMessage.frame.idType = dSTANDARD_CAN_MSG_ID_2_0B;
+    txMessage.frame.id = 0x2; // sleep message id = 2
+    txMessage.frame.dlc = 8;
+    txMessage.frame.data0 = 's';
+    txMessage.frame.data1 = 'l';
+    txMessage.frame.data2 = 'e';
+    txMessage.frame.data3 = 'e';
+    txMessage.frame.data4 = 'p';
+    txMessage.frame.data5 = 0;
+    txMessage.frame.data6 = 0;
+    txMessage.frame.data7 = 0;
+
+    CANSPI_Transmit(&txMessage);
+    HAL_GPIO_TogglePin(GPIOA, GPIO_PIN_5);
     no_activity_counter = 0;
-    enter_sleep_mode();
+		sleep_message_sent = 1;
+    //enter_sleep_mode();
   }
 }
 
