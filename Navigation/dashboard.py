@@ -2,14 +2,14 @@ from PyQt5.QtWidgets import QApplication, QWidget, QLabel, QGridLayout
 from PyQt5.QtGui import QPixmap, QPainter, QPainterPath
 from PyQt5.QtCore import Qt, QRectF, QSize
 import sys, subprocess
-
+import os
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 class RoundImageButton(QLabel):
     def __init__(self, image_path, size, callback):
         super().__init__()
         self.setFixedSize(size, size)
         self.setCursor(Qt.PointingHandCursor)
         self.callback = callback
-
         self.setPixmap(self._get_rounded_pixmap(image_path, size))
         self.setStyleSheet("border: 2px solid #3498db; border-radius: 20px;")
 
@@ -41,21 +41,32 @@ class Dashboard(QWidget):
         layout = QGridLayout()
         layout.setSpacing(30)
 
-        # 이미지 버튼 (예쁘게 잘린 버튼)
-        music_btn = RoundImageButton(
-            "/home/jw/Desktop/music_player/babyshark.jpg",
-            120,
-            self.open_music_player
-        )
+        buttons = [
+            ("전화", os.path.join(BASE_DIR, "icons/phonecall.png"), None),
+            ("카카오톡", os.path.join(BASE_DIR, "icons/kakaotalk.jpg"), None),
+            ("지도", os.path.join(BASE_DIR, "icons/navermap.png"), None),
+            ("노래", os.path.join(BASE_DIR, "icons/babyshark.jpg"), os.path.join(BASE_DIR, "music_player.py")),
+        ]
 
-        layout.addWidget(music_btn, 0, 0)
+        positions = [(i // 2, i % 2) for i in range(len(buttons))]
+
+        for (name, img_path, script_path), (row, col) in zip(buttons, positions):
+            if script_path:
+                callback = lambda path=script_path: self.launch_app(path)
+            else:
+                callback = lambda: None  # 아무 동작 없음
+
+            btn = RoundImageButton(img_path, 120, callback)
+            layout.addWidget(btn, row, col)
+
         self.setLayout(layout)
 
-    def open_music_player(self):
-        subprocess.Popen(["/usr/bin/python3", "/home/jw/Desktop/music_player/v.py"])
+    def launch_app(self, path):
+        subprocess.Popen(["/usr/bin/python3", path])
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)
     win = Dashboard()
     win.showFullScreen()
     sys.exit(app.exec_())
+

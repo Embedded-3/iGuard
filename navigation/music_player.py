@@ -7,7 +7,7 @@ from PyQt5.QtWidgets import (
 )
 from PyQt5.QtGui import QPixmap, QFont
 from PyQt5.QtCore import Qt
-
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 class MusicScreen(QWidget):
     def __init__(self):
         super().__init__()
@@ -25,9 +25,9 @@ class MusicScreen(QWidget):
 
         # 곡 목록
         self.songs = {
-            1: {"title": "babyshark", "image": "/home/jw/Desktop/music_player/babyshark.jpg"},
-            2: {"title": "bbororo", "image": "/home/jw/Desktop/music_player/bbororo.jpg"},
-            3: {"title": "totoro", "image": "/home/jw/Desktop/music_player/totoro.jpg"}
+            1: {"title": "babyshark", "image": os.path.join(BASE_DIR, "icons/babyshark.jpg")},
+            2: {"title": "bbororo", "image": os.path.join(BASE_DIR, "icons/bbororo.jpg")},
+            3: {"title": "totoro", "image": os.path.join(BASE_DIR, "icons/totoro.jpg")}
         }
         self.current_track = 1
 
@@ -130,3 +130,4 @@ if __name__ == '__main__':
     win = MusicScreen()
     win.showFullScreen()
     sys.exit(app.exec_())
+
