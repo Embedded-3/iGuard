@@ -135,8 +135,10 @@ void canReceiveLoop(Hvac* hvac)
                     }
                     else if(receive_data[0] == 0x01) { // 수신 데이터가 0x01이면
                         hvac->control = AUTOMATIC_CTL; // 자동 모드로 변경
+                        break;  // 자동 모드일 때는 팬 속도 제어를 하지 않음
                     }
                     
+                    // 수동 모드에서 팬 속도 제어
                     switch(receive_data[1]) {
                         case 0x00:
                             hvac->speed = STOP; // 팬 정지
@@ -158,11 +160,9 @@ void canReceiveLoop(Hvac* hvac)
                             print("Unknown Fan Speed: %d\r\n", receive_data[1]);
                             break;
                     }
-                    // print("HVAC Automatic Control Mode\r\n");
-                    // hvac->control = AUTOMATIC_CTL; // 자동 모드로 변경
                     break;
                 default:
-                    print("Unknown ID: 0x%03X\r\n", g_rxMsg.id);
+                    print("Unknown ID: 0x%02X\r\n", g_rxMsg.id);
                     break;
             }
 
