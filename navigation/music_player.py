@@ -1,27 +1,19 @@
 import sys
 import os
-import time
-import serial
 from PyQt5.QtWidgets import (
     QApplication, QWidget, QLabel, QVBoxLayout, QPushButton, QHBoxLayout
 )
 from PyQt5.QtGui import QPixmap, QFont
 from PyQt5.QtCore import Qt
+
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+
 class MusicScreen(QWidget):
     def __init__(self):
         super().__init__()
         self.setWindowTitle("노래 플레이어")
         self.setGeometry(0, 0, 800, 480)
         self.setStyleSheet("background-color: #d6eaf8;")  # 연한 하늘색
-
-        # DFPlayer 시리얼 초기화
-        try:
-            self.ser = serial.Serial("/dev/serial0", 9600, timeout=1)
-            time.sleep(2)
-        except Exception as e:
-            print("시리얼 연결 실패:", e)
-            self.ser = None
 
         # 곡 목록
         self.songs = {
@@ -84,20 +76,6 @@ class MusicScreen(QWidget):
         self.close_button.move(self.width() - 60, 20)
         self.close_button.raise_()
 
-    def send_dfplayer_command(self, command, param=0):
-        if not self.ser:
-            return
-        high_byte = (param >> 8) & 0xFF
-        low_byte = param & 0xFF
-        data = [0x7E, 0xFF, 0x06, command, 0x00, high_byte, low_byte, 0xEF]
-        checksum = -(sum(data[1:7])) & 0xFFFF
-        data.insert(7, (checksum >> 8) & 0xFF)
-        data.insert(8, checksum & 0xFF)
-        try:
-            self.ser.write(bytes(data))
-        except Exception as e:
-            print("DFPlayer 전송 오류:", e)
-
     def play_song(self, track):
         song = self.songs.get(track)
         if not song:
@@ -110,8 +88,6 @@ class MusicScreen(QWidget):
         else:
             self.image_label.setText("이미지 없음")
             self.image_label.setPixmap(QPixmap())
-
-        self.send_dfplayer_command(0x03, track)
 
     def play_next(self):
         self.current_track += 1
@@ -130,4 +106,3 @@ if __name__ == '__main__':
     win = MusicScreen()
     win.showFullScreen()
     sys.exit(app.exec_())
-
