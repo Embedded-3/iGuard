@@ -66,19 +66,11 @@ void SystemClock_Config(void);
 /* USER CODE BEGIN 0 */
 volatile uint8_t can_rx_flag = 1;
 volatile uint8_t driving_flag = 1;
-void do_wake_up(void)
-{
-    HAL_GPIO_TogglePin(GPIOA, GPIO_PIN_5); // LED ON
-		HAL_Delay(100);
-		HAL_GPIO_TogglePin(GPIOA, GPIO_PIN_5); // LED ON
-		HAL_Delay(100);
-}
 
 void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 {
 	 if (GPIO_Pin == CAN_INT_Pin)  // PB9 INT
     {
-				//HAL_GPIO_TogglePin(GPIOA, GPIO_PIN_5);
 				can_rx_flag = 1;
 				HAL_ResumeTick();
     }
@@ -132,17 +124,7 @@ int main(void)
   DF_Pause(); // pause
   Printf("DF_Pause \r\n");
   HAL_Delay(1000);
-  
-	//Printf("Go Sleep \r\n");
-  //DF_Resume();
-  //Printf("DF_Resume \r\n");
-  //HAL_Delay(6000);
-	
-	Printf("now Driving mode : %d\r\n", driving_flag);
 	Printf("now int pin : %d\r\n", HAL_GPIO_ReadPin(CAN_INT_GPIO_Port, CAN_INT_Pin));
-     
-	// HAL_SuspendTick();
-	// HAL_PWR_EnterSLEEPMode(PWR_MAINREGULATOR_ON, PWR_SLEEPENTRY_WFI);
   
   static int lcdCnt = 0;
 	static char buf[32];
@@ -206,7 +188,10 @@ int main(void)
 							case 0x05:
 								musicNumber = rxMessage.frame.data0;
 								Printf("%d Music Starts\r\n", musicNumber);
-								Sound_Track(musicNumber);
+								if (musicNumber >= 1 && musicNumber <= 3)
+								{
+									Sound_Track(musicNumber);
+								}
 								break;
 							// DFPlayer EndMusic
 							case 0x06:
@@ -216,12 +201,11 @@ int main(void)
 							//  Sleep Message
 							case 0x02:
 								Printf("Goes to Sleep\r\n");
-								can_rx_flag = 0;
 								HAL_SuspendTick();
 								HAL_PWR_EnterSLEEPMode(PWR_MAINREGULATOR_ON, PWR_SLEEPENTRY_WFI);
 								break;
 							default:
-								Printf("Defuault : %d\r\n", rxMessage.frame.id);
+								Printf("Default : %d\r\n", rxMessage.frame.id);
 								break;
 						}
 					}		
@@ -230,6 +214,7 @@ int main(void)
 		// driving mode
 		else if (driving_flag && can_rx_flag)
 		{
+			can_rx_flag = 0;
 			while(CANSPI_messagesInBuffer() > 0)
 				{
 					if (CANSPI_Receive(&rxMessage))
@@ -279,7 +264,10 @@ int main(void)
 							case 0x05:
 								musicNumber = rxMessage.frame.data0;
 								Printf("%d Music Starts\r\n", musicNumber);
-								Sound_Track(musicNumber);
+								if (musicNumber >= 1 && musicNumber <= 3)
+								{
+									Sound_Track(musicNumber);
+								}
 								break;
 							// DFPlayer EndMusic
 							case 0x06:
