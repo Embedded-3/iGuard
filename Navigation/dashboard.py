@@ -4,7 +4,7 @@ from PyQt5.QtCore import Qt, QRectF, QSize
 import sys, subprocess
 import os
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-class RoundImageButton(QLabel):
+class RoundImageButton(QsLabel):
     def __init__(self, image_path, size, callback):
         super().__init__()
         self.setFixedSize(size, size)
