@@ -153,17 +153,17 @@
         <Ww>
           <count>0</count>
           <WinNumber>1</WinNumber>
-          <ItemText>adcValue</ItemText>
+          <ItemText>Vout</ItemText>
         </Ww>
         <Ww>
           <count>1</count>
           <WinNumber>1</WinNumber>
-          <ItemText>Vout</ItemText>
+          <ItemText>dDist</ItemText>
         </Ww>
         <Ww>
           <count>2</count>
           <WinNumber>1</WinNumber>
-          <ItemText>pressure</ItemText>
+          <ItemText>Distance</ItemText>
         </Ww>
       </WatchWindow1>
       <Tracepoint>
