@@ -1,8 +1,6 @@
 import sys
 import os
-from PyQt5.QtWidgets import (
-    QApplication, QWidget, QLabel, QVBoxLayout, QPushButton, QHBoxLayout
-)
+from PyQt5.QtWidgets import QWidget, QLabel, QVBoxLayout, QPushButton, QHBoxLayout
 from PyQt5.QtGui import QPixmap, QFont
 from PyQt5.QtCore import Qt
 
@@ -13,9 +11,8 @@ class MusicScreen(QWidget):
         super().__init__()
         self.setWindowTitle("노래 플레이어")
         self.setGeometry(0, 0, 800, 480)
-        self.setStyleSheet("background-color: #d6eaf8;")  # 연한 하늘색
+        self.setStyleSheet("background-color: #d6eaf8;")
 
-        # 곡 목록
         self.songs = {
             1: {"title": "babyshark", "image": os.path.join(BASE_DIR, "icons/babyshark.jpg")},
             2: {"title": "bbororo", "image": os.path.join(BASE_DIR, "icons/bbororo.jpg")},
@@ -23,25 +20,21 @@ class MusicScreen(QWidget):
         }
         self.current_track = 1
 
-        # 앨범 이미지
         self.image_label = QLabel()
         self.image_label.setAlignment(Qt.AlignCenter)
 
-        # 곡 제목
         self.title_label = QLabel()
         self.title_label.setAlignment(Qt.AlignCenter)
         self.title_label.setFont(QFont("Arial", 28, QFont.Bold))
 
-        # 이전/다음 버튼
-        self.prev_btn = QPushButton("⏮ 이전 곡")
-        self.next_btn = QPushButton("⏭ 다음 곡")
+        self.prev_btn = QPushButton("\u23ee \uc774\uc804 \uace1")
+        self.next_btn = QPushButton("\u23ed \ub2e4\uc74c \uace1")
         for btn in [self.prev_btn, self.next_btn]:
             btn.setFixedHeight(60)
             btn.setStyleSheet("font-size: 20px;")
         self.prev_btn.clicked.connect(self.play_prev)
         self.next_btn.clicked.connect(self.play_next)
 
-        # 종료 버튼
         self.close_button = QPushButton("X", self)
         self.close_button.setFixedSize(40, 40)
         self.close_button.setStyleSheet("""
@@ -59,7 +52,6 @@ class MusicScreen(QWidget):
         """)
         self.close_button.clicked.connect(self.close)
 
-        # 메인 레이아웃
         layout = QVBoxLayout()
         layout.addWidget(self.image_label)
         layout.addWidget(self.title_label)
@@ -102,6 +94,7 @@ class MusicScreen(QWidget):
         self.play_song(self.current_track)
 
 if __name__ == '__main__':
+    from PyQt5.QtWidgets import QApplication
     app = QApplication(sys.argv)
     win = MusicScreen()
     win.showFullScreen()
