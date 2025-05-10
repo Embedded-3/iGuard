@@ -135,7 +135,7 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
-	
+	HCSR04_Read();
   while (1) {
     if (driving_mode == 0 && tim3_flag) {
       tim3_flag = 0;
@@ -302,6 +302,7 @@ void enter_sleep_mode(void)
   HAL_ResumeTick();   
 }
 
+
 void HCSR04_Read(void)
 {
 	HAL_GPIO_WritePin(GPIOB,GPIO_PIN_4,GPIO_PIN_SET);
@@ -321,7 +322,7 @@ uint8_t Ultrasonic_Check(void) {
 		timeout++;
   }
 
-  return (dDist > 30) ? 1 : 0;
+  return (dDist > 0x30) ? 1 : 0;
 }
 
 uint8_t PIR_Check(void) {
@@ -342,32 +343,30 @@ uint8_t FSR_Check(void){
 uint8_t pir;
 void check_and_send(void) {
 	uint8_t ultrasonic = Ultrasonic_Check();
-	
-	
+
   uint8_t fsr = FSR_Check();
-  pir = PIR_Check();
-  
-  uint8_t result = fsr & (pir | ultrasonic); // Sensor Logic
+  pir = PIR_Check();  
+  uint8_t result = fsr && (pir && ultrasonic); // Sensor Logic
 	
 	// result accumulated stores last 3 results
 	static uint8_t result_accumulated = 0;
-	// one_second_cnt counts for 3 second.
-	static uint8_t one_second_cnt = 0; 
-	// sleep message sent -> sleeps all other ECUs
-	static uint8_t sleep_message_sent = 0;
+	
+	static uint8_t cnt_1s = 0; // cnt_1s counts for 3 second.
+	static uint8_t sleep_message_sent = 0; // sleep message sent -> sleeps all other ECUs
 	static uint8_t wake_message_sent = 0;
-	one_second_cnt++;
-	// stores result to result_accumulated
+	cnt_1s++;
+	// stores result to result_accumulated	
 	result_accumulated |= result;
 	// no_activity_counter counts for N seconds
 	no_activity_counter++;
 	
 	// if 3 seconds 
-	if (one_second_cnt == 3)
+	if (cnt_1s == 3)
 	{
 		if (result_accumulated)
 		{
-			if(wake_message_sent == 0){
+//			if(wake_message_sent == 0)
+			{ // wake only once
 				wake_message_sent = 1;
 				send_wakeup_message();
 			}
@@ -375,11 +374,11 @@ void check_and_send(void) {
 			result_accumulated = 0;
 			sleep_message_sent = 0;
 		}
-		one_second_cnt = 0;
+		cnt_1s = 0;
 	}
 
 	// if CANT find child in 30seconds -> send sleep message to All other ECUs
-  if (no_activity_counter >= 30 && sleep_message_sent == 0) {
+  if (no_activity_counter >= 60 && sleep_message_sent == 0) {
 		// sleep message send
 	  send_sleep_message();
     no_activity_counter = 0;

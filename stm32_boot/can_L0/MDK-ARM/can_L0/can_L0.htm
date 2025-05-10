@@ -3,7 +3,7 @@
 <title>Static Call Graph - [can_L0\can_L0.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image can_L0\can_L0.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 6220000: Last Updated: Fri May  9 18:30:17 2025
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 6220000: Last Updated: Sat May 10 15:16:09 2025
 <BR><P>
 <H3>Maximum Stack Usage =        360 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -563,6 +563,7 @@ Global Symbols
 <P><STRONG><a name="[7d]"></a>HAL_GPIO_WritePin</STRONG> (Thumb, 16 bytes, Stack size 0 bytes, stm32l0xx_hal_gpio.o(.text.HAL_GPIO_WritePin))
 <BR><BR>[Called By]<UL><LI><a href="#[8a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;check_and_send
 <LI><a href="#[81]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MX_GPIO_Init
+<LI><a href="#[30]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 <LI><a href="#[53]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MCP2515_RequestToSend
 <LI><a href="#[52]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MCP2515_LoadTxSequence
 <LI><a href="#[51]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MCP2515_ReadStatus
@@ -1038,7 +1039,7 @@ Global Symbols
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> startup_stm32l073xx.o(RESET)
 </UL>
-<P><STRONG><a name="[8a]"></a>check_and_send</STRONG> (Thumb, 384 bytes, Stack size 56 bytes, main.o(.text.check_and_send))
+<P><STRONG><a name="[8a]"></a>check_and_send</STRONG> (Thumb, 376 bytes, Stack size 56 bytes, main.o(.text.check_and_send))
 <BR><BR>[Stack]<UL><LI>Max Depth = 240<LI>Call Chain = check_and_send &rArr; CANSPI_Transmit &rArr; MCP2515_ReadStatus &rArr; HAL_SPI_Receive &rArr; HAL_SPI_TransmitReceive &rArr; SPI_WaitFlagStateUntilTimeout
 </UL>
 <BR>[Calls]<UL><LI><a href="#[8e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_ReadPin
@@ -1057,7 +1058,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[30]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[30]"></a>main</STRONG> (Thumb, 224 bytes, Stack size 120 bytes, main.o(.text.main))
+<P><STRONG><a name="[30]"></a>main</STRONG> (Thumb, 284 bytes, Stack size 120 bytes, main.o(.text.main))
 <BR><BR>[Stack]<UL><LI>Max Depth = 360<LI>Call Chain = main &rArr; check_and_send &rArr; CANSPI_Transmit &rArr; MCP2515_ReadStatus &rArr; HAL_SPI_Receive &rArr; HAL_SPI_TransmitReceive &rArr; SPI_WaitFlagStateUntilTimeout
 </UL>
 <BR>[Calls]<UL><LI><a href="#[8a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;check_and_send
@@ -1073,6 +1074,7 @@ Global Symbols
 <LI><a href="#[64]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_RCC_ClockConfig
 <LI><a href="#[66]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_RCC_OscConfig
 <LI><a href="#[5e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_Init
+<LI><a href="#[7d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_WritePin
 <LI><a href="#[4a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CANSPI_Initialize
 <LI><a href="#[90]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memclr4
 </UL>
