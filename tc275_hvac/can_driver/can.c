@@ -1,9 +1,6 @@
 // can.c
 #include "can.h"
 
-#define ISR_PRIORITY_CAN_RX   10
-
-//static uint32 swapEndian(uint32 value);
 
 static uint32 swapEndian(uint32 value) {
     return ((value & 0x000000FF) << 24) |
@@ -16,9 +13,9 @@ IFX_INTERRUPT(canRxInterruptHandler, 0, ISR_PRIORITY_CAN_RX);
 void canRxInterruptHandler(void)
 {
     IfxCpu_enableInterrupts();
-    exit_sleep_mode();
+    exit_sleep_mode(); // 슬립 모드 해제
 
-    IfxSrc_disable(IfxMultican_getSrcPointer(&MODULE_CAN, IfxMultican_SrcId_0));
+    //IfxSrc_disable(IfxMultican_getSrcPointer(&MODULE_CAN, IfxMultican_SrcId_0));
 }
 
 /* 초기화 함수 */
@@ -116,8 +113,10 @@ void canReceiveLoop(Hvac* hvac)
                     break;
                 case 0x02: // // Sleep 메시지 수신시
                     print(GREEN"[CAN 수신]\r\nID: 0x%02X  ---  "RESET, g_rxMsg.id);
-                    print("Sleep Mode\r\n");
+                    print("Sleep Mode\r\n");    
                     hvac->control = AUTOMATIC_CTL; // 자동 모드로 변경
+                    hvac->speed = STOP; // 팬 정지
+                    controlFan(hvac->speed);  // 팬 속도 제어 함수 호출
                     enter_sleep_mode();
                     break;
                 case 0x17: // hvac 제어 메시지 수신시
@@ -125,8 +124,8 @@ void canReceiveLoop(Hvac* hvac)
                     receive_data[0] = g_rxMsg.data[0]; // 수신 데이터 1바이트
                     receive_data[1] = g_rxMsg.data[1]; // 수신 데이터 2바이트xx
 
-                    receive_data[0] = swapEndian(receive_data[0]);
-                    receive_data[1] = swapEndian(receive_data[1]);
+                    receive_data[0] = swapEndian(receive_data[0]);  // 엔디안 변환
+                    receive_data[1] = swapEndian(receive_data[1]);  // 엔디안 변환
 
                     if(receive_data[0] == 0x00) { // 수신 데이터가 0x00이면
                         hvac->control = MANUAL_CTL; // 수동 모드로 변경
@@ -162,9 +161,9 @@ void canReceiveLoop(Hvac* hvac)
                             print("Unknown Fan Speed: %d\r\n", receive_data[1]);
                             break;
                     }
-                    break;
+                    break;  // 큰 switch 문 종료
                 default:
-                    print("Unknown ID: 0x%02X\r\n", g_rxMsg.id);
+                    //print("Unknown ID: 0x%02X\r\n", g_rxMsg.id);
                     break;
             }
 

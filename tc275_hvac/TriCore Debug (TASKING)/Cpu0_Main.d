@@ -192,3 +192,5 @@ Cpu0_Main.o :	"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p1\\Libraries\\iLLD\\TC
 "C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p1\\Libraries\\iLLD\\TC27D\\Tricore\_PinMap\IfxMultican_PinMap.h" :
 Cpu0_Main.o :	"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p1\\Libraries\\Infra\\Sfr\\TC27D\\_Reg\IfxCan_bf.h"
 "C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p1\\Libraries\\Infra\\Sfr\\TC27D\\_Reg\IfxCan_bf.h" :
+Cpu0_Main.o :	"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p1\main.h"
+"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p1\main.h" :
