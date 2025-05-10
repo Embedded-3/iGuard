@@ -121,10 +121,13 @@ int main(void)
   Printf("DF_Init finished\r\n");
   HAL_Delay(100);  
 	
+	Sound_Track(1);
+	
   DF_Pause(); // pause
   Printf("DF_Pause \r\n");
   HAL_Delay(1000);
 	Printf("now int pin : %d\r\n", HAL_GPIO_ReadPin(CAN_INT_GPIO_Port, CAN_INT_Pin));
+	Printf("now driving mode : %d\r\n", driving_flag);
   
   static int lcdCnt = 0;
 	static char buf[32];
@@ -197,6 +200,21 @@ int main(void)
 							case 0x06:
 								Printf("Music Pauses\r\n");
 								DF_Pause();
+								break;
+							// Resume Music
+							case 0x07:
+								Printf("Music Resume\r\n");
+								DF_Resume();
+								break;
+							// DFPlayer Volume Up
+							case 0x08:
+								Printf("Music Volume Up\r\n");
+								DF_Volume_Up();
+								break;
+							// DFPlayer Volume Down
+							case 0x09:
+								Printf("Music Volume Down\r\n");
+								DF_Volume_Down();
 								break;
 							//  Sleep Message
 							case 0x02:
