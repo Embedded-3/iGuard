@@ -120,7 +120,7 @@ void canReceiveLoop(Hvac* hvac)
                     hvac->control = AUTOMATIC_CTL; // 자동 모드로 변경
                     enter_sleep_mode();
                     break;
-                case 0x07: // hvac 제어 메시지 수신시
+                case 0x17: // hvac 제어 메시지 수신시
                     print(GREEN"[CAN 수신]\r\nID: 0x%02X  ---  "RESET, g_rxMsg.id);
                     receive_data[0] = g_rxMsg.data[0]; // 수신 데이터 1바이트
                     receive_data[1] = g_rxMsg.data[1]; // 수신 데이터 2바이트xx
