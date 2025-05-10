@@ -274,6 +274,21 @@ int main(void)
 								Printf("Music Pauses\r\n");
 								DF_Pause();
 								break;
+							// Resume Music
+							case 0x07:
+								Printf("Music Resume\r\n");
+								DF_Resume();
+								break;
+							// DFPlayer Volume Up
+							case 0x08:
+								Printf("Music Volume Up\r\n");
+								DF_Volume_Up();
+								break;
+							// DFPlayer Volume Down
+							case 0x09:
+								Printf("Music Volume Down\r\n");
+								DF_Volume_Down();
+								break;
 							//  Sleep Message
 							case 0x02:
 								Printf("Goes to Sleep\r\n");

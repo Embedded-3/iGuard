@@ -29,6 +29,16 @@ void DF_Resume (void) {
 	Send_Cmd(0x0D, 0x00, 0);
 }
 
+void DF_Volume_Up(void)
+{
+	Send_Cmd(0x04, 0x00, 0);
+}
+
+void DF_Volume_Down(void)
+{
+	Send_Cmd(0x05, 0x00, 0);
+}
+
 void DF_Init (uint8_t volume)
 {
 	Printf("DF_Init \r\n");

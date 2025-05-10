@@ -17,4 +17,7 @@ void DF_Init(uint8_t volume);
 void DF_Pause(void);
 void DF_Resume (void);
 void Sound_Track(uint8_t nums);
+void DF_Volume_Up(void);
+void DF_Volume_Down(void);
+
 #endif
