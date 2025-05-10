@@ -6,6 +6,7 @@ static Fan_Speed select_fan_speed(uint16 co2, double humi, double temp);
 
 // 함수 정의
 void hvac_init(Hvac* hvac) {
+    hvac->control = AUTOMATIC_CTL;  // 자동 제어 모드로 초기화
     hvac->mode = EXT_MODE;
     hvac->speed = STOP;
 }
@@ -18,6 +19,10 @@ void sensor_init(Sensor_Data* data) {
 }
 
 uint16 havc_control(Hvac* hvac, const Sensor_Data data) {
+    if(hvac->control == MANUAL_CTL) {  // 수동 제어 모드일 경우
+        return 1;  // 수동 제어 모드에서는 팬 제어를 하지 않음
+    }
+
     switch(hvac->mode){
         case EXT_MODE:
             // 1. 모드 판단
@@ -32,7 +37,7 @@ uint16 havc_control(Hvac* hvac, const Sensor_Data data) {
 
         case INT_MODE:
             // 1. 모드 판단
-            if(data.ext_air <= EXT_AIR_TH) {  // 외부 공기질 좋으면 외부 유입모드로 전환
+            if(data.ext_air <= EXT_AIR_TH - 200) {  // 외부 공기질 좋으면 외부 유입모드로 전환
                 hvac->mode = EXT_MODE;
                 changeMode(EXT_MODE);  // 외부 유입 모드로 전환
             }
