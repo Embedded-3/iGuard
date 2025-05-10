@@ -1,6 +1,6 @@
 	; Module start
 	.compiler_version	"TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler v1.1r8 Build 22011964"
-	.compiler_invocation	"ctc -f cc1792a --dep-file=dht22_driver/dht22.d -c99 --fp-model=3cflnrSTz -D__CPU__=tc27xd -D__CPU_TC27XD__ --core=tc1.6.x --fp-model=+float -D__CPU__=tc27xd -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1 -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Configurations -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\Infra -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\Infra\\\\Platform -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\Infra\\\\Platform\\\\Tricore -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\Infra\\\\Platform\\\\Tricore\\\\Compilers -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\Infra\\\\Sfr -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\Infra\\\\Sfr\\\\TC27D -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\Infra\\\\Sfr\\\\TC27D\\\\_Reg -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\Service -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\Service\\\\CpuGeneric -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\Service\\\\CpuGeneric\\\\StdIf -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\Service\\\\CpuGeneric\\\\SysSe -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\Service\\\\CpuGeneric\\\\SysSe\\\\Bsp -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\Service\\\\CpuGeneric\\\\SysSe\\\\Comm -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\Service\\\\CpuGeneric\\\\_Utilities -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Asclin -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Asclin\\\\Asc -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Asclin\\\\Std -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Cpu -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Cpu\\\\CStart -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Cpu\\\\Irq -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Cpu\\\\Std -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Cpu\\\\Trap -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Gtm -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Gtm\\\\Std -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Gtm\\\\Tom -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Gtm\\\\Tom\\\\Pwm -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Mtu -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Mtu\\\\Std -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Multican -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Multican\\\\Can -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Multican\\\\Std -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Port -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Port\\\\Std -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Scu -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Scu\\\\Std -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Src -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Src\\\\Std -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Stm -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Stm\\\\Std -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Vadc -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Vadc\\\\Adc -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Vadc\\\\Std -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\_Impl -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\_Lib -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\_Lib\\\\DataHandling -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\_PinMap -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\PWM_driver -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\asclin_driver -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\can_driver -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\dht22_driver -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\hvac_ctl_driver -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\mhz19b_driver -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\mq135_driver -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\stm_driver -g2 -w544 -w557 -t4 --language=+volatile -N0 -O0 -Y0 -Z0 --compact-max-size=200 --misrac-version=2004 -o dht22_driver/dht22.src ../dht22_driver/dht22.c"
+	.compiler_invocation	"ctc -f cc19424a --dep-file=dht22_driver/dht22.d -c99 --fp-model=3cflnrSTz -D__CPU__=tc27xd -D__CPU_TC27XD__ --core=tc1.6.x --fp-model=+float -D__CPU__=tc27xd -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1 -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Configurations -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\Infra -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\Infra\\\\Platform -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\Infra\\\\Platform\\\\Tricore -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\Infra\\\\Platform\\\\Tricore\\\\Compilers -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\Infra\\\\Sfr -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\Infra\\\\Sfr\\\\TC27D -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\Infra\\\\Sfr\\\\TC27D\\\\_Reg -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\Service -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\Service\\\\CpuGeneric -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\Service\\\\CpuGeneric\\\\StdIf -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\Service\\\\CpuGeneric\\\\SysSe -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\Service\\\\CpuGeneric\\\\SysSe\\\\Bsp -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\Service\\\\CpuGeneric\\\\SysSe\\\\Comm -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\Service\\\\CpuGeneric\\\\_Utilities -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Asclin -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Asclin\\\\Asc -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Asclin\\\\Std -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Cpu -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Cpu\\\\CStart -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Cpu\\\\Irq -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Cpu\\\\Std -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Cpu\\\\Trap -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Gtm -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Gtm\\\\Std -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Gtm\\\\Tom -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Gtm\\\\Tom\\\\Pwm -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Mtu -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Mtu\\\\Std -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Multican -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Multican\\\\Can -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Multican\\\\Std -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Port -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Port\\\\Std -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Scu -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Scu\\\\Std -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Src -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Src\\\\Std -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Stm -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Stm\\\\Std -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Vadc -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Vadc\\\\Adc -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Vadc\\\\Std -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\_Impl -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\_Lib -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\_Lib\\\\DataHandling -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\_PinMap -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\PWM_driver -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\asclin_driver -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\can_driver -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\dht22_driver -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\hvac_ctl_driver -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\mhz19b_driver -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\mq135_driver -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\stm_driver -g2 -w544 -w557 -t4 --language=+volatile -N0 -O0 -Y0 -Z0 --compact-max-size=200 --misrac-version=2004 -o dht22_driver/dht22.src ../dht22_driver/dht22.c"
 	.compiler_name		"ctc"
 	;source	'../dht22_driver/dht22.c'
 
@@ -13,48 +13,48 @@ $TC16X
 	
 	.global	delay_us
 ; Function delay_us
-.L52:
+.L57:
 delay_us:	.type	func
 	mov	d8,d4
-.L185:
+.L192:
 	movh.a	a15,#61440
-.L82:
+.L87:
 	jz.a	a15,.L2
 .L2:
 	call	IfxScuCcu_getSourceFrequency
-.L184:
+.L191:
 	movh.a	a15,#61443
 	ld.bu	d15,[a15]@los(0xf0036035)
 	and	d15,#15
 	itof	d15,d15
-.L206:
+.L217:
 	div.f	d15,d2,d15
-.L207:
+.L218:
 	j	.L3
 .L3:
 	j	.L4
 .L4:
 	ftoiz	d15,d15
-.L91:
+.L96:
 	mov	d0,#15625
 	sh	d0,#6
-.L208:
+.L219:
 	div	e0,d15,d0
-.L209:
+.L220:
 	mul	d8,d0
-.L186:
+.L193:
 	j	.L5
 .L5:
 	mov	e4,d8
-.L187:
+.L194:
 	call	waitTime
-.L188:
+.L195:
 	ret
-.L76:
+.L81:
 	
 __delay_us_function_end:
 	.size	delay_us,__delay_us_function_end-delay_us
-.L65:
+.L70:
 	; End of function
 	
 	.sdecl	'.text.dht22.DHT22_ReadByte',code,cluster('DHT22_ReadByte')
@@ -63,12 +63,12 @@ __delay_us_function_end:
 	
 	.global	DHT22_ReadByte
 ; Function DHT22_ReadByte
-.L54:
+.L59:
 DHT22_ReadByte:	.type	func
 	mov	d8,#0
-.L103:
+.L108:
 	mov	d9,#0
-.L190:
+.L197:
 	j	.L6
 .L7:
 	j	.L8
@@ -76,21 +76,21 @@ DHT22_ReadByte:	.type	func
 .L8:
 	movh.a	a15,#@his(IfxPort_P02_0)
 	lea	a15,[a15]@los(IfxPort_P02_0)
-.L214:
+.L225:
 	ld.a	a15,[a15]
-.L215:
+.L226:
 	movh.a	a2,#@his(IfxPort_P02_0)
 	lea	a2,[a2]@los(IfxPort_P02_0)
-.L216:
+.L227:
 	ld.bu	d15,[a2]4
-.L108:
+.L113:
 	ld.w	d0,[a15]36
 	extr.u	d15,d0,d15,#1
-.L217:
+.L228:
 	jeq	d15,#0,.L10
-.L218:
+.L229:
 	mov	d15,#1
-.L219:
+.L230:
 	j	.L11
 .L10:
 	mov	d15,#0
@@ -98,27 +98,27 @@ DHT22_ReadByte:	.type	func
 	j	.L12
 .L12:
 	jeq	d15,#0,.L9
-.L109:
+.L114:
 	mov	d4,#30
 	call	delay_us
-.L220:
+.L231:
 	movh.a	a15,#@his(IfxPort_P02_0)
 	lea	a15,[a15]@los(IfxPort_P02_0)
-.L221:
+.L232:
 	ld.a	a15,[a15]
-.L222:
+.L233:
 	movh.a	a2,#@his(IfxPort_P02_0)
 	lea	a2,[a2]@los(IfxPort_P02_0)
-.L223:
+.L234:
 	ld.bu	d15,[a2]4
-.L115:
+.L120:
 	ld.w	d0,[a15]36
 	extr.u	d15,d0,d15,#1
-.L224:
+.L235:
 	jeq	d15,#0,.L13
-.L225:
+.L236:
 	mov	d15,#1
-.L226:
+.L237:
 	j	.L14
 .L13:
 	mov	d15,#0
@@ -126,15 +126,15 @@ DHT22_ReadByte:	.type	func
 	j	.L15
 .L15:
 	jeq	d15,#0,.L16
-.L116:
+.L121:
 	mov	d15,#1
-.L227:
+.L238:
 	rsub	d0,d9,#7
-.L228:
+.L239:
 	sha	d15,d15,d0
-.L229:
+.L240:
 	or	d8,d15
-.L189:
+.L196:
 	extr.u	d8,d8,#0,#8
 .L16:
 	j	.L17
@@ -142,21 +142,21 @@ DHT22_ReadByte:	.type	func
 .L17:
 	movh.a	a15,#@his(IfxPort_P02_0)
 	lea	a15,[a15]@los(IfxPort_P02_0)
-.L230:
+.L241:
 	ld.a	a15,[a15]
-.L231:
+.L242:
 	movh.a	a2,#@his(IfxPort_P02_0)
 	lea	a2,[a2]@los(IfxPort_P02_0)
-.L232:
+.L243:
 	ld.bu	d15,[a2]4
-.L117:
+.L122:
 	ld.w	d0,[a15]36
 	extr.u	d15,d0,d15,#1
-.L233:
+.L244:
 	jeq	d15,#0,.L19
-.L234:
+.L245:
 	mov	d15,#1
-.L235:
+.L246:
 	j	.L20
 .L19:
 	mov	d15,#0
@@ -164,23 +164,23 @@ DHT22_ReadByte:	.type	func
 	j	.L21
 .L21:
 	jeq	d15,#1,.L18
-.L118:
+.L123:
 	add	d9,#1
 .L6:
 	mov	d15,#8
-.L236:
+.L247:
 	jlt	d9,d15,.L7
-.L104:
+.L109:
 	mov	d2,d8
-.L191:
+.L198:
 	j	.L22
 .L22:
 	ret
-.L101:
+.L106:
 	
 __DHT22_ReadByte_function_end:
 	.size	DHT22_ReadByte,__DHT22_ReadByte_function_end-DHT22_ReadByte
-.L70:
+.L75:
 	; End of function
 	
 	.sdecl	'.text.dht22.DHT22_process',code,cluster('DHT22_process')
@@ -189,112 +189,112 @@ __DHT22_ReadByte_function_end:
 	
 	.global	DHT22_process
 ; Function DHT22_process
-.L56:
+.L61:
 DHT22_process:	.type	func
 	sub.a	a10,#16
-.L192:
+.L199:
 	mov.aa	a12,a4
-.L194:
+.L201:
 	movh.a	a2,#@his(IfxPort_P02_0)
 	lea	a2,[a2]@los(IfxPort_P02_0)
-.L241:
-	ld.a	a4,[a2]
-.L193:
-	movh.a	a15,#@his(IfxPort_P02_0)
-	lea	a15,[a15]@los(IfxPort_P02_0)
-.L242:
-	ld.bu	d4,[a15]4
-.L243:
-	mov	d15,#128
-.L244:
-	mov	d5,#128
-.L123:
-	or	d5,d15
-.L245:
-	call	IfxPort_setPinMode
-.L124:
-	movh.a	a2,#@his(IfxPort_P02_0)
-	lea	a2,[a2]@los(IfxPort_P02_0)
-.L246:
-	ld.a	a2,[a2]
-.L247:
-	movh.a	a15,#@his(IfxPort_P02_0)
-	lea	a15,[a15]@los(IfxPort_P02_0)
-.L248:
-	ld.bu	d15,[a15]4
-.L135:
-	movh	d0,#1
-.L143:
-	sha	d0,d0,d15
-.L249:
-	st.w	[a2]4,d0
-.L136:
-	mov	d4,#8000
-	call	delay_us
-.L250:
-	movh.a	a15,#@his(IfxPort_P02_0)
-	lea	a15,[a15]@los(IfxPort_P02_0)
-.L251:
-	ld.a	a2,[a15]
 .L252:
+	ld.a	a4,[a2]
+.L200:
 	movh.a	a15,#@his(IfxPort_P02_0)
 	lea	a15,[a15]@los(IfxPort_P02_0)
 .L253:
-	ld.bu	d15,[a15]4
-.L152:
-	mov	d0,#1
-.L159:
-	sha	d0,d0,d15
+	ld.bu	d4,[a15]4
 .L254:
+	mov	d15,#128
+.L255:
+	mov	d5,#128
+.L128:
+	or	d5,d15
+.L256:
+	call	IfxPort_setPinMode
+.L129:
+	movh.a	a2,#@his(IfxPort_P02_0)
+	lea	a2,[a2]@los(IfxPort_P02_0)
+.L257:
+	ld.a	a2,[a2]
+.L258:
+	movh.a	a15,#@his(IfxPort_P02_0)
+	lea	a15,[a15]@los(IfxPort_P02_0)
+.L259:
+	ld.bu	d15,[a15]4
+.L140:
+	movh	d0,#1
+.L148:
+	sha	d0,d0,d15
+.L260:
 	st.w	[a2]4,d0
-.L153:
+.L141:
+	mov	d4,#8000
+	call	delay_us
+.L261:
+	movh.a	a15,#@his(IfxPort_P02_0)
+	lea	a15,[a15]@los(IfxPort_P02_0)
+.L262:
+	ld.a	a2,[a15]
+.L263:
+	movh.a	a15,#@his(IfxPort_P02_0)
+	lea	a15,[a15]@los(IfxPort_P02_0)
+.L264:
+	ld.bu	d15,[a15]4
+.L157:
+	mov	d0,#1
+.L164:
+	sha	d0,d0,d15
+.L265:
+	st.w	[a2]4,d0
+.L158:
 	mov	d4,#40
 	call	delay_us
-.L255:
+.L266:
 	movh.a	a15,#@his(IfxPort_P02_0)
 	lea	a15,[a15]@los(IfxPort_P02_0)
-.L256:
+.L267:
 	ld.a	a4,[a15]
-.L257:
+.L268:
 	movh.a	a15,#@his(IfxPort_P02_0)
 	lea	a15,[a15]@los(IfxPort_P02_0)
-.L258:
+.L269:
 	ld.bu	d4,[a15]4
-.L259:
+.L270:
 	mov	d5,#16
-.L161:
+.L166:
 	call	IfxPort_setPinMode
-.L162:
+.L167:
 	mov	d0,#10000
-.L195:
+.L202:
 	j	.L23
 .L24:
 	add	d0,#-1
-.L260:
+.L271:
 	jne	d0,#0,.L25
-.L261:
+.L272:
 	mov	d2,#-1
-.L262:
+.L273:
 	j	.L26
 .L25:
 .L23:
 	movh.a	a15,#@his(IfxPort_P02_0)
 	lea	a15,[a15]@los(IfxPort_P02_0)
-.L263:
+.L274:
 	ld.a	a2,[a15]
-.L264:
+.L275:
 	movh.a	a15,#@his(IfxPort_P02_0)
 	lea	a15,[a15]@los(IfxPort_P02_0)
-.L265:
+.L276:
 	ld.bu	d1,[a15]4
-.L171:
+.L176:
 	ld.w	d15,[a2]36
 	extr.u	d15,d15,d1,#1
-.L266:
+.L277:
 	jeq	d15,#0,.L27
-.L267:
+.L278:
 	mov	d15,#1
-.L268:
+.L279:
 	j	.L28
 .L27:
 	mov	d15,#0
@@ -302,37 +302,37 @@ DHT22_process:	.type	func
 	j	.L29
 .L29:
 	jeq	d15,#1,.L24
-.L172:
+.L177:
 	mov	d0,#10000
-.L269:
+.L280:
 	j	.L30
 .L31:
 	add	d0,#-1
-.L270:
+.L281:
 	jne	d0,#0,.L32
-.L271:
+.L282:
 	mov	d2,#-1
-.L272:
+.L283:
 	j	.L33
 .L32:
 .L30:
 	movh.a	a15,#@his(IfxPort_P02_0)
 	lea	a15,[a15]@los(IfxPort_P02_0)
-.L273:
+.L284:
 	ld.a	a2,[a15]
-.L274:
+.L285:
 	movh.a	a15,#@his(IfxPort_P02_0)
 	lea	a15,[a15]@los(IfxPort_P02_0)
-.L275:
+.L286:
 	ld.bu	d1,[a15]4
-.L175:
+.L180:
 	ld.w	d15,[a2]36
 	extr.u	d15,d15,d1,#1
-.L276:
+.L287:
 	jeq	d15,#0,.L34
-.L277:
+.L288:
 	mov	d15,#1
-.L278:
+.L289:
 	j	.L35
 .L34:
 	mov	d15,#0
@@ -340,37 +340,37 @@ DHT22_process:	.type	func
 	j	.L36
 .L36:
 	jeq	d15,#0,.L31
-.L176:
+.L181:
 	mov	d0,#10000
-.L279:
+.L290:
 	j	.L37
 .L38:
 	add	d0,#-1
-.L280:
+.L291:
 	jne	d0,#0,.L39
-.L281:
+.L292:
 	mov	d2,#-1
-.L282:
+.L293:
 	j	.L40
 .L39:
 .L37:
 	movh.a	a15,#@his(IfxPort_P02_0)
 	lea	a15,[a15]@los(IfxPort_P02_0)
-.L283:
+.L294:
 	ld.a	a2,[a15]
-.L284:
+.L295:
 	movh.a	a15,#@his(IfxPort_P02_0)
 	lea	a15,[a15]@los(IfxPort_P02_0)
-.L285:
+.L296:
 	ld.bu	d1,[a15]4
-.L177:
+.L182:
 	ld.w	d15,[a2]36
 	extr.u	d15,d15,d1,#1
-.L286:
+.L297:
 	jeq	d15,#0,.L41
-.L287:
+.L298:
 	mov	d15,#1
-.L288:
+.L299:
 	j	.L42
 .L41:
 	mov	d15,#0
@@ -378,97 +378,97 @@ DHT22_process:	.type	func
 	j	.L43
 .L43:
 	jeq	d15,#1,.L38
-.L178:
+.L183:
 	movh.a	a15,#@his(.1.ini)
 	lea	a15,[a15]@los(.1.ini)
 	lea	a15,[a15]0
-.L289:
+.L300:
 	lea	a2,[a10]4
 	mov.a	a4,#4
 .L44:
 	ld.bu	d15,[a15+]
 	st.b	[a2+],d15
 	loop	a4,.L44
-.L181:
+.L186:
 	mov	d15,#0
-.L196:
+.L203:
 	j	.L45
 .L46:
 	addsc.a	a15,a10,d15,#0
-.L290:
+.L301:
 	call	DHT22_ReadByte
-.L291:
+.L302:
 	st.b	[a15]4,d2
-.L292:
+.L303:
 	add	d15,#1
 .L45:
 	jlt	d15,#5,.L46
-.L182:
+.L187:
 	ld.bu	d1,[a10]8
-.L293:
-	ld.bu	d0,[a10]4
-.L294:
-	ld.bu	d15,[a10]5
-.L197:
-	add	d0,d15
-.L295:
-	ld.bu	d15,[a10]6
-.L296:
-	add	d0,d15
-.L297:
-	ld.bu	d15,[a10]7
-.L298:
-	add	d0,d15
-.L299:
-	jeq	d1,d0,.L47
-.L300:
-	ld.bu	d15,[a10]8
-.L301:
-	addi	d1,d15,#256
-.L302:
-	ld.bu	d0,[a10]4
-.L303:
-	ld.bu	d15,[a10]5
 .L304:
-	add	d0,d15
-.L305:
-	ld.bu	d15,[a10]6
-.L306:
-	add	d0,d15
-.L307:
-	ld.bu	d15,[a10]7
-.L308:
-	add	d0,d15
-.L309:
-	jeq	d1,d0,.L48
-.L310:
-	ld.bu	d15,[a10]8
-.L311:
-	addi	d1,d15,#512
-.L312:
 	ld.bu	d0,[a10]4
-.L313:
+.L305:
 	ld.bu	d15,[a10]5
-.L314:
+.L204:
 	add	d0,d15
-.L315:
+.L306:
 	ld.bu	d15,[a10]6
-.L316:
+.L307:
 	add	d0,d15
-.L317:
+.L308:
 	ld.bu	d15,[a10]7
-.L318:
+.L309:
 	add	d0,d15
+.L310:
+	jeq	d1,d0,.L47
+.L311:
+	ld.bu	d15,[a10]8
+.L312:
+	addi	d1,d15,#256
+.L313:
+	ld.bu	d0,[a10]4
+.L314:
+	ld.bu	d15,[a10]5
+.L315:
+	add	d0,d15
+.L316:
+	ld.bu	d15,[a10]6
+.L317:
+	add	d0,d15
+.L318:
+	ld.bu	d15,[a10]7
 .L319:
-	jeq	d1,d0,.L49
+	add	d0,d15
 .L320:
+	jeq	d1,d0,.L48
+.L321:
+	ld.bu	d15,[a10]8
+.L322:
+	addi	d1,d15,#512
+.L323:
+	ld.bu	d0,[a10]4
+.L324:
+	ld.bu	d15,[a10]5
+.L325:
+	add	d0,d15
+.L326:
+	ld.bu	d15,[a10]6
+.L327:
+	add	d0,d15
+.L328:
+	ld.bu	d15,[a10]7
+.L329:
+	add	d0,d15
+.L330:
+	jeq	d1,d0,.L49
+.L331:
 	movh.a	a15,#@his(stdif)
 	lea	a15,[a15]@los(stdif)
 	ld.a	a4,[a15]
 	movh.a	a5,#@his(.2.str)
 	lea	a5,[a5]@los(.2.str)
 	call	IfxStdIf_DPipe_print
-.L321:
+.L332:
 	ld.bu	d15,[a10]8
 	st.w	[a10],d15
 	movh.a	a15,#@his(stdif)
@@ -477,7 +477,7 @@ DHT22_process:	.type	func
 	movh.a	a5,#@his(.3.str)
 	lea	a5,[a5]@los(.3.str)
 	call	IfxStdIf_DPipe_print
-.L322:
+.L333:
 	ld.bu	d0,[a10]4
 	ld.bu	d15,[a10]5
 	add	d0,d15
@@ -492,42 +492,87 @@ DHT22_process:	.type	func
 	movh.a	a5,#@his(.4.str)
 	lea	a5,[a5]@los(.4.str)
 	call	IfxStdIf_DPipe_print
+.L334:
+	mov	d2,#-2
+.L335:
+	j	.L50
 .L49:
 .L48:
 .L47:
 	ld.bu	d15,[a10]4
-.L323:
+.L336:
 	sha	d0,d15,#8
-.L324:
+.L337:
 	ld.bu	d15,[a10]5
-.L325:
-	or	d0,d15
-.L326:
-	st.w	[a12],d0
-.L327:
+.L338:
+	or	d2,d0,d15
+.L339:
 	ld.bu	d15,[a10]6
-.L328:
+.L340:
 	sha	d0,d15,#8
-.L329:
+.L341:
 	ld.bu	d15,[a10]7
-.L330:
+.L342:
 	or	d0,d15
-.L331:
-	st.w	[a12]4,d0
-.L332:
+.L343:
+	mov	d3,d0
+.L205:
+	mov	d0,d2
+.L344:
+	mov	d15,#1000
+.L345:
+	jge.u	d15,d0,.L51
+.L346:
+	movh.a	a15,#@his(stdif)
+	lea	a15,[a15]@los(stdif)
+	ld.a	a4,[a15]
+	movh.a	a5,#@his(.6.str)
+	lea	a5,[a5]@los(.6.str)
+	call	IfxStdIf_DPipe_print
+.L206:
+	mov	d2,#-3
+.L347:
+	j	.L52
+.L51:
+	mov	d15,d3
+.L348:
+	mov	d0,#800
+.L349:
+	jge.u	d0,d15,.L53
+.L350:
+	movh.a	a15,#@his(stdif)
+	lea	a15,[a15]@los(stdif)
+	ld.a	a4,[a15]
+	movh.a	a5,#@his(.7.str)
+	lea	a5,[a5]@los(.7.str)
+	call	IfxStdIf_DPipe_print
+.L207:
+	mov	d2,#-4
+.L351:
+	j	.L54
+.L53:
+	mov	d15,d2
+.L352:
+	st.w	[a12],d15
+.L353:
+	st.w	[a12]4,d3
+.L354:
 	mov	d2,#0
-.L333:
-	j	.L50
+.L208:
+	j	.L55
+.L55:
+.L54:
+.L52:
 .L50:
 .L40:
 .L33:
 .L26:
 	ret
-.L119:
+.L124:
 	
 __DHT22_process_function_end:
 	.size	DHT22_process,__DHT22_process_function_end-DHT22_process
-.L75:
+.L80:
 	; End of function
 	
 	.sdecl	'.rodata.dht22..1.ini',data,rom
@@ -556,6 +601,31 @@ __DHT22_process_function_end:
 	.size	.4.str,9
 	.byte	98,117,116,32,37,100,10,13
 	.space	1
+	.sdecl	'.rodata.dht22..5.ini',data,rom
+	.sect	'.rodata.dht22..5.ini'
+	.align	4
+.5.ini:	.type	object
+	.size	.5.ini,8
+	.space	8
+	.sdecl	'.rodata.dht22..6.str',data,rom
+	.sect	'.rodata.dht22..6.str'
+.6.str:	.type	object
+	.size	.6.str,33
+	.byte	69,114,114,111,114,32,58,32
+	.byte	72,117,109,105,100,105,116,121
+	.byte	44,32,79,117,116,32,79,102
+	.byte	32,82,97,110,103,101,10,13
+	.space	1
+	.sdecl	'.rodata.dht22..7.str',data,rom
+	.sect	'.rodata.dht22..7.str'
+.7.str:	.type	object
+	.size	.7.str,36
+	.byte	69,114,114,111,114,32,58,32
+	.byte	84,101,109,112,101,114,97,116
+	.byte	117,114,101,44,32,79,117,116
+	.byte	32,79,102,32,82,97,110,103
+	.byte	101,10,13
+	.space	1
 	.calls	'delay_us','IfxScuCcu_getSourceFrequency'
 	.calls	'delay_us','waitTime'
 	.calls	'DHT22_ReadByte','delay_us'
@@ -574,17 +644,17 @@ __DHT22_process_function_end:
 	.calls	'DHT22_process','',16
 	.sdecl	'.debug_info',debug
 	.sect	'.debug_info'
-.L58:
+.L63:
 	.word	96759
 	.half	3
-	.word	.L59
+	.word	.L64
 	.byte	4
-.L57:
+.L62:
 	.byte	1
 	.byte	'../dht22_driver/dht22.c',0
 	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
 	.byte	'C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p1\\TriCore Debug (TASKING)\\',0,12,1
-	.word	.L60
+	.word	.L65
 	.byte	2,1,1,3
 	.word	185
 	.byte	4
@@ -593,7 +663,7 @@ __DHT22_process_function_end:
 	.word	188
 	.byte	6,0,7
 	.byte	'__fract',0,4,128,1
-.L96:
+.L101:
 	.byte	7
 	.byte	'float',0,4,4,8
 	.byte	'Ifx__float_to_fract',0,3,1,149,2,18
@@ -621,7 +691,7 @@ __DHT22_process_function_end:
 	.word	331
 	.byte	6,0,7
 	.byte	'unsigned int',0,4,7
-.L105:
+.L110:
 	.byte	7
 	.byte	'int',0,4,5,7
 	.byte	'unsigned int',0,4,7,10
@@ -647,7 +717,7 @@ __DHT22_process_function_end:
 	.byte	'B',0
 	.word	488
 	.byte	4,2,35,0,0
-.L100:
+.L105:
 	.byte	7
 	.byte	'unsigned char',0,1,8,7
 	.byte	'unsigned short int',0,2,7,10
@@ -2110,67 +2180,67 @@ __DHT22_process_function_end:
 	.word	8567
 	.byte	3
 	.word	9170
-.L107:
+.L112:
 	.byte	8
 	.byte	'IfxPort_getPinState',0,3,5,170,4,20
 	.word	624
 	.byte	1,1
-.L110:
+.L115:
 	.byte	5
 	.byte	'port',0,5,170,4,47
 	.word	9175
-.L112:
+.L117:
 	.byte	5
 	.byte	'pinIndex',0,5,170,4,59
 	.word	624
-.L114:
+.L119:
 	.byte	6,0
-.L151:
+.L156:
 	.byte	4
 	.byte	'IfxPort_setPinHigh',0,3,5,182,4,17,1,1
-.L154:
+.L159:
 	.byte	5
 	.byte	'port',0,5,182,4,43
 	.word	9175
-.L156:
+.L161:
 	.byte	5
 	.byte	'pinIndex',0,5,182,4,55
 	.word	624
-.L158:
+.L163:
 	.byte	17,6,0,0
-.L134:
+.L139:
 	.byte	4
 	.byte	'IfxPort_setPinLow',0,3,5,188,4,17,1,1
-.L137:
+.L142:
 	.byte	5
 	.byte	'port',0,5,188,4,42
 	.word	9175
-.L139:
+.L144:
 	.byte	5
 	.byte	'pinIndex',0,5,188,4,54
 	.word	624
-.L141:
+.L146:
 	.byte	17,6,0,0,18,5,80,9,1,19
 	.byte	'IfxPort_InputMode_undefined',0,127,19
 	.byte	'IfxPort_InputMode_noPullDevice',0,0,19
 	.byte	'IfxPort_InputMode_pullDown',0,8,19
 	.byte	'IfxPort_InputMode_pullUp',0,16,0
-.L160:
+.L165:
 	.byte	4
 	.byte	'IfxPort_setPinModeInput',0,3,5,194,4,17,1,1
-.L163:
+.L168:
 	.byte	5
 	.byte	'port',0,5,194,4,48
 	.word	9175
-.L165:
+.L170:
 	.byte	5
 	.byte	'pinIndex',0,5,194,4,60
 	.word	624
-.L167:
+.L172:
 	.byte	5
 	.byte	'mode',0,5,194,4,88
 	.word	9371
-.L169:
+.L174:
 	.byte	6,0,18,5,131,1,9,1,19
 	.byte	'IfxPort_OutputMode_none',0,0,19
 	.byte	'IfxPort_OutputMode_pushPull',0,128,1,19
@@ -2183,54 +2253,54 @@ __DHT22_process_function_end:
 	.byte	'IfxPort_OutputIdx_alt5',0,168,1,19
 	.byte	'IfxPort_OutputIdx_alt6',0,176,1,19
 	.byte	'IfxPort_OutputIdx_alt7',0,184,1,0
-.L122:
+.L127:
 	.byte	4
 	.byte	'IfxPort_setPinModeOutput',0,3,5,200,4,17,1,1
-.L125:
+.L130:
 	.byte	5
 	.byte	'port',0,5,200,4,49
 	.word	9175
-.L127:
+.L132:
 	.byte	5
 	.byte	'pinIndex',0,5,200,4,61
 	.word	624
-.L129:
+.L134:
 	.byte	5
 	.byte	'mode',0,5,200,4,90
 	.word	9576
-.L131:
+.L136:
 	.byte	5
 	.byte	'index',0,5,200,4,114
 	.word	9672
-.L133:
+.L138:
 	.byte	6,0,18,5,170,1,9,4,19
 	.byte	'IfxPort_State_notChanged',0,0,19
 	.byte	'IfxPort_State_high',0,1,19
 	.byte	'IfxPort_State_low',0,128,128,4,19
 	.byte	'IfxPort_State_toggled',0,129,128,4,0
-.L142:
+.L147:
 	.byte	4
 	.byte	'IfxPort_setPinState',0,3,5,206,4,17,1,1
-.L144:
+.L149:
 	.byte	5
 	.byte	'port',0,5,206,4,44
 	.word	9175
-.L146:
+.L151:
 	.byte	5
 	.byte	'pinIndex',0,5,206,4,56
 	.word	624
-.L148:
+.L153:
 	.byte	5
 	.byte	'action',0,5,206,4,80
 	.word	9985
-.L150:
+.L155:
 	.byte	6,0
-.L98:
+.L103:
 	.byte	8
 	.byte	'IfxScuCcu_getStmFrequency',0,3,7,177,9,20
 	.word	245
 	.byte	1,1
-.L99:
+.L104:
 	.byte	6,0,18,9,155,1,9,1,19
 	.byte	'IfxCpu_ResourceCpu_0',0,0,19
 	.byte	'IfxCpu_ResourceCpu_1',0,1,19
@@ -2251,7 +2321,7 @@ __DHT22_process_function_end:
 	.byte	'enabled',0,8,167,7,50
 	.word	624
 	.byte	6,0
-.L77:
+.L82:
 	.byte	7
 	.byte	'unsigned long int',0,4,7,8
 	.byte	'IfxCpu_getPerformanceCounter',0,3,8,160,6,19
@@ -2904,18 +2974,18 @@ __DHT22_process_function_end:
 	.byte	'stm',0,12,194,4,39
 	.word	14596
 	.byte	6,0
-.L90:
+.L95:
 	.byte	8
 	.byte	'IfxStm_getFrequency',0,3,12,211,4,20
 	.word	245
 	.byte	1,1
-.L92:
+.L97:
 	.byte	5
 	.byte	'stm',0,12,211,4,49
 	.word	14596
-.L94:
+.L99:
 	.byte	17
-.L95:
+.L100:
 	.byte	6,6,0,0,8
 	.byte	'IfxStm_getLower',0,3,12,222,4,19
 	.word	10551
@@ -2923,25 +2993,25 @@ __DHT22_process_function_end:
 	.byte	'stm',0,12,222,4,44
 	.word	14596
 	.byte	6,0
-.L88:
+.L93:
 	.byte	7
 	.byte	'long int',0,4,5
-.L81:
+.L86:
 	.byte	8
 	.byte	'IfxStm_getTicksFromMicroseconds',0,3,12,146,5,19
 	.word	14732
 	.byte	1,1
-.L83:
+.L88:
 	.byte	5
 	.byte	'stm',0,12,146,5,60
 	.word	14596
-.L85:
+.L90:
 	.byte	5
 	.byte	'microSeconds',0,12,146,5,72
 	.word	10551
-.L87:
+.L92:
 	.byte	17,6,0,0
-.L79:
+.L84:
 	.byte	7
 	.byte	'long long int',0,8,5,8
 	.byte	'IfxStm_now',0,3,12,223,5,19
@@ -3702,6 +3772,7 @@ __DHT22_process_function_end:
 	.word	18569
 	.byte	3
 	.word	18758
+.L189:
 	.byte	34,18,13,9,8,13
 	.byte	'humidity',0
 	.word	10551
@@ -3709,10 +3780,10 @@ __DHT22_process_function_end:
 	.byte	'temperature',0
 	.word	10551
 	.byte	4,2,35,4,0
-.L120:
+.L125:
 	.byte	3
 	.word	18768
-.L179:
+.L184:
 	.byte	15,5
 	.word	624
 	.byte	16,4,0,29
@@ -15034,7 +15105,7 @@ __DHT22_process_function_end:
 	.byte	0
 	.sdecl	'.debug_abbrev',debug
 	.sect	'.debug_abbrev'
-.L59:
+.L64:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,16,6,0,0,2,21,0,54,15,39,12,0,0,3,15,0,73,19,0,0,4,46,1,3,8,32,13
 	.byte	58,15,59,15,57,15,54,15,39,12,0,0,5,5,0,3,8,58,15,59,15,57,15,73,19,0,0,6,11,0,0,0,7,36,0,3,8,11,15,62
 	.byte	15,0,0,8,46,1,3,8,32,13,58,15,59,15,57,15,73,19,54,15,39,12,0,0,9,59,0,3,8,0,0,10,19,1,3,8,58,15,59,15
@@ -15048,12 +15119,12 @@ __DHT22_process_function_end:
 	.byte	15,0,0,36,52,0,3,8,58,15,59,15,57,15,73,19,63,12,60,12,0,0,0
 	.sdecl	'.debug_line',debug
 	.sect	'.debug_line'
-.L60:
-	.word	.L199-.L198
-.L198:
+.L65:
+	.word	.L210-.L209
+.L209:
 	.half	3
-	.word	.L201-.L200
-.L200:
+	.word	.L212-.L211
+.L211:
 	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
 	.byte	'C:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\Infra\\\\Sfr\\\\TC27D\\\\_Reg',0
 	.byte	'C:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\Service\\\\CpuGeneric\\\\SysSe\\\\Bsp',0
@@ -15100,125 +15171,12 @@ __DHT22_process_function_end:
 	.byte	'IfxCbs_regdef.h',0,1,0,0
 	.byte	'IfxPort_PinMap.h',0,4,0,0
 	.byte	'asclin.h',0,5,0,0,0
-.L201:
-.L199:
+.L212:
+.L210:
 	.sdecl	'.debug_info',debug,cluster('delay_us')
 	.sect	'.debug_info'
-.L61:
-	.word	425
-	.half	3
-	.word	.L62
-	.byte	4,1
-	.byte	'../dht22_driver/dht22.c',0
-	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
-	.byte	'C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p1\\TriCore Debug (TASKING)\\',0,12,1
-	.word	.L64,.L63
-	.byte	2
-	.word	.L57
-	.byte	3
-	.byte	'delay_us',0,1,8,6,1,1,1
-	.word	.L52,.L76,.L51
-	.byte	4
-	.byte	'us',0,1,8,22
-	.word	.L77,.L78
-	.byte	5
-	.word	.L52,.L76
-	.byte	6
-	.byte	'ticks',0,1,9,18
-	.word	.L79,.L80
-	.byte	7
-	.word	.L81,.L82,.L5
-	.byte	8
-	.word	.L83,.L84
-	.byte	8
-	.word	.L85,.L86
-	.byte	9
-	.word	.L87,.L82,.L5
-	.byte	6
-	.byte	'freq',0,2,148,5,12
-	.word	.L88,.L89
-	.byte	7
-	.word	.L90,.L82,.L91
-	.byte	8
-	.word	.L92,.L93
-	.byte	9
-	.word	.L94,.L82,.L91
-	.byte	9
-	.word	.L95,.L2,.L4
-	.byte	6
-	.byte	'result',0,2,214,4,13
-	.word	.L96,.L97
-	.byte	7
-	.word	.L98,.L2,.L3
-	.byte	10
-	.word	.L99,.L2,.L3
-	.byte	0,0,0,0,0,0,0,0,0
-	.sdecl	'.debug_abbrev',debug,cluster('delay_us')
-	.sect	'.debug_abbrev'
-.L62:
-	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
-	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,1,17,1,18,1,0,0,6,52,0,3
-	.byte	8,58,15,59,15,57,15,73,16,2,6,0,0,7,29,1,49,16,17,1,18,1,0,0,8,5,0,49,16,2,6,0,0,9,11,1,49,16,17,1,18
-	.byte	1,0,0,10,11,0,49,16,17,1,18,1,0,0,0
-	.sdecl	'.debug_line',debug,cluster('delay_us')
-	.sect	'.debug_line'
-.L63:
-	.word	.L203-.L202
-.L202:
-	.half	3
-	.word	.L205-.L204
-.L204:
-	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
-	.byte	'../dht22_driver/dht22.c',0,0,0,0
-	.byte	'C:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\Stm\\Std\\IfxStm.h',0
-	.byte	0,0,0
-	.byte	'C:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\Scu\\Std\\IfxScuCcu.h',0
-	.byte	0,0,0,0
-.L205:
-	.byte	5,6,7,0,5,2
-	.word	.L52
-	.byte	3,7,1,5,58,9
-	.half	.L185-.L52
-	.byte	3,1,1,4,2,5,5,9
-	.half	.L82-.L185
-	.byte	3,204,4,1,4,3,5,40,7,9
-	.half	.L2-.L82
-	.byte	3,222,4,1,5,58,9
-	.half	.L184-.L2
-	.byte	1,5,43,9
-	.half	.L206-.L184
-	.byte	1,5,5,9
-	.half	.L207-.L206
-	.byte	1,4,2,9
-	.half	.L3-.L207
-	.byte	3,167,123,1,5,19,9
-	.half	.L4-.L3
-	.byte	3,58,1,5,21,9
-	.half	.L91-.L4
-	.byte	3,1,1,5,18,9
-	.half	.L208-.L91
-	.byte	1,5,31,9
-	.half	.L209-.L208
-	.byte	1,5,5,9
-	.half	.L186-.L209
-	.byte	1,4,1,5,57,9
-	.half	.L5-.L186
-	.byte	3,244,122,1,5,14,9
-	.half	.L187-.L5
-	.byte	3,1,1,5,1,9
-	.half	.L188-.L187
-	.byte	3,1,1,7,9
-	.half	.L65-.L188
-	.byte	0,1,1
-.L203:
-	.sdecl	'.debug_ranges',debug,cluster('delay_us')
-	.sect	'.debug_ranges'
-.L64:
-	.word	-1,.L52,0,.L65-.L52,0,0
-	.sdecl	'.debug_info',debug,cluster('DHT22_ReadByte')
-	.sect	'.debug_info'
 .L66:
-	.word	418
+	.word	425
 	.half	3
 	.word	.L67
 	.byte	4,1
@@ -15227,174 +15185,111 @@ __DHT22_process_function_end:
 	.byte	'C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p1\\TriCore Debug (TASKING)\\',0,12,1
 	.word	.L69,.L68
 	.byte	2
-	.word	.L57
+	.word	.L62
 	.byte	3
-	.byte	'DHT22_ReadByte',0,1,13,7
-	.word	.L100
-	.byte	1,1,1
-	.word	.L54,.L101,.L53
+	.byte	'delay_us',0,1,8,6,1,1,1
+	.word	.L57,.L81,.L56
 	.byte	4
-	.word	.L54,.L101
+	.byte	'us',0,1,8,22
+	.word	.L82,.L83
 	.byte	5
-	.byte	'result',0,1,15,12
-	.word	.L100,.L102
-	.byte	4
-	.word	.L103,.L104
-	.byte	5
-	.byte	'i',0,1,16,15
-	.word	.L105,.L106
+	.word	.L57,.L81
 	.byte	6
-	.word	.L107,.L108,.L109
+	.byte	'ticks',0,1,9,18
+	.word	.L84,.L85
 	.byte	7
-	.word	.L110,.L111
-	.byte	7
-	.word	.L112,.L113
+	.word	.L86,.L87,.L5
 	.byte	8
-	.word	.L114,.L108,.L109
-	.byte	0,6
-	.word	.L107,.L115,.L116
-	.byte	7
-	.word	.L110,.L111
-	.byte	7
-	.word	.L112,.L113
+	.word	.L88,.L89
 	.byte	8
-	.word	.L114,.L115,.L116
-	.byte	0,6
-	.word	.L107,.L117,.L118
+	.word	.L90,.L91
+	.byte	9
+	.word	.L92,.L87,.L5
+	.byte	6
+	.byte	'freq',0,2,148,5,12
+	.word	.L93,.L94
 	.byte	7
-	.word	.L110,.L111
-	.byte	7
-	.word	.L112,.L113
+	.word	.L95,.L87,.L96
 	.byte	8
-	.word	.L114,.L117,.L118
-	.byte	0,0,0,0,0
-	.sdecl	'.debug_abbrev',debug,cluster('DHT22_ReadByte')
+	.word	.L97,.L98
+	.byte	9
+	.word	.L99,.L87,.L96
+	.byte	9
+	.word	.L100,.L2,.L4
+	.byte	6
+	.byte	'result',0,2,214,4,13
+	.word	.L101,.L102
+	.byte	7
+	.word	.L103,.L2,.L3
+	.byte	10
+	.word	.L104,.L2,.L3
+	.byte	0,0,0,0,0,0,0,0,0
+	.sdecl	'.debug_abbrev',debug,cluster('delay_us')
 	.sect	'.debug_abbrev'
 .L67:
-	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,73,16
-	.byte	54,15,39,12,63,12,17,1,18,1,64,6,0,0,4,11,1,17,1,18,1,0,0,5,52,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,6
-	.byte	29,1,49,16,17,1,18,1,0,0,7,5,0,49,16,2,6,0,0,8,11,0,49,16,17,1,18,1,0,0,0
-	.sdecl	'.debug_line',debug,cluster('DHT22_ReadByte')
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
+	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,1,17,1,18,1,0,0,6,52,0,3
+	.byte	8,58,15,59,15,57,15,73,16,2,6,0,0,7,29,1,49,16,17,1,18,1,0,0,8,5,0,49,16,2,6,0,0,9,11,1,49,16,17,1,18
+	.byte	1,0,0,10,11,0,49,16,17,1,18,1,0,0,0
+	.sdecl	'.debug_line',debug,cluster('delay_us')
 	.sect	'.debug_line'
 .L68:
-	.word	.L211-.L210
-.L210:
+	.word	.L214-.L213
+.L213:
 	.half	3
-	.word	.L213-.L212
-.L212:
+	.word	.L216-.L215
+.L215:
 	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
 	.byte	'../dht22_driver/dht22.c',0,0,0,0
-	.byte	'C:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\Port\\Std\\IfxPort.h',0
+	.byte	'C:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\Stm\\Std\\IfxStm.h',0
+	.byte	0,0,0
+	.byte	'C:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\Scu\\Std\\IfxScuCcu.h',0
 	.byte	0,0,0,0
-.L213:
-	.byte	5,19,7,0,5,2
-	.word	.L54
-	.byte	3,14,1,5,17,9
-	.half	.L103-.L54
-	.byte	3,1,1,5,27,9
-	.half	.L190-.L103
-	.byte	1,5,79,9
-	.half	.L7-.L190
-	.byte	3,1,1,5,37,9
-	.half	.L8-.L7
-	.byte	1,5,47,9
-	.half	.L214-.L8
-	.byte	1,5,54,9
-	.half	.L215-.L214
-	.byte	1,5,64,9
-	.half	.L216-.L215
-	.byte	1,4,2,5,13,9
-	.half	.L108-.L216
-	.byte	3,155,4,1,5,12,9
-	.half	.L217-.L108
-	.byte	1,5,51,7,9
+.L216:
+	.byte	5,6,7,0,5,2
+	.word	.L57
+	.byte	3,7,1,5,58,9
+	.half	.L192-.L57
+	.byte	3,1,1,4,2,5,5,9
+	.half	.L87-.L192
+	.byte	3,204,4,1,4,3,5,40,7,9
+	.half	.L2-.L87
+	.byte	3,222,4,1,5,58,9
+	.half	.L191-.L2
+	.byte	1,5,43,9
+	.half	.L217-.L191
+	.byte	1,5,5,9
 	.half	.L218-.L217
-	.byte	1,5,58,9
-	.half	.L219-.L218
-	.byte	1,5,51,9
-	.half	.L10-.L219
+	.byte	1,4,2,9
+	.half	.L3-.L218
+	.byte	3,167,123,1,5,19,9
+	.half	.L4-.L3
+	.byte	3,58,1,5,21,9
+	.half	.L96-.L4
+	.byte	3,1,1,5,18,9
+	.half	.L219-.L96
+	.byte	1,5,31,9
+	.half	.L220-.L219
 	.byte	1,5,5,9
-	.half	.L11-.L10
-	.byte	1,4,1,5,79,9
-	.half	.L12-.L11
-	.byte	3,229,123,1,5,19,7,9
-	.half	.L109-.L12
-	.byte	3,1,1,5,34,9
-	.half	.L220-.L109
-	.byte	3,2,1,5,44,9
-	.half	.L221-.L220
-	.byte	1,5,51,9
-	.half	.L222-.L221
-	.byte	1,5,61,9
-	.half	.L223-.L222
-	.byte	1,4,2,5,13,9
-	.half	.L115-.L223
-	.byte	3,152,4,1,5,12,9
-	.half	.L224-.L115
-	.byte	1,5,51,7,9
-	.half	.L225-.L224
-	.byte	1,5,58,9
-	.half	.L226-.L225
-	.byte	1,5,51,9
-	.half	.L13-.L226
-	.byte	1,5,5,9
-	.half	.L14-.L13
-	.byte	1,4,1,5,10,9
-	.half	.L15-.L14
-	.byte	3,232,123,1,5,25,7,9
-	.half	.L116-.L15
-	.byte	3,1,1,5,33,9
-	.half	.L227-.L116
-	.byte	1,5,27,9
-	.half	.L228-.L227
-	.byte	1,5,21,9
-	.half	.L229-.L228
-	.byte	1,5,79,9
-	.half	.L16-.L229
-	.byte	3,3,1,5,37,9
-	.half	.L17-.L16
-	.byte	1,5,47,9
-	.half	.L230-.L17
-	.byte	1,5,54,9
-	.half	.L231-.L230
-	.byte	1,5,64,9
-	.half	.L232-.L231
-	.byte	1,4,2,5,13,9
-	.half	.L117-.L232
-	.byte	3,148,4,1,5,12,9
-	.half	.L233-.L117
-	.byte	1,5,51,7,9
-	.half	.L234-.L233
-	.byte	1,5,58,9
-	.half	.L235-.L234
-	.byte	1,5,51,9
-	.half	.L19-.L235
-	.byte	1,5,5,9
-	.half	.L20-.L19
-	.byte	1,4,1,5,79,9
-	.half	.L21-.L20
-	.byte	3,236,123,1,5,30,7,9
-	.half	.L118-.L21
-	.byte	3,120,1,5,26,9
-	.half	.L6-.L118
-	.byte	1,5,27,9
-	.half	.L236-.L6
-	.byte	1,5,6,7,9
-	.half	.L104-.L236
-	.byte	3,10,1,5,1,9
-	.half	.L22-.L104
+	.half	.L193-.L220
+	.byte	1,4,1,5,57,9
+	.half	.L5-.L193
+	.byte	3,244,122,1,5,14,9
+	.half	.L194-.L5
+	.byte	3,1,1,5,1,9
+	.half	.L195-.L194
 	.byte	3,1,1,7,9
-	.half	.L70-.L22
+	.half	.L70-.L195
 	.byte	0,1,1
-.L211:
-	.sdecl	'.debug_ranges',debug,cluster('DHT22_ReadByte')
+.L214:
+	.sdecl	'.debug_ranges',debug,cluster('delay_us')
 	.sect	'.debug_ranges'
 .L69:
-	.word	-1,.L54,0,.L70-.L54,0,0
-	.sdecl	'.debug_info',debug,cluster('DHT22_process')
+	.word	-1,.L57,0,.L70-.L57,0,0
+	.sdecl	'.debug_info',debug,cluster('DHT22_ReadByte')
 	.sect	'.debug_info'
 .L71:
-	.word	791
+	.word	418
 	.half	3
 	.word	.L72
 	.byte	4,1
@@ -15403,546 +15298,770 @@ __DHT22_process_function_end:
 	.byte	'C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p1\\TriCore Debug (TASKING)\\',0,12,1
 	.word	.L74,.L73
 	.byte	2
-	.word	.L57
+	.word	.L62
 	.byte	3
-	.byte	'DHT22_process',0,1,29,5
+	.byte	'DHT22_ReadByte',0,1,13,7
 	.word	.L105
 	.byte	1,1,1
-	.word	.L56,.L119,.L55
+	.word	.L59,.L106,.L58
+	.byte	4
+	.word	.L59,.L106
+	.byte	5
+	.byte	'result',0,1,15,12
+	.word	.L105,.L107
+	.byte	4
+	.word	.L108,.L109
+	.byte	5
+	.byte	'i',0,1,16,15
+	.word	.L110,.L111
+	.byte	6
+	.word	.L112,.L113,.L114
+	.byte	7
+	.word	.L115,.L116
+	.byte	7
+	.word	.L117,.L118
+	.byte	8
+	.word	.L119,.L113,.L114
+	.byte	0,6
+	.word	.L112,.L120,.L121
+	.byte	7
+	.word	.L115,.L116
+	.byte	7
+	.word	.L117,.L118
+	.byte	8
+	.word	.L119,.L120,.L121
+	.byte	0,6
+	.word	.L112,.L122,.L123
+	.byte	7
+	.word	.L115,.L116
+	.byte	7
+	.word	.L117,.L118
+	.byte	8
+	.word	.L119,.L122,.L123
+	.byte	0,0,0,0,0
+	.sdecl	'.debug_abbrev',debug,cluster('DHT22_ReadByte')
+	.sect	'.debug_abbrev'
+.L72:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,73,16
+	.byte	54,15,39,12,63,12,17,1,18,1,64,6,0,0,4,11,1,17,1,18,1,0,0,5,52,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,6
+	.byte	29,1,49,16,17,1,18,1,0,0,7,5,0,49,16,2,6,0,0,8,11,0,49,16,17,1,18,1,0,0,0
+	.sdecl	'.debug_line',debug,cluster('DHT22_ReadByte')
+	.sect	'.debug_line'
+.L73:
+	.word	.L222-.L221
+.L221:
+	.half	3
+	.word	.L224-.L223
+.L223:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
+	.byte	'../dht22_driver/dht22.c',0,0,0,0
+	.byte	'C:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\Port\\Std\\IfxPort.h',0
+	.byte	0,0,0,0
+.L224:
+	.byte	5,19,7,0,5,2
+	.word	.L59
+	.byte	3,14,1,5,17,9
+	.half	.L108-.L59
+	.byte	3,1,1,5,27,9
+	.half	.L197-.L108
+	.byte	1,5,79,9
+	.half	.L7-.L197
+	.byte	3,1,1,5,37,9
+	.half	.L8-.L7
+	.byte	1,5,47,9
+	.half	.L225-.L8
+	.byte	1,5,54,9
+	.half	.L226-.L225
+	.byte	1,5,64,9
+	.half	.L227-.L226
+	.byte	1,4,2,5,13,9
+	.half	.L113-.L227
+	.byte	3,155,4,1,5,12,9
+	.half	.L228-.L113
+	.byte	1,5,51,7,9
+	.half	.L229-.L228
+	.byte	1,5,58,9
+	.half	.L230-.L229
+	.byte	1,5,51,9
+	.half	.L10-.L230
+	.byte	1,5,5,9
+	.half	.L11-.L10
+	.byte	1,4,1,5,79,9
+	.half	.L12-.L11
+	.byte	3,229,123,1,5,19,7,9
+	.half	.L114-.L12
+	.byte	3,1,1,5,34,9
+	.half	.L231-.L114
+	.byte	3,2,1,5,44,9
+	.half	.L232-.L231
+	.byte	1,5,51,9
+	.half	.L233-.L232
+	.byte	1,5,61,9
+	.half	.L234-.L233
+	.byte	1,4,2,5,13,9
+	.half	.L120-.L234
+	.byte	3,152,4,1,5,12,9
+	.half	.L235-.L120
+	.byte	1,5,51,7,9
+	.half	.L236-.L235
+	.byte	1,5,58,9
+	.half	.L237-.L236
+	.byte	1,5,51,9
+	.half	.L13-.L237
+	.byte	1,5,5,9
+	.half	.L14-.L13
+	.byte	1,4,1,5,10,9
+	.half	.L15-.L14
+	.byte	3,232,123,1,5,25,7,9
+	.half	.L121-.L15
+	.byte	3,1,1,5,33,9
+	.half	.L238-.L121
+	.byte	1,5,27,9
+	.half	.L239-.L238
+	.byte	1,5,21,9
+	.half	.L240-.L239
+	.byte	1,5,79,9
+	.half	.L16-.L240
+	.byte	3,3,1,5,37,9
+	.half	.L17-.L16
+	.byte	1,5,47,9
+	.half	.L241-.L17
+	.byte	1,5,54,9
+	.half	.L242-.L241
+	.byte	1,5,64,9
+	.half	.L243-.L242
+	.byte	1,4,2,5,13,9
+	.half	.L122-.L243
+	.byte	3,148,4,1,5,12,9
+	.half	.L244-.L122
+	.byte	1,5,51,7,9
+	.half	.L245-.L244
+	.byte	1,5,58,9
+	.half	.L246-.L245
+	.byte	1,5,51,9
+	.half	.L19-.L246
+	.byte	1,5,5,9
+	.half	.L20-.L19
+	.byte	1,4,1,5,79,9
+	.half	.L21-.L20
+	.byte	3,236,123,1,5,30,7,9
+	.half	.L123-.L21
+	.byte	3,120,1,5,26,9
+	.half	.L6-.L123
+	.byte	1,5,27,9
+	.half	.L247-.L6
+	.byte	1,5,6,7,9
+	.half	.L109-.L247
+	.byte	3,10,1,5,1,9
+	.half	.L22-.L109
+	.byte	3,1,1,7,9
+	.half	.L75-.L22
+	.byte	0,1,1
+.L222:
+	.sdecl	'.debug_ranges',debug,cluster('DHT22_ReadByte')
+	.sect	'.debug_ranges'
+.L74:
+	.word	-1,.L59,0,.L75-.L59,0,0
+	.sdecl	'.debug_info',debug,cluster('DHT22_process')
+	.sect	'.debug_info'
+.L76:
+	.word	818
+	.half	3
+	.word	.L77
+	.byte	4,1
+	.byte	'../dht22_driver/dht22.c',0
+	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
+	.byte	'C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p1\\TriCore Debug (TASKING)\\',0,12,1
+	.word	.L79,.L78
+	.byte	2
+	.word	.L62
+	.byte	3
+	.byte	'DHT22_process',0,1,29,5
+	.word	.L110
+	.byte	1,1,1
+	.word	.L61,.L124,.L60
 	.byte	4
 	.byte	'data',0,1,29,31
-	.word	.L120,.L121
-	.byte	5
-	.word	.L56,.L119
-	.byte	6
-	.word	.L122,.L123,.L124
-	.byte	7
 	.word	.L125,.L126
+	.byte	5
+	.word	.L61,.L124
+	.byte	6
+	.word	.L127,.L128,.L129
 	.byte	7
-	.word	.L127,.L128
+	.word	.L130,.L131
 	.byte	7
-	.word	.L129,.L130
+	.word	.L132,.L133
 	.byte	7
-	.word	.L131,.L132
+	.word	.L134,.L135
+	.byte	7
+	.word	.L136,.L137
 	.byte	8
-	.word	.L133,.L123,.L124
+	.word	.L138,.L128,.L129
 	.byte	0,6
-	.word	.L134,.L135,.L136
+	.word	.L139,.L140,.L141
 	.byte	7
-	.word	.L137,.L138
-	.byte	7
-	.word	.L139,.L140
-	.byte	9
-	.word	.L141,.L135,.L136
-	.byte	6
-	.word	.L142,.L143,.L136
+	.word	.L142,.L143
 	.byte	7
 	.word	.L144,.L145
-	.byte	7
-	.word	.L146,.L147
-	.byte	7
-	.word	.L148,.L149
-	.byte	8
-	.word	.L150,.L143,.L136
-	.byte	0,0,0,6
-	.word	.L151,.L152,.L153
-	.byte	7
-	.word	.L154,.L155
-	.byte	7
-	.word	.L156,.L157
 	.byte	9
-	.word	.L158,.L152,.L153
+	.word	.L146,.L140,.L141
 	.byte	6
-	.word	.L142,.L159,.L153
+	.word	.L147,.L148,.L141
 	.byte	7
-	.word	.L144,.L145
+	.word	.L149,.L150
 	.byte	7
-	.word	.L146,.L147
+	.word	.L151,.L152
 	.byte	7
-	.word	.L148,.L149
+	.word	.L153,.L154
 	.byte	8
-	.word	.L150,.L159,.L153
+	.word	.L155,.L148,.L141
 	.byte	0,0,0,6
-	.word	.L160,.L161,.L162
+	.word	.L156,.L157,.L158
 	.byte	7
-	.word	.L163,.L164
+	.word	.L159,.L160
 	.byte	7
-	.word	.L165,.L166
+	.word	.L161,.L162
+	.byte	9
+	.word	.L163,.L157,.L158
+	.byte	6
+	.word	.L147,.L164,.L158
 	.byte	7
-	.word	.L167,.L168
+	.word	.L149,.L150
+	.byte	7
+	.word	.L151,.L152
+	.byte	7
+	.word	.L153,.L154
 	.byte	8
-	.word	.L169,.L161,.L162
+	.word	.L155,.L164,.L158
+	.byte	0,0,0,6
+	.word	.L165,.L166,.L167
+	.byte	7
+	.word	.L168,.L169
+	.byte	7
+	.word	.L170,.L171
+	.byte	7
+	.word	.L172,.L173
+	.byte	8
+	.word	.L174,.L166,.L167
 	.byte	0,5
-	.word	.L162,.L119
+	.word	.L167,.L124
 	.byte	10
 	.byte	'timeout',0,1,44,12
-	.word	.L77,.L170
+	.word	.L82,.L175
 	.byte	6
-	.word	.L107,.L171,.L172
+	.word	.L112,.L176,.L177
 	.byte	7
-	.word	.L110,.L173
+	.word	.L115,.L178
 	.byte	7
-	.word	.L112,.L174
+	.word	.L117,.L179
 	.byte	8
-	.word	.L114,.L171,.L172
+	.word	.L119,.L176,.L177
 	.byte	0,6
-	.word	.L107,.L175,.L176
+	.word	.L112,.L180,.L181
 	.byte	7
-	.word	.L110,.L173
+	.word	.L115,.L178
 	.byte	7
-	.word	.L112,.L174
+	.word	.L117,.L179
 	.byte	8
-	.word	.L114,.L175,.L176
+	.word	.L119,.L180,.L181
 	.byte	0,6
-	.word	.L107,.L177,.L178
+	.word	.L112,.L182,.L183
 	.byte	7
-	.word	.L110,.L173
+	.word	.L115,.L178
 	.byte	7
-	.word	.L112,.L174
+	.word	.L117,.L179
 	.byte	8
-	.word	.L114,.L177,.L178
+	.word	.L119,.L182,.L183
 	.byte	0,5
-	.word	.L178,.L119
+	.word	.L183,.L124
 	.byte	10
 	.byte	'buffer',0,1,58,11
-	.word	.L179,.L180
+	.word	.L184,.L185
 	.byte	5
-	.word	.L181,.L182
+	.word	.L186,.L187
 	.byte	10
 	.byte	'i',0,1,59,14
-	.word	.L105,.L183
+	.word	.L110,.L188
+	.byte	0,5
+	.word	.L47,.L124
+	.byte	10
+	.byte	'temp',0,1,74,16
+	.word	.L189,.L190
 	.byte	0,0,0,0,0,0
 	.sdecl	'.debug_abbrev',debug,cluster('DHT22_process')
 	.sect	'.debug_abbrev'
-.L72:
+.L77:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,73,16
 	.byte	54,15,39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,1,17,1,18,1,0,0,6
 	.byte	29,1,49,16,17,1,18,1,0,0,7,5,0,49,16,2,6,0,0,8,11,0,49,16,17,1,18,1,0,0,9,11,1,49,16,17,1,18,1,0,0,10
 	.byte	52,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,0
 	.sdecl	'.debug_line',debug,cluster('DHT22_process')
 	.sect	'.debug_line'
-.L73:
-	.word	.L238-.L237
-.L237:
+.L78:
+	.word	.L249-.L248
+.L248:
 	.half	3
-	.word	.L240-.L239
-.L239:
+	.word	.L251-.L250
+.L250:
 	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
 	.byte	'../dht22_driver/dht22.c',0,0,0,0
 	.byte	'C:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\Port\\Std\\IfxPort.h',0
 	.byte	0,0,0,0
-.L240:
+.L251:
 	.byte	5,5,7,0,5,2
-	.word	.L56
+	.word	.L61
 	.byte	3,28,1,5,30,9
-	.half	.L194-.L56
+	.half	.L201-.L61
 	.byte	3,3,1,5,40,9
-	.half	.L241-.L194
+	.half	.L252-.L201
 	.byte	1,5,47,9
-	.half	.L193-.L241
+	.half	.L200-.L252
 	.byte	1,5,57,9
-	.half	.L242-.L193
+	.half	.L253-.L200
 	.byte	1,5,68,9
-	.half	.L243-.L242
+	.half	.L254-.L253
 	.byte	1,5,97,9
-	.half	.L244-.L243
+	.half	.L255-.L254
 	.byte	1,4,2,5,61,9
-	.half	.L123-.L244
+	.half	.L128-.L255
 	.byte	3,170,4,1,5,40,9
-	.half	.L245-.L123
+	.half	.L256-.L128
 	.byte	1,4,1,5,23,9
-	.half	.L124-.L245
+	.half	.L129-.L256
 	.byte	3,215,123,1,5,33,9
-	.half	.L246-.L124
+	.half	.L257-.L129
 	.byte	1,5,40,9
-	.half	.L247-.L246
-	.byte	1,5,50,9
-	.half	.L248-.L247
-	.byte	1,4,2,5,41,9
-	.half	.L135-.L248
-	.byte	3,157,4,1,5,26,9
-	.half	.L143-.L135
-	.byte	3,18,1,5,17,9
-	.half	.L249-.L143
-	.byte	1,4,1,5,14,9
-	.half	.L136-.L249
-	.byte	3,210,123,1,5,24,9
-	.half	.L250-.L136
-	.byte	3,1,1,5,34,9
-	.half	.L251-.L250
-	.byte	1,5,41,9
-	.half	.L252-.L251
-	.byte	1,5,51,9
-	.half	.L253-.L252
-	.byte	1,4,2,5,41,9
-	.half	.L152-.L253
-	.byte	3,149,4,1,5,26,9
-	.half	.L159-.L152
-	.byte	3,24,1,5,17,9
-	.half	.L254-.L159
-	.byte	1,4,1,5,14,9
-	.half	.L153-.L254
-	.byte	3,212,123,1,5,29,9
-	.half	.L255-.L153
-	.byte	3,4,1,5,39,9
-	.half	.L256-.L255
-	.byte	1,5,46,9
-	.half	.L257-.L256
-	.byte	1,5,56,9
 	.half	.L258-.L257
-	.byte	1,5,67,9
+	.byte	1,5,50,9
 	.half	.L259-.L258
-	.byte	1,4,2,5,40,9
-	.half	.L161-.L259
-	.byte	3,156,4,1,4,1,5,20,9
-	.half	.L162-.L161
-	.byte	3,232,123,1,5,74,9
-	.half	.L195-.L162
-	.byte	3,1,1,5,13,9
-	.half	.L24-.L195
-	.byte	3,1,1,5,9,9
-	.half	.L260-.L24
-	.byte	1,5,36,7,9
-	.half	.L261-.L260
-	.byte	1,5,29,9
+	.byte	1,4,2,5,41,9
+	.half	.L140-.L259
+	.byte	3,157,4,1,5,26,9
+	.half	.L148-.L140
+	.byte	3,18,1,5,17,9
+	.half	.L260-.L148
+	.byte	1,4,1,5,14,9
+	.half	.L141-.L260
+	.byte	3,210,123,1,5,24,9
+	.half	.L261-.L141
+	.byte	3,1,1,5,34,9
 	.half	.L262-.L261
-	.byte	1,5,32,9
-	.half	.L23-.L262
-	.byte	3,127,1,5,42,9
-	.half	.L263-.L23
-	.byte	1,5,49,9
-	.half	.L264-.L263
-	.byte	1,5,59,9
-	.half	.L265-.L264
-	.byte	1,4,2,5,13,9
-	.half	.L171-.L265
-	.byte	3,255,3,1,5,12,9
-	.half	.L266-.L171
-	.byte	1,5,51,7,9
-	.half	.L267-.L266
-	.byte	1,5,58,9
-	.half	.L268-.L267
+	.byte	1,5,41,9
+	.half	.L263-.L262
 	.byte	1,5,51,9
-	.half	.L27-.L268
+	.half	.L264-.L263
+	.byte	1,4,2,5,41,9
+	.half	.L157-.L264
+	.byte	3,149,4,1,5,26,9
+	.half	.L164-.L157
+	.byte	3,24,1,5,17,9
+	.half	.L265-.L164
+	.byte	1,4,1,5,14,9
+	.half	.L158-.L265
+	.byte	3,212,123,1,5,29,9
+	.half	.L266-.L158
+	.byte	3,4,1,5,39,9
+	.half	.L267-.L266
+	.byte	1,5,46,9
+	.half	.L268-.L267
+	.byte	1,5,56,9
+	.half	.L269-.L268
+	.byte	1,5,67,9
+	.half	.L270-.L269
+	.byte	1,4,2,5,40,9
+	.half	.L166-.L270
+	.byte	3,156,4,1,4,1,5,20,9
+	.half	.L167-.L166
+	.byte	3,232,123,1,5,74,9
+	.half	.L202-.L167
+	.byte	3,1,1,5,13,9
+	.half	.L24-.L202
+	.byte	3,1,1,5,9,9
+	.half	.L271-.L24
+	.byte	1,5,36,7,9
+	.half	.L272-.L271
+	.byte	1,5,29,9
+	.half	.L273-.L272
+	.byte	1,5,32,9
+	.half	.L23-.L273
+	.byte	3,127,1,5,42,9
+	.half	.L274-.L23
+	.byte	1,5,49,9
+	.half	.L275-.L274
+	.byte	1,5,59,9
+	.half	.L276-.L275
+	.byte	1,4,2,5,13,9
+	.half	.L176-.L276
+	.byte	3,255,3,1,5,12,9
+	.half	.L277-.L176
+	.byte	1,5,51,7,9
+	.half	.L278-.L277
+	.byte	1,5,58,9
+	.half	.L279-.L278
+	.byte	1,5,51,9
+	.half	.L27-.L279
 	.byte	1,5,5,9
 	.half	.L28-.L27
 	.byte	1,4,1,5,74,9
 	.half	.L29-.L28
 	.byte	3,129,124,1,5,13,7,9
-	.half	.L172-.L29
+	.half	.L177-.L29
 	.byte	3,3,1,5,74,9
-	.half	.L269-.L172
+	.half	.L280-.L177
 	.byte	3,1,1,5,13,9
-	.half	.L31-.L269
+	.half	.L31-.L280
 	.byte	3,1,1,5,9,9
-	.half	.L270-.L31
+	.half	.L281-.L31
 	.byte	1,5,36,7,9
-	.half	.L271-.L270
+	.half	.L282-.L281
 	.byte	1,5,29,9
-	.half	.L272-.L271
+	.half	.L283-.L282
 	.byte	1,5,32,9
-	.half	.L30-.L272
+	.half	.L30-.L283
 	.byte	3,127,1,5,42,9
-	.half	.L273-.L30
+	.half	.L284-.L30
 	.byte	1,5,49,9
-	.half	.L274-.L273
+	.half	.L285-.L284
 	.byte	1,5,59,9
-	.half	.L275-.L274
+	.half	.L286-.L285
 	.byte	1,4,2,5,13,9
-	.half	.L175-.L275
+	.half	.L180-.L286
 	.byte	3,251,3,1,5,12,9
-	.half	.L276-.L175
+	.half	.L287-.L180
 	.byte	1,5,51,7,9
-	.half	.L277-.L276
+	.half	.L288-.L287
 	.byte	1,5,58,9
-	.half	.L278-.L277
+	.half	.L289-.L288
 	.byte	1,5,51,9
-	.half	.L34-.L278
+	.half	.L34-.L289
 	.byte	1,5,5,9
 	.half	.L35-.L34
 	.byte	1,4,1,5,74,9
 	.half	.L36-.L35
 	.byte	3,133,124,1,5,13,7,9
-	.half	.L176-.L36
+	.half	.L181-.L36
 	.byte	3,3,1,5,74,9
-	.half	.L279-.L176
+	.half	.L290-.L181
 	.byte	3,1,1,5,13,9
-	.half	.L38-.L279
+	.half	.L38-.L290
 	.byte	3,1,1,5,9,9
-	.half	.L280-.L38
+	.half	.L291-.L38
 	.byte	1,5,36,7,9
-	.half	.L281-.L280
+	.half	.L292-.L291
 	.byte	1,5,29,9
-	.half	.L282-.L281
+	.half	.L293-.L292
 	.byte	1,5,32,9
-	.half	.L37-.L282
+	.half	.L37-.L293
 	.byte	3,127,1,5,42,9
-	.half	.L283-.L37
+	.half	.L294-.L37
 	.byte	1,5,49,9
-	.half	.L284-.L283
+	.half	.L295-.L294
 	.byte	1,5,59,9
-	.half	.L285-.L284
+	.half	.L296-.L295
 	.byte	1,4,2,5,13,9
-	.half	.L177-.L285
+	.half	.L182-.L296
 	.byte	3,247,3,1,5,12,9
-	.half	.L286-.L177
+	.half	.L297-.L182
 	.byte	1,5,51,7,9
-	.half	.L287-.L286
+	.half	.L298-.L297
 	.byte	1,5,58,9
-	.half	.L288-.L287
+	.half	.L299-.L298
 	.byte	1,5,51,9
-	.half	.L41-.L288
+	.half	.L41-.L299
 	.byte	1,5,5,9
 	.half	.L42-.L41
 	.byte	1,4,1,5,74,9
 	.half	.L43-.L42
 	.byte	3,137,124,1,5,23,7,9
-	.half	.L178-.L43
+	.half	.L183-.L43
 	.byte	3,5,1,5,21,9
-	.half	.L289-.L178
+	.half	.L300-.L183
 	.byte	1,5,16,9
-	.half	.L181-.L289
+	.half	.L186-.L300
 	.byte	3,1,1,5,26,9
-	.half	.L196-.L181
+	.half	.L203-.L186
 	.byte	1,5,15,9
-	.half	.L46-.L196
+	.half	.L46-.L203
 	.byte	3,1,1,5,35,9
-	.half	.L290-.L46
+	.half	.L301-.L46
 	.byte	1,5,19,9
-	.half	.L291-.L290
-	.byte	1,5,29,9
-	.half	.L292-.L291
-	.byte	3,127,1,5,26,9
-	.half	.L45-.L292
-	.byte	1,5,15,7,9
-	.half	.L182-.L45
-	.byte	3,5,1,5,29,9
-	.half	.L293-.L182
-	.byte	1,5,41,9
-	.half	.L294-.L293
-	.byte	1,5,33,9
-	.half	.L197-.L294
-	.byte	1,5,53,9
-	.half	.L295-.L197
-	.byte	1,5,45,9
-	.half	.L296-.L295
-	.byte	1,5,65,9
-	.half	.L297-.L296
-	.byte	1,5,57,9
-	.half	.L298-.L297
-	.byte	1,5,5,9
-	.half	.L299-.L298
-	.byte	1,5,20,7,9
-	.half	.L300-.L299
-	.byte	3,1,1,5,24,9
-	.half	.L301-.L300
-	.byte	1,5,40,9
 	.half	.L302-.L301
-	.byte	1,5,52,9
+	.byte	1,5,29,9
 	.half	.L303-.L302
-	.byte	1,5,44,9
-	.half	.L304-.L303
-	.byte	1,5,64,9
+	.byte	3,127,1,5,26,9
+	.half	.L45-.L303
+	.byte	1,5,15,7,9
+	.half	.L187-.L45
+	.byte	3,5,1,5,29,9
+	.half	.L304-.L187
+	.byte	1,5,41,9
 	.half	.L305-.L304
-	.byte	1,5,56,9
-	.half	.L306-.L305
-	.byte	1,5,76,9
+	.byte	1,5,33,9
+	.half	.L204-.L305
+	.byte	1,5,53,9
+	.half	.L306-.L204
+	.byte	1,5,45,9
 	.half	.L307-.L306
-	.byte	1,5,68,9
+	.byte	1,5,65,9
 	.half	.L308-.L307
-	.byte	1,5,13,9
+	.byte	1,5,57,9
 	.half	.L309-.L308
-	.byte	1,5,91,7,9
+	.byte	1,5,5,9
 	.half	.L310-.L309
-	.byte	1,5,95,9
+	.byte	1,5,20,7,9
 	.half	.L311-.L310
-	.byte	1,5,113,9
+	.byte	3,1,1,5,24,9
 	.half	.L312-.L311
-	.byte	1,5,125,9
+	.byte	1,5,40,9
 	.half	.L313-.L312
-	.byte	1,5,117,9
+	.byte	1,5,52,9
 	.half	.L314-.L313
-	.byte	1,5,137,1,9
+	.byte	1,5,44,9
 	.half	.L315-.L314
-	.byte	1,5,129,1,9
+	.byte	1,5,64,9
 	.half	.L316-.L315
-	.byte	1,5,149,1,9
+	.byte	1,5,56,9
 	.half	.L317-.L316
-	.byte	1,5,141,1,9
+	.byte	1,5,76,9
 	.half	.L318-.L317
-	.byte	1,5,103,9
+	.byte	1,5,68,9
 	.half	.L319-.L318
-	.byte	1,5,13,7,9
+	.byte	1,5,13,9
 	.half	.L320-.L319
-	.byte	3,1,1,9
+	.byte	1,5,91,7,9
 	.half	.L321-.L320
-	.byte	3,1,1,9
+	.byte	1,5,95,9
 	.half	.L322-.L321
-	.byte	3,1,1,5,48,9
-	.half	.L47-.L322
-	.byte	3,9,1,5,52,9
-	.half	.L323-.L47
-	.byte	1,5,66,9
+	.byte	1,5,113,9
+	.half	.L323-.L322
+	.byte	1,5,125,9
 	.half	.L324-.L323
-	.byte	1,5,58,9
+	.byte	1,5,117,9
 	.half	.L325-.L324
-	.byte	1,5,20,9
+	.byte	1,5,137,1,9
 	.half	.L326-.L325
-	.byte	1,5,51,9
+	.byte	1,5,129,1,9
 	.half	.L327-.L326
-	.byte	3,1,1,5,55,9
+	.byte	1,5,149,1,9
 	.half	.L328-.L327
-	.byte	1,5,69,9
+	.byte	1,5,141,1,9
 	.half	.L329-.L328
-	.byte	1,5,61,9
+	.byte	1,5,103,9
 	.half	.L330-.L329
-	.byte	1,5,23,9
+	.byte	1,5,13,7,9
 	.half	.L331-.L330
-	.byte	1,5,12,9
+	.byte	3,1,1,9
 	.half	.L332-.L331
-	.byte	3,2,1,5,5,9
+	.byte	3,1,1,9
 	.half	.L333-.L332
+	.byte	3,1,1,5,20,9
+	.half	.L334-.L333
+	.byte	3,1,1,5,13,9
+	.half	.L335-.L334
+	.byte	1,5,47,9
+	.half	.L47-.L335
+	.byte	3,6,1,5,51,9
+	.half	.L336-.L47
+	.byte	1,5,65,9
+	.half	.L337-.L336
+	.byte	1,5,57,9
+	.half	.L338-.L337
+	.byte	1,5,50,9
+	.half	.L339-.L338
+	.byte	3,1,1,5,54,9
+	.half	.L340-.L339
+	.byte	1,5,68,9
+	.half	.L341-.L340
+	.byte	1,5,60,9
+	.half	.L342-.L341
+	.byte	1,5,22,9
+	.half	.L343-.L342
+	.byte	1,5,12,9
+	.half	.L205-.L343
+	.byte	3,3,1,5,24,9
+	.half	.L344-.L205
+	.byte	1,5,5,9
+	.half	.L345-.L344
+	.byte	1,5,9,7,9
+	.half	.L346-.L345
+	.byte	3,1,1,5,16,9
+	.half	.L206-.L346
+	.byte	3,1,1,5,9,9
+	.half	.L347-.L206
+	.byte	1,5,12,9
+	.half	.L51-.L347
+	.byte	3,2,1,5,27,9
+	.half	.L348-.L51
+	.byte	1,5,5,9
+	.half	.L349-.L348
+	.byte	1,5,9,7,9
+	.half	.L350-.L349
+	.byte	3,1,1,5,16,9
+	.half	.L207-.L350
+	.byte	3,1,1,5,9,9
+	.half	.L351-.L207
+	.byte	1,5,26,9
+	.half	.L53-.L351
+	.byte	3,6,1,5,20,9
+	.half	.L352-.L53
+	.byte	1,5,23,9
+	.half	.L353-.L352
+	.byte	3,1,1,5,12,9
+	.half	.L354-.L353
+	.byte	3,2,1,5,5,9
+	.half	.L208-.L354
 	.byte	1,5,1,9
-	.half	.L26-.L333
+	.half	.L26-.L208
 	.byte	3,1,1,7,9
-	.half	.L75-.L26
+	.half	.L80-.L26
 	.byte	0,1,1
-.L238:
+.L249:
 	.sdecl	'.debug_ranges',debug,cluster('DHT22_process')
 	.sect	'.debug_ranges'
-.L74:
-	.word	-1,.L56,0,.L75-.L56,0,0
+.L79:
+	.word	-1,.L61,0,.L80-.L61,0,0
 	.sdecl	'.debug_loc',debug,cluster('DHT22_ReadByte')
 	.sect	'.debug_loc'
-.L53:
-	.word	-1,.L54,0,.L101-.L54
+.L58:
+	.word	-1,.L59,0,.L106-.L59
 	.half	2
 	.byte	138,0
 	.word	0,0
-.L106:
-	.word	-1,.L54,.L190-.L54,.L101-.L54
+.L111:
+	.word	-1,.L59,.L197-.L59,.L106-.L59
 	.half	1
 	.byte	89
 	.word	0,0
-.L113:
+.L118:
 	.word	0,0
-.L111:
+.L116:
 	.word	0,0
-.L102:
-	.word	-1,.L54,.L103-.L54,.L189-.L54
+.L107:
+	.word	-1,.L59,.L108-.L59,.L196-.L59
 	.half	1
 	.byte	88
-	.word	.L16-.L54,.L101-.L54
+	.word	.L16-.L59,.L106-.L59
 	.half	1
 	.byte	88
-	.word	.L191-.L54,.L101-.L54
+	.word	.L198-.L59,.L106-.L59
 	.half	1
 	.byte	82
 	.word	0,0
 	.sdecl	'.debug_loc',debug,cluster('DHT22_process')
 	.sect	'.debug_loc'
-.L55:
-	.word	-1,.L56,0,.L192-.L56
+.L60:
+	.word	-1,.L61,0,.L199-.L61
 	.half	2
 	.byte	138,0
-	.word	.L192-.L56,.L119-.L56
+	.word	.L199-.L61,.L124-.L61
 	.half	2
 	.byte	138,16
-	.word	.L119-.L56,.L119-.L56
+	.word	.L124-.L61,.L124-.L61
 	.half	2
 	.byte	138,0
 	.word	0,0
-.L149:
+.L154:
 	.word	0,0
-.L180:
-	.word	-1,.L56,0,.L119-.L56
+.L185:
+	.word	-1,.L61,0,.L124-.L61
 	.half	2
 	.byte	145,116
 	.word	0,0
-.L121:
-	.word	-1,.L56,0,.L193-.L56
+.L126:
+	.word	-1,.L61,0,.L200-.L61
 	.half	1
 	.byte	100
-	.word	.L194-.L56,.L119-.L56
+	.word	.L201-.L61,.L124-.L61
 	.half	1
 	.byte	108
 	.word	0,0
-.L183:
-	.word	-1,.L56,.L196-.L56,.L197-.L56
+.L188:
+	.word	-1,.L61,.L203-.L61,.L204-.L61
 	.half	1
 	.byte	95
 	.word	0,0
-.L132:
-	.word	0,0
-.L168:
-	.word	0,0
-.L130:
-	.word	0,0
-.L174:
-	.word	0,0
-.L157:
-	.word	0,0
-.L140:
-	.word	0,0
-.L166:
-	.word	0,0
-.L128:
-	.word	0,0
-.L147:
+.L137:
 	.word	0,0
 .L173:
 	.word	0,0
-.L155:
+.L135:
 	.word	0,0
-.L138:
+.L179:
 	.word	0,0
-.L164:
-	.word	0,0
-.L126:
+.L162:
 	.word	0,0
 .L145:
 	.word	0,0
-.L170:
-	.word	-1,.L56,.L195-.L56,.L46-.L56
+.L171:
+	.word	0,0
+.L133:
+	.word	0,0
+.L152:
+	.word	0,0
+.L178:
+	.word	0,0
+.L160:
+	.word	0,0
+.L143:
+	.word	0,0
+.L169:
+	.word	0,0
+.L131:
+	.word	0,0
+.L150:
+	.word	0,0
+.L190:
+	.word	-1,.L61,.L205-.L61,.L206-.L61
+	.half	2
+	.byte	144,33
+	.word	.L51-.L61,.L207-.L61
+	.half	2
+	.byte	144,33
+	.word	.L53-.L61,.L208-.L61
+	.half	2
+	.byte	144,33
+	.word	0,0
+.L175:
+	.word	-1,.L61,.L202-.L61,.L46-.L61
 	.half	5
 	.byte	144,32,157,32,0
 	.word	0,0
 	.sdecl	'.debug_loc',debug,cluster('delay_us')
 	.sect	'.debug_loc'
-.L51:
-	.word	-1,.L52,0,.L76-.L52
+.L56:
+	.word	-1,.L57,0,.L81-.L57
 	.half	2
 	.byte	138,0
 	.word	0,0
-.L89:
-	.word	-1,.L52,.L91-.L52,.L76-.L52
+.L94:
+	.word	-1,.L57,.L96-.L57,.L81-.L57
 	.half	1
 	.byte	95
 	.word	0,0
-.L86:
+.L91:
 	.word	0,0
-.L97:
+.L102:
 	.word	0,0
-.L93:
+.L98:
 	.word	0,0
-.L84:
+.L89:
 	.word	0,0
-.L80:
-	.word	-1,.L52,.L187-.L52,.L188-.L52
+.L85:
+	.word	-1,.L57,.L194-.L57,.L195-.L57
 	.half	2
 	.byte	144,34
 	.word	0,0
-.L78:
-	.word	-1,.L52,0,.L184-.L52
+.L83:
+	.word	-1,.L57,0,.L191-.L57
 	.half	1
 	.byte	84
-	.word	.L185-.L52,.L186-.L52
+	.word	.L192-.L57,.L193-.L57
 	.half	1
 	.byte	88
 	.word	0,0
 	.sdecl	'.debug_frame',debug
 	.sect	'.debug_frame'
-.L334:
+.L355:
 	.word	48
 	.word	-1
 	.byte	3,0,2,1,27,12,26,0,8,26,8,27,8,30,8,29,8,28,8,16,8,17,8,24,8,25,8,31,8,32,8,33,8,34,8,35,8,36,8,37,8,38
@@ -15950,18 +16069,18 @@ __DHT22_process_function_end:
 	.sdecl	'.debug_frame',debug,cluster('delay_us')
 	.sect	'.debug_frame'
 	.word	12
-	.word	.L334,.L52,.L76-.L52
+	.word	.L355,.L57,.L81-.L57
 	.sdecl	'.debug_frame',debug,cluster('DHT22_ReadByte')
 	.sect	'.debug_frame'
 	.word	12
-	.word	.L334,.L54,.L101-.L54
+	.word	.L355,.L59,.L106-.L59
 	.sdecl	'.debug_frame',debug,cluster('DHT22_process')
 	.sect	'.debug_frame'
 	.word	36
-	.word	.L334,.L56,.L119-.L56
+	.word	.L355,.L61,.L124-.L61
 	.byte	4
-	.word	(.L192-.L56)/2
+	.word	(.L199-.L61)/2
 	.byte	19,16,22,26,3,19,138,16,4
-	.word	(.L119-.L192)/2
+	.word	(.L124-.L199)/2
 	.byte	19,0,8,26,0,0
 	; Module end

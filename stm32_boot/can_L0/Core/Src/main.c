@@ -53,19 +53,15 @@
 
 volatile uCAN_MSG rxMessage;
 extern ADC_HandleTypeDef hadc;
-volatile uint32_t adcValue;
 volatile float Vout;
-volatile static float pressure = 0.0f;
 
-volatile static uint8_t bReadHCSR501 = 0;
-volatile static uint32_t IC_Val1 = 0;
-volatile static uint32_t IC_Val2 = 0;
-volatile static uint32_t Difference = 0;
-volatile static uint8_t Is_First_Captured = 0;  // is the first value captured 
-volatile static uint8_t Distance  = 0;
+volatile static uint32_t dDist = 0;
+
 volatile uint8_t DistanceReady = 0;
 volatile uint16_t no_activity_counter = 0;
 volatile uint8_t tim3_flag = 0;
+
+volatile uint8_t driving_mode = 1; // driving mode
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -77,12 +73,23 @@ void HCSR04_Read(void);
 uint8_t FSR_Check (void);
 uint8_t Ultrasonic_Check(void);
 void check_and_send(void);
+void send_sleep_message(void);
+void send_wakeup_message(void);
 void enter_sleep_mode(void);
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
-
+void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
+{
+	 if (GPIO_Pin == EXTERNAL_BUTTON_Pin)  // external button
+    {
+				HAL_GPIO_TogglePin(GPIOA, GPIO_PIN_5);
+			  send_sleep_message();
+				driving_mode = 0; // car poweroff
+    }
+}
+uint32_t cnt2 = 0;
 /* USER CODE END 0 */
 
 /**
@@ -123,13 +130,14 @@ int main(void)
   CANSPI_Initialize();	
 	HAL_TIM_IC_Start_IT(&htim2, TIM_CHANNEL_3);
   HAL_TIM_Base_Start_IT(&htim3);
-
+	__HAL_TIM_DISABLE_IT(&htim2, TIM_IT_CC3);
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
+	HCSR04_Read();
   while (1) {
-    if (tim3_flag) {
+    if (driving_mode == 0 && tim3_flag) {
       tim3_flag = 0;
       check_and_send();  
     }
@@ -204,9 +212,15 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
     tim3_flag= 1;
   }
 }
-
+volatile static float Distance  = 0;
 void HAL_TIM_IC_CaptureCallback(TIM_HandleTypeDef *htim) // 초음파 센서 거리 계산 비동기 로직
 { // INT when detected Ultrasound sig
+		volatile static uint32_t IC_Val1 = 0;
+		volatile static uint32_t IC_Val2 = 0;
+		volatile static uint8_t Is_First_Captured = 0;  // is the first value captured 
+		static uint32_t prevDiff = 0;
+		volatile static uint32_t currDiff = 0;
+		
     if (htim->Channel == HAL_TIM_ACTIVE_CHANNEL_3)  // if the interrupt source is channel1
     {
         if (Is_First_Captured==0) // if the first value is not captured
@@ -222,14 +236,18 @@ void HAL_TIM_IC_CaptureCallback(TIM_HandleTypeDef *htim) // 초음파 센서 거
 
             if (IC_Val2 > IC_Val1)
             {
-                Difference = IC_Val2-IC_Val1;
+                currDiff = IC_Val2-IC_Val1;
             }
             else if (IC_Val1 > IC_Val2)
             {
-                Difference = (0xffff - IC_Val1) + IC_Val2;
+                currDiff = (0xffff - IC_Val1) + IC_Val2;
             }
+						
+						dDist = (prevDiff > currDiff) ? (prevDiff - currDiff) : (currDiff - prevDiff);
 
-            Distance = Difference * .034/2;
+						prevDiff = currDiff;
+            Distance = ((currDiff * 340)/1000)/2;
+						
             DistanceReady = 1;
             Is_First_Captured = 0; 
 						
@@ -239,12 +257,51 @@ void HAL_TIM_IC_CaptureCallback(TIM_HandleTypeDef *htim) // 초음파 센서 거
     }
 }
 
+void send_sleep_message(void)
+{
+		uCAN_MSG txMessage;
+    txMessage.frame.idType = dSTANDARD_CAN_MSG_ID_2_0B;
+    txMessage.frame.id = 0x2; // sleep message id = 2
+    txMessage.frame.dlc = 8;
+    txMessage.frame.data0 = 's';
+    txMessage.frame.data1 = 'l';
+    txMessage.frame.data2 = 'e';
+    txMessage.frame.data3 = 'e';
+    txMessage.frame.data4 = 'p';
+    txMessage.frame.data5 = 0;
+    txMessage.frame.data6 = 0;
+    txMessage.frame.data7 = 0;
 
-void enter_sleep_mode(void) {
+    CANSPI_Transmit(&txMessage);
+    HAL_GPIO_TogglePin(GPIOA, GPIO_PIN_5);
+}
+
+void send_wakeup_message(void)
+{
+		uCAN_MSG txMessage;
+    txMessage.frame.idType = dSTANDARD_CAN_MSG_ID_2_0B;
+    txMessage.frame.id = 0x1; // wakeup message id = 1
+    txMessage.frame.dlc = 8;
+    txMessage.frame.data0 = 'W';
+    txMessage.frame.data1 = 'A';
+    txMessage.frame.data2 = 'K';
+    txMessage.frame.data3 = 'E';
+    txMessage.frame.data4 = 0;
+    txMessage.frame.data5 = 0;
+    txMessage.frame.data6 = 0;
+    txMessage.frame.data7 = 0;
+
+    CANSPI_Transmit(&txMessage);
+    HAL_GPIO_TogglePin(GPIOA, GPIO_PIN_5);
+}
+
+void enter_sleep_mode(void) 
+{
   HAL_SuspendTick(); 
   HAL_PWR_EnterSLEEPMode(PWR_MAINREGULATOR_ON, PWR_SLEEPENTRY_WFI);
   HAL_ResumeTick();   
 }
+
 
 void HCSR04_Read(void)
 {
@@ -259,14 +316,13 @@ void HCSR04_Read(void)
 uint8_t Ultrasonic_Check(void) {
   DistanceReady = 0;
   HCSR04_Read();
-  // 변화량으로 할지 말지 결정해야함.
   uint32_t timeout = 0; 
-  while (!DistanceReady && timeout < 200) {
-      HAL_Delay(1);
-      timeout++;
+  while (!DistanceReady && timeout < 60) {
+		delay(1000);
+		timeout++;
   }
 
-  return (Distance < 100) ? 1 : 0;
+  return (dDist > 0x30) ? 1 : 0;
 }
 
 uint8_t PIR_Check(void) {
@@ -275,56 +331,59 @@ uint8_t PIR_Check(void) {
 }
 
 uint8_t FSR_Check(void){
+	uint32_t adcValue;
 	HAL_ADC_Start(&hadc);
 	HAL_ADC_PollForConversion(&hadc, 1000);
 	adcValue = HAL_ADC_GetValue(&hadc); // ADC
 	HAL_ADC_Stop(&hadc);
 	
 	Vout = (adcValue / 4095.0f) * 5.0f;    // VOUT  (5V )
-	if (Vout < 1.0f) {
-			pressure = 0.0f; 
-	} else if (Vout < 2.0f) {
-			pressure = 200.0f;  // VOUT 2V 200g
-	} else if (Vout < 3.0f) {
-			pressure = 600.0f;  // VOUT 3V 600g
-	} else {
-			pressure = 800.0f;  // VOUT 5V 400g 
-	}
-	
-  return (pressure > 200) ? 1 : 0;
+  return (Vout > 1.0f) ? 1 : 0;
 }
-
+uint8_t pir;
 void check_and_send(void) {
+	uint8_t ultrasonic = Ultrasonic_Check();
+
   uint8_t fsr = FSR_Check();
-  uint8_t pir = PIR_Check();
-  uint8_t ultrasonic = Ultrasonic_Check();
+  pir = PIR_Check();  
+  uint8_t result = fsr && (pir && ultrasonic); // Sensor Logic
 	
-  uint8_t result = fsr & (pir | ultrasonic); // Sensor Logic
-
-  if(result) {
-      uCAN_MSG txMessage;
-      txMessage.frame.idType = dSTANDARD_CAN_MSG_ID_2_0B;
-      txMessage.frame.id = 0x100;
-      txMessage.frame.dlc = 8;
-      txMessage.frame.data0 = 'W';
-      txMessage.frame.data1 = 'A';
-      txMessage.frame.data2 = 'K';
-      txMessage.frame.data3 = 'E';
-      txMessage.frame.data4 = 0;
-      txMessage.frame.data5 = 0;
-      txMessage.frame.data6 = 0;
-      txMessage.frame.data7 = 0;
-
-      CANSPI_Transmit(&txMessage);
-      HAL_GPIO_TogglePin(GPIOA, GPIO_PIN_5);
+	// result accumulated stores last 3 results
+	static uint8_t result_accumulated = 0;
+	
+	static uint8_t cnt_1s = 0; // cnt_1s counts for 3 second.
+	static uint8_t sleep_message_sent = 0; // sleep message sent -> sleeps all other ECUs
+	static uint8_t wake_message_sent = 0;
+	cnt_1s++;
+	// stores result to result_accumulated	
+	result_accumulated |= result;
+	// no_activity_counter counts for N seconds
+	no_activity_counter++;
+	
+	// if 3 seconds 
+	if (cnt_1s == 3)
+	{
+		if (result_accumulated)
+		{
+//			if(wake_message_sent == 0)
+			{ // wake only once
+				wake_message_sent = 1;
+				send_wakeup_message();
+			}
       no_activity_counter = 0;
-  }else {
-    no_activity_counter++;
-  }
+			result_accumulated = 0;
+			sleep_message_sent = 0;
+		}
+		cnt_1s = 0;
+	}
 
-  if (no_activity_counter >= 500) {
+	// if CANT find child in 30seconds -> send sleep message to All other ECUs
+  if (no_activity_counter >= 60 && sleep_message_sent == 0) {
+		// sleep message send
+	  send_sleep_message();
     no_activity_counter = 0;
-    enter_sleep_mode();
+		sleep_message_sent = 1;
+    //enter_sleep_mode();
   }
 }
 

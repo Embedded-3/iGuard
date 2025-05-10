@@ -10,6 +10,9 @@
 //#include "IfxMultican_Can.h"
 #include "Libraries\iLLD\TC27D\Tricore\Multican\Can\IfxMultican_Can.h"
 #include "asclin_driver/asclin.h"
+#include "hvac_ctl.h"
+
+
 
 /* 글로벌 핸들 */
 extern IfxMultican_Can g_can;             // CAN 모듈 핸들
@@ -24,7 +27,7 @@ extern IfxMultican_Message g_rxMsg;
 
 void initCan(void);
 IfxMultican_Status sendCanMessage(void);
-void canReceiveLoop(void);
+void canReceiveLoop(Hvac* g_hvac);
 
 
 #endif /* CAN_H_ */
