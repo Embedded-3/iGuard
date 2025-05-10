@@ -21,10 +21,10 @@
 
 // Thresholds Values
 #define EXT_AIR_TH 3200 //2660
-#define INT_CO2_TH 1000
-#define INT_TEMP_TH 30.0
-#define INT_TEMP_TOO_HIGH_TH 40.0 
-#define INT_HUMIDITY_TH 60.0 
+#define INT_CO2_TH 600
+#define INT_TEMP_TH 27.0
+#define INT_TEMP_TOO_HIGH_TH 30.0 
+#define INT_HUMIDITY_TH 63.0 //60.0 
 
 // 10, 11, 13
 #define RED_LED IfxPort_P10_5

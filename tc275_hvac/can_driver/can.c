@@ -3,6 +3,15 @@
 
 #define ISR_PRIORITY_CAN_RX   10
 
+//static uint32 swapEndian(uint32 value);
+
+static uint32 swapEndian(uint32 value) {
+    return ((value & 0x000000FF) << 24) |
+           ((value & 0x0000FF00) << 8)  |
+           ((value & 0x00FF0000) >> 8)  |
+           ((value & 0xFF000000) >> 24);
+}
+
 IFX_INTERRUPT(canRxInterruptHandler, 0, ISR_PRIORITY_CAN_RX);
 void canRxInterruptHandler(void)
 {
@@ -93,43 +102,28 @@ void canReceiveLoop(Hvac* hvac)
         // 수신 성공
         if (status & IfxMultican_Status_newData)
         {
-            print(GREEN"[CAN 수신 성공]\r\n"RESET);
-            print(GREEN"ID: 0x%02X  ---  "RESET, g_rxMsg.id);
-
+            //print(GREEN"[CAN 수신]\r\nID: 0x%02X  ---  "RESET, g_rxMsg.id);
+            
             uint32 receive_data[2] = {0};
+
+            //print("\r\n0x%08X\r\n", receive_data[0]);
+            //print("0x%08X\r\n", receive_data[1]);
 
             switch(g_rxMsg.id) {
                 case 0x02: // // Sleep 메시지 수신시
+                    print(GREEN"[CAN 수신]\r\nID: 0x%02X  ---  "RESET, g_rxMsg.id);
                     print("Sleep Mode\r\n");
                     hvac->control = AUTOMATIC_CTL; // 자동 모드로 변경
                     enter_sleep_mode();
                     break;
-                // case 0x03: // 팬 제어 정지
-                //     print("Fan Stop\r\n");
-                //     hvac->control = MANUAL_CTL; // 수동 모드로 변경
-                //     hvac->speed = STOP; 
-                //     controlFan(hvac->speed);  // 팬 속도 제어 함수 호출
-                //     break;
-                // case 0x04: // 팬 속도 1
-                //     print("Fan Speed 1\r\n");
-                //     hvac->control = MANUAL_CTL; // 수동 모드로 변경
-                //     hvac->speed = LOW_SPEED;
-                //     controlFan(hvac->speed);  // 팬 속도 제어 함수 호출
-                //     break;
-                // case 0x05: // 팬 속도 2
-                //     print("Fan Speed 2\r\n");
-                //     hvac->control = MANUAL_CTL; // 수동 모드로 변경
-                //     hvac->speed = MID_SPEED;
-                //     controlFan(hvac->speed);  // 팬 속도 제어 함수 호출
-                //     break;
-                // case 0x06: // 팬 속도 3
-                //     hvac->control = MANUAL_CTL; // 수동 모드로 변경
-                //     hvac->speed = HIGH_SPEED;
-                //     controlFan(hvac->speed);  // 팬 속도 제어 함수 호출
-                //     break;
                 case 0x07: // hvac 제어 메시지 수신시
+                    print(GREEN"[CAN 수신]\r\nID: 0x%02X  ---  "RESET, g_rxMsg.id);
                     receive_data[0] = g_rxMsg.data[0]; // 수신 데이터 1바이트
-                    receive_data[1] = g_rxMsg.data[1]; // 수신 데이터 2바이트
+                    receive_data[1] = g_rxMsg.data[1]; // 수신 데이터 2바이트xx
+
+                    receive_data[0] = swapEndian(receive_data[0]);
+                    receive_data[1] = swapEndian(receive_data[1]);
+
                     if(receive_data[0] == 0x00) { // 수신 데이터가 0x00이면
                         hvac->control = MANUAL_CTL; // 수동 모드로 변경
                     }
@@ -143,18 +137,22 @@ void canReceiveLoop(Hvac* hvac)
                         case 0x00:
                             hvac->speed = STOP; // 팬 정지
                             controlFan(hvac->speed);  // 팬 속도 제어 함수 호출
+                            print("Fan Stop\r\n");
                             break;
                         case 0x01:
                             hvac->speed = LOW_SPEED; // 팬 저속
                             controlFan(hvac->speed);  // 팬 속도 제어 함수 호출
+                            print("Fan Low Speed\r\n");
                             break;
                         case 0x02:
                             hvac->speed = MID_SPEED; // 팬 중속
                             controlFan(hvac->speed);  // 팬 속도 제어 함수 호출
+                            print("Fan Mid Speed\r\n");
                             break;
                         case 0x03:
                             hvac->speed = HIGH_SPEED; // 팬 고속
                             controlFan(hvac->speed);  // 팬 속도 제어 함수 호출
+                            print("Fan High Speed\r\n");
                             break;
                         default:
                             print("Unknown Fan Speed: %d\r\n", receive_data[1]);
@@ -172,3 +170,4 @@ void canReceiveLoop(Hvac* hvac)
         IfxMultican_MsgObj_clearRxPending(hwObj);
     }
 }
+

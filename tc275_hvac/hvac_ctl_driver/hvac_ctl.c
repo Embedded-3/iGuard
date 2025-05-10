@@ -37,7 +37,7 @@ uint16 havc_control(Hvac* hvac, const Sensor_Data data) {
 
         case INT_MODE:
             // 1. 모드 판단
-            if(data.ext_air <= EXT_AIR_TH) {  // 외부 공기질 좋으면 외부 유입모드로 전환
+            if(data.ext_air <= EXT_AIR_TH - 200) {  // 외부 공기질 좋으면 외부 유입모드로 전환
                 hvac->mode = EXT_MODE;
                 changeMode(EXT_MODE);  // 외부 유입 모드로 전환
             }
