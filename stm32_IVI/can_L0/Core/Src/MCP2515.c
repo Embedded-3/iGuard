@@ -49,8 +49,11 @@ bool MCP2515_Initialize(void)
       return true;
     
     loop--;
-  } while(loop > 0); 
-      
+  } while(loop > 0);
+
+  // 초기화 시점: 수신된 메시지 내용은 무시하고 플래그만 정리
+  MCP2515_BitModify(MCP2515_CANINTF, 0x03, 0x00); // RX0IF | RX1IF 클리어
+
   return false;
 }
 
