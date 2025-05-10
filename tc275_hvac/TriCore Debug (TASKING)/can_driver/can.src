@@ -1,6 +1,6 @@
 	; Module start
 	.compiler_version	"TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler v1.1r8 Build 22011964"
-	.compiler_invocation	"ctc -f cc7816a --dep-file=can_driver/can.d -c99 --fp-model=3cflnrSTz -D__CPU__=tc27xd -D__CPU_TC27XD__ --core=tc1.6.x --fp-model=+float -D__CPU__=tc27xd -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1 -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Configurations -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\Infra -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\Infra\\\\Platform -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\Infra\\\\Platform\\\\Tricore -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\Infra\\\\Platform\\\\Tricore\\\\Compilers -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\Infra\\\\Sfr -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\Infra\\\\Sfr\\\\TC27D -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\Infra\\\\Sfr\\\\TC27D\\\\_Reg -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\Service -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\Service\\\\CpuGeneric -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\Service\\\\CpuGeneric\\\\StdIf -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\Service\\\\CpuGeneric\\\\SysSe -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\Service\\\\CpuGeneric\\\\SysSe\\\\Bsp -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\Service\\\\CpuGeneric\\\\SysSe\\\\Comm -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\Service\\\\CpuGeneric\\\\_Utilities -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Asclin -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Asclin\\\\Asc -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Asclin\\\\Std -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Cpu -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Cpu\\\\CStart -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Cpu\\\\Irq -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Cpu\\\\Std -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Cpu\\\\Trap -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Gtm -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Gtm\\\\Std -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Gtm\\\\Tom -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Gtm\\\\Tom\\\\Pwm -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Mtu -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Mtu\\\\Std -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Multican -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Multican\\\\Can -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Multican\\\\Std -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Port -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Port\\\\Std -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Scu -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Scu\\\\Std -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Src -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Src\\\\Std -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Stm -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Stm\\\\Std -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Vadc -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Vadc\\\\Adc -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Vadc\\\\Std -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\_Impl -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\_Lib -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\_Lib\\\\DataHandling -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\_PinMap -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\PWM_driver -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\asclin_driver -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\can_driver -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\dht22_driver -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\hvac_ctl_driver -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\mhz19b_driver -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\mq135_driver -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\stm_driver -g2 -w544 -w557 -t4 --language=+volatile -N0 -O0 -Y0 -Z0 --compact-max-size=200 --misrac-version=2004 -o can_driver/can.src ../can_driver/can.c"
+	.compiler_invocation	"ctc -f cc12600a --dep-file=can_driver/can.d -c99 --fp-model=3cflnrSTz -D__CPU__=tc27xd -D__CPU_TC27XD__ --core=tc1.6.x --fp-model=+float -D__CPU__=tc27xd -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1 -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Configurations -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\Infra -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\Infra\\\\Platform -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\Infra\\\\Platform\\\\Tricore -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\Infra\\\\Platform\\\\Tricore\\\\Compilers -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\Infra\\\\Sfr -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\Infra\\\\Sfr\\\\TC27D -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\Infra\\\\Sfr\\\\TC27D\\\\_Reg -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\Service -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\Service\\\\CpuGeneric -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\Service\\\\CpuGeneric\\\\StdIf -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\Service\\\\CpuGeneric\\\\SysSe -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\Service\\\\CpuGeneric\\\\SysSe\\\\Bsp -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\Service\\\\CpuGeneric\\\\SysSe\\\\Comm -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\Service\\\\CpuGeneric\\\\_Utilities -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Asclin -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Asclin\\\\Asc -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Asclin\\\\Std -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Cpu -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Cpu\\\\CStart -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Cpu\\\\Irq -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Cpu\\\\Std -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Cpu\\\\Trap -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Gtm -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Gtm\\\\Std -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Gtm\\\\Tom -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Gtm\\\\Tom\\\\Pwm -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Mtu -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Mtu\\\\Std -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Multican -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Multican\\\\Can -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Multican\\\\Std -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Port -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Port\\\\Std -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Scu -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Scu\\\\Std -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Src -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Src\\\\Std -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Stm -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Stm\\\\Std -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Vadc -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Vadc\\\\Adc -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Vadc\\\\Std -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\_Impl -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\_Lib -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\_Lib\\\\DataHandling -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\_PinMap -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\PWM_driver -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\asclin_driver -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\can_driver -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\dht22_driver -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\hvac_ctl_driver -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\mhz19b_driver -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\mq135_driver -IC:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\stm_driver -g2 -w544 -w557 -t4 --language=+volatile -N0 -O0 -Y0 -Z0 --compact-max-size=200 --misrac-version=2004 -o can_driver/can.src ../can_driver/can.c"
 	.compiler_name		"ctc"
 	;source	'../can_driver/can.c'
 
@@ -12,42 +12,42 @@ $TC16X
 	.align	2
 	
 ; Function swapEndian
-.L31:
+.L33:
 swapEndian:	.type	func
 	and	d15,d4,#255
-.L328:
-	sh	d15,d15,#24
-.L329:
-	mov.u	d0,#65280
-.L330:
-	and	d0,d4
-.L331:
-	sh	d0,d0,#8
-.L332:
-	or	d15,d0
 .L333:
-	movh	d0,#255
+	sh	d15,d15,#24
 .L334:
-	and	d0,d4
+	mov.u	d0,#65280
 .L335:
-	sh	d0,#-8
+	and	d0,d4
 .L336:
-	or	d15,d0
+	sh	d0,d0,#8
 .L337:
-	insert	d0,d4,#0,#0,#24
+	or	d15,d0
 .L338:
-	sh	d2,d0,#-24
+	movh	d0,#255
 .L339:
-	or	d2,d15
+	and	d0,d4
 .L340:
+	sh	d0,#-8
+.L341:
+	or	d15,d0
+.L342:
+	insert	d0,d4,#0,#0,#24
+.L343:
+	sh	d2,d0,#-24
+.L344:
+	or	d2,d15
+.L345:
 	j	.L2
 .L2:
 	ret
-.L156:
+.L158:
 	
 __swapEndian_function_end:
 	.size	swapEndian,__swapEndian_function_end-swapEndian
-.L63:
+.L65:
 	; End of function
 	
 	.sdecl	'.text.inttab0.intvec.00a',code
@@ -61,32 +61,32 @@ __swapEndian_function_end:
 	
 	.global	canRxInterruptHandler
 ; Function canRxInterruptHandler
-.L33:
+.L35:
 canRxInterruptHandler:	.type	func
 	svlcx
-.L160:
+.L162:
 	enable
-.L161:
+.L163:
 	call	exit_sleep_mode
-.L345:
+.L350:
 	movh.a	a4,#61442
 	lea	a4,[a4]@los(0xf0018000)
-.L346:
+.L351:
 	mov	d4,#0
 	call	IfxMultican_getSrcPointer
-.L164:
+.L166:
 	ld.bu	d15,[a2]1
-.L347:
+.L352:
 	insert	d15,d15,#0,#2,#1
 	st.b	[a2]1,d15
-.L165:
+.L167:
 	rslcx
 	rfe
-.L158:
+.L160:
 	
 __canRxInterruptHandler_function_end:
 	.size	canRxInterruptHandler,__canRxInterruptHandler_function_end-canRxInterruptHandler
-.L68:
+.L70:
 	; End of function
 	
 	.sdecl	'.text.can.initCan',code,cluster('initCan')
@@ -95,204 +95,204 @@ __canRxInterruptHandler_function_end:
 	
 	.global	initCan
 ; Function initCan
-.L35:
+.L37:
 initCan:	.type	func
 	lea	a10,[a10]-256
-.L169:
+.L171:
 	lea	a4,[a10]0
-.L190:
+.L193:
 	movh.a	a5,#61442
 	lea	a5,[a5]@los(0xf0018000)
 	call	IfxMultican_Can_initModuleConfig
-.L191:
+.L194:
 	movh.a	a4,#@his(g_can)
 	lea	a4,[a4]@los(g_can)
-.L192:
+.L195:
 	lea	a5,[a10]0
 	call	IfxMultican_Can_initModule
-.L72:
+.L74:
 	lea	a4,[a10]76
-.L193:
+.L196:
 	movh.a	a5,#@his(g_can)
 	lea	a5,[a5]@los(g_can)
 	call	IfxMultican_Can_Node_initConfig
-.L194:
+.L197:
 	mov	d15,#0
-.L195:
+.L198:
 	st.b	[a10]80,d15
-.L196:
+.L199:
 	mov	d15,#15625
 	sh	d15,#4
-.L197:
-	st.w	[a10]84,d15
-.L198:
-	mov	d15,#8000
-.L199:
-	st.h	[a10]88,d15
 .L200:
+	st.w	[a10]84,d15
+.L201:
+	mov	d15,#8000
+.L202:
+	st.h	[a10]88,d15
+.L203:
 	movh.a	a15,#@his(IfxMultican_RXD0B_P20_7_IN)
 	lea	a15,[a15]@los(IfxMultican_RXD0B_P20_7_IN)
-.L201:
+.L204:
 	st.a	[a10]116,a15
-.L202:
+.L205:
 	movh.a	a15,#@his(IfxMultican_TXD0_P20_8_OUT)
 	lea	a15,[a15]@los(IfxMultican_TXD0_P20_8_OUT)
-.L203:
-	st.a	[a10]124,a15
-.L204:
-	mov	d15,#16
-.L205:
-	st.b	[a10]120,d15
 .L206:
-	mov	d15,#128
+	st.a	[a10]124,a15
 .L207:
-	st.b	[a10]128,d15
+	mov	d15,#16
 .L208:
-	mov	d15,#0
+	st.b	[a10]120,d15
 .L209:
-	st.b	[a10]140,d15
+	mov	d15,#128
 .L210:
+	st.b	[a10]128,d15
+.L211:
+	mov	d15,#0
+.L212:
+	st.b	[a10]140,d15
+.L213:
 	movh.a	a4,#@his(g_canNode)
 	lea	a4,[a4]@los(g_canNode)
-.L211:
+.L214:
 	lea	a5,[a10]76
 	call	IfxMultican_Can_Node_init
-.L75:
+.L77:
 	lea	a4,[a10]144
-.L212:
+.L215:
 	movh.a	a5,#@his(g_canNode)
 	lea	a5,[a5]@los(g_canNode)
 	call	IfxMultican_Can_MsgObj_initConfig
-.L213:
-	mov	d15,#0
-.L214:
-	st.w	[a10]148,d15
-.L215:
-	mov	d15,#256
 .L216:
-	st.w	[a10]178,d15
+	mov	d15,#0
 .L217:
-	mov	d15,#1
+	st.w	[a10]148,d15
 .L218:
-	st.b	[a10]172,d15
+	mov	d15,#256
 .L219:
-	mov	d15,#8
+	st.w	[a10]178,d15
 .L220:
-	st.b	[a10]157,d15
+	mov	d15,#1
 .L221:
+	st.b	[a10]172,d15
+.L222:
+	mov	d15,#8
+.L223:
+	st.b	[a10]157,d15
+.L224:
 	movh.a	a4,#@his(g_txMsgObj)
 	lea	a4,[a4]@los(g_txMsgObj)
-.L222:
+.L225:
 	lea	a5,[a10]144
 	call	IfxMultican_Can_MsgObj_init
-.L78:
+.L80:
 	lea	a4,[a10]200
-.L223:
+.L226:
 	movh.a	a5,#@his(g_canNode)
 	lea	a5,[a5]@los(g_canNode)
 	call	IfxMultican_Can_MsgObj_initConfig
-.L224:
-	mov	d15,#1
-.L225:
-	st.w	[a10]204,d15
-.L226:
-	mov	d15,#0
 .L227:
-	st.w	[a10]234,d15
-.L228:
-	mov	d15,#0
-.L229:
-	st.w	[a10]230,d15
-.L230:
-	mov	d15,#0
-.L231:
-	st.b	[a10]228,d15
-.L232:
-	mov	d15,#8
-.L233:
-	st.b	[a10]213,d15
-.L234:
 	mov	d15,#1
-.L235:
-	st.b	[a10]240,d15
-.L236:
+.L228:
+	st.w	[a10]204,d15
+.L229:
 	mov	d15,#0
+.L230:
+	st.w	[a10]234,d15
+.L231:
+	mov	d15,#0
+.L232:
+	st.w	[a10]230,d15
+.L233:
+	mov	d15,#0
+.L234:
+	st.b	[a10]228,d15
+.L235:
+	mov	d15,#8
+.L236:
+	st.b	[a10]213,d15
 .L237:
-	st.b	[a10]241,d15
+	mov	d15,#1
 .L238:
+	st.b	[a10]240,d15
+.L239:
+	mov	d15,#0
+.L240:
+	st.b	[a10]241,d15
+.L241:
 	movh.a	a4,#@his(g_rxMsgObj)
 	lea	a4,[a4]@los(g_rxMsgObj)
-.L239:
+.L242:
 	lea	a5,[a10]200
 	call	IfxMultican_Can_MsgObj_init
-.L240:
+.L243:
 	movh.a	a15,#@his(g_txMsg)
 	lea	a15,[a15]@los(g_txMsg)
-.L241:
+.L244:
 	mov	d0,#10
-.L242:
+.L245:
 	mov	d1,#13124
 	addih	d1,d1,#4386
-.L243:
+.L246:
 	mov	d2,#30600
 	addih	d2,d2,#21862
-.L244:
-	mov	d15,#8
-.L81:
-	st.w	[a15],d0
-.L245:
-	st.w	[a15]6,d1
-.L246:
-	st.w	[a15]10,d2
 .L247:
-	st.b	[a15]4,d15
+	mov	d15,#8
+.L83:
+	st.w	[a15],d0
 .L248:
-	mov	d15,#0
+	st.w	[a15]6,d1
 .L249:
+	st.w	[a15]10,d2
+.L250:
+	st.b	[a15]4,d15
+.L251:
+	mov	d15,#0
+.L252:
 	st.b	[a15]14,d15
-.L82:
+.L84:
 	movh.a	a4,#61442
 	lea	a4,[a4]@los(0xf0018000)
-.L250:
+.L253:
 	mov	d4,#0
 	call	IfxMultican_getSrcPointer
-.L251:
+.L254:
 	mov	d0,#0
-.L252:
+.L255:
 	mov	d15,#10
-.L95:
+.L97:
 	ld.bu	d1,[a2]
-.L253:
+.L256:
 	insert	d15,d1,d15,#0,#8
 	st.b	[a2],d15
-.L254:
-	ld.bu	d15,[a2]1
-.L255:
-	insert	d15,d15,d0,#3,#2
-	st.b	[a2]1,d15
-.L105:
-	ld.bu	d15,[a2]3
-.L256:
-	or	d15,#2
-	st.b	[a2]3,d15
-.L96:
-	movh.a	a4,#61442
-	lea	a4,[a4]@los(0xf0018000)
 .L257:
-	mov	d4,#0
-	call	IfxMultican_getSrcPointer
-.L110:
 	ld.bu	d15,[a2]1
 .L258:
+	insert	d15,d15,d0,#3,#2
+	st.b	[a2]1,d15
+.L107:
+	ld.bu	d15,[a2]3
+.L259:
+	or	d15,#2
+	st.b	[a2]3,d15
+.L98:
+	movh.a	a4,#61442
+	lea	a4,[a4]@los(0xf0018000)
+.L260:
+	mov	d4,#0
+	call	IfxMultican_getSrcPointer
+.L112:
+	ld.bu	d15,[a2]1
+.L261:
 	or	d15,#4
 	st.b	[a2]1,d15
-.L111:
+.L113:
 	ret
-.L69:
+.L71:
 	
 __initCan_function_end:
 	.size	initCan,__initCan_function_end-initCan
-.L48:
+.L50:
 	; End of function
 	
 	.sdecl	'.text.can.sendCanMessage',code,cluster('sendCanMessage')
@@ -301,23 +301,23 @@ __initCan_function_end:
 	
 	.global	sendCanMessage
 ; Function sendCanMessage
-.L37:
+.L39:
 sendCanMessage:	.type	func
 	movh.a	a4,#@his(g_txMsgObj)
 	lea	a4,[a4]@los(g_txMsgObj)
-.L263:
+.L266:
 	movh.a	a5,#@his(g_txMsg)
 	lea	a5,[a5]@los(g_txMsg)
 	call	IfxMultican_Can_MsgObj_sendMessage
-.L170:
+.L172:
 	j	.L3
 .L3:
 	ret
-.L116:
+.L118:
 	
 __sendCanMessage_function_end:
 	.size	sendCanMessage,__sendCanMessage_function_end-sendCanMessage
-.L53:
+.L55:
 	; End of function
 	
 	.sdecl	'.text.can.canReceiveLoop',code,cluster('canReceiveLoop')
@@ -326,40 +326,40 @@ __sendCanMessage_function_end:
 	
 	.global	canReceiveLoop
 ; Function canReceiveLoop
-.L39:
+.L41:
 canReceiveLoop:	.type	func
 	sub.a	a10,#8
-.L171:
-	mov.aa	a12,a4
 .L173:
+	mov.aa	a12,a4
+.L175:
 	movh.a	a2,#@his(g_rxMsgObj)
 	lea	a2,[a2]@los(g_rxMsgObj)
-.L268:
+.L271:
 	ld.a	a2,[a2]
-.L269:
+.L272:
 	ld.a	a2,[a2]
-.L270:
+.L273:
 	movh.a	a15,#@his(g_rxMsgObj)
 	lea	a15,[a15]@los(g_rxMsgObj)
-.L271:
+.L274:
 	ld.w	d15,[a15]4
-.L124:
+.L126:
 	mul	d15,d15,#32
 	addsc.a	a15,a2,d15,#0
 	lea	a13,[a15]4096
-.L174:
+.L176:
 	j	.L4
 .L4:
 	mov.aa	a4,a13
-.L172:
+.L174:
 	call	IfxMultican_MsgObj_getStatus
-.L175:
+.L177:
 	extr.u	d15,d2,#0,#8
-.L272:
+.L275:
 	jz.t	d15:0,.L5
-.L273:
+.L276:
 	mov	d15,#1
-.L274:
+.L277:
 	j	.L6
 .L5:
 	mov	d15,#0
@@ -367,50 +367,53 @@ canReceiveLoop:	.type	func
 	j	.L7
 .L7:
 	jeq	d15,#0,.L8
-.L131:
+.L133:
 	movh.a	a15,#@his(g_rxMsg)
 	lea	a15,[a15]@los(g_rxMsg)
-.L275:
-	mov	d0,#0
-.L276:
-	mov	d1,#0
-.L277:
-	mov	d2,#0
-.L176:
-	mov	d15,#8
-.L137:
-	st.w	[a15],d0
 .L278:
-	st.w	[a15]6,d1
+	mov	d0,#0
 .L279:
-	st.w	[a15]10,d2
+	mov	d1,#0
 .L280:
-	st.b	[a15]4,d15
+	mov	d2,#0
+.L178:
+	mov	d15,#8
+.L139:
+	st.w	[a15],d0
 .L281:
-	mov	d15,#0
+	st.w	[a15]6,d1
 .L282:
+	st.w	[a15]10,d2
+.L283:
+	st.b	[a15]4,d15
+.L284:
+	mov	d15,#0
+.L285:
 	st.b	[a15]14,d15
-.L138:
+.L140:
 	movh.a	a5,#@his(g_rxMsg)
 	lea	a5,[a5]@los(g_rxMsg)
 	mov.aa	a4,a13
 	call	IfxMultican_MsgObj_readMessage
-.L177:
+.L179:
 	jz.t	d2:8,.L9
-.L145:
+.L147:
 	movh.a	a15,#@his(g_rxMsg)
 	lea	a15,[a15]@los(g_rxMsg)
-.L283:
+.L286:
 	ld.w	d0,[a15]
-.L284:
-	mov	d15,#2
+.L287:
+	mov	d15,#1
 	jeq	d15,d0,.L10
-.L149:
-	mov	d15,#7
-	jeq	d15,d0,.L11
-	j	.L12
-.L10:
+.L288:
 	mov	d15,#2
+	jeq	d15,d0,.L11
+.L151:
+	mov	d15,#7
+	jeq	d15,d0,.L12
+	j	.L13
+.L10:
+	mov	d15,#1
 	st.w	[a10],d15
 	movh.a	a15,#@his(stdif)
 	lea	a15,[a15]@los(stdif)
@@ -418,22 +421,40 @@ canReceiveLoop:	.type	func
 	movh.a	a5,#@his(.3.str)
 	lea	a5,[a5]@los(.3.str)
 	call	IfxStdIf_DPipe_print
-.L178:
+.L180:
 	movh.a	a15,#@his(stdif)
 	lea	a15,[a15]@los(stdif)
 	ld.a	a4,[a15]
 	movh.a	a5,#@his(.4.str)
 	lea	a5,[a5]@los(.4.str)
 	call	IfxStdIf_DPipe_print
-.L285:
-	mov	d15,#1
-.L286:
-	st.b	[a12],d15
-.L150:
-	call	enter_sleep_mode
-.L287:
-	j	.L13
+.L289:
+	j	.L14
 .L11:
+	mov	d15,#2
+	st.w	[a10],d15
+	movh.a	a15,#@his(stdif)
+	lea	a15,[a15]@los(stdif)
+	ld.a	a4,[a15]
+	movh.a	a5,#@his(.3.str)
+	lea	a5,[a5]@los(.3.str)
+	call	IfxStdIf_DPipe_print
+.L181:
+	movh.a	a15,#@his(stdif)
+	lea	a15,[a15]@los(stdif)
+	ld.a	a4,[a15]
+	movh.a	a5,#@his(.5.str)
+	lea	a5,[a5]@los(.5.str)
+	call	IfxStdIf_DPipe_print
+.L290:
+	mov	d15,#1
+.L291:
+	st.b	[a12],d15
+.L152:
+	call	enter_sleep_mode
+.L292:
+	j	.L15
+.L12:
 	mov	d15,#7
 	st.w	[a10],d15
 	movh.a	a15,#@his(stdif)
@@ -442,144 +463,144 @@ canReceiveLoop:	.type	func
 	movh.a	a5,#@his(.3.str)
 	lea	a5,[a5]@los(.3.str)
 	call	IfxStdIf_DPipe_print
-.L179:
+.L182:
 	movh.a	a15,#@his(g_rxMsg)
 	lea	a15,[a15]@los(g_rxMsg)
-.L288:
+.L293:
 	ld.w	d8,[a15]6
-.L289:
+.L294:
 	movh.a	a15,#@his(g_rxMsg)
 	lea	a15,[a15]@los(g_rxMsg)
-.L290:
+.L295:
 	ld.w	d15,[a15]10
-.L291:
+.L296:
 	mov	d9,d15
-.L180:
+.L183:
 	mov	d4,d8
 	call	swapEndian
-.L292:
+.L297:
 	mov	d8,d2
-.L293:
+.L298:
 	mov	d4,d9
 	call	swapEndian
 	mov	d15,d2
-.L294:
-	mov	d9,d15
-.L295:
-	mov	d15,d8
-.L296:
-	jne	d15,#0,.L14
-.L297:
-	mov	d15,#0
-.L298:
-	st.b	[a12],d15
 .L299:
-	j	.L15
-.L14:
-	mov	d15,d8
+	mov	d9,d15
 .L300:
-	jne	d15,#1,.L16
+	mov	d15,d8
 .L301:
-	mov	d15,#1
+	jne	d15,#0,.L16
 .L302:
-	st.b	[a12],d15
+	mov	d15,#0
 .L303:
+	st.b	[a12],d15
+.L304:
 	j	.L17
 .L16:
-.L15:
-	mov	d15,#0
-	jeq	d15,d9,.L18
-.L304:
-	mov	d15,#1
-	jeq	d15,d9,.L19
+	mov	d15,d8
 .L305:
-	mov	d15,#2
-	jeq	d15,d9,.L20
+	jne	d15,#1,.L18
 .L306:
-	mov	d15,#3
-	jeq	d15,d9,.L21
-	j	.L22
-.L18:
-	mov	d15,#0
+	mov	d15,#1
 .L307:
-	st.b	[a12]2,d15
+	st.b	[a12],d15
 .L308:
+	j	.L19
+.L18:
+.L17:
+	mov	d15,#0
+	jeq	d15,d9,.L20
+.L309:
+	mov	d15,#1
+	jeq	d15,d9,.L21
+.L310:
+	mov	d15,#2
+	jeq	d15,d9,.L22
+.L311:
+	mov	d15,#3
+	jeq	d15,d9,.L23
+	j	.L24
+.L20:
+	mov	d15,#0
+.L312:
+	st.b	[a12]2,d15
+.L313:
 	mov	d4,#0
 	call	controlFan
-.L309:
-	movh.a	a15,#@his(stdif)
-	lea	a15,[a15]@los(stdif)
-	ld.a	a4,[a15]
-	movh.a	a5,#@his(.5.str)
-	lea	a5,[a5]@los(.5.str)
-	call	IfxStdIf_DPipe_print
-.L310:
-	j	.L23
-.L19:
-	mov	d15,#1
-.L311:
-	st.b	[a12]2,d15
-.L312:
-	mov	d4,#1
-	call	controlFan
-.L313:
+.L314:
 	movh.a	a15,#@his(stdif)
 	lea	a15,[a15]@los(stdif)
 	ld.a	a4,[a15]
 	movh.a	a5,#@his(.6.str)
 	lea	a5,[a5]@los(.6.str)
 	call	IfxStdIf_DPipe_print
-.L314:
-	j	.L24
-.L20:
-	mov	d15,#2
 .L315:
-	st.b	[a12]2,d15
+	j	.L25
+.L21:
+	mov	d15,#1
 .L316:
-	mov	d4,#2
-	call	controlFan
+	st.b	[a12]2,d15
 .L317:
+	mov	d4,#1
+	call	controlFan
+.L318:
 	movh.a	a15,#@his(stdif)
 	lea	a15,[a15]@los(stdif)
 	ld.a	a4,[a15]
 	movh.a	a5,#@his(.7.str)
 	lea	a5,[a5]@los(.7.str)
 	call	IfxStdIf_DPipe_print
-.L318:
-	j	.L25
-.L21:
-	mov	d15,#3
 .L319:
-	st.b	[a12]2,d15
+	j	.L26
+.L22:
+	mov	d15,#2
 .L320:
-	mov	d4,#3
-	call	controlFan
+	st.b	[a12]2,d15
 .L321:
+	mov	d4,#2
+	call	controlFan
+.L322:
 	movh.a	a15,#@his(stdif)
 	lea	a15,[a15]@los(stdif)
 	ld.a	a4,[a15]
 	movh.a	a5,#@his(.8.str)
 	lea	a5,[a5]@los(.8.str)
 	call	IfxStdIf_DPipe_print
-.L322:
-	j	.L26
-.L22:
-	st.w	[a10],d9
+.L323:
+	j	.L27
+.L23:
+	mov	d15,#3
+.L324:
+	st.b	[a12]2,d15
+.L325:
+	mov	d4,#3
+	call	controlFan
+.L326:
 	movh.a	a15,#@his(stdif)
 	lea	a15,[a15]@los(stdif)
 	ld.a	a4,[a15]
 	movh.a	a5,#@his(.9.str)
 	lea	a5,[a5]@los(.9.str)
 	call	IfxStdIf_DPipe_print
-.L323:
-	j	.L27
+.L327:
+	j	.L28
+.L24:
+	st.w	[a10],d9
+	movh.a	a15,#@his(stdif)
+	lea	a15,[a15]@los(stdif)
+	ld.a	a4,[a15]
+	movh.a	a5,#@his(.10.str)
+	lea	a5,[a5]@los(.10.str)
+	call	IfxStdIf_DPipe_print
+.L328:
+	j	.L29
+.L29:
+.L28:
 .L27:
 .L26:
 .L25:
-.L24:
-.L23:
-	j	.L28
-.L12:
+	j	.L30
+.L13:
 	movh.a	a15,#@his(g_rxMsg)
 	lea	a15,[a15]@los(g_rxMsg)
 	ld.w	d15,[a15]
@@ -587,26 +608,27 @@ canReceiveLoop:	.type	func
 	movh.a	a15,#@his(stdif)
 	lea	a15,[a15]@los(stdif)
 	ld.a	a4,[a15]
-	movh.a	a5,#@his(.10.str)
-	lea	a5,[a5]@los(.10.str)
+	movh.a	a5,#@his(.11.str)
+	lea	a5,[a5]@los(.11.str)
 	call	IfxStdIf_DPipe_print
-.L181:
-	j	.L29
-.L29:
-.L28:
-.L17:
-.L13:
+.L184:
+	j	.L31
+.L31:
+.L30:
+.L19:
+.L15:
+.L14:
 .L9:
 	mov	d4,#0
 	mov.aa	a4,a13
 	call	IfxMultican_MsgObj_clearStatusFlag
 .L8:
 	ret
-.L118:
+.L120:
 	
 __canReceiveLoop_function_end:
 	.size	canReceiveLoop,__canReceiveLoop_function_end-canReceiveLoop
-.L58:
+.L60:
 	; End of function
 	
 	.sdecl	'.rodata.can..2.ini',data,rom
@@ -628,53 +650,61 @@ __canReceiveLoop_function_end:
 	.sdecl	'.rodata.can..4.str',data,rom
 	.sect	'.rodata.can..4.str'
 .4.str:	.type	object
-	.size	.4.str,13
-	.byte	83,108,101,101,112,32,77,111
-	.byte	100,101,13,10
+	.size	.4.str,14
+	.byte	87,97,107,101,117,112,32,77
+	.byte	111,100,101,13
+	.byte	10
 	.space	1
 	.sdecl	'.rodata.can..5.str',data,rom
 	.sect	'.rodata.can..5.str'
 .5.str:	.type	object
-	.size	.5.str,11
-	.byte	70,97,110,32,83,116,111,112
-	.byte	13,10
+	.size	.5.str,13
+	.byte	83,108,101,101,112,32,77,111
+	.byte	100,101,13,10
 	.space	1
 	.sdecl	'.rodata.can..6.str',data,rom
 	.sect	'.rodata.can..6.str'
 .6.str:	.type	object
-	.size	.6.str,16
-	.byte	70,97,110,32,76,111,119,32
-	.byte	83,112,101,101
-	.byte	100,13,10
+	.size	.6.str,11
+	.byte	70,97,110,32,83,116,111,112
+	.byte	13,10
 	.space	1
 	.sdecl	'.rodata.can..7.str',data,rom
 	.sect	'.rodata.can..7.str'
 .7.str:	.type	object
 	.size	.7.str,16
-	.byte	70,97,110,32,77,105,100,32
+	.byte	70,97,110,32,76,111,119,32
 	.byte	83,112,101,101
 	.byte	100,13,10
 	.space	1
 	.sdecl	'.rodata.can..8.str',data,rom
 	.sect	'.rodata.can..8.str'
 .8.str:	.type	object
-	.size	.8.str,17
-	.byte	70,97,110,32,72,105,103,104
-	.byte	32,83,112,101,101,100,13,10
+	.size	.8.str,16
+	.byte	70,97,110,32,77,105,100,32
+	.byte	83,112,101,101
+	.byte	100,13,10
 	.space	1
 	.sdecl	'.rodata.can..9.str',data,rom
 	.sect	'.rodata.can..9.str'
 .9.str:	.type	object
-	.size	.9.str,24
+	.size	.9.str,17
+	.byte	70,97,110,32,72,105,103,104
+	.byte	32,83,112,101,101,100,13,10
+	.space	1
+	.sdecl	'.rodata.can..10.str',data,rom
+	.sect	'.rodata.can..10.str'
+.10.str:	.type	object
+	.size	.10.str,24
 	.byte	85,110,107,110,111,119,110,32
 	.byte	70,97,110,32,83,112,101,101
 	.byte	100,58,32,37
 	.byte	100,13,10
 	.space	1
-	.sdecl	'.rodata.can..10.str',data,rom
-	.sect	'.rodata.can..10.str'
-.10.str:	.type	object
-	.size	.10.str,21
+	.sdecl	'.rodata.can..11.str',data,rom
+	.sect	'.rodata.can..11.str'
+.11.str:	.type	object
+	.size	.11.str,21
 	.byte	85,110,107,110,111,119,110,32
 	.byte	73,68,58,32,48,120,37,48
 	.byte	50,88,13,10
@@ -727,17 +757,17 @@ __canReceiveLoop_function_end:
 	.calls	'canReceiveLoop','',8
 	.sdecl	'.debug_info',debug
 	.sect	'.debug_info'
-.L41:
+.L43:
 	.word	232343
 	.half	3
-	.word	.L42
+	.word	.L44
 	.byte	4
-.L40:
+.L42:
 	.byte	1
 	.byte	'../can_driver/can.c',0
 	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
 	.byte	'C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p1\\TriCore Debug (TASKING)\\',0,12,1
-	.word	.L43
+	.word	.L45
 	.byte	2,1,1,3
 	.word	181
 	.byte	4
@@ -749,7 +779,7 @@ __canReceiveLoop_function_end:
 	.word	229
 	.byte	3
 	.word	235
-.L155:
+.L157:
 	.byte	9
 	.byte	'unsigned long int',0,4,7,4
 	.byte	'Ifx__ldmstAsm',0,3,1,138,2,17,1,1,5
@@ -2314,10 +2344,10 @@ __canReceiveLoop_function_end:
 	.byte	'IfxCpu_disableInterrupts',0,3,8,146,5,20
 	.word	779
 	.byte	1,1,19,6,0,0
-.L159:
+.L161:
 	.byte	4
 	.byte	'IfxCpu_enableInterrupts',0,3,8,156,5,17,1,1
-.L162:
+.L164:
 	.byte	6,0,4
 	.byte	'IfxCpu_restoreInterrupts',0,3,8,167,7,17,1,1,5
 	.byte	'enabled',0,8,167,7,50
@@ -2400,53 +2430,53 @@ __canReceiveLoop_function_end:
 	.word	10361
 	.byte	3
 	.word	10400
-.L104:
+.L106:
 	.byte	4
 	.byte	'IfxSrc_clearRequest',0,3,10,247,1,17,1,1
-.L106:
+.L108:
 	.byte	5
 	.byte	'src',0,10,247,1,60
 	.word	10405
-.L108:
+.L110:
 	.byte	6,0
-.L163:
+.L165:
 	.byte	4
 	.byte	'IfxSrc_disable',0,3,10,131,2,17,1,1
-.L166:
+.L168:
 	.byte	5
 	.byte	'src',0,10,131,2,55
 	.word	10405
-.L168:
+.L170:
 	.byte	6,0
-.L109:
+.L111:
 	.byte	4
 	.byte	'IfxSrc_enable',0,3,10,137,2,17,1,1
-.L112:
+.L114:
 	.byte	5
 	.byte	'src',0,10,137,2,54
 	.word	10405
-.L114:
+.L116:
 	.byte	6,0,17,12,66,9,1,18
 	.byte	'IfxSrc_Tos_cpu0',0,0,18
 	.byte	'IfxSrc_Tos_cpu1',0,1,18
 	.byte	'IfxSrc_Tos_cpu2',0,2,18
 	.byte	'IfxSrc_Tos_dma',0,3,0
-.L94:
+.L96:
 	.byte	4
 	.byte	'IfxSrc_init',0,3,10,143,2,17,1,1
-.L97:
+.L99:
 	.byte	5
 	.byte	'src',0,10,143,2,52
 	.word	10405
-.L99:
+.L101:
 	.byte	5
 	.byte	'typOfService',0,10,143,2,68
 	.word	10528
-.L101:
+.L103:
 	.byte	5
 	.byte	'priority',0,10,143,2,95
 	.word	796
-.L103:
+.L105:
 	.byte	19,6,0,0,11
 	.byte	'_Ifx_STM_CLC_Bits',0,14,118,16,4,12
 	.byte	'DISR',0,1
@@ -4663,7 +4693,7 @@ __canReceiveLoop_function_end:
 	.byte	'IfxMultican_DataLengthCode_32',0,13,18
 	.byte	'IfxMultican_DataLengthCode_48',0,14,18
 	.byte	'IfxMultican_DataLengthCode_64',0,15,0
-.L146:
+.L148:
 	.byte	15,8
 	.word	245
 	.byte	16,1,0,21,15,243,1,9,16,14
@@ -4680,74 +4710,74 @@ __canReceiveLoop_function_end:
 	.word	779
 	.byte	1,2,35,14,0,3
 	.word	24790
-.L80:
+.L82:
 	.byte	4
 	.byte	'IfxMultican_Message_init',0,3,15,240,8,17,1,1
-.L83:
+.L85:
 	.byte	5
 	.byte	'msg',0,15,240,8,63
 	.word	24864
-.L85:
+.L87:
 	.byte	5
 	.byte	'id',0,15,240,8,75
 	.word	245
-.L87:
+.L89:
 	.byte	5
 	.byte	'dataLow',0,15,240,8,86
 	.word	245
-.L89:
+.L91:
 	.byte	5
 	.byte	'dataHigh',0,15,240,8,102
 	.word	245
-.L91:
+.L93:
 	.byte	5
 	.byte	'lengthCode',0,15,240,8,139,1
 	.word	24272
-.L93:
+.L95:
 	.byte	6,0,8
 	.word	23467
-.L121:
+.L123:
 	.byte	3
 	.word	24985
-.L151:
+.L153:
 	.byte	4
 	.byte	'IfxMultican_MsgObj_clearRxPending',0,3,15,146,9,17,1,1
-.L152:
+.L154:
 	.byte	5
 	.byte	'hwObj',0,15,146,9,63
 	.word	24990
-.L154:
+.L156:
 	.byte	6,0,4
 	.byte	'IfxMultican_MsgObj_clearTxPending',0,3,15,152,9,17,1,1,5
 	.byte	'hwObj',0,15,152,9,63
 	.word	24990
 	.byte	6,0,9
 	.byte	'long int',0,4,5
-.L123:
+.L125:
 	.byte	10
 	.byte	'IfxMultican_MsgObj_getPointer',0,3,15,184,9,24
 	.word	24990
 	.byte	1,1
-.L125:
+.L127:
 	.byte	5
 	.byte	'mcan',0,15,184,9,63
 	.word	24073
-.L127:
+.L129:
 	.byte	5
 	.byte	'msgObjId',0,15,184,9,90
 	.word	25113
-.L129:
+.L131:
 	.byte	6,0
-.L130:
+.L132:
 	.byte	10
 	.byte	'IfxMultican_MsgObj_isRxPending',0,3,15,196,9,20
 	.word	779
 	.byte	1,1
-.L132:
+.L134:
 	.byte	5
 	.byte	'hwObj',0,15,196,9,63
 	.word	24990
-.L134:
+.L136:
 	.byte	6,0,11
 	.byte	'_Ifx_GTM_ATOM_CH_RDADDR_Bits',0,19,207,3,16,4,12
 	.byte	'RDADDR0',0,4
@@ -7136,7 +7166,7 @@ __canReceiveLoop_function_end:
 	.byte	'flag',0,15,252,7,100
 	.word	41153
 	.byte	0
-.L135:
+.L137:
 	.byte	13,15,253,1,9,4,14
 	.byte	'B',0
 	.word	23111
@@ -7150,7 +7180,7 @@ __canReceiveLoop_function_end:
 	.byte	'hwObj',0,15,145,8,76
 	.word	24990
 	.byte	0
-.L115:
+.L117:
 	.byte	17,15,211,1,9,2,18
 	.byte	'IfxMultican_Status_ok',0,0,18
 	.byte	'IfxMultican_Status_notInitialised',0,1,18
@@ -7214,7 +7244,7 @@ __canReceiveLoop_function_end:
 	.byte	1,2,35,2,0,15,64
 	.word	42905
 	.byte	16,15,0
-.L70:
+.L72:
 	.byte	21,22,219,6,9,76,14
 	.byte	'module',0
 	.word	24073
@@ -7364,7 +7394,7 @@ __canReceiveLoop_function_end:
 	.byte	'IfxPort_PadDriver_ttlSpeed2',0,9,18
 	.byte	'IfxPort_PadDriver_ttlSpeed3',0,10,18
 	.byte	'IfxPort_PadDriver_ttlSpeed4',0,11,0
-.L73:
+.L75:
 	.byte	21,22,130,7,9,68,14
 	.byte	'module',0
 	.word	24073
@@ -7507,7 +7537,7 @@ __canReceiveLoop_function_end:
 	.byte	'gatewayDstObjId',0
 	.word	25113
 	.byte	4,2,35,2,0
-.L76:
+.L78:
 	.byte	21,22,239,6,9,56,14
 	.byte	'node',0
 	.word	43275
@@ -7866,14 +7896,14 @@ __canReceiveLoop_function_end:
 	.byte	'speed',0
 	.word	48013
 	.byte	1,2,35,2,0
-.L119:
+.L121:
 	.byte	3
 	.word	48063
 	.byte	36
 	.byte	'exit_sleep_mode',0,29,19,5
 	.word	620
 	.byte	1,1,1,36
-	.byte	'enter_sleep_mode',0,29,117,21
+	.byte	'enter_sleep_mode',0,29,121,21
 	.word	620
 	.byte	1,1,1,31
 	.byte	'__wchar_t',0,29,1,1
@@ -33259,7 +33289,7 @@ __canReceiveLoop_function_end:
 	.byte	1,1,0
 	.sdecl	'.debug_abbrev',debug
 	.sect	'.debug_abbrev'
-.L42:
+.L44:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,16,6,0,0,2,21,0,54,15,39,12,0,0,3,15,0,73,19,0,0,4,46,1,3,8,32,13
 	.byte	58,15,59,15,57,15,54,15,39,12,0,0,5,5,0,3,8,58,15,59,15,57,15,73,19,0,0,6,11,0,0,0,7,59,0,3,8,0,0,8,53
 	.byte	0,73,19,0,0,9,36,0,3,8,11,15,62,15,0,0,10,46,1,3,8,32,13,58,15,59,15,57,15,73,19,54,15,39,12,0,0,11,19
@@ -33274,12 +33304,12 @@ __canReceiveLoop_function_end:
 	.byte	15,59,15,57,15,73,19,63,12,60,12,0,0,0
 	.sdecl	'.debug_line',debug
 	.sect	'.debug_line'
-.L43:
-	.word	.L183-.L182
-.L182:
+.L45:
+	.word	.L186-.L185
+.L185:
 	.half	3
-	.word	.L185-.L184
-.L184:
+	.word	.L188-.L187
+.L187:
 	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
 	.byte	'C:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\Infra\\\\Sfr\\\\TC27D\\\\_Reg',0
 	.byte	'C:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Cpu\\\\Std',0
@@ -33348,48 +33378,46 @@ __canReceiveLoop_function_end:
 	.byte	0,0,0
 	.byte	'IfxGtm_Tom_Pwm.h',0,7,0,0
 	.byte	'..\\can_driver\\can.h',0,0,0,0,0
-.L185:
-.L183:
+.L188:
+.L186:
 	.sdecl	'.debug_info',debug,cluster('initCan')
 	.sect	'.debug_info'
-.L44:
+.L46:
 	.word	547
 	.half	3
-	.word	.L45
+	.word	.L47
 	.byte	4,1
 	.byte	'../can_driver/can.c',0
 	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
 	.byte	'C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p1\\TriCore Debug (TASKING)\\',0,12,1
-	.word	.L47,.L46
+	.word	.L49,.L48
 	.byte	2
-	.word	.L40
+	.word	.L42
 	.byte	3
 	.byte	'initCan',0,1,25,6,1,1,1
-	.word	.L35,.L69,.L34
+	.word	.L37,.L71,.L36
 	.byte	4
-	.word	.L35,.L69
+	.word	.L37,.L71
 	.byte	5
 	.byte	'canConfig',0,1,28,26
-	.word	.L70,.L71
+	.word	.L72,.L73
 	.byte	4
-	.word	.L72,.L69
+	.word	.L74,.L71
 	.byte	5
 	.byte	'nodeConfig',0,1,33,30
-	.word	.L73,.L74
+	.word	.L75,.L76
 	.byte	4
-	.word	.L75,.L69
+	.word	.L77,.L71
 	.byte	5
 	.byte	'txMsgConfig',0,1,48,32
-	.word	.L76,.L77
+	.word	.L78,.L79
 	.byte	4
-	.word	.L78,.L69
+	.word	.L80,.L71
 	.byte	5
 	.byte	'rxMsgConfig',0,1,59,32
-	.word	.L76,.L79
+	.word	.L78,.L81
 	.byte	6
-	.word	.L80,.L81,.L82
-	.byte	7
-	.word	.L83,.L84
+	.word	.L82,.L83,.L84
 	.byte	7
 	.word	.L85,.L86
 	.byte	7
@@ -33398,683 +33426,693 @@ __canReceiveLoop_function_end:
 	.word	.L89,.L90
 	.byte	7
 	.word	.L91,.L92
-	.byte	8
-	.word	.L93,.L81,.L82
-	.byte	0,6
-	.word	.L94,.L95,.L96
 	.byte	7
-	.word	.L97,.L98
+	.word	.L93,.L94
+	.byte	8
+	.word	.L95,.L83,.L84
+	.byte	0,6
+	.word	.L96,.L97,.L98
 	.byte	7
 	.word	.L99,.L100
 	.byte	7
 	.word	.L101,.L102
+	.byte	7
+	.word	.L103,.L104
 	.byte	9
-	.word	.L103,.L95,.L96
+	.word	.L105,.L97,.L98
 	.byte	6
-	.word	.L104,.L105,.L96
+	.word	.L106,.L107,.L98
 	.byte	7
-	.word	.L106,.L107
+	.word	.L108,.L109
 	.byte	8
-	.word	.L108,.L105,.L96
+	.word	.L110,.L107,.L98
 	.byte	0,0,0,6
-	.word	.L109,.L110,.L111
+	.word	.L111,.L112,.L113
 	.byte	7
-	.word	.L112,.L113
+	.word	.L114,.L115
 	.byte	8
-	.word	.L114,.L110,.L111
+	.word	.L116,.L112,.L113
 	.byte	0,0,0,0,0,0,0
 	.sdecl	'.debug_abbrev',debug,cluster('initCan')
 	.sect	'.debug_abbrev'
-.L45:
+.L47:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
 	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,11,1,17,1,18,1,0,0,5,52,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,6,29,1
 	.byte	49,16,17,1,18,1,0,0,7,5,0,49,16,2,6,0,0,8,11,0,49,16,17,1,18,1,0,0,9,11,1,49,16,17,1,18,1,0,0,0
 	.sdecl	'.debug_line',debug,cluster('initCan')
 	.sect	'.debug_line'
-.L46:
-	.word	.L187-.L186
-.L186:
+.L48:
+	.word	.L190-.L189
+.L189:
 	.half	3
-	.word	.L189-.L188
-.L188:
+	.word	.L192-.L191
+.L191:
 	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
 	.byte	'../can_driver/can.c',0,0,0,0
 	.byte	'C:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\Multican\\Std\\IfxMultican.h',0
 	.byte	0,0,0
 	.byte	'C:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\Src\\Std\\IfxSrc.h',0
 	.byte	0,0,0,0
-.L189:
+.L192:
 	.byte	5,6,7,0,5,2
-	.word	.L35
+	.word	.L37
 	.byte	3,24,1,5,37,9
-	.half	.L169-.L35
+	.half	.L171-.L37
 	.byte	3,4,1,5,49,9
-	.half	.L190-.L169
+	.half	.L193-.L171
 	.byte	1,5,31,9
-	.half	.L191-.L190
-	.byte	3,1,1,5,39,9
-	.half	.L192-.L191
-	.byte	1,5,36,9
-	.half	.L72-.L192
-	.byte	3,4,1,5,49,9
-	.half	.L193-.L72
-	.byte	1,5,23,9
 	.half	.L194-.L193
-	.byte	3,2,1,5,21,9
+	.byte	3,1,1,5,39,9
 	.half	.L195-.L194
-	.byte	1,5,25,9
-	.half	.L196-.L195
-	.byte	3,1,1,5,23,9
+	.byte	1,5,36,9
+	.half	.L74-.L195
+	.byte	3,4,1,5,49,9
+	.half	.L196-.L74
+	.byte	1,5,23,9
 	.half	.L197-.L196
-	.byte	1,5,28,9
+	.byte	3,2,1,5,21,9
 	.half	.L198-.L197
-	.byte	3,1,1,5,26,9
+	.byte	1,5,25,9
 	.half	.L199-.L198
-	.byte	1,5,23,9
+	.byte	3,1,1,5,23,9
 	.half	.L200-.L199
-	.byte	3,1,1,5,20,9
+	.byte	1,5,28,9
 	.half	.L201-.L200
-	.byte	1,5,23,9
+	.byte	3,1,1,5,26,9
 	.half	.L202-.L201
-	.byte	3,1,1,5,20,9
+	.byte	1,5,23,9
 	.half	.L203-.L202
-	.byte	1,5,26,9
+	.byte	3,1,1,5,20,9
 	.half	.L204-.L203
-	.byte	3,1,1,5,24,9
+	.byte	1,5,23,9
 	.half	.L205-.L204
-	.byte	1,5,26,9
+	.byte	3,1,1,5,20,9
 	.half	.L206-.L205
-	.byte	3,1,1,5,24,9
+	.byte	1,5,26,9
 	.half	.L207-.L206
-	.byte	1,5,26,9
+	.byte	3,1,1,5,24,9
 	.half	.L208-.L207
-	.byte	3,1,1,5,24,9
+	.byte	1,5,26,9
 	.half	.L209-.L208
-	.byte	1,5,30,9
-	.half	.L210-.L209
-	.byte	3,2,1,5,42,9
-	.half	.L211-.L210
-	.byte	1,5,38,9
-	.half	.L75-.L211
-	.byte	3,4,1,5,52,9
-	.half	.L212-.L75
-	.byte	1,5,26,9
-	.half	.L213-.L212
-	.byte	3,2,1,5,24,9
-	.half	.L214-.L213
-	.byte	1,5,27,9
-	.half	.L215-.L214
-	.byte	3,1,1,5,25,9
-	.half	.L216-.L215
-	.byte	1,5,23,9
-	.half	.L217-.L216
-	.byte	3,1,1,5,21,9
-	.half	.L218-.L217
-	.byte	1,5,36,9
-	.half	.L219-.L218
-	.byte	3,1,1,5,34,9
-	.half	.L220-.L219
-	.byte	1,5,32,9
-	.half	.L221-.L220
-	.byte	3,2,1,5,45,9
-	.half	.L222-.L221
-	.byte	1,5,38,9
-	.half	.L78-.L222
-	.byte	3,4,1,5,52,9
-	.half	.L223-.L78
-	.byte	1,5,26,9
-	.half	.L224-.L223
-	.byte	3,2,1,5,24,9
-	.half	.L225-.L224
-	.byte	1,5,27,9
-	.half	.L226-.L225
-	.byte	3,1,1,5,25,9
-	.half	.L227-.L226
-	.byte	1,5,32,9
-	.half	.L228-.L227
-	.byte	3,1,1,5,30,9
-	.half	.L229-.L228
-	.byte	1,5,23,9
-	.half	.L230-.L229
-	.byte	3,1,1,5,21,9
-	.half	.L231-.L230
-	.byte	1,5,36,9
-	.half	.L232-.L231
-	.byte	3,1,1,5,34,9
-	.half	.L233-.L232
-	.byte	1,5,37,9
-	.half	.L234-.L233
-	.byte	3,3,1,5,35,9
-	.half	.L235-.L234
-	.byte	1,9
-	.half	.L236-.L235
-	.byte	3,1,1,5,33,9
-	.half	.L237-.L236
-	.byte	1,5,32,9
-	.half	.L238-.L237
-	.byte	3,3,1,5,45,9
-	.half	.L239-.L238
-	.byte	1,5,29,9
-	.half	.L240-.L239
-	.byte	3,3,1,5,38,9
-	.half	.L241-.L240
-	.byte	1,5,45,9
-	.half	.L242-.L241
-	.byte	1,5,57,9
-	.half	.L243-.L242
-	.byte	1,5,69,9
-	.half	.L244-.L243
-	.byte	1,4,2,5,22,9
-	.half	.L81-.L244
-	.byte	3,166,8,1,9
-	.half	.L245-.L81
-	.byte	3,1,1,9
-	.half	.L246-.L245
-	.byte	3,1,1,9
-	.half	.L247-.L246
 	.byte	3,1,1,5,24,9
-	.half	.L248-.L247
-	.byte	3,2,1,5,22,9
+	.half	.L210-.L209
+	.byte	1,5,26,9
+	.half	.L211-.L210
+	.byte	3,1,1,5,24,9
+	.half	.L212-.L211
+	.byte	1,5,30,9
+	.half	.L213-.L212
+	.byte	3,2,1,5,42,9
+	.half	.L214-.L213
+	.byte	1,5,38,9
+	.half	.L77-.L214
+	.byte	3,4,1,5,52,9
+	.half	.L215-.L77
+	.byte	1,5,26,9
+	.half	.L216-.L215
+	.byte	3,2,1,5,24,9
+	.half	.L217-.L216
+	.byte	1,5,27,9
+	.half	.L218-.L217
+	.byte	3,1,1,5,25,9
+	.half	.L219-.L218
+	.byte	1,5,23,9
+	.half	.L220-.L219
+	.byte	3,1,1,5,21,9
+	.half	.L221-.L220
+	.byte	1,5,36,9
+	.half	.L222-.L221
+	.byte	3,1,1,5,34,9
+	.half	.L223-.L222
+	.byte	1,5,32,9
+	.half	.L224-.L223
+	.byte	3,2,1,5,45,9
+	.half	.L225-.L224
+	.byte	1,5,38,9
+	.half	.L80-.L225
+	.byte	3,4,1,5,52,9
+	.half	.L226-.L80
+	.byte	1,5,26,9
+	.half	.L227-.L226
+	.byte	3,2,1,5,24,9
+	.half	.L228-.L227
+	.byte	1,5,27,9
+	.half	.L229-.L228
+	.byte	3,1,1,5,25,9
+	.half	.L230-.L229
+	.byte	1,5,32,9
+	.half	.L231-.L230
+	.byte	3,1,1,5,30,9
+	.half	.L232-.L231
+	.byte	1,5,23,9
+	.half	.L233-.L232
+	.byte	3,1,1,5,21,9
+	.half	.L234-.L233
+	.byte	1,5,36,9
+	.half	.L235-.L234
+	.byte	3,1,1,5,34,9
+	.half	.L236-.L235
+	.byte	1,5,37,9
+	.half	.L237-.L236
+	.byte	3,3,1,5,35,9
+	.half	.L238-.L237
+	.byte	1,9
+	.half	.L239-.L238
+	.byte	3,1,1,5,33,9
+	.half	.L240-.L239
+	.byte	1,5,32,9
+	.half	.L241-.L240
+	.byte	3,3,1,5,45,9
+	.half	.L242-.L241
+	.byte	1,5,29,9
+	.half	.L243-.L242
+	.byte	3,3,1,5,38,9
+	.half	.L244-.L243
+	.byte	1,5,45,9
+	.half	.L245-.L244
+	.byte	1,5,57,9
+	.half	.L246-.L245
+	.byte	1,5,69,9
+	.half	.L247-.L246
+	.byte	1,4,2,5,22,9
+	.half	.L83-.L247
+	.byte	3,166,8,1,9
+	.half	.L248-.L83
+	.byte	3,1,1,9
 	.half	.L249-.L248
-	.byte	1,4,1,5,42,9
-	.half	.L82-.L249
-	.byte	3,216,119,1,5,54,9
-	.half	.L250-.L82
-	.byte	1,5,76,9
+	.byte	3,1,1,9
+	.half	.L250-.L249
+	.byte	3,1,1,5,24,9
 	.half	.L251-.L250
-	.byte	1,5,93,9
+	.byte	3,2,1,5,22,9
 	.half	.L252-.L251
-	.byte	1,4,3,5,11,9
-	.half	.L95-.L252
-	.byte	3,194,1,1,5,17,9
-	.half	.L253-.L95
-	.byte	1,5,11,9
+	.byte	1,4,1,5,42,9
+	.half	.L84-.L252
+	.byte	3,216,119,1,5,54,9
+	.half	.L253-.L84
+	.byte	1,5,76,9
 	.half	.L254-.L253
-	.byte	3,1,1,5,17,9
+	.byte	1,5,93,9
 	.half	.L255-.L254
-	.byte	1,5,11,9
-	.half	.L105-.L255
-	.byte	3,103,1,5,17,9
-	.half	.L256-.L105
-	.byte	1,4,1,5,44,9
-	.half	.L96-.L256
-	.byte	3,215,126,1,5,56,9
-	.half	.L257-.L96
 	.byte	1,4,3,5,11,9
-	.half	.L110-.L257
+	.half	.L97-.L255
+	.byte	3,194,1,1,5,17,9
+	.half	.L256-.L97
+	.byte	1,5,11,9
+	.half	.L257-.L256
+	.byte	3,1,1,5,17,9
+	.half	.L258-.L257
+	.byte	1,5,11,9
+	.half	.L107-.L258
+	.byte	3,103,1,5,17,9
+	.half	.L259-.L107
+	.byte	1,4,1,5,44,9
+	.half	.L98-.L259
+	.byte	3,215,126,1,5,56,9
+	.half	.L260-.L98
+	.byte	1,4,3,5,11,9
+	.half	.L112-.L260
 	.byte	3,187,1,1,5,16,9
-	.half	.L258-.L110
+	.half	.L261-.L112
 	.byte	1,4,1,5,1,9
-	.half	.L111-.L258
+	.half	.L113-.L261
 	.byte	3,198,126,1,7,9
-	.half	.L48-.L111
+	.half	.L50-.L113
 	.byte	0,1,1
-.L187:
+.L190:
 	.sdecl	'.debug_ranges',debug,cluster('initCan')
 	.sect	'.debug_ranges'
-.L47:
-	.word	-1,.L35,0,.L48-.L35,0,0
+.L49:
+	.word	-1,.L37,0,.L50-.L37,0,0
 	.sdecl	'.debug_info',debug,cluster('sendCanMessage')
 	.sect	'.debug_info'
-.L49:
+.L51:
 	.word	255
 	.half	3
-	.word	.L50
+	.word	.L52
 	.byte	4,1
 	.byte	'../can_driver/can.c',0
 	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
 	.byte	'C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p1\\TriCore Debug (TASKING)\\',0,12,1
-	.word	.L52,.L51
+	.word	.L54,.L53
 	.byte	2
-	.word	.L40
+	.word	.L42
 	.byte	3
 	.byte	'sendCanMessage',0,1,84,20
-	.word	.L115
+	.word	.L117
 	.byte	1,1,1
-	.word	.L37,.L116,.L36
+	.word	.L39,.L118,.L38
 	.byte	4
-	.word	.L37,.L116
+	.word	.L39,.L118
 	.byte	5
 	.byte	'status',0,1,86,24
-	.word	.L115,.L117
+	.word	.L117,.L119
 	.byte	0,0,0
 	.sdecl	'.debug_abbrev',debug,cluster('sendCanMessage')
 	.sect	'.debug_abbrev'
-.L50:
+.L52:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,73,16
 	.byte	54,15,39,12,63,12,17,1,18,1,64,6,0,0,4,11,1,17,1,18,1,0,0,5,52,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,0
 	.sdecl	'.debug_line',debug,cluster('sendCanMessage')
 	.sect	'.debug_line'
-.L51:
-	.word	.L260-.L259
-.L259:
+.L53:
+	.word	.L263-.L262
+.L262:
 	.half	3
-	.word	.L262-.L261
-.L261:
+	.word	.L265-.L264
+.L264:
 	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
 	.byte	'../can_driver/can.c',0,0,0,0,0
-.L262:
+.L265:
 	.byte	5,69,7,0,5,2
-	.word	.L37
+	.word	.L39
 	.byte	3,213,0,1,5,82,9
-	.half	.L263-.L37
+	.half	.L266-.L39
 	.byte	1,5,5,9
-	.half	.L170-.L263
+	.half	.L172-.L266
 	.byte	3,1,1,5,1,9
-	.half	.L3-.L170
+	.half	.L3-.L172
 	.byte	3,1,1,7,9
-	.half	.L53-.L3
+	.half	.L55-.L3
 	.byte	0,1,1
-.L260:
+.L263:
 	.sdecl	'.debug_ranges',debug,cluster('sendCanMessage')
 	.sect	'.debug_ranges'
-.L52:
-	.word	-1,.L37,0,.L53-.L37,0,0
+.L54:
+	.word	-1,.L39,0,.L55-.L39,0,0
 	.sdecl	'.debug_info',debug,cluster('canReceiveLoop')
 	.sect	'.debug_info'
-.L54:
+.L56:
 	.word	549
 	.half	3
-	.word	.L55
+	.word	.L57
 	.byte	4,1
 	.byte	'../can_driver/can.c',0
 	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
 	.byte	'C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p1\\TriCore Debug (TASKING)\\',0,12,1
-	.word	.L57,.L56
+	.word	.L59,.L58
 	.byte	2
-	.word	.L40
+	.word	.L42
 	.byte	3
 	.byte	'canReceiveLoop',0,1,91,6,1,1,1
-	.word	.L39,.L118,.L38
+	.word	.L41,.L120,.L40
 	.byte	4
 	.byte	'hvac',0,1,91,27
-	.word	.L119,.L120
+	.word	.L121,.L122
 	.byte	5
-	.word	.L39,.L118
+	.word	.L41,.L120
 	.byte	6
 	.byte	'hwObj',0,1,93,17
-	.word	.L121,.L122
+	.word	.L123,.L124
 	.byte	7
-	.word	.L123,.L124,.L4
-	.byte	8
-	.word	.L125,.L126
+	.word	.L125,.L126,.L4
 	.byte	8
 	.word	.L127,.L128
-	.byte	9
-	.word	.L129,.L124,.L4
-	.byte	0,7
-	.word	.L130,.L4,.L131
 	.byte	8
-	.word	.L132,.L133
+	.word	.L129,.L130
+	.byte	9
+	.word	.L131,.L126,.L4
+	.byte	0,7
+	.word	.L132,.L4,.L133
+	.byte	8
+	.word	.L134,.L135
 	.byte	10
-	.word	.L134,.L4,.L131
+	.word	.L136,.L4,.L133
 	.byte	6
 	.byte	'msgStatus',0,2,198,9,28
-	.word	.L135,.L136
+	.word	.L137,.L138
 	.byte	0,0,7
-	.word	.L80,.L137,.L138
+	.word	.L82,.L139,.L140
 	.byte	8
-	.word	.L83,.L139
+	.word	.L85,.L141
 	.byte	8
-	.word	.L85,.L140
+	.word	.L87,.L142
 	.byte	8
-	.word	.L87,.L141
+	.word	.L89,.L143
 	.byte	8
-	.word	.L89,.L142
+	.word	.L91,.L144
 	.byte	8
-	.word	.L91,.L143
+	.word	.L93,.L145
 	.byte	9
-	.word	.L93,.L137,.L138
+	.word	.L95,.L139,.L140
 	.byte	0,5
-	.word	.L138,.L8
+	.word	.L140,.L8
 	.byte	6
 	.byte	'status',0,1,100,28
-	.word	.L115,.L144
+	.word	.L117,.L146
 	.byte	5
-	.word	.L145,.L9
+	.word	.L147,.L9
 	.byte	6
 	.byte	'receive_data',0,1,107,20
-	.word	.L146,.L147
+	.word	.L148,.L149
 	.byte	11
-	.word	.L148
+	.word	.L150
 	.byte	0,7
-	.word	.L151,.L9,.L8
+	.word	.L153,.L9,.L8
 	.byte	8
-	.word	.L152,.L153
+	.word	.L154,.L155
 	.byte	9
-	.word	.L154,.L9,.L8
+	.word	.L156,.L9,.L8
 	.byte	0,0,0,0,0
 	.sdecl	'.debug_abbrev',debug,cluster('canReceiveLoop')
 	.sect	'.debug_abbrev'
-.L55:
+.L57:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
 	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,1,17,1,18,1,0,0,6,52,0,3
 	.byte	8,58,15,59,15,57,15,73,16,2,6,0,0,7,29,1,49,16,17,1,18,1,0,0,8,5,0,49,16,2,6,0,0,9,11,0,49,16,17,1,18
 	.byte	1,0,0,10,11,1,49,16,17,1,18,1,0,0,11,11,0,85,6,0,0,0
 	.sdecl	'.debug_line',debug,cluster('canReceiveLoop')
 	.sect	'.debug_line'
-.L56:
-	.word	.L265-.L264
-.L264:
+.L58:
+	.word	.L268-.L267
+.L267:
 	.half	3
-	.word	.L267-.L266
-.L266:
+	.word	.L270-.L269
+.L269:
 	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
 	.byte	'../can_driver/can.c',0,0,0,0
 	.byte	'C:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\Multican\\Std\\IfxMultican.h',0
 	.byte	0,0,0,0
-.L267:
+.L270:
 	.byte	5,6,7,0,5,2
-	.word	.L39
+	.word	.L41
 	.byte	3,218,0,1,5,55,9
-	.half	.L173-.L39
+	.half	.L175-.L41
 	.byte	3,2,1,5,65,9
-	.half	.L268-.L173
+	.half	.L271-.L175
 	.byte	1,5,70,9
-	.half	.L269-.L268
+	.half	.L272-.L271
 	.byte	1,5,78,9
-	.half	.L270-.L269
-	.byte	1,5,88,9
-	.half	.L271-.L270
-	.byte	1,4,2,5,22,9
-	.half	.L124-.L271
-	.byte	3,221,8,1,5,5,9
-	.half	.L174-.L124
-	.byte	1,5,69,9
-	.half	.L4-.L174
-	.byte	3,12,1,5,23,9
-	.half	.L175-.L4
-	.byte	3,1,1,5,12,9
-	.half	.L272-.L175
-	.byte	1,5,30,7,9
 	.half	.L273-.L272
-	.byte	1,5,37,9
+	.byte	1,5,88,9
 	.half	.L274-.L273
+	.byte	1,4,2,5,22,9
+	.half	.L126-.L274
+	.byte	3,221,8,1,5,5,9
+	.half	.L176-.L126
+	.byte	1,5,69,9
+	.half	.L4-.L176
+	.byte	3,12,1,5,23,9
+	.half	.L177-.L4
+	.byte	3,1,1,5,12,9
+	.half	.L275-.L177
+	.byte	1,5,30,7,9
+	.half	.L276-.L275
+	.byte	1,5,37,9
+	.half	.L277-.L276
 	.byte	1,5,30,9
-	.half	.L5-.L274
+	.half	.L5-.L277
 	.byte	1,5,5,9
 	.half	.L6-.L5
 	.byte	1,4,1,9
 	.half	.L7-.L6
 	.byte	3,153,119,1,5,35,7,9
-	.half	.L131-.L7
+	.half	.L133-.L7
 	.byte	3,3,1,5,44,9
-	.half	.L275-.L131
+	.half	.L278-.L133
 	.byte	1,5,47,9
-	.half	.L276-.L275
-	.byte	1,5,50,9
-	.half	.L277-.L276
-	.byte	1,5,53,9
-	.half	.L176-.L277
-	.byte	1,4,2,5,22,9
-	.half	.L137-.L176
-	.byte	3,143,8,1,9
-	.half	.L278-.L137
-	.byte	3,1,1,9
 	.half	.L279-.L278
-	.byte	3,1,1,9
+	.byte	1,5,50,9
 	.half	.L280-.L279
-	.byte	3,1,1,5,24,9
-	.half	.L281-.L280
-	.byte	3,2,1,5,22,9
+	.byte	1,5,53,9
+	.half	.L178-.L280
+	.byte	1,4,2,5,22,9
+	.half	.L139-.L178
+	.byte	3,143,8,1,9
+	.half	.L281-.L139
+	.byte	3,1,1,9
 	.half	.L282-.L281
-	.byte	1,4,1,5,76,9
-	.half	.L138-.L282
-	.byte	3,237,119,1,5,9,9
-	.half	.L177-.L138
-	.byte	3,3,1,5,20,7,9
-	.half	.L145-.L177
-	.byte	3,9,1,5,27,9
-	.half	.L283-.L145
-	.byte	1,5,22,9
+	.byte	3,1,1,9
+	.half	.L283-.L282
+	.byte	3,1,1,5,24,9
 	.half	.L284-.L283
+	.byte	3,2,1,5,22,9
+	.half	.L285-.L284
+	.byte	1,4,1,5,76,9
+	.half	.L140-.L285
+	.byte	3,237,119,1,5,9,9
+	.half	.L179-.L140
+	.byte	3,3,1,5,20,7,9
+	.half	.L147-.L179
+	.byte	3,9,1,5,27,9
+	.half	.L286-.L147
+	.byte	1,5,22,9
+	.half	.L287-.L286
 	.byte	3,1,1,9
-	.half	.L149-.L284
+	.half	.L288-.L287
+	.byte	3,4,1,9
+	.half	.L151-.L288
 	.byte	3,6,1,5,21,9
-	.half	.L10-.L149
-	.byte	3,123,1,9
-	.half	.L178-.L10
+	.half	.L10-.L151
+	.byte	3,119,1,9
+	.half	.L180-.L10
+	.byte	3,1,1,9
+	.half	.L289-.L180
+	.byte	3,1,1,9
+	.half	.L11-.L289
+	.byte	3,2,1,9
+	.half	.L181-.L11
 	.byte	3,1,1,5,37,9
-	.half	.L285-.L178
+	.half	.L290-.L181
 	.byte	3,1,1,5,35,9
-	.half	.L286-.L285
-	.byte	1,5,37,9
-	.half	.L150-.L286
-	.byte	3,1,1,5,21,9
-	.half	.L287-.L150
-	.byte	3,1,1,9
-	.half	.L11-.L287
-	.byte	3,2,1,5,39,9
-	.half	.L179-.L11
-	.byte	3,1,1,5,51,9
-	.half	.L288-.L179
-	.byte	1,5,39,9
-	.half	.L289-.L288
-	.byte	3,1,1,5,51,9
-	.half	.L290-.L289
-	.byte	1,5,37,9
 	.half	.L291-.L290
-	.byte	1,5,62,9
-	.half	.L180-.L291
-	.byte	3,2,1,5,37,9
-	.half	.L292-.L180
-	.byte	1,5,62,9
-	.half	.L293-.L292
-	.byte	3,1,1,5,37,9
+	.byte	1,5,37,9
+	.half	.L152-.L291
+	.byte	3,1,1,5,21,9
+	.half	.L292-.L152
+	.byte	3,1,1,9
+	.half	.L12-.L292
+	.byte	3,2,1,5,39,9
+	.half	.L182-.L12
+	.byte	3,1,1,5,51,9
+	.half	.L293-.L182
+	.byte	1,5,39,9
 	.half	.L294-.L293
-	.byte	1,5,36,9
+	.byte	3,1,1,5,51,9
 	.half	.L295-.L294
-	.byte	3,2,1,5,21,9
+	.byte	1,5,37,9
 	.half	.L296-.L295
-	.byte	1,5,41,7,9
-	.half	.L297-.L296
-	.byte	3,1,1,5,39,9
+	.byte	1,5,62,9
+	.half	.L183-.L296
+	.byte	3,2,1,5,37,9
+	.half	.L297-.L183
+	.byte	1,5,62,9
 	.half	.L298-.L297
-	.byte	1,5,51,9
+	.byte	3,1,1,5,37,9
 	.half	.L299-.L298
-	.byte	1,5,41,9
-	.half	.L14-.L299
-	.byte	3,2,1,5,26,9
-	.half	.L300-.L14
-	.byte	1,5,41,7,9
+	.byte	1,5,36,9
+	.half	.L300-.L299
+	.byte	3,2,1,5,21,9
 	.half	.L301-.L300
-	.byte	3,1,1,5,39,9
+	.byte	1,5,41,7,9
 	.half	.L302-.L301
-	.byte	1,5,25,9
+	.byte	3,1,1,5,39,9
 	.half	.L303-.L302
-	.byte	3,1,1,5,30,9
-	.half	.L15-.L303
-	.byte	3,5,1,9
-	.half	.L304-.L15
-	.byte	3,5,1,9
-	.half	.L305-.L304
-	.byte	3,5,1,9
+	.byte	1,5,51,9
+	.half	.L304-.L303
+	.byte	1,5,41,9
+	.half	.L16-.L304
+	.byte	3,2,1,5,26,9
+	.half	.L305-.L16
+	.byte	1,5,41,7,9
 	.half	.L306-.L305
-	.byte	3,5,1,5,43,9
-	.half	.L18-.L306
-	.byte	3,114,1,5,41,9
-	.half	.L307-.L18
-	.byte	1,5,44,9
+	.byte	3,1,1,5,39,9
+	.half	.L307-.L306
+	.byte	1,5,25,9
 	.half	.L308-.L307
-	.byte	3,1,1,5,29,9
-	.half	.L309-.L308
-	.byte	3,1,1,9
+	.byte	3,1,1,5,30,9
+	.half	.L17-.L308
+	.byte	3,5,1,9
+	.half	.L309-.L17
+	.byte	3,5,1,9
 	.half	.L310-.L309
-	.byte	3,1,1,5,43,9
-	.half	.L19-.L310
-	.byte	3,2,1,5,41,9
-	.half	.L311-.L19
+	.byte	3,5,1,9
+	.half	.L311-.L310
+	.byte	3,5,1,5,43,9
+	.half	.L20-.L311
+	.byte	3,114,1,5,41,9
+	.half	.L312-.L20
 	.byte	1,5,44,9
-	.half	.L312-.L311
-	.byte	3,1,1,5,29,9
 	.half	.L313-.L312
-	.byte	3,1,1,9
+	.byte	3,1,1,5,29,9
 	.half	.L314-.L313
+	.byte	3,1,1,9
+	.half	.L315-.L314
 	.byte	3,1,1,5,43,9
-	.half	.L20-.L314
+	.half	.L21-.L315
 	.byte	3,2,1,5,41,9
-	.half	.L315-.L20
+	.half	.L316-.L21
 	.byte	1,5,44,9
-	.half	.L316-.L315
-	.byte	3,1,1,5,29,9
 	.half	.L317-.L316
-	.byte	3,1,1,9
-	.half	.L318-.L317
-	.byte	3,1,1,5,43,9
-	.half	.L21-.L318
-	.byte	3,2,1,5,41,9
-	.half	.L319-.L21
-	.byte	1,5,44,9
-	.half	.L320-.L319
 	.byte	3,1,1,5,29,9
-	.half	.L321-.L320
+	.half	.L318-.L317
 	.byte	3,1,1,9
+	.half	.L319-.L318
+	.byte	3,1,1,5,43,9
+	.half	.L22-.L319
+	.byte	3,2,1,5,41,9
+	.half	.L320-.L22
+	.byte	1,5,44,9
+	.half	.L321-.L320
+	.byte	3,1,1,5,29,9
 	.half	.L322-.L321
 	.byte	3,1,1,9
-	.half	.L22-.L322
-	.byte	3,2,1,9
-	.half	.L323-.L22
-	.byte	3,1,1,5,21,9
+	.half	.L323-.L322
+	.byte	3,1,1,5,43,9
 	.half	.L23-.L323
+	.byte	3,2,1,5,41,9
+	.half	.L324-.L23
+	.byte	1,5,44,9
+	.half	.L325-.L324
+	.byte	3,1,1,5,29,9
+	.half	.L326-.L325
+	.byte	3,1,1,9
+	.half	.L327-.L326
+	.byte	3,1,1,9
+	.half	.L24-.L327
 	.byte	3,2,1,9
-	.half	.L12-.L23
+	.half	.L328-.L24
+	.byte	3,1,1,5,21,9
+	.half	.L25-.L328
 	.byte	3,2,1,9
-	.half	.L181-.L12
+	.half	.L13-.L25
+	.byte	3,2,1,9
+	.half	.L184-.L13
 	.byte	3,1,1,4,2,5,47,9
-	.half	.L9-.L181
-	.byte	3,240,7,1,4,1,5,1,9
+	.half	.L9-.L184
+	.byte	3,236,7,1,4,1,5,1,9
 	.half	.L8-.L9
-	.byte	3,152,120,1,7,9
-	.half	.L58-.L8
+	.byte	3,156,120,1,7,9
+	.half	.L60-.L8
 	.byte	0,1,1
-.L265:
+.L268:
 	.sdecl	'.debug_ranges',debug,cluster('canReceiveLoop')
 	.sect	'.debug_ranges'
-.L57:
-	.word	-1,.L39,0,.L58-.L39,0,0
-.L148:
-	.word	-1,.L39,.L149-.L39,.L10-.L39,.L150-.L39,.L9-.L39,0,0
+.L59:
+	.word	-1,.L41,0,.L60-.L41,0,0
+.L150:
+	.word	-1,.L41,.L151-.L41,.L10-.L41,.L152-.L41,.L9-.L41,0,0
 	.sdecl	'.debug_info',debug,cluster('swapEndian')
 	.sect	'.debug_info'
-.L59:
+.L61:
 	.word	248
 	.half	3
-	.word	.L60
+	.word	.L62
 	.byte	4,1
 	.byte	'../can_driver/can.c',0
 	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
 	.byte	'C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p1\\TriCore Debug (TASKING)\\',0,12,1
-	.word	.L62,.L61
+	.word	.L64,.L63
 	.byte	2
-	.word	.L40
+	.word	.L42
 	.byte	3
 	.byte	'swapEndian',0,1,8,15
-	.word	.L155
+	.word	.L157
 	.byte	1,1
-	.word	.L31,.L156,.L30
+	.word	.L33,.L158,.L32
 	.byte	4
 	.byte	'value',0,1,8,33
-	.word	.L155,.L157
+	.word	.L157,.L159
 	.byte	5
-	.word	.L31,.L156
+	.word	.L33,.L158
 	.byte	0,0
 	.sdecl	'.debug_abbrev',debug,cluster('swapEndian')
 	.sect	'.debug_abbrev'
-.L60:
+.L62:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,73,16
 	.byte	54,15,39,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,0,17,1,18,1,0,0,0
 	.sdecl	'.debug_line',debug,cluster('swapEndian')
 	.sect	'.debug_line'
-.L61:
-	.word	.L325-.L324
-.L324:
+.L63:
+	.word	.L330-.L329
+.L329:
 	.half	3
-	.word	.L327-.L326
-.L326:
+	.word	.L332-.L331
+.L331:
 	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1,0
 	.byte	'../can_driver/can.c',0,0,0,0,0
-.L327:
+.L332:
 	.byte	5,20,7,0,5,2
-	.word	.L31
+	.word	.L33
 	.byte	3,8,1,5,34,9
-	.half	.L328-.L31
+	.half	.L333-.L33
 	.byte	1,5,22,9
-	.half	.L329-.L328
-	.byte	3,1,1,5,20,9
-	.half	.L330-.L329
-	.byte	1,5,34,9
-	.half	.L331-.L330
-	.byte	1,5,41,9
-	.half	.L332-.L331
-	.byte	3,127,1,5,22,9
-	.half	.L333-.L332
-	.byte	3,2,1,5,20,9
 	.half	.L334-.L333
-	.byte	1,5,34,9
+	.byte	3,1,1,5,20,9
 	.half	.L335-.L334
-	.byte	1,5,41,9
+	.byte	1,5,34,9
 	.half	.L336-.L335
-	.byte	3,127,1,5,20,9
-	.half	.L337-.L336
-	.byte	3,2,1,5,34,9
-	.half	.L338-.L337
 	.byte	1,5,41,9
+	.half	.L337-.L336
+	.byte	3,127,1,5,22,9
+	.half	.L338-.L337
+	.byte	3,2,1,5,20,9
 	.half	.L339-.L338
-	.byte	3,127,1,5,5,9
+	.byte	1,5,34,9
 	.half	.L340-.L339
+	.byte	1,5,41,9
+	.half	.L341-.L340
+	.byte	3,127,1,5,20,9
+	.half	.L342-.L341
+	.byte	3,2,1,5,34,9
+	.half	.L343-.L342
+	.byte	1,5,41,9
+	.half	.L344-.L343
+	.byte	3,127,1,5,5,9
+	.half	.L345-.L344
 	.byte	3,126,1,5,1,9
-	.half	.L2-.L340
+	.half	.L2-.L345
 	.byte	3,4,1,7,9
-	.half	.L63-.L2
+	.half	.L65-.L2
 	.byte	0,1,1
-.L325:
+.L330:
 	.sdecl	'.debug_ranges',debug,cluster('swapEndian')
 	.sect	'.debug_ranges'
-.L62:
-	.word	-1,.L31,0,.L63-.L31,0,0
+.L64:
+	.word	-1,.L33,0,.L65-.L33,0,0
 	.sdecl	'.debug_info',debug,cluster('canRxInterruptHandler')
 	.sect	'.debug_info'
-.L64:
+.L66:
 	.word	302
 	.half	3
-	.word	.L65
+	.word	.L67
 	.byte	4,1
 	.byte	'../can_driver/can.c',0
 	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
 	.byte	'C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p1\\TriCore Debug (TASKING)\\',0,12,1
-	.word	.L67,.L66
+	.word	.L69,.L68
 	.byte	2
-	.word	.L40
+	.word	.L42
 	.byte	3
 	.byte	'canRxInterruptHandler',0,1,16,6,1,1,1
-	.word	.L33,.L158,.L32
+	.word	.L35,.L160,.L34
 	.byte	4
-	.word	.L33,.L158
+	.word	.L35,.L160
 	.byte	5
-	.word	.L159,.L160,.L161
+	.word	.L161,.L162,.L163
 	.byte	6
-	.word	.L162,.L160,.L161
+	.word	.L164,.L162,.L163
 	.byte	0,5
-	.word	.L163,.L164,.L165
+	.word	.L165,.L166,.L167
 	.byte	7
-	.word	.L166,.L167
+	.word	.L168,.L169
 	.byte	6
-	.word	.L168,.L164,.L165
+	.word	.L170,.L166,.L167
 	.byte	0,0,0,0
 	.sdecl	'.debug_abbrev',debug,cluster('canRxInterruptHandler')
 	.sect	'.debug_abbrev'
-.L65:
+.L67:
 	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
 	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,11,1,17,1,18,1,0,0,5,29,1,49,16,17,1,18,1,0,0,6,11,0,49,16,17,1,18,1
 	.byte	0,0,7,5,0,49,16,2,6,0,0,0
 	.sdecl	'.debug_line',debug,cluster('canRxInterruptHandler')
 	.sect	'.debug_line'
-.L66:
-	.word	.L342-.L341
-.L341:
+.L68:
+	.word	.L347-.L346
+.L346:
 	.half	3
-	.word	.L344-.L343
-.L343:
+	.word	.L349-.L348
+.L348:
 	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
 	.byte	'C:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\\\Cpu\\\\Std',0
 	.byte	0
@@ -34082,185 +34120,188 @@ __canReceiveLoop_function_end:
 	.byte	'IfxCpu.h',0,1,0,0
 	.byte	'C:\\\\Users\\\\USER\\\\AURIX-v1.10.6-workspace\\\\p1\\\\Libraries\\\\iLLD\\\\TC27D\\\\Tricore\\Src\\Std\\IfxSrc.h',0
 	.byte	0,0,0,0
-.L344:
+.L349:
 	.byte	5,6,7,0,5,2
-	.word	.L33
+	.word	.L35
 	.byte	3,15,1,4,2,5,13,9
-	.half	.L160-.L33
+	.half	.L162-.L35
 	.byte	3,142,5,1,4,1,5,20,9
-	.half	.L161-.L160
+	.half	.L163-.L162
 	.byte	3,245,122,1,5,47,9
-	.half	.L345-.L161
+	.half	.L350-.L163
 	.byte	3,2,1,5,59,9
-	.half	.L346-.L345
+	.half	.L351-.L350
 	.byte	1,4,3,5,11,9
-	.half	.L164-.L346
+	.half	.L166-.L351
 	.byte	3,240,1,1,5,16,9
-	.half	.L347-.L164
+	.half	.L352-.L166
 	.byte	1,4,1,5,1,9
-	.half	.L165-.L347
+	.half	.L167-.L352
 	.byte	3,145,126,1,9
-	.half	.L68-.L165
+	.half	.L70-.L167
 	.byte	0,1,1
-.L342:
+.L347:
 	.sdecl	'.debug_ranges',debug,cluster('canRxInterruptHandler')
 	.sect	'.debug_ranges'
-.L67:
-	.word	-1,.L33,0,.L68-.L33,0,0
+.L69:
+	.word	-1,.L35,0,.L70-.L35,0,0
 	.sdecl	'.debug_loc',debug,cluster('canReceiveLoop')
 	.sect	'.debug_loc'
-.L38:
-	.word	-1,.L39,0,.L171-.L39
+.L40:
+	.word	-1,.L41,0,.L173-.L41
 	.half	2
 	.byte	138,0
-	.word	.L171-.L39,.L118-.L39
+	.word	.L173-.L41,.L120-.L41
 	.half	2
 	.byte	138,8
-	.word	.L118-.L39,.L118-.L39
+	.word	.L120-.L41,.L120-.L41
 	.half	2
 	.byte	138,0
 	.word	0,0
-.L142:
-	.word	0,0
-.L141:
-	.word	0,0
-.L120:
-	.word	-1,.L39,0,.L172-.L39
-	.half	1
-	.byte	100
-	.word	.L173-.L39,.L118-.L39
-	.half	1
-	.byte	108
-	.word	0,0
-.L122:
-	.word	-1,.L39,.L174-.L39,.L118-.L39
-	.half	1
-	.byte	109
-	.word	0,0
-.L153:
-	.word	0,0
-.L133:
-	.word	0,0
-.L140:
+.L144:
 	.word	0,0
 .L143:
 	.word	0,0
-.L126:
+.L122:
+	.word	-1,.L41,0,.L174-.L41
+	.half	1
+	.byte	100
+	.word	.L175-.L41,.L120-.L41
+	.half	1
+	.byte	108
 	.word	0,0
-.L139:
+.L124:
+	.word	-1,.L41,.L176-.L41,.L120-.L41
+	.half	1
+	.byte	109
+	.word	0,0
+.L155:
+	.word	0,0
+.L135:
+	.word	0,0
+.L142:
+	.word	0,0
+.L145:
 	.word	0,0
 .L128:
 	.word	0,0
-.L136:
-	.word	-1,.L39,.L175-.L39,.L176-.L39
+.L141:
+	.word	0,0
+.L130:
+	.word	0,0
+.L138:
+	.word	-1,.L41,.L177-.L41,.L178-.L41
 	.half	1
 	.byte	82
 	.word	0,0
-.L147:
-	.word	-1,.L39,.L180-.L39,.L12-.L39
+.L149:
+	.word	-1,.L41,.L183-.L41,.L13-.L41
 	.half	2
 	.byte	144,36
 	.word	0,0
-.L144:
-	.word	-1,.L39,.L177-.L39,.L178-.L39
+.L146:
+	.word	-1,.L41,.L179-.L41,.L180-.L41
 	.half	1
 	.byte	82
-	.word	.L11-.L39,.L179-.L39
+	.word	.L11-.L41,.L181-.L41
 	.half	1
 	.byte	82
-	.word	.L12-.L39,.L181-.L39
+	.word	.L12-.L41,.L182-.L41
+	.half	1
+	.byte	82
+	.word	.L13-.L41,.L184-.L41
 	.half	1
 	.byte	82
 	.word	0,0
 	.sdecl	'.debug_loc',debug,cluster('canRxInterruptHandler')
+	.sect	'.debug_loc'
+.L34:
+	.word	-1,.L35,0,.L160-.L35
+	.half	2
+	.byte	138,0
+	.word	0,0
+.L169:
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('initCan')
+	.sect	'.debug_loc'
+.L73:
+	.word	-1,.L37,0,.L71-.L37
+	.half	3
+	.byte	145,128,126
+	.word	0,0
+.L92:
+	.word	0,0
+.L90:
+	.word	0,0
+.L88:
+	.word	0,0
+.L36:
+	.word	-1,.L37,0,.L171-.L37
+	.half	2
+	.byte	138,0
+	.word	.L171-.L37,.L71-.L37
+	.half	3
+	.byte	138,128,2
+	.word	.L71-.L37,.L71-.L37
+	.half	2
+	.byte	138,0
+	.word	0,0
+.L94:
+	.word	0,0
+.L86:
+	.word	0,0
+.L76:
+	.word	-1,.L37,0,.L71-.L37
+	.half	3
+	.byte	145,204,126
+	.word	0,0
+.L104:
+	.word	0,0
+.L81:
+	.word	-1,.L37,0,.L71-.L37
+	.half	2
+	.byte	145,72
+	.word	0,0
+.L109:
+	.word	0,0
+.L115:
+	.word	0,0
+.L100:
+	.word	0,0
+.L79:
+	.word	-1,.L37,0,.L71-.L37
+	.half	3
+	.byte	145,144,127
+	.word	0,0
+.L102:
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('sendCanMessage')
+	.sect	'.debug_loc'
+.L38:
+	.word	-1,.L39,0,.L118-.L39
+	.half	2
+	.byte	138,0
+	.word	0,0
+.L119:
+	.word	-1,.L39,.L172-.L39,.L118-.L39
+	.half	1
+	.byte	82
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('swapEndian')
 	.sect	'.debug_loc'
 .L32:
 	.word	-1,.L33,0,.L158-.L33
 	.half	2
 	.byte	138,0
 	.word	0,0
-.L167:
-	.word	0,0
-	.sdecl	'.debug_loc',debug,cluster('initCan')
-	.sect	'.debug_loc'
-.L71:
-	.word	-1,.L35,0,.L69-.L35
-	.half	3
-	.byte	145,128,126
-	.word	0,0
-.L90:
-	.word	0,0
-.L88:
-	.word	0,0
-.L86:
-	.word	0,0
-.L34:
-	.word	-1,.L35,0,.L169-.L35
-	.half	2
-	.byte	138,0
-	.word	.L169-.L35,.L69-.L35
-	.half	3
-	.byte	138,128,2
-	.word	.L69-.L35,.L69-.L35
-	.half	2
-	.byte	138,0
-	.word	0,0
-.L92:
-	.word	0,0
-.L84:
-	.word	0,0
-.L74:
-	.word	-1,.L35,0,.L69-.L35
-	.half	3
-	.byte	145,204,126
-	.word	0,0
-.L102:
-	.word	0,0
-.L79:
-	.word	-1,.L35,0,.L69-.L35
-	.half	2
-	.byte	145,72
-	.word	0,0
-.L107:
-	.word	0,0
-.L113:
-	.word	0,0
-.L98:
-	.word	0,0
-.L77:
-	.word	-1,.L35,0,.L69-.L35
-	.half	3
-	.byte	145,144,127
-	.word	0,0
-.L100:
-	.word	0,0
-	.sdecl	'.debug_loc',debug,cluster('sendCanMessage')
-	.sect	'.debug_loc'
-.L36:
-	.word	-1,.L37,0,.L116-.L37
-	.half	2
-	.byte	138,0
-	.word	0,0
-.L117:
-	.word	-1,.L37,.L170-.L37,.L116-.L37
-	.half	1
-	.byte	82
-	.word	0,0
-	.sdecl	'.debug_loc',debug,cluster('swapEndian')
-	.sect	'.debug_loc'
-.L30:
-	.word	-1,.L31,0,.L156-.L31
-	.half	2
-	.byte	138,0
-	.word	0,0
-.L157:
-	.word	-1,.L31,0,.L156-.L31
+.L159:
+	.word	-1,.L33,0,.L158-.L33
 	.half	1
 	.byte	84
 	.word	0,0
 	.sdecl	'.debug_frame',debug
 	.sect	'.debug_frame'
-.L348:
+.L353:
 	.word	48
 	.word	-1
 	.byte	3,0,2,1,27,12,26,0,8,26,8,27,8,30,8,29,8,28,8,16,8,17,8,24,8,25,8,31,8,32,8,33,8,34,8,35,8,36,8,37,8,38
@@ -34268,32 +34309,32 @@ __canReceiveLoop_function_end:
 	.sdecl	'.debug_frame',debug,cluster('swapEndian')
 	.sect	'.debug_frame'
 	.word	24
-	.word	.L348,.L31,.L156-.L31
+	.word	.L353,.L33,.L158-.L33
 	.byte	8,18,8,19,8,20,8,21,8,22,8,23
 	.sdecl	'.debug_frame',debug,cluster('canRxInterruptHandler')
 	.sect	'.debug_frame'
 	.word	12
-	.word	.L348,.L33,.L158-.L33
+	.word	.L353,.L35,.L160-.L35
 	.sdecl	'.debug_frame',debug,cluster('initCan')
 	.sect	'.debug_frame'
 	.word	36
-	.word	.L348,.L35,.L69-.L35
+	.word	.L353,.L37,.L71-.L37
 	.byte	4
-	.word	(.L169-.L35)/2
+	.word	(.L171-.L37)/2
 	.byte	19,128,2,22,26,4,19,138,128,2,4
-	.word	(.L69-.L169)/2
+	.word	(.L71-.L171)/2
 	.byte	19,0,8,26
 	.sdecl	'.debug_frame',debug,cluster('sendCanMessage')
 	.sect	'.debug_frame'
 	.word	12
-	.word	.L348,.L37,.L116-.L37
+	.word	.L353,.L39,.L118-.L39
 	.sdecl	'.debug_frame',debug,cluster('canReceiveLoop')
 	.sect	'.debug_frame'
 	.word	36
-	.word	.L348,.L39,.L118-.L39
+	.word	.L353,.L41,.L120-.L41
 	.byte	4
-	.word	(.L171-.L39)/2
+	.word	(.L173-.L41)/2
 	.byte	19,8,22,26,3,19,138,8,4
-	.word	(.L118-.L171)/2
+	.word	(.L120-.L173)/2
 	.byte	19,0,8,26,0,0
 	; Module end

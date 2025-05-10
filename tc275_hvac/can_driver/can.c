@@ -110,6 +110,10 @@ void canReceiveLoop(Hvac* hvac)
             //print("0x%08X\r\n", receive_data[1]);
 
             switch(g_rxMsg.id) {
+                case 0x01: // Wakeup 메시지 수신시
+                    print(GREEN"[CAN 수신]\r\nID: 0x%02X  ---  "RESET, g_rxMsg.id);
+                    print("Wakeup Mode\r\n");
+                    break;
                 case 0x02: // // Sleep 메시지 수신시
                     print(GREEN"[CAN 수신]\r\nID: 0x%02X  ---  "RESET, g_rxMsg.id);
                     print("Sleep Mode\r\n");
