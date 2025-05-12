@@ -122,6 +122,7 @@ int main(void)
   HAL_Delay(100);  
 	
 	Sound_Track(1);
+	HAL_Delay(100);
 	
   DF_Pause(); // pause
   Printf("DF_Pause \r\n");
