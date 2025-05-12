@@ -2,6 +2,26 @@
 
 ---
 
+## 👥 팀원 소개
+
+| 배정우 | 조현호 | 박주현 | 김호준 | 김서진 | 박해웅 |
+|:------:|:------:|:------:|:------:|:------:|:------:|
+| [@jwjungwoo](https://github.com/jwjungwoo) | [@178kg78cm](https://github.com/178kg78cm) | [@ian125](https://github.com/ian125) | [@kimhojun2](https://github.com/kimhojun2) | [@loltochess](https://github.com/loltochess) | [@seabears](https://github.com/seabears) |
+
+---
+
+## 📁 프로젝트 구조
+
+```
+iGuard/
+├── stm32_boot/
+├── stm32_IVI/
+├── tc275_hvac/
+└── raspberry_pi/
+```
+
+---
+
 ## 📦 시스템 구성
 
 ### 1. 구성 모듈
@@ -125,22 +145,5 @@
 - **통신**: CAN, MQTT  
 - **센서**: PIR 모션 센서, 초음파 센서, 압력 센서  
 - **액추에이터**: DFPlayer Mini, TextLCD, 모터, 카메라
-
----
-
-## 📁 프로젝트 구조
-
-```
-iGuard/
-├── stm32_boot/
-├── stm32_IVI/
-├── tc275_hvac/
-└── raspberry_pi/
-```
-## 👥 팀원 소개
-
-| 배정우 | 조현호 | 박주현 | 김호준 | 김서진 | 박해웅 |
-|:------:|:------:|:------:|:------:|:------:|:------:|
-| @jwjungwoo | @178kg78cm | @ian125 | @kimhojun2 | @loltochess | @seabears |
 
 ---
