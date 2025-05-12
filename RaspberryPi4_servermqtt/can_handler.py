@@ -1,6 +1,6 @@
 import can
 
-def create_can_bus(interface='vcan0'):
+def create_can_bus(interface='can0'):
     return can.interface.Bus(channel=interface, bustype='socketcan')
 
 def send_can_message(bus, can_id, data_list):

@@ -16,7 +16,7 @@ backlight = Backlight()
 detection_handler = None
 
 app = QApplication(sys.argv)
-dashboard_window = Dashboard(bus) 
+dashboard_window = Dashboard(bus)  # Dashboard 인스턴스
 
 def can_receiver():
     global current_mode, detection_handler
@@ -24,15 +24,12 @@ def can_receiver():
     while True:
         message = bus.recv()
         if message:
+            # 모드 전환 처리
             if message.arbitration_id == 0x02 and current_mode != 'detection':
                 current_mode = "detection"
                 print("모드 전환 → detection")
                 backlight.power = False
-
-                # dashboard 화면 감추기
                 dashboard_window.hide()
-
-                # detection 모드 처리 시작
                 if not detection_handler:
                     detection_handler = DetectionMode(bus)
 
@@ -40,22 +37,28 @@ def can_receiver():
                 current_mode = "driving"
                 print("모드 전환 → driving")
                 backlight.power = True
-
-                # dashboard 화면 다시 표시
                 dashboard_window.showFullScreen()
 
-            # 상태값 업데이트...
+            # 온도·습도 업데이트
+            if message.arbitration_id == 0x21:
+                temperature = struct.unpack('<H', message.data[0:2])[0] / 10.0
+                humidity = struct.unpack('<H', message.data[4:6])[0] / 10.0
+                dashboard_window.update_env_signal.emit(temperature, humidity)
+                print(f"UI 업데이트 → 온도 {temperature}°C, 습도 {humidity}%")
+
+            # detection 모드에서 추가 메시지 처리
             if current_mode == 'detection' and detection_handler:
                 detection_handler.handle_can_message(message)
 
+# CAN 수신용 별도 쓰레드
 can_thread = threading.Thread(target=can_receiver)
 can_thread.daemon = True
 can_thread.start()
 
 if __name__ == '__main__':
-    dashboard_window.showFullScreen()  # 시작할 때만 한 번 실행
+    dashboard_window.showFullScreen()
     try:
-        sys.exit(app.exec_())  # PyQt 이벤트 루프는 한 번만 실행
+        sys.exit(app.exec_())  # PyQt 이벤트 루프 실행
     except KeyboardInterrupt:
         print("프로그램 종료!")
 
