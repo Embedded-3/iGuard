@@ -133,7 +133,8 @@ iGuard/
 
 ### 5. 구현 환경 및 시연 영상
 
-[<img src="https://img.youtube.com/vi/dxATn7LloXw/0.jpg" width="400"/>](https://www.youtube.com/watch?v=dxATn7LloXw)
+[영상 링크](https://www.youtube.com/watch?v=dxATn7LloXw)
+![thumbnail](./images/thumbnail.png)
 
 ![iguard_app](./images/iguard_app.png)
 
