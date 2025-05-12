@@ -39,7 +39,7 @@ iGuard/
 
 ### 1. STM32 Nucleo-L073RZ 보드
 
-![Nucleo Pinmap](./images/stm32_boot.png)
+![Nucleo Pinmap](./images/nucleo_pinmap.png)
 
 #### 1-1. 감지 및 부팅 시스템 – `stm32_boot`
 
