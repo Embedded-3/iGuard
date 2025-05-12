@@ -1,6 +1,24 @@
 # 🚗 iGuard – 차량 내 아동 방치 방지 시스템
 
 ---
+## 👥 팀원 소개
+
+| 배정우 | 조현호 | 박주현 | 김호준 | 김서진 | 박해웅 |
+|:------:|:------:|:------:|:------:|:------:|:------:|
+| @jwjungwoo | @178kg78cm | @ian125 | @kimhojun2 | @loltochess | @seabears |
+
+---
+
+## 📁 프로젝트 구조
+
+```
+iGuard/
+├── stm32_boot/
+├── stm32_IVI/
+├── tc275_hvac/
+└── raspberry_pi/
+
+---
 
 ## 📦 시스템 구성
 
@@ -111,11 +129,15 @@
 
 ![sleep diagram](./images/sleep_mode_diagram.png)
 
+---
+
 ### 5. 구현 환경 및 시연 영상
 
 ![project_picture](./images/project_picture.png)
 
 ![iguard_app](./images/iguard_app.png)
+
+---
 
 ## 🔧 기술 스택
 
@@ -125,26 +147,5 @@
 - **통신**: CAN, MQTT  
 - **센서**: PIR 모션 센서, 초음파 센서, 압력 센서  
 - **액추에이터**: DFPlayer Mini, TextLCD, 모터, 카메라
-
----
-
-## 📁 프로젝트 구조
-
-```
-iGuard/
-├── stm32_boot/
-├── stm32_IVI/
-├── tc275_hvac/
-└── raspberry_pi/
-```
-
-## 👥 팀원
-
-- 김서진  
-- 김호준  
-- 박주현  
-- 박해웅  
-- 배정우  
-- 조현호  
 
 ---
