@@ -12,6 +12,9 @@
 #include "asclin_driver/asclin.h"
 #include "hvac_ctl.h"
 
+#include "main.h"
+
+#define ISR_PRIORITY_CAN_RX   3 // 10
 
 
 /* 글로벌 핸들 */

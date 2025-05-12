@@ -37,6 +37,7 @@
 #include <PWM_driver/PWM.h>
 #include <hvac_ctl_driver/hvac_ctl.h>
 #include <can_driver/can.h>
+#include"main.h"
 
 
 #include "IfxPort.h"
@@ -67,6 +68,8 @@ IfxMultican_Message g_rxMsg;
 
 IfxMultican_Status g_status;  // CAN 상태
 
+
+
 void initSleepMode(void)
 {
     /* Clear ENDINIT protection */
@@ -83,7 +86,8 @@ void enter_sleep_mode(void)
 {
     if (g_sleep == 0)
     {
-        print("잠든다!!\n\r");
+        //print("잠든다!!\n\r");
+        for(volatile uint32 i = 0; i < 1000000; i++); // Delay : can.c에서 "Sleep Mode" 출력 대기
         g_sleep = 1;
 
         IfxScuWdt_clearCpuEndinit(IfxScuWdt_getCpuWatchdogPassword());
@@ -92,7 +96,7 @@ void enter_sleep_mode(void)
     }
 }
 
-void exit_sleep_mode(void)
+void exit_sleep_mode()
 {
     if (g_sleep == 1)
     {
@@ -100,18 +104,18 @@ void exit_sleep_mode(void)
     }
 }
 
-void initGPIO(void)
-{
-    // GPIO 초기화
-    IfxPort_setPinModeOutput(RED_LED.port, RED_LED.pinIndex, IfxPort_OutputMode_pushPull, IfxPort_OutputIdx_general);
-    IfxPort_setPinLow(RED_LED.port, RED_LED.pinIndex);  // 초기값 HIGH
+// void initGPIO(void)
+// {
+//     // GPIO 초기화
+//     IfxPort_setPinModeOutput(RED_LED.port, RED_LED.pinIndex, IfxPort_OutputMode_pushPull, IfxPort_OutputIdx_general);
+//     IfxPort_setPinLow(RED_LED.port, RED_LED.pinIndex);  // 초기값 HIGH
 
-    IfxPort_setPinModeOutput(YELLOW_LED.port, YELLOW_LED.pinIndex, IfxPort_OutputMode_pushPull, IfxPort_OutputIdx_general);
-    IfxPort_setPinLow(YELLOW_LED.port, YELLOW_LED.pinIndex);  // 초기값 HIGH
+//     IfxPort_setPinModeOutput(YELLOW_LED.port, YELLOW_LED.pinIndex, IfxPort_OutputMode_pushPull, IfxPort_OutputIdx_general);
+//     IfxPort_setPinLow(YELLOW_LED.port, YELLOW_LED.pinIndex);  // 초기값 HIGH
 
-    IfxPort_setPinModeOutput(GREEN_LED.port, GREEN_LED.pinIndex, IfxPort_OutputMode_pushPull, IfxPort_OutputIdx_general);
-    IfxPort_setPinLow(GREEN_LED.port, GREEN_LED.pinIndex);  // 초기값 HIGH
-}
+//     IfxPort_setPinModeOutput(GREEN_LED.port, GREEN_LED.pinIndex, IfxPort_OutputMode_pushPull, IfxPort_OutputIdx_general);
+//     IfxPort_setPinLow(GREEN_LED.port, GREEN_LED.pinIndex);  // 초기값 HIGH
+// }
 void core0_main(void)
 {
     IfxCpu_enableInterrupts();
@@ -137,26 +141,25 @@ void core0_main(void)
     Driver_MHZ19B_Init();   // Init MH-Z19B ASCLIN
     initFanTomPwm();        // Init Fan PWM
     initServoPwm();         // Init Servo PWM
-    initSleepMode();        // Init Sleep Mode
     initCan();              // Init CAN
-    initGPIO();             // Init GPIO
+    initSleepMode();        // Init Sleep Mode
+    //initGPIO();             // Init GPIO
 
     //enter_sleep_mode();       // Sleep 모드 진입  // TODO
-    print("빠져나왔다!!\r\n");
-    sendCanMessage();   // CAN 송신 : 빠져나왔다!!
+    //sendCanMessage();   // CAN 송신 : 빠져나왔다!!
 
     while(1)
     {
         AppScheduling();
         canReceiveLoop(&g_hvac);
+
     }
 }
 
 void AppTask1000ms(void)
 {
     stTestCnt.u32nuCnt1000ms++;
-
-
+    
     print("---------------------------\n\r");
 
     // 1. MQ135
@@ -175,9 +178,9 @@ void AppTask1000ms(void)
         if(!result){
             print(MAGENTA"< DHT22 > \n\r"RESET);
             print("temperature : ");
-            print(CYAN"%.1lf\n\r"RESET, (double)dht22_data.temperature/10);
+            print(CYAN"%.1lf °C\n\r"RESET, (double)dht22_data.temperature/10);
             print("humidity    : ");
-            print(CYAN"%.1lf\n\r"RESET, (double)dht22_data.humidity/10);
+            print(CYAN"%.1lf %%\n\r"RESET, (double)dht22_data.humidity/10);
         }
         else{
             print("DHT22 Error : %d\n\r", result);
@@ -189,7 +192,7 @@ void AppTask1000ms(void)
     int mhz19b_ret = MHZ19B_requestCO2(&mhz19b_value);
     if(!mhz19b_ret){
         print(MAGENTA"< MH-Z19B >\n\r"RESET);
-        print("CO2        : ");
+        print("CO2         : ");
         print(CYAN"%d ppm\n\r"RESET, mhz19b_value);
     }
     else{
@@ -205,16 +208,20 @@ void AppTask1000ms(void)
 
     if(hvac_ret == 0){
         print(MAGENTA"< HVAC Automatic Control >\n\r"RESET);
-        print("HVAC Mode  : ");
-        print(CYAN"%d\n\r"RESET, g_hvac.mode);
-        print("HVAC Speed : ");
+        print("HVAC Mode   : ");
+        if(g_hvac.mode == EXT_MODE)         print(CYAN"External Mode(%d)\n\r"RESET, g_hvac.mode);
+        else if(g_hvac.mode == INT_MODE)    print(CYAN"Internal Mode(%d)\n\r"RESET, g_hvac.mode);
+        //print(CYAN"%d\n\r"RESET, g_hvac.mode);
+        print("HVAC Speed  : ");
         print(CYAN"%d\n\r"RESET, g_hvac.speed);
     }
     else if(hvac_ret == 1){
         print(MAGENTA"< HVAC "YELLOW"Manual Control >\r\n"RESET);
-        print("HVAC Mode  : ");
-        print(CYAN"%d\n\r"RESET, g_hvac.mode);
-        print("HVAC Speed : ");
+        print("HVAC Mode   : ");
+        if(g_hvac.mode == EXT_MODE)         print(CYAN"External Mode(%d)\n\r"RESET, g_hvac.mode);
+        else if(g_hvac.mode == INT_MODE)    print(CYAN"Internal Mode(%d)\n\r"RESET, g_hvac.mode);
+        //print(CYAN"%d\n\r"RESET, g_hvac.mode);
+        print("HVAC Speed  : ");
         print(CYAN"%d\n\r"RESET, g_hvac.speed);
     }
     else{
@@ -222,7 +229,7 @@ void AppTask1000ms(void)
     }
 
     // 5. CAN 송신 9, 10초
-    if(stTestCnt.u32nuCnt1000ms % 9 == 0) { // 9초에 한번
+    if(stTestCnt.u32nuCnt1000ms % 5 == 0) { // 9초에 한번
         // 온도, 습도 데이터 송신
         g_txMsg.id = 0x21;
         g_txMsg.lengthCode = 8;
@@ -252,7 +259,7 @@ void AppTask1000ms(void)
         //     }
         // } while (g_status != IfxMultican_Status_ok);  // 성공적으로 전송되었을 때까지 반복
     }
-    else if(stTestCnt.u32nuCnt1000ms % 10 == 0) {   // 10초에 한번
+    else if(stTestCnt.u32nuCnt1000ms % 6 == 0) {   // 10초에 한번
         g_txMsg.id = 0x20;
         g_txMsg.lengthCode = 8;
         g_txMsg.data[0] = ((uint32)(g_data.ext_air) << 16) | (uint32)(g_data.int_co2);  // 외부 공기질, 내부 CO2 농도

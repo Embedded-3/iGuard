@@ -146,3 +146,5 @@ can.o :	"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p1\\Libraries\\iLLD\\TC27D\\T
 "C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p1\\Libraries\\iLLD\\TC27D\\Tricore\Gtm\Std\IfxGtm_Cmu.h" :
 can.o :	"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p1\\asclin_driver\asclin.h"
 "C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p1\\asclin_driver\asclin.h" :
+can.o :	"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p1\main.h"
+"C:\\Users\\USER\\AURIX-v1.10.6-workspace\\p1\main.h" :
