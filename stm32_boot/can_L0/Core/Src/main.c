@@ -100,7 +100,7 @@ int main(void)
 {
 
   /* USER CODE BEGIN 1 */
-
+	
   /* USER CODE END 1 */
 
   /* MCU Configuration--------------------------------------------------------*/
@@ -346,7 +346,7 @@ void check_and_send(void) {
 
   uint8_t fsr = FSR_Check();
   pir = PIR_Check();  
-  uint8_t result = fsr && (pir && ultrasonic); // Sensor Logic
+  uint8_t result = fsr && (pir || ultrasonic); // Sensor Logic
 	
 	// result accumulated stores last 3 results
 	static uint8_t result_accumulated = 0;
@@ -365,7 +365,7 @@ void check_and_send(void) {
 	{
 		if (result_accumulated)
 		{
-//			if(wake_message_sent == 0)
+			if(wake_message_sent == 0)
 			{ // wake only once
 				wake_message_sent = 1;
 				send_wakeup_message();
@@ -378,7 +378,7 @@ void check_and_send(void) {
 	}
 
 	// if CANT find child in 30seconds -> send sleep message to All other ECUs
-  if (no_activity_counter >= 60 && sleep_message_sent == 0) {
+  if (no_activity_counter >= 600 && sleep_message_sent == 0) {
 		// sleep message send
 	  send_sleep_message();
     no_activity_counter = 0;
