@@ -108,7 +108,7 @@ iGuard/
 | Volume Down | `0x09` | 볼륨 감소 | `RaspberryPi` |
 | LCD Message | `0x10` | LCD에 텍스트 표시 | `RaspberryPi` |
 | HVAC Control | `0x17` | HVAC 팬 모드 제어 | `RaspberryPi` |
-| HVAC Status | `0x20` | HVAC 명령 전송 및 상태 수신 | `tc275_hvac` |
+| HVAC Status | `0x20` | HVAC 명령 전송 및 상태 수신, 외부 대기질, co2 전송 | `tc275_hvac` |
 | Temp/Humidity | `0x21` | 온습도 전송 | `tc275_hvac` |
 
 ---
@@ -144,7 +144,7 @@ iGuard/
 - **임베디드 보드**: Infineon TC275  
 - **싱글 보드 컴퓨터**: Raspberry Pi 4  
 - **통신**: CAN, MQTT  
-- **센서**: PIR 모션 센서, 초음파 센서, 압력 센서  
-- **액추에이터**: DFPlayer Mini, TextLCD, 모터, 카메라
+- **센서**: PIR 모션 센서, 초음파 센서, 압력 센서, 온습도 센서, CO2 센서, 유해가스/공기질 센서
+- **액추에이터**: DFPlayer Mini, TextLCD, DC팬, 서보 모터, 카메라
 
 ---
