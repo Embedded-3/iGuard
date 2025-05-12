@@ -20,9 +20,13 @@
 
 ## 📌 참조 PinMap
 
-### 1. STM32 Nucleo-L073RZ 보드(./images/1. STM32 Nucleo Pinmap.png)
+### 1. STM32 Nucleo-L073RZ 보드
+
+![Nucleo Pinmap](./images/stm32_boot.png)
 
 #### 1-1. 감지 및 부팅 시스템 – `stm32_boot`
+
+![stm32_boot](./images/stm32_boot.png)
 
 | Components          | Pin Name       | Board Pin | Instruction                  |
 |---------------------|----------------|-----------|-------------------------------|
@@ -37,6 +41,8 @@
 | CAN Module (MISO)   | SPI1_MISO      | PA6       | SPI Master In                 |
 
 #### 1-2. 인포테인먼트 시스템 – `stm32_IVI`
+
+![stm32_ivi](./images/stm32_ivi.png)
 
 | Components         | Pin Name      | Board Pin | Instruction                       |
 |--------------------|---------------|-----------|------------------------------------|
@@ -57,6 +63,8 @@
 ---
 
 ### 2. Infineon TC275 보드
+
+![tc275](./images/tc275_pinmap.png)
 
 | 센서/장치                  | 핀 번호                      | 설명                        |
 |----------------------------|-------------------------------|-----------------------------|
@@ -102,6 +110,16 @@
 
 ---
 
+### 4. 시스템 흐름도
+
+![sleep diagram](./images/sleep_mode_diagram.png)
+
+### 5. 구현 환경 및 시연 영상
+
+![project_picture](./images/project_picture.png)
+
+![iguard_app](./images/iguard_app.png)
+
 ## 🔧 기술 스택
 
 - **MCU**: STM32 Nucleo-L073RZ  
@@ -122,15 +140,6 @@ iGuard/
 ├── tc275_hvac/
 └── raspberry_pi/
 ```
-
----
-
-## 📸 데모 영상
-
-> [👉 시연 영상 보러가기](#)  
-> *(링크는 실제 영상 주소로 교체해주세요)*
-
----
 
 ## 👥 팀원
 
