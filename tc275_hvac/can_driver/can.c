@@ -103,9 +103,6 @@ void canReceiveLoop(Hvac* hvac)
             
             uint32 receive_data[2] = {0};
 
-            //print("\r\n0x%08X\r\n", receive_data[0]);
-            //print("0x%08X\r\n", receive_data[1]);
-
             switch(g_rxMsg.id) {
                 case 0x01: // Wakeup 메시지 수신시
                     print(GREEN"[CAN 수신]\r\nID: 0x%02X  ---  "RESET, g_rxMsg.id);
@@ -126,6 +123,9 @@ void canReceiveLoop(Hvac* hvac)
 
                     receive_data[0] = swapEndian(receive_data[0]);  // 엔디안 변환
                     receive_data[1] = swapEndian(receive_data[1]);  // 엔디안 변환
+
+                    //print("\r\n0x%08X\r\n", receive_data[0]);
+                    //print("0x%08X\r\n", receive_data[1]);
 
                     if(receive_data[0] == 0x00) { // 수신 데이터가 0x00이면
                         hvac->control = MANUAL_CTL; // 수동 모드로 변경
