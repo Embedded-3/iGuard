@@ -20,7 +20,7 @@
 
 ## 📌 참조 PinMap
 
-### 1. STM32 Nucleo-L073RZ 보드
+### 1. STM32 Nucleo-L073RZ 보드(./images/1. STM32 Nucleo Pinmap.png)
 
 #### 1-1. 감지 및 부팅 시스템 – `stm32_boot`
 
